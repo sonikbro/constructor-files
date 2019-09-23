@@ -1,0 +1,130 @@
+<!-- Форма без ціни (Додати віжуал - розкоментувати style)-->
+
+<div class="form" id="form">
+        <img class="form__rocket" src="http://chief.bizconstructor.com/img/back_1.png" alt="">
+        <div class="container" style="max-width: 450px;">
+             <div class="form__content">
+                 <div class="form__right">
+                     <div class="form__header"> <!-- Шапка форми -->
+                         <div class="form__flag"><img src="http://systemworkshop.bizconstructor.com/img/flags/flag.ua.svg" alt=""></div>
+                         <div class="form__title">Киев</div> <!-- Місце проведення -->
+                         <div class="form__arrow"><img src="http://constructor.biz.ua/tilda-img/arrow_form.svg" alt=""></div>
+                         <div class="form__title">4 октября</div> <!-- Дата проведення -->
+                     </div>
+                     <form class="form__fields zoho_url" method="POST" action="http://proceed.bizconstructor.com"
+                         data-rules="{&quot;name&quot;:&quot;required&quot;,&quot;email&quot;:&quot;required&quot;, &quot;phone&quot;:&quot;required&quot;}"
+                         autocomplete="off" novalidate="novalidate">
+                         <div class="form__field">
+                             <p>Имя и фамилия</p>
+                             <div><input id="name" type="text" name="name" autocomplete="off"></div>
+                         </div>
+                         <div class="form__field">
+                             <p>Телефон</p>
+                             <div>
+                                 <div class="phone_wrapper"><input id="phone" type="text" name="phone" data-phone=""
+                                         autocomplete="off">
+                                     <div class="response"><img class="error" src="http://systemworkshop.bizconstructor.com/build/img/error-icon.svg" alt=""><img
+                                             class="valid" src="http://systemworkshop.bizconstructor.com/build/img/valid-icon.svg" alt=""></div>
+                                     <!-- <span class="input__line"></span> -->
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="form__field">
+                             <p>E-mail</p>
+                             <div><input id="email" type="email" name="email" autocomplete="off"></div>
+                         </div>
+                         <!-- Промокод -->
+                         <!-- <div class="form__field">
+                             <p>Промо-код</p>
+                             <div><input id="promocode" type="text" name="promocode" autocomplete="off"><span id="promoicon"
+                                     style="display: block; position: absolute; bottom: 2px; right: 0px; background: url(&quot;http://cdn.bizconstructor.com/img/help-icon.min.svg&quot;) center center no-repeat; cursor: pointer; width: 0px; height: 0px;"></span>
+                                 <div class="promotext"
+                                     style="display: block; position: absolute; top: 90%; right: 0px; background: rgb(255, 255, 255); width: 100%; opacity: 0; margin-top: -1px; z-index: 500; padding: 1rem; border: 1px solid rgba(99, 103, 103, 0.15); transition: all 0.2s ease-in-out 0s; pointer-events: none; font-size: 11px;">
+                                     <strong style="color: rgb(129, 136, 136); font-weight: 600;">Промокоды
+                                         «Бизнес-Конструктор»:</strong>
+                                     <p style="margin: 0.5rem 0px 0px; color: rgb(182, 184, 184); line-height: 16px;">
+                                         Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или
+                                         введите промокод из рассылки и получите скидку, указанную в тексте письма.</p>
+                                 </div>
+                             </div>
+                         </div> -->
+                         <input type="hidden" name="ref" value="" autocomplete="off"><input type="hidden" name="ga"
+                             value="" autocomplete="off"><input type="hidden" name="ym_uid" value=""
+                             autocomplete="off"><input type="hidden" name="utm_source" value="" autocomplete="off"><input
+                             type="hidden" name="utm_medium" value="" autocomplete="off"><input type="hidden" name="utm_term"
+                             value="" autocomplete="off"><input type="hidden" name="utm_content" value=""
+                             autocomplete="off"><input type="hidden" name="utm_campaign" value="" autocomplete="off"><input
+                             type="hidden" name="google_client_id" value="" autocomplete="off"><input
+                             type="hidden" name="landing_id" value="2108311000186599063" autocomplete="off"><!-- Landing_id -->
+                             <input
+                             type="hidden" name="es_mail_id" value="2159" autocomplete="off"><input type="hidden"
+                             name="convert_in_zoho" autocomplete="off"><input type="hidden" name="es_id" value="1120"
+                             autocomplete="off"><input type="hidden" name="token"
+                             value="LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" autocomplete="off"><input
+                             type="hidden" name="success_url" value="http://chief.bizconstructor.com/program/chief"
+                             autocomplete="off"><input type="hidden" name="error_url"
+                             value="http://chief.bizconstructor.com/program/chief" autocomplete="off"><input type="hidden"
+                             name="redirect" value="false" autocomplete="off">
+                         <div class="form__button"><button class="button button--submit send-form">Регистрация</button></div>
+                         <div class="form__politic">Нажимая кнопку «Регистрация», я даю согласие на обработку моих
+                             персональных данных
+                             согласно<a href="http://privacy.bizconstructor.com/" target="_blank">политике
+                                 конфиденциальности.<p></p></a><a href="http://refund.bizconstructor.com/"
+                                 target="_blank">Политика возврата</a></div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <!-- <style>
+            .form {
+                padding: 0;
+            }
+            .form__rocket {
+                margin: 0 auto;
+                display: block;
+                position: relative;
+                width: 100%;
+                top: -50px;
+            }
+            #form .container {
+                position: relative;
+                margin-top: -230px;
+            }
+            #form {
+                position: relative;
+            }
+            .form__content {
+                padding: 0;
+                padding-bottom: 3rem;
+            }
+                .form__rocket {
+                display: block !important;
+                opacity: 1 !important;
+                }
+            
+            @media(max-width: 768px) {
+                .text__block {
+                    font-size: 16px !important;
+                    line-height: 3rem;
+                }
+                .block__orange {
+                    font-size: 28px !important;
+                    margin-bottom: 15px;
+                    line-height: 4rem;
+                }
+                .form__content {
+                    padding: 0 1rem 4rem;
+                }
+                #form .container {
+                    margin-top: -110px;
+                }
+                .form__rocket {
+                    top: -60px;
+                    content: url(http://chief.bizconstructor.com/img/back_1_mobile.png);
+                display: block !important;
+                opacity: 1 !important;
+                }
+            }
+    </style> -->

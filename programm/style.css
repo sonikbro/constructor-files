@@ -13,3 +13,7 @@
       max-width: 100px;
     }
   }
+  #allrecords a {
+    color: #8f8f8f !important;
+    text-decoration: none;
+  }
