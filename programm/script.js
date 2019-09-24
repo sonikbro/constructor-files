@@ -8,9 +8,5 @@ setTimeout(function(){
 
 
 autoPriceChange('[data-price]','[data-total-price]', '[data-deadline]');
-
-if (!$('.bottom > .date:contains("Астана")').length > 0) {
-$(".date").addClass("thisClass");} 
-  else {
-  $(".dateKZ").addClass("thisClass");
-  };
+$('#allrecords').after('<div id="copydel"></div>');
+$('body').addClass('zoho_url');
