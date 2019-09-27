@@ -1,7 +1,7 @@
 .button, .hero .type__text, .hero__description, .hero__title {
 	font-family: museo !important;
 }
-body, body div {
+body, body div, .menu__item--tooltip, .getcall__button--expand span, .getcall__hover span {
 	font-family: museo !important;
 }
 .mobileHeroImage {
@@ -42,7 +42,7 @@ body, body div {
 		margin: 5rem auto 0rem !important;
 	}
 	.features {
-		padding: 2.8rem 2.4rem;
+		padding: 2.8rem 2.4rem !important;
 	}
 	.feature {
 		border: none;
@@ -648,8 +648,82 @@ body, body div {
 		top: 40%;
 	}
 }
-
-
 .featureTexts {
 	margin: 4rem auto 6rem;
+}
+.newFeedback {
+	font-weight: 700;
+}
+.profit__title {
+	color: #171718;
+}
+@media(min-width: 769px) {
+	.featuresBlocks .feature__icon {
+		display: none;
+	}
+	.feature {
+		border: none;
+		width: 24%;
+	}
+	.featuresBlocks .feature:nth-child(1) {
+		background: linear-gradient(180deg, #72A7FE 0%, #728AFE 100%);
+		box-shadow: 0px 2px 20px rgba(114, 165, 254, 0.35);
+	}
+	.featuresBlocks .feature:nth-child(2) {
+		background: linear-gradient(180deg, #FDD584 0%, #F7A378 100%);
+		box-shadow: 0px 2px 20px rgba(253, 211, 131, 0.3);
+	}
+	.featuresBlocks .feature:nth-child(3) {
+		background: linear-gradient(180deg, #FF7A84 0%, #F85964 100%);
+		box-shadow: 0px 2px 20px rgba(255, 120, 130, 0.3);
+	}
+	.featuresBlocks .feature:nth-child(4) {
+		background: linear-gradient(180deg, #B276FF 0%, #9E52FF 100%);
+		box-shadow: 0px 2px 20px rgba(176, 114, 255, 0.3);
+	}
+	.featuresBlocks {
+		justify-content: space-between;
+	}
+	.feature__title {
+		font-weight: bold;
+		font-size: 45px;
+		line-height: 49px;
+		color: #FFFFFF !important;
+		padding-bottom: 30px;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.feature__text {
+		font-size: 16px;
+		line-height: 20px;
+		color: #FFFFFF !important;
+	}
+	.feature:after {
+		display: none;
+	}
+	.feature__title:after {
+		content: '';
+		background: #FFF;
+		opacity: .2;
+		width: 90px;
+		height: 4px;
+		position: relative;
+		display: block;
+		left: 30%;
+		top: 10px;
+	}
+}
+.features {
+	padding: 9rem 0 10rem;
+}
+.accordeon-section {
+	padding: 9rem 0 10rem !important;
+}
+#allrecords ul {
+	padding-left: 0 !important;
+}
+#form__contact  a {
+	color: #06c !important;
+}
+#form__contact {
+	padding-top: 5rem;
 }
