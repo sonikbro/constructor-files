@@ -47,3 +47,5 @@ $(".program__item").click(function() {
 	$(this).toggleClass('program-item-block-max');
 	$('.program__item').not(this).removeClass('program-item-block-max');
 });
+
+
