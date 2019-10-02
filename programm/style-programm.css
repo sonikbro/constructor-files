@@ -9,24 +9,6 @@
 	margin: 0 auto;
 	width: 100%;
 }
-.thisClass {
-	display: block !important;
-}
-.dateKZ {
-	font-family: Open Sans;
-	font-weight: 600;
-	color: #999;
-	font-size: 1.7rem;
-	margin-left: 2rem;
-}
-@media(max-width: 768px) {
-	.dateKZ {
-		max-width: 100px;
-	}
-}
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400,600,700&subset=cyrillic,cyrillic-ext');
-@import url('/program/img/css/sprite.css');
-@import url('/program/css/fonts/raleway.css');
 * {
 	outline: none !important;
 }
@@ -233,7 +215,6 @@ footer {
 	background: #f9f9f7;
 	border-top: 1px solid #ececea;
 	padding: 4rem 0;
-	font-family: 'Open Sans', sans-serif;
 }
 footer .container {
 	max-width: 965px;
@@ -279,7 +260,6 @@ header {
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: 'Raleway', sans-serif;
 	border-bottom: 2px solid #d6d6d6;
 	position: relative;
 	top: 0;
@@ -332,7 +312,6 @@ header .header-menu .menu-link {
 }
 header .header-menu .menu-link.phone-link {
 	font-weight: 600;
-	font-family: 'Open Sans', sans-serif;
 	color: #5c5c5c;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
@@ -580,30 +559,28 @@ button.burger.burger1 span {
 	display: none !important;
 }
 .menu__item, .container h3, .container h1, button, .date, span, .modules li {
-  font-family: museo !important;
+	font-family: museo !important;
 }
 .container h1 {
-  position: relative;
+	position: relative;
 }
-
 .container h1:after {
-  display: inline-block;
-  position: relative;
-  top: -18px;
-  content: '®';
-  font-family: arial;
-  font-size: 17px;
-  color: #0000003b;
+	display: inline-block;
+	position: relative;
+	top: -18px;
+	content: '®';
+	font-family: arial;
+	font-size: 17px;
+	color: #0000003b;
 }
-
 @media (max-width: 768px) {
-  .first h1 {
-      font-size: 4.3rem !important;
-      line-height: 1.2 !important;
-  }
+	.first h1 {
+		font-size: 4.3rem !important;
+		line-height: 1.2 !important;
+	}
 }
-#allrecords div:nth-child(2) ~ div:nth-child(even) .modules {
-  background: #fff;
+#allrecords div:nth-child(2)~div:nth-child(even) .modules {
+	background: #fff;
 }
 #copydel {
 	position: absolute;
@@ -611,4 +588,12 @@ button.burger.burger1 span {
 	background: #0066cc;
 	height: 70px;
 	width: 100%;
+}
+body {
+	padding: 0 !important;
+}
+@media (max-width: 767px) {
+	body {
+		padding: 0 !important;
+	}
 }

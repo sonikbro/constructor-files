@@ -1,0 +1,27 @@
+<!-- CustomCSS / JS -->
+
+<style>
+   @import "http://constructor.biz.ua/tilda-img/css/style-programm.css";
+</style>
+
+
+<script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
+<script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+
+<script>
+  setTimeout(function(){
+  var obj = searchToObject();
+  if (obj.landing_id) {
+    LP.CORE.selectPackage( $('[data-id="'+ obj.landing_id +'"]') )
+  }
+  
+}, 1500);
+
+
+autoPriceChange('[data-price]','[data-total-price]', '[data-deadline]');
+$('#allrecords').after('<div id="copydel"></div>');
+$('body').addClass('zoho_url');
+</script>
+
