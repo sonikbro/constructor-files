@@ -597,3 +597,11 @@ body {
 		padding: 0 !important;
 	}
 }
+#allrecords .form a {
+	color: #06c !important;
+}
+@media (min-width: 768px) {
+	#allrecords {
+		margin-top: 3rem;
+	}
+}
