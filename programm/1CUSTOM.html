@@ -2,18 +2,13 @@
 
 <style>
   @import "http://constructor.biz.ua/tilda-img/css/style-programm.css";
-
-  #allrecords .form a {
-    color: #06c !important;
-  }
-
-  @media (min-width: 768px) {
-    #allrecords {
-      margin-top: 3rem;
-    }
-  }
 </style>
 
+
+<script>
+  var bodyUrl = document.getElementsByTagName('body')[0];
+  bodyUrl.classList.add("zoho_url");
+</script>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.js"></script>
@@ -25,12 +20,11 @@
     var obj = searchToObject();
     if (obj.landing_id) {
       LP.CORE.selectPackage($('[data-id="' + obj.landing_id + '"]'))
-    }
-
+    };
   }, 1500);
 
-
   autoPriceChange('[data-price]', '[data-total-price]', '[data-deadline]');
+
+ 
   $('#allrecords').after('<div id="copydel"></div>');
-  $('body').addClass('zoho_url');
 </script>
