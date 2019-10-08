@@ -43,7 +43,13 @@ $('.feed-button').on('click', function(e) {
 });
 $('#allrecords').after('<div id="copydel"></div>');
 $(".program__item:first").addClass('program-item-block-max');
+
+setTimeout(function(){
+	$('#tildacopy').css("display", "none");
+}, 100);
+
+
 $(".program__item").click(function() {
 	$(this).toggleClass('program-item-block-max');
 	$('.program__item').not(this).removeClass('program-item-block-max');
-});
+})
