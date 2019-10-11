@@ -1,6 +1,657 @@
 <!-- CustomCSS / JS -->
 
 <style>
+  .form__cta {
+    display: block !important;
+    opacity: 1 !important;
+    width: 100%;
+    position: relative;
+  }
+
+  .form__content {
+    padding: 0 0 4rem;
+    position: relative;
+    top: -70px;
+  }
+
+  .form__cta {
+    content: url('http://constructor.biz.ua/tilda-img/chief/new-cta.jpg');
+  }
+
+  @media(max-width: 768px) {
+    .form__cta {
+      content: url('http://constructor.biz.ua/tilda-img/chief/new-cta-mob.png');
+    }
+
+    .form__content {
+      padding: 0 1rem 4rem;
+      position: static;
+    }
+
+    .form .container {
+      margin-top: 2rem;
+    }
+
+  }
+
+  .container--pm-numbers {
+    background-image: url(http://constructor.biz.ua/tilda-img/package/pm-numbers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 118px 0 122px 0;
+    display: block !important;
+    opacity: 1 !important;
+
+  }
+
+  .pm-numbers--items {
+    max-width: 1015px;
+    margin: 0 auto;
+    min-width: 768px;
+    display: flex;
+  }
+
+  .pm--item {
+    width: 25%;
+    text-align: center;
+  }
+
+  .pm-item--num {
+    color: #FF008A;
+    font-weight: bold;
+    mix-blend-mode: normal;
+    text-transform: uppercase;
+    font-size: 42.835px;
+    line-height: 109.9%;
+    font-family: Raleway;
+    padding-bottom: 18px;
+    position: relative;
+  }
+
+  .pm-item-text {
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 122.9%;
+    padding-top: 19px;
+  }
+
+
+  .pm-item--num::after {
+    content: '';
+    background: #367BF5;
+    height: 5px;
+    position: absolute;
+    bottom: -4px;
+  }
+
+  .pm-numbers--items .pm--item:nth-child(1) .pm-item--num:after,
+  .pm-numbers--items .pm--item:nth-child(3) .pm-item--num:after {
+    width: 10px;
+    left: 48%;
+  }
+
+  .pm-numbers--items .pm--item:nth-child(2) .pm-item--num:after,
+  .pm-numbers--items .pm--item:nth-child(4) .pm-item--num:after {
+    width: 36px;
+    left: 42%;
+  }
+
+  @media(max-width: 768px) {
+    .container--pm-numbers {
+      background-image: url(http://constructor.biz.ua/tilda-img/package/pm-numbersMOB.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 48px 0 66px;
+    }
+
+    .pm-numbers--items {
+      flex-direction: column;
+      max-width: 100%;
+      min-width: unset;
+    }
+
+    .pm--item {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .pm-item-text {
+      padding: 19px 50px 0;
+      font-size: 22px;
+      line-height: 122.9%;
+    }
+
+    .pm-numbers--items .pm--item:nth-child(1) .pm-item--num:after,
+    .pm-numbers--items .pm--item:nth-child(3) .pm-item--num:after {
+      left: 48.5%;
+    }
+
+    .pm-numbers--items .pm--item:nth-child(2) .pm-item--num:after,
+    .pm-numbers--items .pm--item:nth-child(4) .pm-item--num:after {
+      left: 45%;
+    }
+  }
+
+
+  .container--package {
+    display: flex !important;
+    opacity: 1 !important;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0;
+  }
+
+  .package-items {
+    max-width: 740px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .title__package {
+    color: #1F1F1F;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 49px;
+    margin-bottom: 26px;
+    text-align: center;
+  }
+
+  .list--item--text {
+    color: #898989;
+    font-family: Open Sans;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .title__list {
+    max-width: 270px;
+  }
+
+  .item--text--bottom {
+    color: #C9C9C9;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+  }
+
+  .title__list--item {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .title__list--item:last-child {
+    margin-bottom: 0px;
+    position: relative;
+  }
+
+  .list--item--img {
+    padding-right: 20px;
+  }
+
+  .package-item.box {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(157, 169, 194, 0.24);
+    border-radius: 5px;
+  }
+
+  .box--title {
+    letter-spacing: 0.03em;
+    color: #1F1F1F;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 31px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 2px solid #F5F5F5;
+    padding: 13px 50px;
+    margin-bottom: 20px;
+  }
+
+  .box--title img {
+    padding-right: 6px;
+  }
+
+  .box--title.standart {
+    color: #7C7C7C;
+  }
+
+  .box--btn {
+    background: #367BF5;
+    border-radius: 0 0 5px 5px;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    transition: .3s;
+  }
+
+  .package--box {
+    height: 100%;
+    width: 197px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .checkbox {
+    margin-bottom: 30px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkbox.line1,
+  .checkbox.line4,
+  .checkbox.line5 {
+    height: 27px
+  }
+
+  .checkbox.line2,
+  .checkbox.line6 {
+    height: 49px
+  }
+
+  .checkbox.line3 {
+    height: 96px
+  }
+
+  .item--text--bottom.link {
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  .item--text--bottom.link img {
+    padding-left: 5px;
+  }
+
+  .modal--items {
+    opacity: 0;
+    font-family: Open Sans;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: .2px;
+    color: #898989;
+    display: flex;
+    align-items: flex-start;
+    padding: 18px 24px 23px 23px;
+    position: absolute;
+    flex-direction: column;
+    top: 80px;
+    left: -40px;
+    background: #FFF;
+    box-shadow: 0 4px 32px rgba(157, 169, 194, .24);
+    border-radius: 5px;
+    transition: .2s .2s ease-in-out;
+  }
+
+  .setting:hover~.modal--items {
+    opacity: 1;
+  }
+
+  .modal--item {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .modal--item img {
+    margin-right: 22px;
+    display: block;
+  }
+
+  .list--item--text.setting {
+    font-weight: bold;
+    color: #3E3E3E;
+  }
+
+  .list--item--text.setting .item--text--bottom.link {
+    font-weight: 300;
+    color: #C9C9C9;
+  }
+
+  @media(max-width: 768px) {
+    .package-items {
+      display: none;
+    }
+
+    .package-items.mob {
+      display: flex !important;
+      opacity: 1 !important;
+      max-width: 100%;
+      flex-direction: column;
+    }
+
+    .package--box {
+      width: 100%;
+      margin-bottom: 60px;
+      box-shadow: 0px 4px 32px rgba(157, 169, 194, 0.24);
+      border-radius: 5px;
+    }
+
+    .package-item.box {
+      box-shadow: unset;
+    }
+
+    .title__list {
+      max-width: 100%;
+      padding: 10px 20px 40px;
+    }
+
+    .list--item--text {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .box--title {
+      font-size: 22px;
+      line-height: 31px;
+      color: #1F1F1F;
+    }
+
+    .box--title.standart {
+      color: #7C7C7C;
+      font-weight: bold;
+    }
+
+    .box--title {
+      padding: 20px 50px;
+    }
+
+    .modal--items {
+      display: none;
+    }
+
+    .modal--itemsmob {
+      font-family: Open Sans;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: .2px;
+      color: #898989;
+      display: flex;
+      align-items: flex-start;
+      padding: 18px 24px 23px 23px;
+      flex-direction: column;
+      background: #FFF;
+      box-shadow: 0 4px 32px rgba(157, 169, 194, .24);
+      border-radius: 5px;
+      transition: .2s .2s ease-in-out;
+    }
+
+    .modal--item {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .modal--item img {
+      margin-right: 22px;
+      display: block;
+    }
+
+    .modal--itemsmob {
+      margin: 0 20px;
+      display: none;
+    }
+
+    .modal--itemsmob.active {
+      position: fixed;
+      top: 25%;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex !important;
+      opacity: 1 !important;
+    }
+
+    .modal-pack-close {
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+    }
+
+    .modal--itemsmob-bg {
+      transition: .3s ease-in-out;
+    }
+
+    .modal--itemsmob-bg.on {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.79);
+      z-index: 99;
+    }
+
+    .list--item--text.setting.mob {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .list--item--text.setting.mob img {
+      margin-right: 17px;
+    }
+  }
+
+  .modal--itemsmob {
+    display: none;
+  }
+
+  a.box--btn {
+    text-decoration: none
+  }
+
+  @media(min-width: 768px) {
+    .feature .feature__title {
+      display: none;
+    }
+  }
+
+  .feature {
+    border: none;
+  }
+
+  .featuresBlocks {
+    max-width: 1100px;
+  }
+
+  .feature__icon {
+    padding-bottom: 22px;
+  }
+
+  .feature:hover {
+    background: unset;
+  }
+
+  .feature:hover .feature__text,
+  .feature:hover .feature__title {
+    color: unset;
+  }
+
+  .feature .feature__icon {
+    transition: .3s ease-in-out;
+    transform-origin: center;
+  }
+
+  .feature__text {
+    transition: .3s ease-in-out;
+  }
+
+  .feature:hover .feature__icon {
+    transform: scale(1.2);
+  }
+
+  .feature {
+    position: relative;
+    overflow: visible;
+  }
+
+  .features {
+    padding: 9rem 0 0;
+  }
+
+  .feature:before {
+    content: '';
+    position: absolute;
+    background: rgba(54, 123, 245, .1);
+    width: 3px;
+    height: 99px;
+    transform: rotate(90deg);
+    right: -2%;
+    top: 35px;
+  }
+
+  .feature:last-child:before {
+    display: none;
+  }
+
+  .featureTexts {
+    display: none;
+  }
+
+  @media(max-width: 768px) {
+    .feature:before {
+      display: none;
+    }
+
+    .featuresBlocks {
+      margin: 0 auto 0;
+    }
+
+    .features {
+      padding: 5rem 0 0;
+    }
+
+    .feature {
+      padding: 3rem 3rem 1rem;
+    }
+
+    .feature__icon {
+      padding-bottom: 0px;
+    }
+  }
+
+  .text {
+    padding: 8rem 0 9rem;
+  }
+
+  .text__block {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  .blue_fruk {
+    color: #0066cc;
+  }
+
+  .profit__list {
+    padding-top: 2rem;
+  }
+
+  .profit .container {
+    max-width: 1100px;
+  }
+
+  .profit__title {
+    color: #1F1F1F;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 49px;
+  }
+
+  .profit__list li {
+    align-items: flex-start;
+  }
+
+  .profit__list li span {
+    color: #3F3F3F;
+    font-size: 18px;
+    line-height: 26px;
+    min-height: 86px;
+    position: relative;
+  }
+
+  .profit__list li span:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: rgba(54, 123, 245, 0.1);
+    left: -20px;
+  }
+
+  @media(max-width: 768px) {
+    .profit__list li span:before {
+      left: -17px;
+    }
+
+    .profit__title {
+      font-size: 28px;
+      line-height: 35px;
+    }
+  }
+
+  .profit {
+    background: #fff;
+  }
+
+  #allrecords .package-items .box--btn {
+    color: #FFFFFF !important
+  }
+
+  #allrecords .package-items .box--btn:hover {
+    background: #1EAF35 !important;
+  }
+
+  @media (max-width: 768px) {
+    .hero__title br {
+      display: block;
+    }
+
+    .hero__icon {
+      margin-right: 2rem;
+    }
+    .features {
+      padding: 0!important;
+    }
+    .program-item-block-max {
+      max-height: 400px!important;
+    }
+    .container--package {
+      padding: 5rem 2rem;
+    }
+  }
 </style>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
@@ -8,3 +659,22 @@
 <script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+
+<script>
+  $("#packageModal").click(function () {
+    $(".modal--itemsmob").addClass('active');
+    $(".modal--itemsmob-bg").addClass('on');
+  });
+
+  $("#packageModalClose").click(function () {
+    $(".modal--itemsmob").removeClass('active');
+    $(".modal--itemsmob-bg").removeClass('on');
+  });
+
+  $('a.box--btn').on('click', function (e) {
+    $('html,body').stop().animate({
+      scrollTop: $('#form').offset().top + 260
+    }, 1000);
+    e.preventDefault();
+  });
+</script>
