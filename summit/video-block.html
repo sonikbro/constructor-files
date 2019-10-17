@@ -1,14 +1,30 @@
 <!-- video block -->
 <section>
-    <div class="video-sum">
-      <div class="video-sum-container">
-        <p class="title--video">
-          КАК ПРОХОДЯТ САММИТЫ <br> «БИЗНЕС-КОНСТРУКТОР»
-        </p>
-        <div class="video--container">
-          <iframe width="768" height="480" src="https://www.youtube.com/embed/89TtdQoW_vc" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+  <div class="video-sum">
+    <div class="video-sum-container">
+      <p class="title--video">
+        КАК ПРОХОДЯТ САММИТЫ <br> «БИЗНЕС-КОНСТРУКТОР»
+      </p>
+      <div class="video--container">
+        <video id="video-sum" width="768" poster="http://constructor.biz.ua/tilda-img/trends/video.jpg">
+          <source src="http://constructor.biz.ua/tilda-img/trends/main_video.mp4" type="video/mp4">
+        </video>
+        <button class="btn-video" id="btn-video" onclick="playPause()"></button>
       </div>
+      <a class="call--link" href="#form" id="call-link">РЕГИСТРАЦИЯ </a>
     </div>
-  </section>
+  </div>
+</section>
+ы
+<script>
+  var myVideo = document.getElementById("video-sum");
+
+  function playPause() {
+    if (myVideo.paused) {
+      myVideo.play();
+    } else
+      myVideo.pause();
+    $('#btn-video').toggleClass('test');
+
+  }
+</script>
