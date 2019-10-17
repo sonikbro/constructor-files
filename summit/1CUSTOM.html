@@ -1,257 +1,35 @@
 <!-- CustomCSS / JS -->
 
 <style>
-  @media(min-width: 768px) {
-    .form__header {
-      min-height: 76px;
-    }
+  .speakers__list-new .fathercard:last-child .speaker--card {
+    min-height: 90px;
+    margin-top: 30px
   }
 
-  .call--link {
-    margin-top: 50px;
-    width: 312px;
-    height: 52px;
-    background: #09144C;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 1px;
-    font-size: 16px;
-    line-height: 19px;
-    transition: .3s;
-    font-weight: 500;
-  }
-
-  #allrecords a.call--link,
-  #allrecords a.call--link:hover {
-    color: #FFFFFF !important;
-  }
-
-  .call--link:hover {
-    background: #070C29;
-  }
-
-  .video-sum {
-    padding-bottom: 50px;
-  }
-
-  .speaker--card:hover .speaker--content {
-    padding-bottom: 20px;
-  }
-
-  .speaker--logo:after {
-    content: '';
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: #ECECEC;
-    top: 10px;
-    position: relative;
-  }
-
-  @media(min-width: 1500px) {
-    .hero--conteiner {
-      max-width: 1600px;
-      width: 100%;
-      height: 80%;
-      justify-content: space-around;
+  @media(max-width: 768px) {
+    .speakers__list-new .fathercard:last-child .speaker--card .speaker--content {
+      max-height: 110px;
     }
 
-    .hero-left {
-      justify-content: space-between;
-    }
-
-    .hero-left,
-    .hero-right {
-      width: unset;
-    }
-
-    .top-logo img {
-      width: 105%;
-    }
-
-    .left-bottom img {
-      width: 150%;
-    }
-  }
-
-  .form .container {
-    max-width: 400px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/triagle.svg) no-repeat, url(http://constructor.biz.ua/tilda-img/trends/triagle1.svg) no-repeat 100% 0, url(http://constructor.biz.ua/tilda-img/trends/triagle2.svg) no-repeat 100% 100%, url(http://constructor.biz.ua/tilda-img/trends/triagle3.svg) no-repeat 0 100%;
-  }
-
-  .hero .form__fields {
-    margin: 15px 35px 35px;
-  }
-
-  .numblock-item--text {
-    white-space: pre-line;
-  }
-
-  #form {
-    padding-bottom: 0 !important;
-  }
-
-  .form-container {
-    padding: 30px 0 50px;
-  }
-
-  .speaker--logo {
-    margin: 16px 0
-  }
-
-  .video--container {
-    position: relative;
-  }
-
-  #btn-video {
-    height: 72px;
-    width: 130px;
-    display: block;
-    background: url(http://constructor.biz.ua/tilda-img/trends/video-btn.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-    position: absolute;
-    top: 180px;
-    margin: 0 auto;
-    transition: .3s;
-    left: 0;
-    right: 0;
-    outline: none;
-  }
-
-  #btn-video:focus {
-    outline: none;
-  }
-
-  #btn-video.test {
-    top: 320px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/video-btn-stop.svg);
-    transform: scale(.5);
-  }
-
-  #form .tabs__tab,
-  .tabs__tab:after {
-    border-radius: 4px !important;
-  }
-
-
-  .form-container #form .form__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .form-container .form__header {
-    border-bottom: 2px solid #6F33F1;
-  }
-
-  .speaker--card {
-    min-height: 177px;
-  }
-
-  .speaker--content {
-    max-height: 180px;
-    transition: .2s 0s ease-in-out;
-  }
-
-  .fathercard {
-    height: 180px;
-    margin-bottom: 50px;
-  }
-
-  @media (max-width: 768px) {
-    #video-sum {
-      width: 100%;
-    }
-
-    #btn-video,
-    #btn-video.test {
-      top: 70px;
-      transition: .7s;
-    }
-
-    .form-container #form .button--submit,
-    .tabs__tab {
-      height: 50px !important;
-    }
-
-    #form .tabs__tab {
-      display: flex;
-      align-items: center;
-    }
-
-    .form-container {
-      padding: 30px 10px 50px;
-    }
-
-    #form .container {
-      padding: 0;
-    }
-
-    .form__info.form__info--tabs.form__info--summit,
-    .form-container .form__right,
-    .form__politic {
-      padding: 0 20px 0;
-    }
-
-    .form-container .form__header {
-      padding: 32px 0 30px 30px;
-    }
-
-    .form__politic {
-      padding-bottom: 20px;
-    }
-
-    #form .tabs__tab {
-      padding: 22px 0 22px 25px;
-    }
-
-    .form-container .form__field input {
-      padding: 1rem 1rem 1rem 25px;
-    }
-
-    .hero .form__fields {
-      margin: 0;
-      padding: 20px;
-    }
-
-    .speaker--logo {
-      opacity: 1;
-    }
-
-    .speaker--logo img {
-      max-width: 85px;
-    }
-
-    .speaker--name {
-      max-width: 180px;
-      font-size: 17px;
-    }
-
-    .speaker--card {
-      min-height: 150px;
+    .speakers__list-new .fathercard:last-child .speaker--card {
+      margin-top: 50px;
     }
 
     .speaker--card .speaker--photo {
-      max-width: 155px;
+      max-width: 138px;
     }
 
-    .fathercard {
-      height: 150px;
-      margin-bottom: 25px;
-      padding: 0 20px;
+    #btn-video.test {
+      top: 130px;
     }
-    .speaker--content {
-      max-height: 150px;
+    .form-container {
+      padding: 30px 20px 50px;
     }
-    .speaker--card.hover-card .speaker--content {
-      padding-bottom: 50px;
+    .form-container .form__right, .form__info.form__info--tabs.form__info--summit {
+      padding: 0 10px 0;
     }
-    .hero-right {
-      padding: 0 3rem;
+    .form__politic {
+      padding: 0 20px 30px;
     }
   }
 </style>
