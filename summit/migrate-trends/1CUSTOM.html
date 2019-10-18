@@ -340,7 +340,181 @@
     }
   }
 
-  
+  .feature {
+    border: none;
+  }
+
+  .feature:after {
+    display: none;
+  }
+
+  .feature:hover {
+    background: unset;
+  }
+
+  .features {
+    padding: 9rem 0 0;
+  }
+
+  .speakers__title {
+    margin-bottom: 30px;
+    color: #1F1F1F;
+    padding-bottom: 4.5rem;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+  }
+
+  .list__content .list-item:nth-child(1) .list--num:after {
+    content: '1'
+  }
+
+  .list__content .list-item:nth-child(2) .list--num:after {
+    content: '2'
+  }
+
+  .list__content .list-item:nth-child(3) .list--num:after {
+    content: '3'
+  }
+
+  .list__content .list-item:nth-child(4) .list--num:after {
+    content: '4'
+  }
+
+  .list__content .list-item:nth-child(5) .list--num:after {
+    content: '5'
+  }
+
+  .list__content .list-item:nth-child(6) .list--num:after {
+    content: '6'
+  }
+
+  #allrecords a.partner__link {
+    color: #fff !important;
+  }
+
+  .title--video {
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
+  }
+
+  #btn-video {
+    height: 72px;
+    width: 130px;
+    display: block;
+    background: url(http://constructor.biz.ua/tilda-img/trends/video-btn.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    position: absolute;
+    top: 180px;
+    margin: 0 auto;
+    transition: .3s;
+    left: 0;
+    right: 0;
+    outline: 0;
+  }
+
+  #btn-video.test {
+    top: 320px;
+    background: url(http://constructor.biz.ua/tilda-img/trends/video-btn-stop.svg);
+    transform: scale(.5);
+  }
+
+  .video--container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form__info--summit .tabs__tab {
+    border-bottom: 1px solid #ededed !important;
+  }
+
+  @media (min-width: 1024px) {
+    .page__meta {
+      bottom: 0 !important;
+      margin-top: 0;
+    }
+
+    .wrapper__contentBottom {
+      margin-bottom: 3rem;
+    }
+    .title__imge img {
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #video-sum {
+      width: 100%;
+    }
+
+    #btn-video {
+      top: 70px;
+    }
+
+    #btn-video.test {
+      top: 130px;
+    }
+
+    .p__logo div {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .featureTexts {
+      padding-bottom: 4rem;
+    }
+
+    .hero {
+      padding: 4rem 0 7rem;
+    }
+
+    .page__button {
+      width: 343px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px !important;
+    }
+
+    .page__meta {
+      margin-bottom: 4rem !important;
+    }
+
+    .page__meta {
+      bottom: 0 !important;
+      margin-top: 2rem;
+    }
+
+    .wrapper__contentBottom {
+      margin-bottom: 2rem;
+    }
+
+    .featureTexts strong {
+      font-size: 25px;
+    }
+
+    .btn-more-speaker,
+    .btn-less-speaker {
+      left: 20px;
+    }
+
+    #video-sum {
+      max-height: 210px;
+      margin-bottom: 2rem;
+    }
+
+    .title--video {
+      font-size: 20px;
+    }
+  }
 </style>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
