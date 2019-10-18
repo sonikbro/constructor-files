@@ -1,6 +1,6 @@
     <!-- CSS -->
     <style>
-      @import url(http://constructor.biz.ua/tilda-img/1promo/build/img/speakers/slick.css);
+      @import url(https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css);
 
       @media(max-width: 1400px) AND (min-width: 992px) {
         html {
@@ -36,11 +36,13 @@
       }
 
       .wrapper__contentTop {
-        height: 100vh;
+        height: 95vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        background: url(http://constructor.biz.ua/tilda-img/1promo/build/img/bg.jpg) center top no-repeat #171718;
+        background-size: cover;
       }
 
       .page__button {
@@ -62,13 +64,12 @@
         transition: .3s;
       }
 
-      .page__button:hover {
-        background: #FF003D;
+      .wrapper {
+        padding: 0;
       }
 
-      .wrapper__background {
-        background: url(http://constructor.biz.ua/tilda-img/1promo/build/img/bg.jpg) center top no-repeat #171718;
-        background-size: 100% auto;
+      .page__button:hover {
+        background: #FF003D;
       }
 
       .meta__item {
@@ -77,41 +78,59 @@
         line-height: 19px;
       }
 
+      .your-class {
+        width: 100%;
+      }
+
       .slick-slider {
         display: flex;
         align-items: center;
+        justify-content: center;
+      }
+
+      .slick-track {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .slick-slide {
+        height: 100%;
+      }
+
+      .page__social,
+      .video__mobile {
+        margin: 0;
+      }
+
+      .slick-prev,
+      .slick-next {
+        width: 180px;
+        height: 22px;
+        border: none;
+        color: rgba(255, 255, 255, 0);
+      }
+
+      .slick-prev {
+        background: url(http://constructor.biz.ua/tilda-img/1promo/build/img/speakers/arrow2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+
+      }
+
+      .slick-next {
+        background: url(http://constructor.biz.ua/tilda-img/1promo/build/img/speakers/arrow1.svg);
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .slick-slide:focus {
         outline: none;
       }
 
-      .slick-prev,
-      .slick-next {
-        font-size: 0;
-        line-height: 0;
-        position: absolute;
-        display: block;
-        width: 60px;
-        height: 60px;
-        cursor: pointer;
-        color: transparent;
-        border: none;
-        outline: none;
-        background: transparent;
-        transition: 1s ease-in-out;
-      }
-
-      .slick-prev {
-        left: -65px;
-      }
-
-      .slick-next {
-        right: -65px;
-      }
-
-      .slick-slide img {
-        width: 100%;
+      .slick-slide {
+        height: 250px;
+        width: auto !important;
+        margin: 0px 60px;
       }
     </style>
 
@@ -120,22 +139,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://cbk.bizconstructor.com/scripts.js"></script>
     <script src="http://constructor.biz.ua/tilda-img/1promo/build/js/scripts.min.js"></script>
-    <script src="http://constructor.biz.ua/tilda-img/1promo/build/img/speakers/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
       var myVideo = document.getElementById("video_el");
 
       function playPause() {
         if (myVideo.paused) {
           myVideo.play();
-        } else
-          myVideo.pause();
+        } else myVideo.pause();
         $('#btn-video').toggleClass('test');
       };
-
-      $('#SLider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
+      $(document).ready(function () {
+        $('.your-class').slick({
+          infinite: true,
+          speed: 1000,
+          slidesToShow: 1
+        });
       });
     </script>
