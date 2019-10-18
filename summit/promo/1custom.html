@@ -1,0 +1,52 @@
+    <!-- CSS -->
+    <style>
+      @media(max-width: 1400px) AND (min-width: 992px) {
+        html {
+          font-size: 8px;
+        }
+      }
+
+      #allrecords {
+        font-family: museo !important;
+      }
+
+      #btn-video {
+        height: 72px;
+        width: 130px;
+        display: block;
+        background: url(http://constructor.biz.ua/tilda-img/trends/video-btn.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        position: absolute;
+        top: 245px;
+        margin: 0 auto;
+        transition: .3s;
+        left: 0;
+        right: 0;
+        outline: 0;
+      }
+      #btn-video.test{
+        background: url(http://constructor.biz.ua/tilda-img/trends/video-btn-stop.svg);
+        transform: scale(0.5);
+        top: 305px;
+      }
+    </style>
+
+    <!-- JS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://cbk.bizconstructor.com/scripts.js"></script>
+    <script src="http://constructor.biz.ua/tilda-img/1promo/build/js/scripts.min.js"></script>
+    <script>
+      var myVideo = document.getElementById("video_el");
+
+      function playPause() {
+        if (myVideo.paused) {
+          myVideo.play();
+        } else
+          myVideo.pause();
+        $('#btn-video').toggleClass('test');
+
+      }
+    </script>
