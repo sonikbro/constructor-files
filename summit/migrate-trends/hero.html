@@ -1,0 +1,58 @@
+<div class="hero" id="hero_ubiis" style="min-height: 568px;">
+  <div class="wrapper__background" data-bg="http://api.bizconstructor.com/uploads/e6f972f6410c448ab95fa888fb692e40.jpg"
+    data-bg-m="http://api.bizconstructor.com/uploads/376252eced0f4001b5ecc4583fedbfd3.jpg"
+    style="background-image: url(&quot;http://api.bizconstructor.com/uploads/e6f972f6410c448ab95fa888fb692e40.jpg&quot;);">
+  </div>
+  <div class="wrapper__contentTop">
+    <h1>БИЗНЕС-ТРЕНДЫ 2020 — Бизнес-Конструктор </h1>
+    <div class="title__imge"><img src="http://api.bizconstructor.com/uploads/e714907a65384a6db050066fe95e8832.png"
+        alt=""></div>
+    <h3>Будьте на шаг впереди конкурентов</h3>
+    <div class="description__mobile">Будьте на шаг впереди конкурентов</div>
+  </div>
+  <div class="wrapper__contentBottom">
+    <div class="page__meta">
+      <div class="meta__item" style="color:rgba(238,53,97,1)"><svg width="30" height="30" viewBox="0 0 30 30"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.7297 0.945953V3.51352H27.2973C28.782 3.51352 30 4.73158 30 6.21622V27.2973C30 28.782 28.782 30 27.2973 30H2.7027C1.21808 30 0 28.782 0 27.2973V6.21622C0 4.73158 1.21808 3.51352 2.7027 3.51352H5.27026V0.770279C5.27026 0.612839 5.34924 0.427933 5.53949 0.263062C5.73199 0.0962067 5.98566 0 6.21625 0H6.39191C6.54932 0 6.73425 0.0789795 6.89911 0.269211C7.06598 0.461731 7.16217 0.715363 7.16217 0.945953V3.51352H22.8378V0.945953C22.8378 0.60318 22.9485 0.380539 23.0835 0.245636C23.2184 0.110718 23.441 0 23.7838 0C24.1266 0 24.3492 0.110718 24.4841 0.245636C24.619 0.380539 24.7297 0.60318 24.7297 0.945953ZM1.89191 28.1081H28.1082V12.4324H1.89191V28.1081ZM1.89191 10.5405H28.1082V5.40541H1.89191V10.5405Z"
+            fill="rgba(238,53,97,1)"></path>
+        </svg>27 ноября</div>
+      <div class="meta__item" style="color:rgba(238,53,97,1)"><svg width="25" height="30" viewBox="0 0 25 30"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.8039 1.70158L12.7826 1.70097L12.7614 1.70158C6.86497 1.87108 2.10862 6.46153 2.27855 12.3132C2.28227 15.2667 3.75102 17.8543 5.68083 20.2068C7.03618 21.8591 8.68339 23.4666 10.2914 25.036L10.2921 25.0366C10.9615 25.6899 11.6241 26.3365 12.2561 26.977L12.7826 27.5107L13.3092 26.977C13.9389 26.3388 14.599 25.6945 15.266 25.0436L15.2732 25.0366C16.8815 23.4671 18.5289 21.8593 19.8845 20.2068C21.8143 17.8543 23.2831 15.2667 23.2867 12.3133C23.4566 6.46155 18.7003 1.87108 12.8039 1.70158ZM0.503339 12.3021V12.2935L0.503095 12.2849C0.35069 5.72992 5.84599 0.159058 12.7826 0C19.7169 0.158997 25.2049 5.72362 24.9 12.4275L24.8993 12.4443V12.4611C24.8993 15.2012 23.8412 17.6388 22.2467 19.9089C20.6452 22.1891 18.5406 24.2491 16.4968 26.2465L14.5348 28.164L12.7815 30L10.8672 28.0044L8.90037 26.0822L8.89488 26.077C4.77946 22.2158 0.503339 17.9755 0.503339 12.3021Z"
+            fill="rgba(238,53,97,1)"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.7698 18.4442C9.58203 18.4442 7 15.8966 7 12.822C7 9.74741 9.58203 7.19981 12.7698 7.19981C15.9576 7.19981 18.5396 9.74741 18.5396 12.822C18.5396 15.8966 15.9576 18.4442 12.7698 18.4442ZM12.7698 8.90128C10.5872 8.90128 8.77527 10.648 8.77527 12.822C8.77527 14.996 10.5872 16.7428 12.7698 16.7428C14.9524 16.7428 16.7643 14.996 16.7643 12.822C16.7643 10.648 14.9524 8.90128 12.7698 8.90128Z"
+            fill="rgba(238,53,97,1)"></path>
+        </svg>Киев</div>
+    </div>
+    <div class="page__button" data-href="#form">Забронировать участие </div>
+  </div>
+  <link rel="stylesheet" type="text/css" href="/css/ubis.css">
+  <script>
+    $(document).ready(function () {
+      setBackground()
+    });
+    $(window).resize(setBackground)
+
+    function setBackground() {
+      if ($(window).width() < 768) {
+        $('.wrapper__background').css('background-image', 'url(' + $('.wrapper__background').data('bg-m') + ')')
+      } else {
+        $('.wrapper__background').css('background-image', 'url(' + $('.wrapper__background').data('bg') + ')')
+      }
+    }
+  </script>
+  <style>
+    .page__button {
+      background: rgba(238, 53, 97, 1) !important;
+    }
+
+    .page__button:hover {
+      background: rgba(112, 53, 238, 1) !important;
+      box-shadow: 0 4px 30px rgba(112, 53, 238, 1) !important;
+    }
+  </style>
+</div>
