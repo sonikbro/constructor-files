@@ -12,6 +12,15 @@
         font-family: museo !important;
       }
 
+      .slick-slide img {
+        margin: 0 auto;
+        height: 230px;
+      }
+
+      .page__button:hover {
+        box-shadow: unset;
+      }
+
       #btn-video {
         height: 72px;
         width: 130px;
@@ -74,7 +83,7 @@
 
       .meta__item {
         color: #FFFFFF;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 19px;
       }
 
@@ -86,11 +95,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-
-      .slick-track {
-        display: flex;
-        align-items: flex-end;
+        margin-top: 5rem;
       }
 
       .slick-slide {
@@ -104,11 +109,14 @@
 
       .slick-prev,
       .slick-next {
-        width: 180px;
+        min-width: 34px;
         height: 22px;
         border: none;
         color: rgba(255, 255, 255, 0);
+        top: 25px;
+        position: relative;
       }
+    
 
       .slick-prev {
         background: url(http://constructor.biz.ua/tilda-img/1promo/build/img/speakers/arrow2.svg);
@@ -127,10 +135,8 @@
         outline: none;
       }
 
-      .slick-slide {
-        height: 250px;
-        width: auto !important;
-        margin: 0px 60px;
+      .page__meta {
+        padding-bottom: 0;
       }
     </style>
 
@@ -152,6 +158,8 @@
       $(document).ready(function () {
         $('.your-class').slick({
           infinite: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
           speed: 1000,
           slidesToShow: 1
         });
