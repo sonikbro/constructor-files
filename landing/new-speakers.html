@@ -1,0 +1,392 @@
+<!-- Блок зі спікерами -->
+
+<div class="speakers-new__list">
+  <div class="speakers__title">Спикеры саммита</div>
+  <div class="speakers__list-new">
+    <div class="fathercard">
+      <div class="speaker--card"><span class="speaker--overlay"></span>
+        <div class="speaker--content">
+          <div class="speaker--logo"><img src="http://constructor.biz.ua/tilda-img/trends/speakers/33.png"></div>
+          <div class="speaker--name">Кирилл Куницкий</div>
+          <div class="btn-more-speaker" id="more-speaker" style="display: none">Подробнее</div>
+          <div class="speaker--about">Бизнесмен, эксперт по систематизации бизнеса и построению сильных команд,
+            основатель международной образовательно-консалтинговой компании «Бизнес-Конструктор», автор комплексной
+            методологии по систематизации бизнеса.</div>
+          <div class="btn-less-speaker" id="less-speaker" style="display: none">Скрыть описание</div>
+        </div><img class="speaker--photo" src="http://constructor.biz.ua/tilda-img/trends/speakers/3.png">
+      </div>
+    </div>
+    <div class="fathercard">
+      <div class="speaker--card"><span class="speaker--overlay"></span>
+        <div class="speaker--content">
+          <div class="speaker--logo"><img src="http://constructor.biz.ua/tilda-img/strategy/222.svg"></div>
+          <div class="speaker--name">Рамиль Мухоряпов</div>
+          <div class="btn-more-speaker" id="more-speaker" style="display: none">Подробнее</div>
+          <div class="speaker--about">Основатель холдинга Choco Family. Лучший CEO 2018 года по версии Kazakhstan Growth
+            Forum</div>
+          <div class="btn-less-speaker" id="less-speaker" style="display: none">Скрыть описание</div>
+        </div><img class="speaker--photo" src="http://constructor.biz.ua/tilda-img/strategy/22.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .speakers__list-new {
+    max-width: 1100px;
+    width: 100%;
+    display: flex !important;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .speaker--card {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 4px 32px rgba(157, 169, 194, .24);
+    border-radius: 5px;
+    transition: .3s 0s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    min-height: 120px;
+  }
+
+  .speaker--overlay {
+    width: 100%;
+    max-width: 330px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, #FFF 100%);
+    transition: .1s 0s;
+  }
+
+  .speaker--card .speaker--photo {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+  .speaker--content {
+    overflow-y: hidden;
+    margin-left: 20px;
+    overflow: hidden;
+    max-height: 120px;
+    transition: .3s 0s ease-in-out;
+  }
+
+  .speaker--content span {
+    display: block;
+    max-width: 323px;
+  }
+
+  .speaker--name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 23px;
+    color: #1F1F1F;
+    transition: .3s 0s ease-in-out;
+  }
+
+  .speaker--about {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #939393;
+    transition: .3s 0s ease-in-out;
+    max-width: 300px;
+  }
+
+  .speaker--logo {
+    display: block;
+    margin: 20px 0;
+  }
+
+  .speaker--photo {
+    position: relative;
+    bottom: 40px;
+    transition: .3s 0s ease-in-out;
+  }
+
+  .fathercard {
+    width: 48%;
+    height: 120px;
+    margin-bottom: 80px;
+  }
+
+  .speaker--card {
+    z-index: 1;
+  }
+
+  .opacity {
+    opacity: .2;
+    transition: .6s ease-in-out;
+  }
+
+  @media(min-width:768px) {
+    .speaker--card:hover {
+      z-index: 2;
+      background: #fff;
+    }
+
+    .speaker--card:hover .speaker--content {
+      max-height: 360px;
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card:hover .speaker--photo {
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card:hover .speaker--overlay {
+      opacity: 0;
+      transition: 0s .4s;
+    }
+
+    .speaker--card:hover .speaker--about {
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card:hover .speaker--name {
+      color: #06c;
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card:hover {
+      cursor: crosshair;
+      box-shadow: 0 4px 32px rgba(157, 169, 194, .35);
+      transition: .3s .2s ease-in-out;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .opacity {
+      pointer-events: none;
+    }
+
+    .speakers__list-new {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .fathercard {
+      width: 100%;
+      margin-bottom: 35px;
+      min-height: 120px;
+      padding: 0 25px;
+    }
+
+    .speaker--card {
+      min-height: 120px;
+    }
+
+    .speaker--name {
+      font-size: 20px;
+      line-height: 23px;
+      max-width: 180px;
+    }
+
+    .speaker--about {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    .btn-more-speaker {
+      display: block !important;
+    }
+
+    .speaker--logo {
+      margin: 25px 0 45px 0;
+    }
+
+    .btn-more-speaker,
+    .btn-less-speaker {
+      text-decoration-line: underline;
+      color: #A6A6A6;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 18px;
+      position: absolute;
+      bottom: 18px;
+    }
+
+    .speaker--card .speaker--photo {
+      max-width: 150px;
+      transition: .15s ease-in-out;
+    }
+
+    .speaker--card.hover-card .speaker--photo,
+    .speaker--about,
+    .speaker--logo,
+    .speaker--card.hover-card .btn-more-speaker {
+      opacity: 0;
+    }
+
+    .speaker--card.hover-card .speaker--about,
+    .speaker--card.hover-card .speaker--logo,
+    .speaker--card.hover-card .btn-less-speaker {
+      opacity: 1;
+    }
+
+    .speaker--card.hover-card .btn-less-speaker {
+      display: block !important;
+    }
+
+    .speaker--card.hover-card {
+      z-index: 2;
+      background: #fff;
+    }
+
+    .speaker--card.hover-card .speaker--content {
+      max-height: 360px;
+      transition: .3s .2s ease-in-out;
+      padding-right: 10px;
+    }
+
+    .speaker--card.hover-card .speaker--photo {
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card.hover-card .speaker--overlay {
+      opacity: 0;
+      transition: 0s .4s;
+    }
+
+    .speaker--card.hover-card .speaker--about {
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card.hover-card .speaker--name {
+      color: #06c;
+      transition: .3s .2s ease-in-out;
+    }
+
+    .speaker--card.hover-card {
+      cursor: crosshair;
+      box-shadow: 0 4px 32px rgba(157, 169, 194, .35);
+      transition: .3s .2s ease-in-out;
+    }
+  }
+
+  .speakers__title {
+    color: #1F1F1F;
+  }
+
+  @media(min-width:768px) {
+    .speakers__title {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .speaker--name {
+      max-width: 150px;
+    }
+
+    .speaker--overlay {
+      width: calc(100% - 20px);
+    }
+  }
+
+  .speakers-new__list {
+    padding: 15rem 0 8rem;
+  }
+
+  .speakers__title {
+    margin-bottom: 30px;
+    color: #1F1F1F;
+    padding-bottom: 4.5rem;
+    text-align: left;
+    font-size: 4.5rem;
+    font-weight: 700;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .speaker--logo {
+    margin: 16px 0;
+  }
+
+  .speaker--logo:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #ececec;
+    top: 10px;
+    position: relative;
+  }
+
+  .speaker--card {
+    min-height: 177px;
+  }
+
+  .speaker--content {
+    max-height: 180px;
+  }
+
+  .speaker--card:hover .speaker--content {
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .speaker--logo img {
+      max-width: 85px;
+    }
+
+    .speaker--logo {
+      opacity: 1;
+    }
+
+    .speaker--name {
+      max-width: 180px;
+      font-size: 17px;
+    }
+
+    .speaker--about {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    .speaker--card .speaker--photo {
+      max-width: 138px;
+    }
+
+    .speaker--card {
+      min-height: 150px;
+    }
+
+    .fathercard {
+      height: 150px;
+      margin-bottom: 55px;
+      padding: 0 20px;
+    }
+
+    .speaker--card.hover-card .speaker--content {
+      padding-bottom: 50px;
+    }
+
+    .speaker--card.hover-card .speaker--content {
+      max-height: 360px;
+      transition: .3s .2s ease-in-out;
+      padding-right: 10px;
+    }
+
+    .speakers-new__list {
+      padding: 15rem 0 3rem;
+    }
+
+    .speakers__title {
+      padding-left: 20px;
+    }
+  }
+</style>
