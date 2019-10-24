@@ -182,7 +182,7 @@
   /* second scren */
 
   .second {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/2nd-bg.jpg) no-repeat, #020918;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/2nd-bg.jpg) 0 -570px no-repeat, #020918;
   }
 
   .nums-items {
@@ -445,10 +445,6 @@
     border-left: none;
   }
 
-  input:-internal-autofill-selected {
-    background-color: unset !important;
-  }
-
   .package__name {
     color: #FFFFFF;
     letter-spacing: 4px;
@@ -518,7 +514,349 @@
 
   .package {
     background: #020918;
-    padding: 30px 0 140px;
+    padding: 30px 0 70px;
+  }
+
+  .partners-title {
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 80px;
+    margin-bottom: 60px;
+    padding-top: 80px;
+    color: #fff;
+  }
+
+  .partners-title span {
+    color: #FEE71D;
+  }
+
+  .partners-row--text {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 300px;
+  }
+
+  .partners-bg {
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat top, #020918;
+  }
+
+  .partners-row {
+    display: flex;
+  }
+
+  .partners-row-items {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .row-blocks-item.bg {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .partners-row-items {
+    margin-bottom: 70px;
+  }
+
+  .action--text {
+    text-transform: uppercase;
+  }
+
+  .action--text-t {
+    letter-spacing: 0.03em;
+    font-size: 23px;
+    line-height: 30px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .action--text-t span {
+    color: #FEE71D;
+  }
+
+  .action--text-b {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 5px;
+  }
+
+
+  .partners-action {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10rem;
+  }
+
+  #video-sum {
+    width: 960px !important;
+    height: 568px;
+  }
+
+  .video-sum {
+    background: #020918;
+    padding-bottom: 10rem;
+  }
+
+  #btn-video {
+    height: 92px;
+    width: 92px;
+    display: block;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/play.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    position: absolute;
+    top: 270px;
+    margin: 0 auto;
+    transition: .3s;
+    left: 0;
+    right: 0;
+    outline: 0;
+  }
+
+  #btn-video.test {
+    top: 470px;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/paused.svg);
+    transform: scale(.5);
+  }
+
+  .video--container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    #video-sum {
+      width: 100%;
+    }
+
+    #btn-video {
+      top: 70px;
+    }
+
+    #btn-video.test {
+      top: 130px;
+    }
+  }
+
+  html {
+    font-family: museo !important;
+  }
+
+  #allrecords a.menu__item {
+    color: #fff !important;
+  }
+
+  #allrecords a.menu__item:hover {
+    background: rgba(0, 0, 0, .1) !important;
+  }
+
+  .menu__item:after {
+    display: none;
+  }
+
+  .button.button--submit.send-form {
+    border-radius: unset !important;
+    letter-spacing: 4px;
+  }
+
+  .first--logo img {
+    margin-left: -5px;
+  }
+
+  .text-btn-trend-left {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+
+  .speakers-item .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .speaker-desk {
+    font-weight: 500;
+    padding-right: 50px;
+    letter-spacing: .5px;
+  }
+
+  .logo-id {
+    margin-top: 20px;
+  }
+
+  .speakers-items {
+    align-items: flex-end;
+  }
+
+  .speakers-item.last .face-id img {
+    max-width: 150px;
+  }
+
+  .speakers-item.last .left {
+    width: 30%;
+  }
+
+  .program-container .program-container-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .program-container-item {
+    padding: 20px 0 20px 15px;
+  }
+
+  .text-bottom-program {
+    font-weight: 500;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .program-packages {
+    padding: 10rem 3rem 3rem;
+  }
+
+  .program--title-bottom {
+    font-weight: 500;
+    margin-bottom: 70px;
+  }
+
+  .package__text {
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+
+  .partners-row-items {
+    width: 80%;
+  }
+
+  .partners-row--text {
+    width: 20%;
+  }
+
+  .row-blocks-item img {
+    width: 100%;
+  }
+
+  .row-blocks-item {
+    width: 23%;
+  }
+
+  .text-btn--trend {
+    margin-left: 20px;
+  }
+
+  .packages__item .button {
+    letter-spacing: 1px !important;
+  }
+
+  .form {
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/reg-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .form__content {
+    padding: 10rem 0 15rem !important;
+    box-shadow: none;
+    max-width: 890px;
+  }
+
+  .form__left {
+    width: 40%;
+  }
+
+  .form__right {
+    width: 60%;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
+    padding: 45px 60px 80px;
+  }
+
+  .form__header,
+  .form__info,
+  .form__politic {
+    padding: 0;
+  }
+
+  .form__header {
+    border-bottom: none;
+  }
+
+  .form__title {
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 40px;
+  }
+
+  .form__left {
+    background: rgba(255, 255, 255, .9);
+  }
+
+  .form__politic {
+    color: rgba(0, 0, 0, 0.29) !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .form__info--red {
+    border-left: none;
+    margin: 0;
+    background: unset;
+  }
+
+  .form__info.form__info--tabs {
+    padding-top: 0 !important;
+  }
+
+  .tabs__tab:after {
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
+    width: 60%;
+  }
+
+  .form__info--summit .tabs__tab {
+    border: 0 !important;
+    border-bottom: none;
+    padding: 0.2px !important;
+    color: rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  .tabs__tab--active {
+    color: #000000 !important;
+    font-size: 21px;
+  }
+
+  .tabs__tab span {
+    padding-left: 50px;
+  }
+
+  .form__info {
+    margin: 0;
+  }
+
+  .form__info--red {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
   }
 </style>
 
