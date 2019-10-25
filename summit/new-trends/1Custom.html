@@ -20,12 +20,11 @@
   }
 
   .container {
-    max-width: 1400px;
+    max-width: 1100px;
     padding: 0;
   }
 
-
-  @media (max-width: 1500px) {
+  @media (min-width: 1500px) {
     .container {
       max-width: 1300px;
     }
@@ -48,12 +47,11 @@
     margin: 0;
   }
 
-
   .first .container {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    padding: 5rem 0;
+    padding: 6rem 0;
   }
 
   .first-left {
@@ -102,7 +100,6 @@
     color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
     max-width: 500;
-
   }
 
   .desk-b {
@@ -197,7 +194,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
   }
 
   .num--item--title {
@@ -217,7 +213,6 @@
     width: 100%;
     background: url(http://constructor.biz.ua/tilda-img/trends/new/line.png)
   }
-
 
   .num--item--text {
     font-size: 16px;
@@ -586,7 +581,6 @@
     margin-top: 5px;
   }
 
-
   .partners-action {
     align-items: center;
     display: flex;
@@ -768,7 +762,7 @@
   .form__content {
     padding: 10rem 0 15rem !important;
     box-shadow: none;
-    max-width: 890px;
+    max-width: 710px;
   }
 
   .form__left {
@@ -778,7 +772,7 @@
   .form__right {
     width: 60%;
     background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
-    padding: 45px 60px 80px;
+    padding: 45px 60px 60px;
   }
 
   .form__header,
@@ -802,19 +796,25 @@
 
   .form__left {
     background: rgba(255, 255, 255, .9);
+    padding-top: 45px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .form__politic {
     color: rgba(0, 0, 0, 0.29) !important;
     text-transform: uppercase;
-    font-size: 14px !important;
+    font-size: 12px !important;
     line-height: 20px !important;
+    opacity: 1;
+    font-weight: 600;
   }
 
-  .form__info--red {
-    border-left: none;
-    margin: 0;
-    background: unset;
+  #allrecords .form__politic a {
+    color: rgba(0, 0, 0, 0.29) !important;
+    text-decoration: underline;
   }
 
   .form__info.form__info--tabs {
@@ -829,13 +829,18 @@
   .form__info--summit .tabs__tab {
     border: 0 !important;
     border-bottom: none;
-    padding: 0.2px !important;
+    padding: 0.5px !important;
     color: rgba(0, 0, 0, 0.3);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     font-size: 20px;
     line-height: 30px;
     font-weight: 500;
+    margin-bottom: .7rem;
+  }
+
+  .form__info--summit .tabs__tab:hover {
+    color: rgba(0, 0, 0, 0.8);
   }
 
   .tabs__tab--active {
@@ -852,11 +857,54 @@
   }
 
   .form__info--red {
-    font-size: 14px;
     line-height: 20px;
-    font-weight: 500;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.7);
+    border-left: none;
+    margin: 0;
+    background: unset;
+    padding-left: 50px;
+    padding-right: 52px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .form__left .form__header {
+    display: inline-block;
+    margin-bottom: 5rem;
+  }
+
+  .form__left .form__title {
+    display: inline;
+    margin-right: 5px;
+  }
+
+  .form--line {
+    padding-left: 50px;
+  }
+
+  .form__left .form__header:before {
+    content: url(http://constructor.biz.ua/tilda-img/trends/new/line.png);
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 220px;
+    overflow: hidden;
+    height: 7px;
+  }
+
+  .tabs {
+    border: none;
+  }
+
+  .form__title {
+    padding-top: 7px;
+  }
+
+  .form__content {
+    margin: 0 auto;
   }
 </style>
 
