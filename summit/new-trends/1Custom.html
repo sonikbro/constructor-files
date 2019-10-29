@@ -16,7 +16,7 @@
   }
 
   .line-item-text {
-    font-weight: 700;
+    font-weight: 600;
     opacity: 0.5;
     color: #FFFFFF;
     letter-spacing: 1px;
@@ -69,6 +69,10 @@
     flex-direction: column;
   }
 
+  .our-mission--title {
+    padding-bottom: 40px;
+  }
+
   .our-mission--title img {
     width: 100%;
   }
@@ -80,13 +84,13 @@
   .our-mission--text {
     font-weight: 500;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 18px;
+    line-height: 28px;
     text-transform: uppercase;
   }
 
   .our-mission--text p:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .our-mission--text span {
@@ -110,18 +114,28 @@
   .yellow-text-text {
     font-weight: 500;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 22px;
-    line-height: 33px;
     text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 16px;
+    line-height: 30px;
   }
 
   .mission--yellow-text {
     margin-top: 45px;
     padding-left: 30px;
-    border-left: 5px solid #FEE71D;
     width: 75%;
+    position: relative;
   }
 
+  .mission--yellow-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/line-vertical.png);
+    height: 100%;
+    width: 9px;
+  }
 
   .border {
     position: absolute;
@@ -188,6 +202,410 @@
     width: 25%;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .task-bg {
+    background: #020918;
+    padding-top: 10rem;
+  }
+
+  .task-title {
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .task-title span {
+    color: #FEE71D;
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .task-items {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+  }
+
+  .task-item {
+    width: 23%;
+  }
+
+  .task-item-t {
+    display: flex;
+    padding-bottom: 8px;
+  }
+
+  .task-item-t div {
+    margin-right: 30px;
+  }
+
+  .task-item-b {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 19px;
+    opacity: 0.5;
+    padding-right: 80px;
+  }
+
+  .task-item-t p {
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .task--text-t {
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: relative;
+  }
+
+  .task .text-btn--trend {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .task--text-t span {
+    color: #FEE71D;
+  }
+
+  .task-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task--text-t-overlay {
+    position: relative;
+    padding: 15px 0 15px 0;
+  }
+
+  .task--text-t-overlay:before {
+    content: '';
+    position: absolute;
+    width: 560px;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: -20px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .text-btn--trend {
+    cursor: pointer;
+  }
+
+  #video-sum {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .video-sum {
+    padding-top: 10rem;
+  }
+
+  #btn-video {
+    top: 310px;
+  }
+
+  #btn-video.test {
+    top: 560px;
+  }
+
+
+  .dinner-bg {
+    background: #020918;
+    padding-top: 5rem;
+  }
+
+  .dinner {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 25px 32px 35px;
+    border: 10px solid #FEE71D;
+    box-sizing: border-box;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/bg-dinner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .dinner-l-items {
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+  }
+
+  .dinner .text-btn--trend {
+    letter-spacing: 1px;
+  }
+
+  .dinner-l-item {
+    display: flex;
+  }
+
+  .dinner-l-item-text {
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  .dinner-l-item-text.active {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .dinner-l-title {
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .dinner-l-title span {
+    color: #FEE71D;
+    display: block;
+  }
+
+  .dinner-l-items .dinner-l-item:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  .dinner-r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 30%;
+  }
+
+  .dinner-l-item-img {
+    margin-right: 15px;
+  }
+
+  .dinner-r .text-btn--trend {
+    width: 100%;
+    margin-left: 0;
+    height: 55px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .dinner-r-date {
+    color: #FFFFFF;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 2px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 900;
+  }
+
+  .dinner-r-date span {
+    color: #FEE71D;
+  }
+
+  .dinner-r-text {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 44px;
+  }
+
+  .dinner-r-date,
+  .dinner-r-text {
+    padding-left: 20px;
+  }
+
+  .dinner-center {
+    position: relative;
+  }
+
+  .dinner-center::after {
+    content: url(http://constructor.biz.ua/tilda-img/trends/new/oskar.png);
+    left: -155px;
+    bottom: -85px;
+    position: absolute;
+  }
+
+  .slider-bg {
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat center bottom, #020918;
+    padding: 10rem 0 50px;
+  }
+
+  .slider {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .slider-l--b {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .slider-l,
+  .slider-r {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slider-l--b p,
+  .slider-r--b {
+    color: #FFFFFF;
+    font-weight: 600;
+    opacity: 0.4;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .slider-l--t {
+    position: relative;
+  }
+
+  .slider-l--t:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 314px;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
+    background-position: 0 0;
+    animation: slide 50s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      background-position: 0 0
+    }
+
+    to {
+      background-position: -1891px 0
+    }
+  }
+
+  .slider-num img {
+    position: relative;
+    left: -4px;
+  }
+
+  .l--b-tg {
+    margin-right: 20px;
+  }
+
+  .l--b-tg a {
+    height: 50px;
+    width: 50px;
+    display: block;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .l--b-tg a:hover {
+    transform: scale(1.1);
+  }
+
+  .slider-title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  .slider-title span {
+    color: #FEE71D;
+    display: block;
+  }
+
+  .slider-sms {
+    position: absolute;
+    top: -60px;
+    right: 110px;
+  }
+
+  .slider-arrow {
+    margin-bottom: 15px;
+  }
+
+  .slider-num {
+    margin-bottom: 30px;
+  }
+
+  .form-title p {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 31px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  .form-title {
+    text-align: center;
+  }
+
+  .form__content {
+    padding: 4.5rem 0 15rem !important;
+  }
+
+  .program-packages {
+    padding: 4rem 3rem 8rem;
+  }
+
+  .package {
+    padding: 30px 0 0;
+  }
+
+  .form--line .form__title:last-child {
+    display: block;
+    padding-top: 0;
+    line-height: 10px;
+  }
+
+  @media (min-width: 1600px) {
+    .first--logo img {
+      content: url(http://constructor.biz.ua/tilda-img/trends/new/logo-big.png);
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .getcall__button--expand span {
+    font-family: museo !important;
   }
 </style>
 
