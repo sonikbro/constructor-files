@@ -2,608 +2,747 @@
 
 <style>
   .num-line {
-    background: #020918;
-    padding: 80px 0 80px;
+  	background: #020918;
+  	padding: 80px 0 80px;
   }
-
   .num-line-items {
-    display: flex;
-    justify-content: space-between;
+  	display: flex;
+  	justify-content: space-between;
   }
-
   .num-line-item {
-    width: 22%;
+  	width: 22%;
   }
-
   .line-item-text {
-    font-weight: 600;
-    opacity: 0.5;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 15px;
-    line-height: 19px;
-    text-align: left;
-    padding-right: 45px;
-    padding-top: 20px;
+  	font-weight: 600;
+  	opacity: 0.5;
+  	color: #FFFFFF;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	font-size: 15px;
+  	line-height: 19px;
+  	text-align: left;
+  	padding-right: 45px;
+  	padding-top: 20px;
   }
-
-
   .line-item-num {
-    display: flex;
-    align-items: center;
+  	display: flex;
+  	align-items: center;
   }
-
   .line--item {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.14);
+  	width: 100%;
+  	height: 6px;
+  	background: rgba(255, 255, 255, 0.14);
   }
-
   .line-item-num img {
-    margin-right: 20px;
+  	margin-right: 20px;
   }
-
   .second {
-    background: #020918;
+  	background: #020918;
   }
-
   .speaker-name {
-    font-size: 31px;
-    line-height: 37px;
-    letter-spacing: 3px;
+  	font-size: 31px;
+  	line-height: 37px;
+  	letter-spacing: 3px;
   }
-
   .speaker-desk {
-    font-size: 14px;
-    line-height: 22px;
+  	font-size: 14px;
+  	line-height: 22px;
   }
-
   .our-mission {
-    background: #020918;
-    padding-bottom: 80px;
+  	background: #020918;
+  	padding-bottom: 80px;
   }
-
   .our-mission-container {
-    display: flex;
-    flex-direction: column;
+  	display: flex;
+  	flex-direction: column;
   }
-
   .our-mission--title {
-    padding-bottom: 40px;
+  	padding-bottom: 40px;
   }
-
   .our-mission--title img {
-    width: 100%;
+  	width: 100%;
   }
-
   .logo-anim .text {
-    background: unset;
+  	background: unset;
   }
-
   .our-mission--text {
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 18px;
-    line-height: 28px;
-    text-transform: uppercase;
+  	font-weight: 500;
+  	color: rgba(255, 255, 255, 0.5);
+  	font-size: 18px;
+  	line-height: 28px;
+  	text-transform: uppercase;
   }
-
   .our-mission--text p:not(:last-child) {
-    margin-bottom: 10px;
+  	margin-bottom: 10px;
   }
-
   .our-mission--text span {
-    color: #FEE71D;
-    display: block;
+  	color: #FEE71D;
+  	display: block;
   }
-
   .yellow-text-title {
-    color: #FFFFFF;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 40px;
-    line-height: 50px;
-    font-weight: 900;
+  	color: #FFFFFF;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	font-size: 40px;
+  	line-height: 50px;
+  	font-weight: 900;
   }
-
   .yellow-text-title span {
-    color: #FEE71D;
+  	color: #FEE71D;
   }
-
   .yellow-text-text {
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    font-size: 16px;
-    line-height: 30px;
+  	font-weight: 500;
+  	color: rgba(255, 255, 255, 0.5);
+  	text-transform: uppercase;
+  	letter-spacing: .5px;
+  	font-size: 16px;
+  	line-height: 30px;
   }
-
   .mission--yellow-text {
-    margin-top: 45px;
-    padding-left: 30px;
-    width: 75%;
-    position: relative;
+  	margin-top: 45px;
+  	padding-left: 30px;
+  	width: 75%;
+  	position: relative;
   }
-
   .mission--yellow-text::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/line-vertical.png);
-    height: 100%;
-    width: 9px;
+  	content: '';
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	background: url(http://constructor.biz.ua/tilda-img/trends/new/line-vertical.png);
+  	height: 100%;
+  	width: 9px;
   }
-
   .border {
-    position: absolute;
-    width: 175px;
-    height: 175px;
-    border: 6px solid rgba(255, 255, 255, .1);
-    border-radius: 90px;
-    mix-blend-mode: exclusion;
+  	position: absolute;
+  	width: 175px;
+  	height: 175px;
+  	border: 6px solid rgba(255, 255, 255, .1);
+  	border-radius: 90px;
+  	mix-blend-mode: exclusion;
   }
-
   .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 175px;
-    height: 175px;
-    position: relative;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	width: 175px;
+  	height: 175px;
+  	position: relative;
   }
-
   .box:hover {
-    cursor: crosshair;
+  	cursor: crosshair;
   }
-
   .mission-container-b img {
-    position: absolute;
-    background: unset;
+  	position: absolute;
+  	background: unset;
   }
-
   .text {
-    animation: round 30s linear infinite;
-    animation-direction: reverse;
-    padding: 0 !important;
+  	animation: round 30s linear infinite;
+  	animation-direction: reverse;
+  	padding: 0 !important;
   }
-
   .box:hover .text {
-    animation-play-state: paused;
+  	animation-play-state: paused;
   }
-
   .lines {
-    animation: round 30s linear infinite;
-    animation-play-state: paused;
+  	animation: round 30s linear infinite;
+  	animation-play-state: paused;
   }
-
   .box:hover .lines {
-    animation-play-state: running;
+  	animation-play-state: running;
   }
-
   @keyframes round {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(-360deg);
-    }
+  	0% {
+  		transform: rotate(0deg);
+  	}
+  	100% {
+  		transform: rotate(-360deg);
+  	}
   }
-
   .our-mission--container {
-    display: flex;
-    align-items: flex-end;
+  	display: flex;
+  	align-items: flex-end;
   }
-
   .logo-anim {
-    width: 25%;
-    display: flex;
-    justify-content: flex-end;
+  	width: 25%;
+  	display: flex;
+  	justify-content: flex-end;
   }
-
   .task-bg {
-    background: #020918;
-    padding-top: 10rem;
+  	background: #020918;
+  	padding-top: 10rem;
   }
-
   .task-title {
-    font-weight: 900;
-    color: #FFFFFF;
-    font-size: 40px;
-    line-height: 50px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  	font-weight: 900;
+  	color: #FFFFFF;
+  	font-size: 40px;
+  	line-height: 50px;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
   }
-
   .task-title span {
-    color: #FEE71D;
-    display: block;
-    margin-bottom: 40px;
+  	color: #FEE71D;
+  	display: block;
+  	margin-bottom: 40px;
   }
-
   .task-items {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 60px;
+  	display: flex;
+  	justify-content: space-between;
+  	padding-bottom: 60px;
   }
-
   .task-item {
-    width: 23%;
+  	width: 23%;
   }
-
   .task-item-t {
-    display: flex;
-    padding-bottom: 8px;
+  	display: flex;
+  	padding-bottom: 8px;
   }
-
   .task-item-t div {
-    margin-right: 30px;
+  	margin-right: 30px;
   }
-
   .task-item-b {
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    font-size: 15px;
-    line-height: 19px;
-    opacity: 0.5;
-    padding-right: 80px;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	color: #FFFFFF;
+  	font-size: 15px;
+  	line-height: 19px;
+  	opacity: 0.5;
+  	padding-right: 80px;
   }
-
   .task-item-t p {
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 900;
+  	color: rgba(255, 255, 255, 0.1);
+  	font-size: 40px;
+  	line-height: 48px;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	font-weight: 900;
   }
-
   .task--text-t {
-    font-weight: 900;
-    font-size: 21px;
-    line-height: 26px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    position: relative;
+  	font-weight: 900;
+  	font-size: 21px;
+  	line-height: 26px;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	color: #FFFFFF;
+  	position: relative;
   }
-
   .task .text-btn--trend {
-    font-weight: 600;
-    font-size: 18px;
+  	font-weight: 600;
+  	font-size: 18px;
   }
-
   .task--text-t span {
-    color: #FEE71D;
+  	color: #FEE71D;
   }
-
   .task-action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
   }
-
   .task--text-t-overlay {
-    position: relative;
-    padding: 15px 0 15px 0;
+  	position: relative;
+  	padding: 15px 0 15px 0;
   }
-
   .task--text-t-overlay:before {
-    content: '';
-    position: absolute;
-    width: 560px;
-    height: 100%;
-    display: block;
-    top: 0;
-    left: -20px;
-    background: rgba(255, 255, 255, 0.05);
+  	content: '';
+  	position: absolute;
+  	width: 560px;
+  	height: 100%;
+  	display: block;
+  	top: 0;
+  	left: -20px;
+  	background: rgba(255, 255, 255, 0.05);
   }
-
   .text-btn--trend {
-    cursor: pointer;
+  	cursor: pointer;
   }
-
   #video-sum {
-    width: 100% !important;
-    height: auto;
+  	width: 100% !important;
+  	height: auto;
   }
-
   .video-sum {
-    padding-top: 10rem;
+  	padding-top: 10rem;
   }
-
   #btn-video {
-    top: 310px;
+  	top: 310px;
   }
-
   #btn-video.test {
-    top: 560px;
+  	top: 560px;
   }
-
-
   .dinner-bg {
-    background: #020918;
-    padding-top: 5rem;
+  	background: #020918;
+  	padding-top: 5rem;
   }
-
   .dinner {
-    display: flex;
-    justify-content: space-between;
-    padding: 32px 25px 32px 35px;
-    border: 10px solid #FEE71D;
-    box-sizing: border-box;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/bg-dinner.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  	display: flex;
+  	justify-content: space-between;
+  	padding: 32px 25px 32px 35px;
+  	border: 10px solid #FEE71D;
+  	box-sizing: border-box;
+  	background: url(http://constructor.biz.ua/tilda-img/trends/new/bg-dinner.jpg);
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
   }
-
   .dinner-l-items {
-    display: flex;
-    flex-direction: column;
-    max-width: 430px;
+  	display: flex;
+  	flex-direction: column;
+  	max-width: 430px;
   }
-
   .dinner .text-btn--trend {
-    letter-spacing: 1px;
+  	letter-spacing: 1px;
   }
-
   .dinner-l-item {
-    display: flex;
+  	display: flex;
   }
-
   .dinner-l-item-text {
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 11px;
-    line-height: 16px;
-    text-transform: uppercase;
+  	font-weight: 600;
+  	letter-spacing: 1.4px;
+  	color: rgba(255, 255, 255, 0.4);
+  	font-size: 11px;
+  	line-height: 16px;
+  	text-transform: uppercase;
   }
-
   .dinner-l-item-text.active {
-    color: #FFFFFF;
-    font-size: 14px;
-    line-height: 19px;
+  	color: #FFFFFF;
+  	font-size: 14px;
+  	line-height: 19px;
   }
-
   .dinner-l-title {
-    font-weight: 900;
-    color: #FFFFFF;
-    font-size: 32px;
-    line-height: 42px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
+  	font-weight: 900;
+  	color: #FFFFFF;
+  	font-size: 32px;
+  	line-height: 42px;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	margin-bottom: 30px;
   }
-
   .dinner-l-title span {
-    color: #FEE71D;
-    display: block;
+  	color: #FEE71D;
+  	display: block;
   }
-
   .dinner-l-items .dinner-l-item:not(:last-child) {
-    margin-bottom: 11px;
+  	margin-bottom: 11px;
   }
-
   .dinner-r {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    width: 30%;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-end;
+  	width: 30%;
   }
-
   .dinner-l-item-img {
-    margin-right: 15px;
+  	margin-right: 15px;
   }
-
   .dinner-r .text-btn--trend {
-    width: 100%;
-    margin-left: 0;
-    height: 55px;
-    font-size: 14px;
-    font-weight: 600;
+  	width: 100%;
+  	margin-left: 0;
+  	height: 55px;
+  	font-size: 14px;
+  	font-weight: 600;
   }
-
   .dinner-r-date {
-    color: #FFFFFF;
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: 2px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    font-weight: 900;
+  	color: #FFFFFF;
+  	font-size: 28px;
+  	line-height: 34px;
+  	letter-spacing: 2px;
+  	letter-spacing: 1.6px;
+  	text-transform: uppercase;
+  	margin-bottom: 18px;
+  	font-weight: 900;
   }
-
   .dinner-r-date span {
-    color: #FEE71D;
+  	color: #FEE71D;
   }
-
   .dinner-r-text {
-    font-size: 12px;
-    line-height: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.3);
-    margin-bottom: 44px;
+  	font-size: 12px;
+  	line-height: 20px;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	font-weight: 500;
+  	color: rgba(255, 255, 255, 0.3);
+  	margin-bottom: 44px;
   }
-
-  .dinner-r-date,
-  .dinner-r-text {
-    padding-left: 20px;
+  .dinner-r-date, .dinner-r-text {
+  	padding-left: 20px;
   }
-
   .dinner-center {
-    position: relative;
+  	position: relative;
   }
-
   .dinner-center::after {
-    content: url(http://constructor.biz.ua/tilda-img/trends/new/oskar.png);
-    left: -155px;
-    bottom: -85px;
-    position: absolute;
+  	content: url(http://constructor.biz.ua/tilda-img/trends/new/oskar.png);
+  	left: -155px;
+  	bottom: -85px;
+  	position: absolute;
   }
-
   .slider-bg {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat center bottom, #020918;
-    padding: 10rem 0 50px;
+  	background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat center bottom, #020918;
+  	padding: 10rem 0 50px;
   }
-
   .slider {
-    display: flex;
-    justify-content: space-between;
+  	display: flex;
+  	justify-content: space-between;
   }
-
   .slider-l--b {
-    display: flex;
-    align-items: flex-end;
+  	display: flex;
+  	align-items: flex-end;
   }
-
-  .slider-l,
-  .slider-r {
-    width: 47%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .slider-l, .slider-r {
+  	width: 47%;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: space-between;
   }
-
-  .slider-l--b p,
-  .slider-r--b {
-    color: #FFFFFF;
-    font-weight: 600;
-    opacity: 0.4;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: left;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  .slider-l--b p, .slider-r--b {
+  	color: #FFFFFF;
+  	font-weight: 600;
+  	opacity: 0.4;
+  	font-size: 12px;
+  	line-height: 16px;
+  	text-align: left;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
   }
-
   .slider-l--t {
-    position: relative;
+  	position: relative;
   }
-
   .slider-l--t:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 314px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
-    background-position: 0 0;
-    animation: slide 50s linear infinite;
+  	content: '';
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 314px;
+  	background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
+  	background-position: 0 0;
+  	animation: slide 50s linear infinite;
   }
-
   @keyframes slide {
-    0% {
-      background-position: 0 0
-    }
-
-    to {
-      background-position: -1891px 0
-    }
+  	0% {
+  		background-position: 0 0
+  	}
+  	to {
+  		background-position: -1891px 0
+  	}
   }
-
   .slider-num img {
-    position: relative;
-    left: -4px;
+  	position: relative;
+  	left: -4px;
   }
-
   .l--b-tg {
-    margin-right: 20px;
+  	margin-right: 20px;
   }
-
-  .l--b-tg a {
-    height: 50px;
-    width: 50px;
-    display: block;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
-    cursor: pointer;
-    transition: .3s ease-in-out;
+  .l--b-tg span {
+  	height: 50px;
+  	width: 50px;
+  	display: block;
+  	background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
+  	cursor: pointer;
+  	transition: .3s ease-in-out;
   }
-
-  .l--b-tg a:hover {
-    transform: scale(1.1);
+  .l--b-tg span:hover {
+  	transform: scale(1.1);
   }
-
   .slider-title {
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 50px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    position: relative;
-    margin-bottom: 35px;
+  	font-weight: 900;
+  	font-size: 40px;
+  	line-height: 50px;
+  	letter-spacing: 0.03em;
+  	text-transform: uppercase;
+  	color: #FFFFFF;
+  	position: relative;
+  	margin-bottom: 35px;
   }
-
   .slider-title span {
-    color: #FEE71D;
-    display: block;
+  	color: #FEE71D;
+  	display: block;
   }
-
   .slider-sms {
-    position: absolute;
-    top: -60px;
-    right: 110px;
+  	position: absolute;
+  	top: -60px;
+  	right: 110px;
   }
-
   .slider-arrow {
-    margin-bottom: 15px;
+  	margin-bottom: 15px;
   }
-
   .slider-num {
-    margin-bottom: 30px;
+  	margin-bottom: 30px;
   }
-
   .form-title p {
-    font-weight: 700;
-    color: #FFFFFF;
-    font-size: 18px;
-    line-height: 31px;
-    text-align: center;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    margin-top: 10px;
+  	font-weight: 700;
+  	color: #FFFFFF;
+  	font-size: 18px;
+  	line-height: 31px;
+  	text-align: center;
+  	letter-spacing: 0.03em;
+  	text-transform: uppercase;
+  	margin-top: 10px;
   }
-
   .form-title {
-    text-align: center;
+  	text-align: center;
   }
-
   .form__content {
-    padding: 4.5rem 0 15rem !important;
+  	padding: 4.5rem 0 15rem !important;
   }
-
   .program-packages {
-    padding: 4rem 3rem 8rem;
+  	padding: 4rem 3rem 8rem;
   }
-
   .package {
-    padding: 30px 0 0;
+  	padding: 30px 0 0;
   }
-
   .form--line .form__title:last-child {
-    display: block;
-    padding-top: 0;
-    line-height: 10px;
+  	display: block;
+  	padding-top: 0;
+  	line-height: 10px;
+  }
+  @media (min-width: 1600px) {
+  	.first--logo img {
+  		content: url(http://constructor.biz.ua/tilda-img/trends/new/logo-big.png);
+  		width: 100%;
+  		height: 100%;
+  	}
+  }
+  .getcall__button--expand span, .getcall__hover span+span {
+  	font-family: museo !important;
+  }
+  @media (max-width: 968px) {
+  	.num-line-items, .task-items, .slider, .task-action, .dinner {
+  		flex-direction: column;
+  	}
+  	.num-line-item {
+  		width: 100%;
+  		margin-bottom: 60px;
+  	}
+  	.line--item.none {
+  		display: block !important;
+  	}
+  	.line-item-num img {
+  		margin-left: 20px;
+  	}
+  	.line-item-text {
+  		color: #FFFFFF;
+  		font-size: 20px;
+  		line-height: 25px;
+  		text-align: center;
+  		letter-spacing: 2px;
+  		padding: 20px 0 0 0;
+  		opacity: 1;
+  	}
+  	.task-item, .task--text, .task-action .text-btn--trend, .slider-l, .slider-r, .dinner-r {
+  		width: 100%;
+  	}
+  	.slider-l--t {
+  		height: 314px;
+  	}
+  	.dinner {
+  		flex-direction: column;
+  	}
+  	.dinner-l-items {
+  		max-width: 100%;
+  	}
+  	.dinner-center::after {
+  		left: 0;
+  		bottom: 0;
+  	}
+  	.dinner-center {
+  		min-height: 460px;
+  	}
+  	.num-line {
+  		padding: 80px 0 0;
+  	}
+  	.speakers-item.last .speaker-name {
+  		font-size: 20px;
+  		line-height: 26px;
+  	}
+  	.our-mission--title p {
+  		text-align: center;
+  	}
+  	.our-mission--title p, .yellow-text-title {
+  		display: block !important;
+  		font-size: 31px;
+  		line-height: 37px;
+  		letter-spacing: 3px;
+  		text-transform: uppercase;
+  		font-weight: 900;
+  		color: #fff;
+  	}
+  	.our-mission--title p span, .yellow-text-title span {
+  		color: #FEE71D;
+  	}
+  	.our-mission--title img {
+  		display: none;
+  	}
+  	.yellow-text-text, .our-mission--text {
+  		font-size: 14px;
+  		line-height: 22px;
+  	}
+  	.our-mission {
+  		padding-bottom: 15px;
+  	}
+  	.our-mission--title {
+  		padding-bottom: 55px;
+  	}
+  	.our-mission {
+  		padding-bottom: 65px;
+  		position: relative;
+  	}
+  	.logo-anim {
+  		width: 100%;
+  		position: absolute;
+  		bottom: -30px;
+  		right: -70px;
+  	}
+  	.task-title {
+  		font-size: 22px;
+  		line-height: 28px;
+  		text-align: center;
+  	}
+  	#allrecords {
+  		overflow: hidden;
+  	}
+  	.box, .border {
+  		width: 185px;
+  		height: 185px;
+  	}
+  	.task-item-b {
+  		padding: 0 30px;
+  		text-align: center;
+  	}
+  	.task-item-t {
+  		justify-content: center;
+  		padding-bottom: 15px;
+  	}
+  	.task-item {
+  		margin-bottom: 50px;
+  	}
+  	.task .task--arrow {
+  		display: none;
+  	}
+  	.task--text-t-overlay:before {
+  		display: none;
+  	}
+  	.task--text-t {
+  		font-size: 22px;
+  		line-height: 28px;
+  		text-align: center;
+  	}
+  	#btn-video {
+  		top: 63px;
+  	}
+  	#btn-video.test {
+  		top: 100px;
+  	}
+  	.dinner {
+  		padding: 12px 15px;
+  		border: 7px solid #FEE71D;
+  	}
+  	.dinner-l-title {
+  		font-size: 30px;
+  		line-height: 36px;
+  		margin-bottom: 20px;
+  	}
+  	.dinner-l-item-img {
+  		min-width: 24px;
+  	}
+  	.dinner-l-item-text {
+  		font-size: 12px;
+  		font-weight: 500;
+  		line-height: 18px;
+  	}
+  	.dinner-r-date {
+  		padding-top: 30px;
+  	}
+  	.dinner-r-date, .dinner-r-text {
+  		padding-left: 0;
+  	}
+  	.dinner-center.desk::after {
+  		display: none;
+  	}
+  	.dinner-center.desk {
+  		min-height: 0;
+  	}
+  	.dinner-img {
+  		margin-right: 20px;
+  		display: block !important;
+  	}
+  	.dinner-img img {
+  		max-width: 100px;
+  	}
+  	.dinner-r-date span {
+  		display: block;
+  	}
+  	.dinner-r-date {
+  		display: flex;
+  		align-items: center;
+  	}
+  	.dinner-r-text {
+  		display: none;
+  	}
+  	.slider.desk {
+  		display: none;
+  	}
+  	.slider.mob {
+  		display: flex !important;
+  	}
+  	.slider-title {
+  		font-size: 26px;
+  		line-height: 30px;
+  	}
+  	.slider-l--t {
+  		margin-top: 30px;
+  	}
+  	.slider-l--b {
+  		margin-bottom: 35px;
+  	}
+  	.slider-r--b.last {
+  		padding-left: 70px;
+  	}
+  	.form-title img {
+  		width: 100%;
+  	}
+  	.form-title p {
+  		font-size: 20px;
+  		line-height: 28px;
+  		letter-spacing: 1.5px;
+  	}
+  	.package .arrow-program {
+  		padding-top: 0;
+  	}
+  	.form--line .form__title:last-child {
+  		display: inline;
+  	}
+  	.slider-l--b {
+  		align-items: flex-start;
+  	}
+  	.slider-l--b p, .slider-r--b {
+  		font-weight: 500;
+  	}
+  	#copydel {
+  		display: none;
+  	}
+  	.slider-l--b {
+  		margin-bottom: 17px;
+  	}
+  	.slider-title {
+  		text-align: center;
+  	}
+  	.slider-num img {
+  		position: relative;
+  		left: -4px;
+  		bottom: -12px;
+  		transform: scale(.6);
+  	}
+  	.slider-num {
+  		margin-bottom: 0;
+  		text-align: center;
+  	}
+  	.first--desk {
+  		margin-bottom: 15px;
+  	}
+  	#video-sum {
+  		height: 200px;
+  	}
   }
 
-  @media (min-width: 1600px) {
-    .first--logo img {
-      content: url(http://constructor.biz.ua/tilda-img/trends/new/logo-big.png);
-      width: 100%;
-      height: 100%;
-    }
-  }
   .getcall__button--expand span, .getcall__hover span+span {
     font-family: museo !important;
   }
