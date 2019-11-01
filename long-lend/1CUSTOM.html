@@ -1,0 +1,98 @@
+<!-- CustomCSS / JS -->
+
+<style>
+  .learning__title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #06c;
+    margin-bottom: 4rem;
+    z-index: 2;
+    text-align: left;
+  }
+
+  .learning__list {
+    list-style-type: none;
+    z-index: 2
+  }
+
+  .learning__list li {
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    font-size: 1.9rem;
+    color: #171718
+  }
+
+  .learning__list li:last-child {
+    margin-bottom: 0
+  }
+
+  .learning__list li div {
+    min-width: 27px;
+    margin-right: 3.5rem
+  }
+
+  .learning__list li div svg {
+    display: block;
+    margin: 0 auto
+  }
+
+  .learning {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .learning__image img {
+    display: block;
+    max-width: 100%
+  }
+
+  .learning .container {
+    width: 80%;
+  }
+
+  @media (max-width:1440px) {
+    .learning__image {
+      max-width: 700px
+    }
+  }
+
+  @media (max-width:1180px) {
+    .learning__image {
+      max-width: 600px
+    }
+  }
+
+  @media (max-width:992px) {
+    .learning__title {
+      text-align: center;
+    }
+    .learning {
+      flex-direction: column;
+    }
+
+    .learning .container {
+      width: 100%;
+    }
+
+    .learning__image {
+      position: static;
+      max-width: 100%;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none
+    }
+  }
+</style>
+
+<script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
+<script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
