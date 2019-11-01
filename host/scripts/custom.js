@@ -76,3 +76,9 @@ if ($(window).width() < 768) {
 		$('.speaker--card').not(this).removeClass('hover-card').toggleClass('opacity');
 	});
 };
+
+$('.footer a').click(function() {
+	$(this).target = "_blank";
+	window.open($(this).prop('href'));
+	return false;
+});
