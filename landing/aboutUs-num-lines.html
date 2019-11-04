@@ -1,0 +1,164 @@
+<!-- Блок з цифрами о нас-->
+<div class="new-features">
+  <div class="features">
+    <div class="features--title">О НАС</div>
+    <div class="features--desk">Команда Бизнес-Конструктор – эталон эффективной HR-функции</div>
+    <div class="featuresBlocks">
+      <div class="feature" data-n="1">
+        <div class="feature__icon"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a1.svg" alt=""></div>
+        <!-- svg іконка -->
+        <div class="feature__title"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a1.svg" alt=""></div>
+        <!-- текст під іконкою -->
+        <div class="feature__text">кандидатов прошли испытательный срок благодаря программе адаптации</div>
+        <!-- текст в блоці -->
+      </div>
+      <div class="feature" data-n="2">
+        <div class="feature__icon"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a2.svg" alt=""></div>
+        <div class="feature__title"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a2.svg" alt=""></div>
+        <div class="feature__text">сотрудников повысились
+          в должности с момента прихода в компании</div>
+      </div>
+      <div class="feature" data-n="3">
+        <div class="feature__icon"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a3.svg" alt=""></div>
+        <div class="feature__title"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a3.svg" alt=""></div>
+        <div class="feature__text">Уровень вовлеченности сотрудников Бизнес-Конструктор </div>
+      </div>
+      <div class="feature" data-n="4">
+        <div class="feature__icon"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a4.svg" alt=""></div>
+        <div class="feature__title"><img src="http://constructor.biz.ua/tilda-img/teamworkshop/a4.svg" alt=""></div>
+        <div class="feature__text">клиентов оценивают работу команды Бизнес-Конструктор
+          на 10 из 10 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .new-features .feature__icon {
+    transition: .3s ease-in-out;
+    transform-origin: center;
+  }
+
+  .new-features .feature__text {
+    transition: .3s ease-in-out;
+  }
+
+  .new-features .feature:hover .feature__icon {
+    transform: scale(1.2);
+  }
+
+  .new-features .feature:before {
+    content: '';
+    position: absolute;
+    background: rgba(54, 123, 245, .1);
+    width: 3px;
+    height: 99px;
+    transform: rotate(90deg);
+    right: -6%;
+    top: 5px;
+  }
+
+
+  .new-features .feature:last-child:before {
+    display: none;
+  }
+
+  .new-features .feature {
+    box-shadow: unset;
+    overflow: visible;
+  }
+
+  .new-features .features {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .new-features .featuresBlocks {
+    box-shadow: 0px 4px 32px rgba(157, 169, 194, 0.24);
+  }
+
+  .features--title {
+    color: #000000;
+    font-size: 45px;
+    line-height: 54px;
+    font-weight: 900;
+    margin-bottom: 9px;
+  }
+
+  .new-features .features {
+    padding: 2rem 0 3rem;
+  }
+
+  .features--desk {
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 42px;
+    color: #757575;
+    margin-bottom: 50px;
+  }
+
+  .new-features .feature__text {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 10px;
+  }
+
+  @media(max-width: 768px) {
+    .features--title {
+      font-size: 35px;
+      line-height: 42px;
+      margin-bottom: 15px;
+    }
+
+    .features--desk {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 25px;
+    }
+
+    .new-features .featuresBlocks {
+      box-shadow: unset
+    }
+
+    .new-features .feature:before {
+      display: none;
+    }
+
+    .new-features .feature {
+      background: #FFFFFF;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 17px 20px 23px 20px;
+      margin-bottom: 20px;
+    }
+
+    .new-features .feature__text {
+      margin-bottom: 0;
+    }
+
+    .new-features .feature__text:after {
+      display: none;
+    }
+
+    .new-features .feature__title {
+      display: inline;
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .new-features .feature__title:after {
+      content: '';
+      position: relative;
+      display: block;
+      background: #656565;
+      height: 5px;
+      width: 71px;
+      top: -5px;
+      left: 0;
+    }
+
+    .new-features .feature__text {
+      padding: 0;
+    }
+  }
+</style>
