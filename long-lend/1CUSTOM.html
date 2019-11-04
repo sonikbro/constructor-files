@@ -52,10 +52,6 @@
     max-width: 100%
   }
 
-  .learning .container {
-    width: 80%;
-  }
-
   @media (max-width:1440px) {
     .learning__image {
       max-width: 700px
@@ -72,6 +68,7 @@
     .learning__title {
       text-align: center;
     }
+
     .learning {
       flex-direction: column;
     }
@@ -88,6 +85,98 @@
       -ms-transform: none;
       transform: none
     }
+  }
+
+  .learning {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learning .container {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .featureTexts button {
+      display: block;
+    }
+
+    .form,
+    .learning,
+    .modules-section,
+    .profit,
+    .target,
+    .text {
+      padding: 3rem 0;
+    }
+
+    .learning {
+      padding-top: 10rem !important;
+    }
+
+    .learning .container {
+      flex-direction: column;
+    }
+  }
+
+  .button--short,
+  .button--long {
+    background: #D81A38;
+    color: #fff;
+  }
+
+  .button--short:hover,
+  .button--long:hover {
+    background: #c11732;
+  }
+
+  .profit,
+  .text {
+    background: #fff;
+  }
+
+  @media(min-width: 768px) {
+    .features {
+      padding: 9rem 0 0;
+    }
+
+    .form,
+    .learning,
+    .profit {
+      padding: 6rem 0;
+    }
+  }
+
+  #copydel {
+    height: 0;
+  }
+  #allrecords {
+    padding: 3rem;
+    background: #06c;
+  }
+
+  .target__text {
+    margin-top: 3rem;
+    line-height: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    #allrecords {
+      padding: 1rem;
+    }
+  }
+
+  .speaker__name {
+    color: #D81A38;
+  }
+  .speaker__name:after {
+    background: #D81A38;
+  }
+  .speaker__name p {
+    opacity: 1;
+    color: rgba(255,255,255,1);
   }
 </style>
 
