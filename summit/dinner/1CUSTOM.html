@@ -240,7 +240,6 @@
     background: rgba(236, 0, 140, 1);
   }
 
-
   @media(max-width: 768px) {
     .profit__list li span:before {
       left: -17px;
@@ -323,7 +322,7 @@
   }
 
   .form-bg {
-    padding: 11rem 0 10rem;
+    padding: 11rem 0 10rem !important;
   }
 
   .form__Ncontacts {
@@ -430,9 +429,10 @@
 
     .nums-desk {
       font-size: 15px;
-      line-height: 30px;
+      line-height: 21px;
       max-width: 100%;
       margin-bottom: 25px;
+      padding-right: 10px;
     }
 
     .nums-items {
@@ -465,7 +465,58 @@
       margin-right: 18px;
     }
 
+    .profit {
+      padding: 35px 0 35px;
+      background: #FAFAFA;
+    }
 
+    .profit__title {
+      text-align: center;
+      font-size: 24px !important;
+      line-height: 29px !important;
+    }
+
+    .profit__list li span {
+      font-size: 15px;
+      line-height: 26px;
+      padding-right: 0;
+    }
+
+    .profit__list li span:before {
+      height: 100%;
+    }
+
+    .call-to-action {
+      display: none;
+    }
+
+    .cover-bg {
+      padding: 35px 0 350px;
+      background: url(http://constructor.biz.ua/tilda-img/trends/dinner/BLOCK--4.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .cover-t {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .cover-b {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .form__Ncontacts {
+      margin-left: 0;
+    }
+
+    .form-bg {
+      padding: 35px 0 0 !important;
+      background: #fafafa;
+    }
   }
 </style>
 
@@ -474,3 +525,18 @@
 <script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+
+<script>
+  $('.main-l-btn').on('click', function (e) {
+    $('html,body').stop().animate({
+      scrollTop: $('.form').offset().top - 20
+    }, 1000);
+    e.preventDefault();
+  });
+  $('.button--short').on('click', function (e) {
+    $('html,body').stop().animate({
+      scrollTop: $('.form').offset().top - 20
+    }, 1000);
+    e.preventDefault();
+  });
+</script>
