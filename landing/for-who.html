@@ -5,15 +5,11 @@
       <div class="who-item">
         <div class="who-item--title">Собственники бизнеса</div>
         <div class="who-item--text">
-          <ul>
-            <li>Пришло время расширяться, но нет понимания как?</li>
-            <li>Стратегия развития регулярно обновляется “в стол”?</li>
-            <li>Рынок стремительно меняется, а ваша компания — нет?</li>
-          </ul>
+          Погружены в ежедневную рутину и не можете оставить дела даже на день?
         </div>
         <div class="who-item-desk">
           <img src="http://constructor.biz.ua/tilda-img/intensive/textsms.svg" alt="">
-          <p>На обучении вы пропишете актуальную, жизнеспособную стратегию развития, а также пошаговый план ее достижения.</p>
+          <p>Найдите слабые места и устраните их!</p>
         </div>
         <img class="title-img" src="http://constructor.biz.ua/tilda-img/intensive/who1.svg" alt="">
       </div>
@@ -21,20 +17,187 @@
       <div class="who-item">
         <div class="who-item--title">Руководители отдела</div>
         <div class="who-item--text">
-          <ul>
-            <li>Ищете способы выполнить KPI отдела?</li>
-            <li>Старые инструменты и техники перестали работать?</li>
-            <li>Есть потребность вводить изменения, но команда боится перемен ?</li>
-          </ul>
+          Не знаете как удержать бизнес на плаву и не закрыться в первые 2 года?
         </div>
         <div class="who-item-desk">
           <img src="http://constructor.biz.ua/tilda-img/intensive/textsms.svg" alt="">
-          <p>В рамках интенсива вы составите список целей отдела, назначите ответственных и возьмете под контроль их реализацию.</p>
+          <p>Составьте стратегию развития!</p>
         </div>
         <img class="title-img" src="http://constructor.biz.ua/tilda-img/intensive/who2.svg" alt="">
       </div>
+
+      <div class="who-item">
+        <div class="who-item--title">Управленцы и топ-менеджеры</div>
+        <div class="who-item--text">
+          Сотрудники безынициативны, планы не выполняются?
+        </div>
+        <div class="who-item-desk">
+          <img src="http://constructor.biz.ua/tilda-img/intensive/textsms.svg" alt="">
+          <p>Научитесь правильно мотивировать персонал и делегировать задачи </p>
+        </div>
+        <img class="title-img" src="http://constructor.biz.ua/tilda-img/intensive/who3.svg" alt="">
+      </div>
+
+      <div class="who-item">
+        <div class="who-item--title">Те, кто только планирует открыть бизнес
+        </div>
+        <div class="who-item--text">
+          Хотите сразу строить бизнес правильно и избежать ошибок?
+        </div>
+        <div class="who-item-desk">
+          <img src="http://constructor.biz.ua/tilda-img/intensive/textsms.svg" alt="">
+          <p>Начните с создания бизнес-модели!</p>
+        </div>
+        <img class="title-img" src="http://constructor.biz.ua/tilda-img/intensive/who4.svg" alt="">
+      </div>
+
     </div>
   </div>
 </div>
 
+<style>
+  .who-item--title {
+    font-weight: 700;
+    color: #3F3F3F;
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 19px;
+  }
 
+  .who-bg {
+    padding: 5rem 0;
+  }
+
+  .who-item {
+    position: relative;
+  }
+
+  .who-title {
+    color: #181818;
+    font-size: 45px;
+    line-height: 54px;
+    font-weight: 900;
+    margin-bottom: 50px;
+  }
+
+  .who-item--text li {
+    color: #3F3F3F;
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 300;
+    list-style: none;
+    position: relative;
+    display: flex;
+  }
+
+  .who-item--text li::before {
+    content: '-';
+    display: block;
+    position: relative;
+    margin-right: 10px;
+    line-height: 21px;
+  }
+
+  .who-item--text li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .who-item-desk p {
+    color: #367BF5;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .who-items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .who-item-desk {
+    padding-top: 11px;
+  }
+
+  .who-item {
+    width: 48%;
+    padding: 25px 24px 20px 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+  }
+
+  .who-item-desk {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 15px;
+  }
+
+  .who-item-desk img {
+    margin-right: 10px;
+
+  }
+
+  .title-img {
+    position: absolute;
+    top: 10px;
+    left: -20px;
+  }
+
+  @media (max-width: 768px) {
+    .who-items {
+      flex-direction: column;
+    }
+
+    .who-item {
+      width: 100%;
+      margin-bottom: 60px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    who-item .who-item-desk img {
+      display: none;
+    }
+
+    .who-item--text,
+    .who-item-desk {
+      text-align: center;
+    }
+
+    .who-item-desk {
+      padding: 20px 0 0 0;
+    }
+
+    .who-item--text li {
+      display: block;
+    }
+
+    .who-item--text li::before {
+      display: inline;
+      margin-right: 5px;
+    }
+
+    .title-img {
+      position: relative;
+      top: 40px;
+      left: 0;
+    }
+
+    .who-title {
+      font-size: 26px;
+      line-height: 31px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .who-item-desk img {
+      display: none;
+    }
+
+    .who-bg {
+      padding: 0;
+    }
+  }
+</style>
