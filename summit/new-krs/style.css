@@ -171,8 +171,8 @@ html {
     transition: .2s;
     text-align: center;
     border: 0;
-    line-height: 1.4!important;
-    border-radius: 5px!important
+    line-height: 1.4 !important;
+    border-radius: 5px !important
 }
 
 .footer__social a,
@@ -208,7 +208,7 @@ html {
     -ms-flex-pack: justify;
     max-width: 920px;
     margin: 0 auto;
-    align-items: flex-start!important;
+    align-items: flex-start !important;
     justify-content: space-between
 }
 
@@ -220,7 +220,7 @@ html {
     -ms-flex-pack: justify;
     justify-content: space-between;
     background: #fff;
-    z-index: 9!important
+    z-index: 9 !important
 }
 
 .header:after,
@@ -248,7 +248,7 @@ html {
 
 @media (max-width:768px) {
     .header__logo img {
-        width: 160px!important
+        width: 160px !important
     }
 }
 
@@ -469,10 +469,12 @@ html {
 }
 
 @media (max-width:768px) {
+
     .header__menu,
     .menu__button {
         display: block
     }
+
     .header {
         padding: 0 2rem;
         -webkit-justify-content: space-between;
@@ -484,9 +486,11 @@ html {
         -ms-flex-align: center;
         align-items: center
     }
+
     .header__logo {
         margin-left: 0
     }
+
     .header__menu {
         position: absolute;
         top: 100%;
@@ -500,11 +504,13 @@ html {
         transition: .2s;
         margin-top: 2rem
     }
+
     .header__menu--active {
         opacity: 1;
         margin-top: 0;
         pointer-events: auto
     }
+
     .menu__item {
         -webkit-justify-content: flex-start;
         -moz-box-pack: start;
@@ -634,14 +640,14 @@ html {
 
 .form__info--summit .tabs__tab {
     text-align: left;
-    border: 0!important;
+    border: 0 !important;
     border-bottom: 1px solid #ededed;
-    padding: 1.25rem 1.75rem 1.25rem 1.75rem!important
+    padding: 1.25rem 1.75rem 1.25rem 1.75rem !important
 }
 
 .form__info--summit .tabs__tab:last-child {
     text-align: left;
-    border: 0!important;
+    border: 0 !important;
     border-bottom: 0
 }
 
@@ -671,7 +677,7 @@ html {
 }
 
 .form__info.form__info--tabs {
-    padding-top: 1.88rem!important
+    padding-top: 1.88rem !important
 }
 
 .tabs__tab:after {
@@ -761,7 +767,7 @@ html {
 }
 
 .form__politic a {
-    color: #1a5bdd!important
+    color: #1a5bdd !important
 }
 
 .form__contacts {
@@ -827,21 +833,26 @@ html {
 
 @media (max-width:768px) {
     .form__content {
-        display: block!important
+        display: block !important
     }
+
     .form__left,
     .form__right {
         width: 100%
     }
+
     .form__fields {
         margin: 0 1rem
     }
+
     .form__header {
         padding-left: 1rem
     }
+
     .form__header--right {
         display: none
     }
+
     .form__icons,
     .form__info {
         margin-left: 1rem;
@@ -865,8 +876,8 @@ html {
 }
 
 .modal--active {
-    opacity: 1!important;
-    pointer-events: auto!important
+    opacity: 1 !important;
+    pointer-events: auto !important
 }
 
 .modal__overlay {
@@ -913,6 +924,7 @@ html {
     html {
         font-size: 8px
     }
+
     .wrapper {
         padding: 2rem
     }
@@ -922,9 +934,11 @@ html {
     html {
         font-size: 8px
     }
+
     .wrapper {
         padding: 1rem
     }
+
     .footer__content {
         -webkit-flex-direction: column;
         -moz-box-orient: vertical;
@@ -974,9 +988,10 @@ html {
     .features {
         padding: 6rem 0 7rem
     }
+
     .back,
     .front {
-        transition: none!important
+        transition: none !important
     }
 }
 
@@ -984,6 +999,7 @@ html {
     .features {
         padding: 6rem 2rem
     }
+
     .feature {
         pointer-events: none;
         width: 100%
@@ -1173,6 +1189,7 @@ html {
         width: 100%;
         border-bottom: 1px solid #e6e6e9
     }
+
     .packages__item:last-child {
         border-bottom: 0
     }
@@ -1224,6 +1241,7 @@ html {
 }
 
 @media (max-width:768px) {
+
     .form,
     .learning,
     .modules-section,
@@ -1232,6 +1250,7 @@ html {
     .text {
         padding-top: 9rem
     }
+
     .form {
         padding-top: 3rem
     }
@@ -1246,32 +1265,38 @@ html {
         flex-direction: column;
         text-align: center
     }
+
     .feature {
         border-left: 1px solid #e6e6e9
     }
+
     .package__modal {
         padding: 2rem 0;
         overflow-y: scroll
     }
+
     .package__content {
         margin: 2rem 30px;
         height: 100%
     }
+
     .package__flex {
         display: block
     }
+
     .modal__info,
     .package__modalForm {
         max-width: 100%;
         max-height: 100%
     }
+
     .modal__overlay {
         position: fixed
     }
 }
 
 .form {
-    padding-bottom: 0!important
+    padding-bottom: 0 !important
 }
 
 .form__content,
@@ -1295,6 +1320,7 @@ a.menu__item.menu__item--phone.menu__item--phone--mobile {
     a.menu__item.menu__item--phone.menu__item--phone--desktop {
         display: none
     }
+
     a.menu__item.menu__item--phone.menu__item--phone--mobile {
         display: inline-flex;
         width: 100%
@@ -1338,7 +1364,7 @@ a.menu__item.menu__item--phone.menu__item--phone--mobile {
     line-height: 21px;
     color: #8d8d8d;
     display: flex;
-    align-items: flex-start!important
+    align-items: flex-start !important
 }
 
 .footer--contacts img {
@@ -1355,51 +1381,63 @@ a.menu__item.menu__item--phone.menu__item--phone--mobile {
     padding-bottom: 29px;
     border-top: 1px solid #e2e2e2;
     width: 100%;
-    padding-bottom: 0!important
+    padding-bottom: 0 !important
 }
 
 @media (max-width:768px) {
     .footer {
         padding-left: 35px
     }
+
     .footer .container {
         padding: 43px 0 0
     }
+
     .footer-col-list.desktop {
         display: none
     }
+
     .footer-col-list-mobile {
-        display: flex!important
+        display: flex !important
     }
+
     .footer-col-list-mobile ul {
-        display: flex!important;
+        display: flex !important;
         flex-direction: row;
         align-items: center
     }
+
     .footer-col-list-mobile li:nth-child(1) {
         margin-left: 0
     }
+
     .footer-col-list-mobile li {
         margin-left: 39px;
         align-items: center
     }
+
     .footer-col {
         margin-bottom: 30px
     }
+
     .foter-foter p.desktop {
         display: none
     }
+
     .foter-foter p.mobile {
-        display: block!important
+        display: block !important
     }
+
     .container .footer__content:nth-child(1) {
         margin-bottom: 0
     }
+
     .foter-foter .desktop {
         display: none
     }
+
     .foter-foter .mobile {
-        display: block!important
+        display: block !important
     }
 }
 
@@ -1423,6 +1461,7 @@ footer.footer {
     html {
         font-size: 8px
     }
+
     .wrapper {
         padding: 2rem
     }
@@ -1432,9 +1471,11 @@ footer.footer {
     html {
         font-size: 8px
     }
+
     .wrapper {
         padding: 1rem
     }
+
     .footer__content {
         -webkit-flex-direction: column;
         -moz-box-orient: vertical;
@@ -1448,9 +1489,10 @@ footer.footer {
     .features {
         padding: 6rem 0 7rem
     }
+
     .back,
     .front {
-        transition: none!important
+        transition: none !important
     }
 }
 
@@ -1546,7 +1588,7 @@ footer.footer {
 
 .back .inner p {
     max-width: 80%;
-    margin: 0 auto 0 auto!important
+    margin: 0 auto 0 auto !important
 }
 
 .accordeon-section .accordeon-item .accorden-item__title:hover:after,
@@ -1561,6 +1603,7 @@ footer.footer {
     .features {
         padding: 6rem 2rem
     }
+
     .feature {
         pointer-events: none;
         width: 100%
@@ -1576,6 +1619,7 @@ footer.footer {
 }
 
 @media (max-width:768px) {
+
     .form,
     .learning,
     .modules-section,
@@ -1584,6 +1628,7 @@ footer.footer {
     .text {
         padding-top: 9rem
     }
+
     .form {
         padding-top: 3rem
     }
@@ -1594,6 +1639,7 @@ footer.footer {
         flex-direction: column;
         text-align: center
     }
+
     .feature {
         border-left: 1px solid #e6e6e9
     }
@@ -1609,6 +1655,7 @@ footer.footer {
     a.menu__item.menu__item--phone.menu__item--phone--desktop {
         display: none
     }
+
     a.menu__item.menu__item--phone.menu__item--phone--mobile {
         display: inline-flex;
         width: 100%
@@ -1619,44 +1666,56 @@ footer.footer {
     .footer {
         padding-left: 35px
     }
+
     .footer .container {
         padding: 43px 0 0
     }
+
     .footer-col-list.desktop {
         display: none
     }
+
     .footer-col-list-mobile {
-        display: flex!important
+        display: flex !important
     }
+
     .footer-col-list-mobile ul {
-        display: flex!important;
+        display: flex !important;
         flex-direction: row;
         align-items: center
     }
+
     .footer-col-list-mobile li:nth-child(1) {
         margin-left: 0
     }
+
     .footer-col-list-mobile li {
         margin-left: 39px;
         align-items: center
     }
+
     .footer-col {
         margin-bottom: 30px
     }
+
     .foter-foter p.desktop {
         display: none
     }
+
     .foter-foter p.mobile {
-        display: block!important
+        display: block !important
     }
+
     .container .footer__content:nth-child(1) {
         margin-bottom: 0
     }
+
     .foter-foter .desktop {
         display: none
     }
+
     .foter-foter .mobile {
-        display: block!important
+        display: block !important
     }
 }
 
@@ -1670,8 +1729,9 @@ footer.footer {
 
 @media (max-width:768px) {
     .features {
-        padding: 2.8rem 2.4rem 2.8rem 2.4rem!important
+        padding: 2.8rem 2.4rem 2.8rem 2.4rem !important
     }
+
     .feature {
         border: none;
         text-align: left;
@@ -1681,7 +1741,7 @@ footer.footer {
 }
 
 .accorden-item__title.is-open {
-    color: #ff6371!important;
+    color: #ff6371 !important;
     font-size: 21px
 }
 
@@ -1689,7 +1749,7 @@ footer.footer {
     font-size: 17px;
     line-height: 23px;
     color: #7b7b7b;
-    padding: .7rem 0 1.5rem 3rem!important
+    padding: .7rem 0 1.5rem 3rem !important
 }
 
 .accorden-item__title {
@@ -1704,14 +1764,14 @@ footer.footer {
 }
 
 #allrecords a {
-    color: #8f8f8f!important;
+    color: #8f8f8f !important;
     text-decoration: none
 }
 
 @media (max-width:768px) {
     .program__item {
         padding: 0 0 24px;
-        background: #fff!important;
+        background: #fff !important;
         box-shadow: 0 4px 32px rgba(157, 169, 194, .24);
         border-radius: 2px;
         margin-bottom: 16px;
@@ -1719,21 +1779,23 @@ footer.footer {
         overflow: hidden;
         transition: .3s ease-in-out
     }
+
     .program__item:before,
     .program__item:last-child:after {
         display: none
     }
+
     .program-item-block-max {
-        max-height: 300px!important
+        max-height: 300px !important
     }
 }
 
 #allrecords ul {
-    padding-left: 0!important
+    padding-left: 0 !important
 }
 
 #form__contact a {
-    color: #06c!important
+    color: #06c !important
 }
 
 #form__contact {
@@ -1742,7 +1804,7 @@ footer.footer {
 
 #allrecords a:hover,
 .list-footer a:hover {
-    color: #06c!important
+    color: #06c !important
 }
 
 .checkbox {
@@ -1759,7 +1821,6 @@ footer.footer {
 }
 
 .first {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/1-st.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1768,7 +1829,7 @@ footer.footer {
 
 #sticky-wrapper,
 .header {
-    height: 5rem!important;
+    height: 5rem !important;
     background: #000
 }
 
@@ -1840,7 +1901,6 @@ footer.footer {
 }
 
 .first--date::before {
-    content: url(http://constructor.biz.ua/tilda-img/trends/new/line.png);
     display: block;
     position: relative;
     top: 0;
@@ -1866,7 +1926,6 @@ footer.footer {
 }
 
 .first--form-conteiner {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1876,11 +1935,11 @@ footer.footer {
 
 .button.button--submit.send-form {
     background: #000;
-    color: #fff!important;
+    color: #fff !important;
     text-transform: uppercase;
     letter-spacing: .2px;
     font-size: 15px;
-    line-height: 18px!important;
+    line-height: 18px !important;
     font-weight: 900;
     padding: 0;
     height: 60px;
@@ -1891,7 +1950,7 @@ footer.footer {
 }
 
 .button.button--submit.send-form:hover {
-    color: #fee71d!important
+    color: #fee71d !important
 }
 
 .form__field input {
@@ -1939,10 +1998,6 @@ footer.footer {
     font-weight: 900
 }
 
-.second {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/2nd-bg.jpg) 0 -570px no-repeat, #020918
-}
-
 .nums-items {
     display: flex;
     padding-top: 70px;
@@ -1971,8 +2026,7 @@ footer.footer {
 
 .item--title-line {
     height: 8px;
-    width: 100%;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/line.png)
+    width: 100%
 }
 
 .num--item--text {
@@ -2007,7 +2061,6 @@ footer.footer {
 .text-btn--trend {
     height: 60px;
     width: 305px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2020,7 +2073,7 @@ footer.footer {
 }
 
 #allrecords a.text-btn--trend {
-    color: #000!important
+    color: #000 !important
 }
 
 .package__flex .modal__info {
@@ -2032,7 +2085,7 @@ footer.footer {
 }
 
 .package__flex .button.button--submit:hover {
-    color: #fee71d!important
+    color: #fee71d !important
 }
 
 .promo-trends {
@@ -2126,7 +2179,6 @@ footer.footer {
     padding: 10px 0 10px 15px;
     width: 100%;
     font-weight: 700;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
     position: relative
 }
 
@@ -2239,9 +2291,9 @@ footer.footer {
     text-transform: uppercase;
     letter-spacing: .2em;
     font-size: 16px;
-    line-height: 19px!important;
+    line-height: 19px !important;
     background: rgba(255, 255, 255, .1);
-    border-radius: unset!important
+    border-radius: unset !important
 }
 
 .packages__item:hover {
@@ -2260,7 +2312,7 @@ footer.footer {
 }
 
 .packages__item:hover .button {
-    background: rgba(255, 255, 255, .1)!important;
+    background: rgba(255, 255, 255, .1) !important;
     color: #fff
 }
 
@@ -2269,7 +2321,6 @@ footer.footer {
 }
 
 .program-packages {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/program-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
@@ -2285,7 +2336,7 @@ footer.footer {
 }
 
 #allrecords #form__contact a {
-    color: rgba(255, 255, 255, .8)!important
+    color: rgba(255, 255, 255, .8) !important
 }
 
 .menu__item.menu__item--phone.menu__item--phone--desktop {
@@ -2339,10 +2390,6 @@ footer.footer {
     letter-spacing: 1.5px
 }
 
-.partners-bg {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat top, #020918
-}
-
 .partners-row {
     display: flex
 }
@@ -2392,7 +2439,7 @@ footer.footer {
 }
 
 #video-sum {
-    width: 960px!important;
+    width: 960px !important;
     height: 568px
 }
 
@@ -2405,7 +2452,6 @@ footer.footer {
     height: 92px;
     width: 92px;
     display: block;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/play.svg);
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
@@ -2420,7 +2466,6 @@ footer.footer {
 
 #btn-video.test {
     top: 470px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/paused.svg);
     transform: scale(.5)
 }
 
@@ -2434,24 +2479,26 @@ footer.footer {
     #video-sum {
         width: 100%
     }
+
     #btn-video {
         top: 70px
     }
+
     #btn-video.test {
         top: 130px
     }
 }
 
 html {
-    font-family: museo!important
+    font-family: museo !important
 }
 
 #allrecords a.menu__item {
-    color: rgba(255, 255, 255, .6)!important
+    color: rgba(255, 255, 255, .6) !important
 }
 
 #allrecords a.menu__item:hover {
-    background: rgba(0, 0, 0, .1)!important
+    background: rgba(0, 0, 0, .1) !important
 }
 
 .menu__item:after {
@@ -2459,7 +2506,7 @@ html {
 }
 
 .button.button--submit.send-form {
-    border-radius: unset!important;
+    border-radius: unset !important;
     letter-spacing: 4px
 }
 
@@ -2542,18 +2589,17 @@ html {
 }
 
 .packages__item .button {
-    letter-spacing: 1px!important
+    letter-spacing: 1px !important
 }
 
 .form {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/1-st.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
 }
 
 .form__content {
-    padding: 10rem 0 15rem!important;
+    padding: 10rem 0 15rem !important;
     box-shadow: none;
     max-width: 710px
 }
@@ -2564,7 +2610,6 @@ html {
 
 .form__right {
     width: 60%;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
     padding: 45px 60px 60px
 }
 
@@ -2597,32 +2642,31 @@ html {
 }
 
 .form__politic {
-    color: rgba(0, 0, 0, .29)!important;
+    color: rgba(0, 0, 0, .29) !important;
     text-transform: uppercase;
-    font-size: 12px!important;
-    line-height: 20px!important;
+    font-size: 12px !important;
+    line-height: 20px !important;
     opacity: 1;
     font-weight: 600
 }
 
 #allrecords .form__politic a {
-    color: rgba(0, 0, 0, .29)!important;
+    color: rgba(0, 0, 0, .29) !important;
     text-decoration: underline
 }
 
 .form__info.form__info--tabs {
-    padding-top: 0!important
+    padding-top: 0 !important
 }
 
 .tabs__tab:after {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/form-bg.jpg);
     width: 70%
 }
 
 .form__info--summit .tabs__tab {
-    border: 0!important;
+    border: 0 !important;
     border-bottom: none;
-    padding: 8px 0 6px!important;
+    padding: 8px 0 6px !important;
     color: rgba(0, 0, 0, .3);
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -2637,7 +2681,7 @@ html {
 }
 
 .tabs__tab--active {
-    color: #000!important;
+    color: #000 !important;
     font-size: 21px
 }
 
@@ -2677,7 +2721,6 @@ html {
 }
 
 .form__left .form__header:before {
-    content: url(http://constructor.biz.ua/tilda-img/trends/new/line.png);
     width: 100%;
     position: relative;
     top: 0;
@@ -2711,17 +2754,17 @@ html {
 }
 
 #allrecords .row-blocks-item.bg a {
-    color: rgba(255, 255, 255, 0)!important;
+    color: rgba(255, 255, 255, 0) !important;
     transition: .3s ease-in-out;
     text-align: center
 }
 
 #allrecords .row-blocks-item.bg:hover a {
-    color: #fff!important
+    color: #fff !important
 }
 
 .row-blocks-item.bg:hover {
-    color: #fff!important;
+    color: #fff !important;
     letter-spacing: .03em
 }
 
@@ -2745,111 +2788,136 @@ html {
     .container {
         overflow: hidden
     }
+
     .header__logo img {
-        width: 60%!important
+        width: 60% !important
     }
+
     #sticky-wrapper,
     .header {
-        height: 6rem!important
+        height: 6rem !important
     }
+
     #video-sum {
-        width: 100%!important
+        width: 100% !important
     }
+
     .hamburger-inner,
     .hamburger-inner:after,
     .hamburger-inner:before {
         background-color: #fff
     }
+
     .first .container {
         flex-direction: column;
         padding: 3rem 2rem;
         justify-content: flex-start
     }
+
     .first {
         height: 100%
     }
+
     .first--logo img {
         width: 100%
     }
+
     .first--date--items span {
         line-height: 48px;
         font-size: 21px;
         letter-spacing: .05em
     }
+
     .first--desk {
         font-size: 17px;
         line-height: 26px;
         margin-bottom: 40px
     }
+
     .first-left {
         width: 100%;
         padding: 0 3rem
     }
+
     .first--date::before {
         width: 260px;
         height: 7px
     }
+
     .desk-b {
         margin-top: 10px
     }
+
     .first--form-conteiner {
         width: 100%;
         padding: 20px 30px 40px 30px
     }
+
     .desk--title.desk {
         display: none
     }
+
     .desk--title.mob {
-        display: block!important
+        display: block !important
     }
+
     .desk--title {
         line-height: 25px;
         margin-bottom: 10px
     }
+
     .title--form {
         letter-spacing: 4px;
         font-size: 18px
     }
+
     .form__field input {
         font-size: 16px;
         line-height: 19px;
         font-weight: 500
     }
+
     .button.button--submit.send-form {
         height: 60px
     }
+
     .first,
     .form {
-        background: url(http://constructor.biz.ua/tilda-img/trends/new/1-stbgMOB.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover
     }
+
     .nums-items {
         flex-direction: column;
         padding-top: 30px
     }
+
     .num--item {
         width: 100%;
         margin-bottom: 30px
     }
+
     .num--item--title {
         font-size: 22px;
         line-height: 30px;
         padding: 0 10px 15px 0
     }
+
     .num--item--text {
         font-size: 19px;
         line-height: 22px;
         padding: 15px 10px 0 0
     }
+
     .second {
-        background: url(http://constructor.biz.ua/tilda-img/trends/new/2-ndbgMOB.jpg) no-repeat, #020918;
         background-size: contain
     }
+
     .text-btn-trend {
         flex-direction: column
     }
+
     .promo-trends--titlemob {
         font-weight: 700;
         color: #fff;
@@ -2860,9 +2928,7 @@ html {
         font-size: 18px;
         line-height: 28px
     }
-    .promo-trends--title img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/2nd-titleMOB.png)
-    }
+
     .text-btn-trend-left {
         font-size: 17px;
         line-height: 22px;
@@ -2871,28 +2937,35 @@ html {
         margin-bottom: 30px;
         letter-spacing: .1px
     }
+
     .promo-trends--titlemob {
-        display: block!important
+        display: block !important
     }
+
     .promo-trends--title {
         padding: 20px 0 25px
     }
+
     .speakers-items {
         align-items: center;
         flex-direction: column
     }
+
     .speakers-item {
         width: 100%;
         flex-direction: column;
         align-items: center
     }
+
     .speakers-item .left {
         width: 100%
     }
+
     .speakers-item .right {
         width: 100%;
         align-items: center
     }
+
     .speaker-desk {
         padding: 0;
         text-align: center;
@@ -2901,123 +2974,125 @@ html {
         color: rgba(255, 255, 255, .5);
         text-transform: unset
     }
+
     .face-id img {
         max-width: 100px
     }
+
     .logo-id {
         display: none
     }
+
     .logo-idMOB {
-        display: block!important
+        display: block !important
     }
+
     .face-id,
     .logo-idMOB {
         text-align: center
     }
+
     .logo-idMOB img {
         max-width: 140px
     }
-    .speakers-items .speakers-item:nth-child(1) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/1m.png)
-    }
-    .speakers-items .speakers-item:nth-child(2) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/2m.png)
-    }
-    .speakers-items .speakers-item:nth-child(3) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/3m.png)
-    }
-    .speakers-items .speakers-item:nth-child(4) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/7m.png)
-    }
-    .speakers-items .speakers-item:nth-child(5) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/4m.png)
-    }
-    .speakers-items .speakers-item:nth-child(6) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/5m.png)
-    }
-    .speakers-items .speakers-item:nth-child(7) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/6m.png)
-    }
-    .speakers-items .speakers-item:nth-child(8) .face-id img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/8m.png)
-    }
+
     .speaker-name {
         text-align: center;
         padding-left: 0;
         font-size: 24px;
         line-height: 29px
     }
+
     .speaker-name {
         margin-top: 15px;
         margin-bottom: 15px
     }
+
     .logo-idMOB {
         margin-bottom: 15px
     }
+
     .program--title {
         font-size: 40px;
         line-height: 47px
     }
+
     .program-container-item {
         padding: 15px 20px;
         text-align: left
     }
+
     .program-container-item::before {
         display: none
     }
+
     .arrow-program {
         padding: 35px 0
     }
+
     .text-bottom-program {
         padding: 0;
         font-size: 16px;
         line-height: 24px
     }
+
     .package {
         padding: 0
     }
+
     .program--title-bottom {
         font-size: 16px;
         line-height: 24px
     }
+
     .packages__items {
         flex-direction: column
     }
+
     .packages__item {
         width: 100%;
         margin-bottom: 30px;
         padding: 30px 35px 35px;
         border-bottom: none
     }
+
     .packages__items .packages__item:nth-child(1),
     .packages__items .packages__item:nth-child(3) {
         background: rgba(255, 255, 255, .06)
     }
+
     .package__text {
         display: none
     }
+
     .package__name {
         margin-bottom: 30px
     }
+
     .packages__items .button--blue {
         margin-top: 30px
     }
+
     .partners-title {
         padding-top: 60px;
         margin-bottom: 25px
     }
+
     .partners-title {
         font-size: 24px;
         line-height: 29px;
         letter-spacing: 2px;
         text-align: center
     }
+
     .partners-row {
         flex-direction: column
     }
+
     .row-blocks-item.unset {
         display: none
     }
+
     .partners-row--text {
         width: 100%;
         text-align: center;
@@ -3026,23 +3101,29 @@ html {
         color: rgba(255, 255, 255, .3);
         padding-right: 0
     }
+
     .row-blocks-item {
         width: 48%
     }
+
     .partners-row-items {
         width: 100%;
         flex-wrap: wrap
     }
+
     .partners-row--text {
         margin-bottom: 15px
     }
+
     .row-blocks-item.bg {
         min-height: 76px;
         margin-top: 15px
     }
+
     .action--arrow {
         display: none
     }
+
     .action--text-t {
         color: #fee71d;
         text-align: center;
@@ -3052,6 +3133,7 @@ html {
         line-height: 29px;
         margin-bottom: 10px
     }
+
     .action--text-b {
         text-transform: uppercase;
         font-size: 16px;
@@ -3061,89 +3143,113 @@ html {
         padding: 0 10px;
         text-align: center
     }
+
     .partners-action {
         flex-direction: column
     }
+
     .text-btn--trend {
         margin-left: 0
     }
+
     #video-sum {
         height: 208px
     }
+
     .form__left,
     .form__right {
         width: 100%
     }
+
     .form__content {
-        padding: 4rem 0 10rem!important
+        padding: 4rem 0 10rem !important
     }
+
     .form__left {
         padding-top: 30px;
         padding-bottom: 20px
     }
+
     .form__title {
         font-size: 21px;
         line-height: 25px
     }
+
     .form__left .form__header:before {
         max-width: 100%
     }
+
     .form__info--summit .tabs__tab {
         font-size: 25px;
         line-height: 30px;
-        padding: 4px!important
+        padding: 4px !important
     }
+
     .form__info.form__info--red {
         color: rgba(0, 0, 0, .7);
         font-size: 14px;
         line-height: 20px;
         padding-top: 30px
     }
+
     .form__info--red {
         padding-left: 30px
     }
+
     .form__right {
         padding: 30px
     }
+
     .tabs__tab span {
         padding-left: 30px
     }
+
     .form--line {
         padding-left: 30px
     }
+
     .form__header--right {
         display: block
     }
+
     .form__title {
         letter-spacing: 1.8px;
         font-size: 21px;
         line-height: 33px
     }
+
     .form__politic {
         display: none
     }
+
     .partners-action {
         margin-bottom: 7rem
     }
+
     #btn-video {
         transform: scale(.5)
     }
+
     #btn-video.test {
         transform: scale(.4)
     }
+
     .header__menu {
         background: #000;
         border-bottom: none
     }
+
     .form__info--summit .tabs__tab {
         font-size: 25px;
         line-height: 30px;
-        padding: 8px 0 6px!important;
+        padding: 8px 0 6px !important;
         margin-bottom: 0
     }
+
     .text-btn-trend {
         align-items: center
     }
+
     .tabs__tab:after {
         width: 200px
     }
@@ -3285,7 +3391,6 @@ html {
     position: absolute;
     left: 0;
     top: 0;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/line-vertical.png);
     height: 100%;
     width: 9px
 }
@@ -3320,7 +3425,7 @@ html {
 .text {
     animation: round 30s linear infinite;
     animation-direction: reverse;
-    padding: 0!important
+    padding: 0 !important
 }
 
 .box:hover .text {
@@ -3340,6 +3445,7 @@ html {
     0% {
         transform: rotate(0)
     }
+
     100% {
         transform: rotate(-360deg)
     }
@@ -3460,7 +3566,7 @@ html {
 }
 
 #video-sum {
-    width: 100%!important;
+    width: 100% !important;
     height: auto
 }
 
@@ -3487,7 +3593,6 @@ html {
     padding: 32px 25px 32px 35px;
     border: 10px solid #fee71d;
     box-sizing: border-box;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/bg-dinner.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
@@ -3596,14 +3701,12 @@ html {
 }
 
 .dinner-center::after {
-    content: url(http://constructor.biz.ua/tilda-img/trends/new/oskar.png);
     left: -155px;
     bottom: -85px;
     position: absolute
 }
 
 .slider-bg {
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/partner-bg.jpg) no-repeat center bottom, #020918;
     padding: 10rem 0 50px
 }
 
@@ -3648,7 +3751,6 @@ html {
     left: 0;
     width: 100%;
     height: 314px;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
     background-position: 0 0;
     animation: slide 50s linear infinite
 }
@@ -3657,6 +3759,7 @@ html {
     0% {
         background-position: 0 0
     }
+
     to {
         background-position: -1891px 0
     }
@@ -3675,7 +3778,6 @@ html {
     height: 50px;
     width: 50px;
     display: block;
-    background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
     cursor: pointer;
     transition: .3s ease-in-out
 }
@@ -3730,7 +3832,7 @@ html {
 }
 
 .form__content {
-    padding: 4.5rem 0 15rem!important
+    padding: 4.5rem 0 15rem !important
 }
 
 .program-packages {
@@ -3749,7 +3851,6 @@ html {
 
 @media (min-width:1600px) {
     .first--logo img {
-        content: url(http://constructor.biz.ua/tilda-img/trends/new/logo-big.png);
         width: 100%;
         height: 100%
     }
@@ -3757,10 +3858,11 @@ html {
 
 .getcall__button--expand span,
 .getcall__hover span+span {
-    font-family: museo!important
+    font-family: museo !important
 }
 
 @media (max-width:968px) {
+
     .dinner,
     .num-line-items,
     .slider,
@@ -3768,16 +3870,20 @@ html {
     .task-items {
         flex-direction: column
     }
+
     .num-line-item {
         width: 100%;
         margin-bottom: 60px
     }
+
     .line--item.none {
-        display: block!important
+        display: block !important
     }
+
     .line-item-num img {
         margin-left: 20px
     }
+
     .line-item-text {
         color: #fff;
         font-size: 20px;
@@ -3787,6 +3893,7 @@ html {
         padding: 20px 0 0 0;
         opacity: 1
     }
+
     .dinner-r,
     .slider-l,
     .slider-r,
@@ -3795,35 +3902,44 @@ html {
     .task-item {
         width: 100%
     }
+
     .slider-l--t {
         height: 314px
     }
+
     .dinner {
         flex-direction: column
     }
+
     .dinner-l-items {
         max-width: 100%
     }
+
     .dinner-center::after {
         left: 0;
         bottom: 0
     }
+
     .dinner-center {
         min-height: 460px
     }
+
     .num-line {
         padding: 80px 0 0
     }
+
     .speakers-item.last .speaker-name {
         font-size: 20px;
         line-height: 26px
     }
+
     .our-mission--title p {
         text-align: center
     }
+
     .our-mission--title p,
     .yellow-text-title {
-        display: block!important;
+        display: block !important;
         font-size: 31px;
         line-height: 37px;
         letter-spacing: 3px;
@@ -3831,184 +3947,234 @@ html {
         font-weight: 900;
         color: #fff
     }
+
     .our-mission--title p span,
     .yellow-text-title span {
         color: #fee71d
     }
+
     .our-mission--title img {
         display: none
     }
+
     .our-mission--text,
     .yellow-text-text {
         font-size: 14px;
         line-height: 22px
     }
+
     .our-mission {
         padding-bottom: 15px
     }
+
     .our-mission--title {
         padding-bottom: 55px
     }
+
     .our-mission {
         padding-bottom: 65px;
         position: relative
     }
+
     .logo-anim {
         width: 100%;
         position: absolute;
         bottom: -30px;
         right: -70px
     }
+
     .task-title {
         font-size: 22px;
         line-height: 28px;
         text-align: center
     }
+
     #allrecords {
         overflow: hidden
     }
+
     .border,
     .box {
         width: 185px;
         height: 185px
     }
+
     .task-item-b {
         padding: 0 30px;
         text-align: center
     }
+
     .task-item-t {
         justify-content: center;
         padding-bottom: 15px
     }
+
     .task-item {
         margin-bottom: 50px
     }
+
     .task .task--arrow {
         display: none
     }
+
     .task--text-t-overlay:before {
         display: none
     }
+
     .task--text-t {
         font-size: 22px;
         line-height: 28px;
         text-align: center
     }
+
     #btn-video {
         top: 63px
     }
+
     #btn-video.test {
         top: 100px
     }
+
     .dinner {
         padding: 12px 15px;
         border: 7px solid #fee71d
     }
+
     .dinner-l-title {
         font-size: 30px;
         line-height: 36px;
         margin-bottom: 20px
     }
+
     .dinner-l-item-img {
         min-width: 24px
     }
+
     .dinner-l-item-text {
         font-size: 12px;
         font-weight: 500;
         line-height: 18px
     }
+
     .dinner-r-date {
         padding-top: 30px
     }
+
     .dinner-r-date,
     .dinner-r-text {
         padding-left: 0
     }
+
     .dinner-center.desk::after {
         display: none
     }
+
     .dinner-center.desk {
         min-height: 0
     }
+
     .dinner-img {
         margin-right: 20px;
-        display: block!important
+        display: block !important
     }
+
     .dinner-img img {
         max-width: 100px
     }
+
     .dinner-r-date span {
         display: block
     }
+
     .dinner-r-date {
         display: flex;
         align-items: center
     }
+
     .dinner-r-text {
         display: none
     }
+
     .slider.desk {
         display: none
     }
+
     .slider.mob {
-        display: flex!important
+        display: flex !important
     }
+
     .slider-title {
         font-size: 26px;
         line-height: 30px
     }
+
     .slider-l--t {
         margin-top: 30px
     }
+
     .slider-l--b {
         margin-bottom: 35px
     }
+
     .slider-r--b.last {
         padding-left: 70px
     }
+
     .form-title img {
         width: 100%
     }
+
     .form-title p {
         font-size: 20px;
         line-height: 28px;
         letter-spacing: 1.5px
     }
+
     .package .arrow-program {
         padding-top: 0
     }
+
     .form--line .form__title:last-child {
         display: inline
     }
+
     .slider-l--b {
         align-items: flex-start
     }
+
     .slider-l--b p,
     .slider-r--b {
         font-weight: 500
     }
+
     #copydel {
         display: none
     }
+
     .slider-l--b {
         margin-bottom: 17px
     }
+
     .slider-title {
         text-align: center
     }
+
     .slider-num img {
         position: relative;
         left: -4px;
         bottom: -12px;
         transform: scale(.6)
     }
+
     .slider-num {
         margin-bottom: 0;
         text-align: center
     }
+
     .first--desk {
         margin-bottom: 15px
     }
+
     #video-sum {
         height: 200px
     }
@@ -4016,5 +4182,758 @@ html {
 
 .getcall__button--expand span,
 .getcall__hover span+span {
-    font-family: museo!important
+    font-family: museo !important
+}
+
+.first {
+    background: url(http://constructor.biz.ua/tilda-img/krs/bg.png) no-repeat, linear-gradient(180deg, #3f3d3e 0, #191718 100%);
+    background-size: cover;
+    background-position: bottom
+}
+
+.first--date::before {
+    display: none
+}
+
+.first--date--items strong {
+    color: #ff4545
+}
+
+#sticky-wrapper,
+.header {
+    background: #ff4545
+}
+
+.first--form-conteiner {
+    background: url(http://constructor.biz.ua/tilda-img/krs/forn-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.desk--text-b,
+.first-right,
+.form__field input,
+.form__field input::placeholder {
+    color: #fff !important
+}
+
+.form__field input {
+    border-bottom: 2px solid #fff
+}
+
+@media (min-width:1600px) {
+    .first--logo img {
+        content: unset
+    }
+}
+
+.header:after {
+    background: unset
+}
+
+.first-left {
+    justify-content: flex-start
+}
+
+.first--logo {
+    margin-top: 40px;
+    margin-bottom: 40px
+}
+
+.our-mission .container {
+    display: flex
+}
+
+.logo-anim img {
+    position: absolute
+}
+
+.mission--yellow-text {
+    margin-top: 0;
+    padding-left: 0
+}
+
+.mission--yellow-text::before {
+    display: none
+}
+
+.num-line {
+    padding: 0 0 80px
+}
+
+.yellow-text-text {
+    margin-top: 50px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, .65);
+    text-transform: unset
+}
+
+.nums-items {
+    margin-bottom: 90px
+}
+
+.item--title-line {
+    background: #ff4545
+}
+
+.num--item--text {
+    padding: 20px 0 0 0;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, .5)
+}
+
+.num--item--title {
+    padding: 0;
+    padding-bottom: 20px
+}
+
+.num-mission {
+    padding-bottom: 77px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/v1.png) no-repeat -60px 220px, url(http://constructor.biz.ua/tilda-img/krs/v2.png) no-repeat 116% 100%, #191718
+}
+
+.yellow-text-text span {
+    color: #ff4545
+}
+
+.container.mission {
+    display: flex
+}
+
+@media(max-height:750px) {
+    .first {
+        min-height: 720px;
+        height: 100%
+    }
+}
+
+@media(min-height:760px) {
+    .first {
+        height: calc(100vh - 5rem)
+    }
+}
+
+.speaker-programm {
+    padding: 77px 0 90px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/dirty.png) no-repeat center, #191718
+}
+
+.speaker-name span.active {
+    color: #ff4545
+}
+
+.program-container-item::before {
+    display: none
+}
+
+.program-container {
+    max-width: 720px;
+    margin: 0
+}
+
+.program-container .program-container-item:nth-child(1) {
+    background: url(http://constructor.biz.ua/tilda-img/krs/p1.png)
+}
+
+.program-container .program-container-item:nth-child(2) {
+    background: url(http://constructor.biz.ua/tilda-img/krs/p2.png)
+}
+
+.program-container .program-container-item:nth-child(3) {
+    background: url(http://constructor.biz.ua/tilda-img/krs/p3.png)
+}
+
+.program-container .program-container-item:nth-child(4) {
+    background: url(http://constructor.biz.ua/tilda-img/krs/p4.png)
+}
+
+.program-container .program-container-item:nth-child(5) {
+    background: url(http://constructor.biz.ua/tilda-img/krs/p5.png)
+}
+
+.program-container-item {
+    color: #fff
+}
+
+.program {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 77px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/s2.png) no-repeat 20% 100%
+}
+
+.container.spe {
+    background: url(http://constructor.biz.ua/tilda-img/krs/s1.png) no-repeat 100% 33%
+}
+
+.problems-bg {
+    background: url(http://constructor.biz.ua/tilda-img/krs/dirty.png) no-repeat center, url(http://constructor.biz.ua/tilda-img/krs/h1.png) no-repeat -5% 10%, url(http://constructor.biz.ua/tilda-img/krs/w.png) no-repeat -5%, url(http://constructor.biz.ua/tilda-img/krs/w1.png) no-repeat 100% 20%, #191718
+}
+
+.problems {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.problems-l {
+    width: 100%;
+    max-width: 539px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/l-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 45px 66px 65px 45px
+}
+
+.problems-r {
+    width: 100%;
+    max-width: 558px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/r-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 45px 44px 40px 45px
+}
+
+.l-title {
+    text-shadow: 4px 4px 0 #191718;
+    color: #fff;
+    letter-spacing: .03em;
+    font-size: 45px;
+    line-height: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 25px
+}
+
+.r-title {
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 56px;
+    color: #191718;
+    margin-bottom: 25px
+}
+
+.l-item {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #191718;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 15px
+}
+
+.l-items .l-item:last-child {
+    margin-bottom: 40px
+}
+
+.r-item {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #191718;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 15px
+}
+
+.r-items .r-item:last-child {
+    margin-bottom: 40px
+}
+
+.l-items ul,
+.r-items ul {
+    list-style: none
+}
+
+.l-items li::before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/bullet-l.svg);
+    display: block;
+    top: -5px;
+    position: relative;
+    left: -15px
+}
+
+.r-items li::before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/bullet-r.svg);
+    display: block;
+    top: -5px;
+    position: relative;
+    left: -15px
+}
+
+.package {
+    background: unset
+}
+
+.action--text-t span,
+.partners-title span,
+.program--title span {
+    color: #ff4545
+}
+
+.program---title-bottom {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    max-width: 906px;
+    margin: 0 auto
+}
+
+.program---title-bottom p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .5);
+    margin: 50px 0 30px
+}
+
+.partners-bg {
+    background: #191718
+}
+
+.text-btn--trend {
+    background: url(http://constructor.biz.ua/tilda-img/krs/btn-part.jpg);
+    width: 280px;
+    height: 64px;
+    display: flex;
+    align-content: center;
+    justify-content: center
+}
+
+#btn-video {
+    background: url(http://constructor.biz.ua/tilda-img/krs/button-play.svg);
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+#btn-video.test {
+    top: 460px;
+    background: url(http://constructor.biz.ua/tilda-img/krs/button-paused.svg);
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.video-slider {
+    background: #191718;
+    padding-bottom: 70px
+}
+
+.video-sum {
+    background: unset
+}
+
+.social {
+    padding-top: 10rem;
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+.social p {
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 75px;
+    color: #fff;
+    margin-bottom: 45px
+}
+
+.social p span {
+    color: #ff4545
+}
+
+.slick-prev {
+    top: -115px;
+    right: 110px
+}
+
+.slick-next {
+    right: 0;
+    top: -115px
+}
+
+.counterStudy {
+    background: #191718
+}
+
+.counterStudy__number {
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+.counterStudy__number p {
+    font-weight: 900;
+    font-size: 31px;
+    line-height: 39px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: left
+}
+
+.counterStudy__number p span {
+    color: #ff4545
+}
+
+.counterStudy__logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.counterStudy__logo {
+    width: 23%;
+    height: 130px
+}
+
+.counterStudy__logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center
+}
+
+.row1,
+.row10,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6,
+.row7,
+.row8,
+.row9 {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+    border-radius: 5px;
+    margin: 0;
+    margin-bottom: 30px
+}
+
+@media(max-width:414px) {
+    .counterStudyKZ {
+        width: 100%
+    }
+
+    .counterStudy__logo {
+        width: 46.5%;
+        height: 100px
+    }
+
+    .row1,
+    .row10,
+    .row2,
+    .row3,
+    .row4,
+    .row5,
+    .row6,
+    .row7,
+    .row8,
+    .row9 {
+        margin: 5px
+    }
+
+    .counterStudy__number p {
+        font-size: 25px;
+        line-height: 1
+    }
+}
+
+@media(max-width:1024px) {
+    .counterStudyKZ {
+        width: 100%
+    }
+
+    .counterStudy__logo {
+        height: 100px
+    }
+}
+
+.counterStudyKZ {
+    margin-top: 2rem;
+    margin-bottom: 4rem
+}
+
+.counterStudy__number {
+    margin-bottom: 3rem;
+    padding-top: 7rem
+}
+
+.counterStudyKZ {
+    display: block !important;
+    opacity: 1 !important
+}
+
+.counterStudyKZ {
+    background: #fbfbfb;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.counterStudy__logos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 10rem
+}
+
+.counterStudy__logo {
+    background-color: #fff
+}
+
+.counterStudy__logo img {
+    width: 100%;
+    border-radius: 5px
+}
+
+.package__flex .modal__info {
+    background: #191718
+}
+
+.form {
+    background: url(http://constructor.biz.ua/tilda-img/krs/block-reg-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.form__right {
+    background: url(http://constructor.biz.ua/tilda-img/krs/block-reg-form-bg.png)
+}
+
+.tabs__tab:after {
+    background: url(http://constructor.biz.ua/tilda-img/krs/block-reg-package-bg.png)
+}
+
+.form__left .form__header:before {
+    content: '';
+    background: url(http://constructor.biz.ua/tilda-img/krs/block-reg-package-bg.png);
+    max-width: 100%
+}
+
+.form__right .form__title {
+    color: #fff
+}
+
+.form__politic {
+    color: #fff !important;
+    font-weight: 300
+}
+
+#allrecords .form__politic a {
+    color: #fff !important
+}
+
+.form--line .form__title:last-child {
+    display: inline
+}
+
+.tabs__tab--active {
+    color: #fff !important
+}
+
+@media(max-width:962px) {
+    .logo-anim {
+        display: none
+    }
+
+    .first--logo {
+        margin-bottom: 10px
+    }
+
+    .speaker-name {
+        margin-bottom: 0
+    }
+
+    .num-mission {
+        background: url(http://constructor.biz.ua/tilda-img/krs/v2.png) no-repeat 276% 110%, #191718;
+        padding-bottom: 0
+    }
+
+    .container {
+        overflow: visible
+    }
+
+    .face-id {
+        display: none
+    }
+
+    .program {
+        flex-direction: column;
+        padding-top: 0
+    }
+
+    .program--title {
+        margin-bottom: 0
+    }
+
+    .problems {
+        flex-direction: column
+    }
+
+    .problems-l,
+    .problems-r {
+        padding: 40px 30px 0
+    }
+
+    .l-title,
+    .r-title {
+        text-align: center;
+        font-size: 34px;
+        line-height: 40px
+    }
+
+    .l-item,
+    .r-item {
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 30px
+    }
+
+    .l-arrow {
+        display: none
+    }
+
+    .mission--yellow-text,
+    .mission--yellow-text img {
+        width: 100%
+    }
+
+    .program---title-bottom {
+        padding-top: 0
+    }
+
+    .program---title-bottom p {
+        margin: 30px 0 30px
+    }
+
+    .partners-action {
+        margin-bottom: 0
+    }
+
+    .social p {
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 30px;
+        padding-left: 20px
+    }
+
+    .counterStudy__logo {
+        width: 48%
+    }
+
+    .counterStudy__logos {
+        padding: 0 20px
+    }
+
+    .counterStudy__number {
+        margin-bottom: 3rem;
+        padding-top: 7rem;
+        padding: 20px 20px 0 20px
+    }
+
+    .row1,
+    .row10,
+    .row2,
+    .row3,
+    .row4,
+    .row5,
+    .row6,
+    .row7,
+    .row8,
+    .row9 {
+        margin: 0;
+        margin-bottom: 10px
+    }
+
+    .action--text-t {
+        color: #fff
+    }
+
+    .action--text-t span {
+        color: #ff4545
+    }
+
+    .problems-l,
+    .problems-r {
+        max-width: 100%;
+        flex-wrap: nowrap
+    }
+
+    br {
+        display: block
+    }
+
+    .l-item,
+    .r-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .l-items li::before,
+    .r-items li::before {
+        left: 0;
+        width: 100%
+    }
+
+    .program--title span {
+        display: block
+    }
+
+    .container {
+        overflow: hidden
+    }
+}
+
+.button.button--submit.send-form:hover {
+    color: #ff4545 !important
+}
+
+.getcall__hover span {
+    font-family: museo !important
+}
+
+#rec141221095 {
+    word-break: normal !important
+}
+
+.partners-row,
+.partners-title {
+    display: none
+}
+
+.partners-action {
+    padding-top: 10rem
+}
+
+@media (min-width:962px) {
+    .form-title p {
+        font-weight: 900;
+        font-size: 25px;
+        line-height: 31px;
+        letter-spacing: .03em
+    }
+}
+
+.form__field input::placeholder {
+    color: rgba(255, 255, 255, .56) !important
 }
