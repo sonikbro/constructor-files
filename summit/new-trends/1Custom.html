@@ -1,23 +1,33 @@
 <!-- CustomCSS / JS -->
 
 <style>
-/* убрать */
-#allrecords .row-blocks-item.bg a {
-    transition: unset;
-}
-/* убрать */
-#allrecords .row-blocks-item.bg a {
-  color: #fff !important;
-  opacity: 0;
-}
+  .getcall__button--expand span,
+  .getcall__hover span+span,
+  .getcall__hover span {
+    font-family: museo !important;
+  }
 
-#allrecords .row-blocks-item.bg:hover a {
-  opacity: 1;
-}
-.row-blocks-item.bg span {
-  color: #fee71d;
-}
+  #allrecords .row-blocks-item.bg a {
+    color: #fff !important;
+    opacity: 0;
+  }
 
+  .row-blocks-item.bg span {
+    color: #fee71d;
+  }
+
+  #allrecords .row-blocks-item.bg:hover a {
+    opacity: 1;
+  }
+
+  @media (max-width: 960px) {
+    .speakers-items .speakers-item:nth-child(8) .face-id img {
+      content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/9m.png);
+    }
+    .speakers-items .speakers-item:nth-child(9) .face-id img {
+      content: url(http://constructor.biz.ua/tilda-img/trends/new/speakers/mobile/10m.png);
+    }
+  }
 </style>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
@@ -27,10 +37,19 @@
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
 
 <script>
+  $('.getcall__button').click();
+  $('.getcall__button').click();
+
   $('#to--form').on('click', function (e) {
     $('html,body').stop().animate({
       scrollTop: $('.form.main').offset().top + 50
     }, 1000);
     e.preventDefault();
+  });
+
+
+  $('.callback_button_reg').on('click', function (e) {
+    $('.getcall__input').val($('.phone_reg_footer input#phone').val());
+    $('.getcall__send').click();
   });
 </script>
