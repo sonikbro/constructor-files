@@ -31,10 +31,11 @@
   .first .container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
   }
 
   .first-left {
-    width: 60%;
+    width: 63%;
   }
 
   .first-left img {
@@ -69,6 +70,7 @@
     text-transform: uppercase;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.45);
+    padding: 1rem 1rem 1rem 0;
   }
 
   .button--submit {
@@ -89,8 +91,11 @@
     box-shadow: 0px 4px 20px #000000;
     border-radius: 6px;
     width: 23%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     padding: 15px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .item-pr {
@@ -102,6 +107,7 @@
     border-radius: 3px;
     margin-bottom: 15px;
     width: max-content;
+    font-weight: 600;
   }
 
   .item-title {
@@ -117,14 +123,193 @@
     line-height: 15px;
     color: rgba(0, 0, 0, 0.38);
     min-height: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
   }
 
   .item-date {
     font-size: 13px;
     line-height: 15px;
     color: #000000;
-    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .item-pr.red {
+    background: #DE2431;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .item-pr.life {
+    background: #EFEFEF;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .cards-item.zero {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .header__menu .menu__item {
+    padding: 0;
+  }
+
+  .header__menu .menu__item:not(:last-child) {
+    padding: 0 3rem 0 0;
+  }
+
+  .form__field input.error,
+  .form__field input.valid.phone-error {
+    border: none;
+    border-bottom: 2px solid #d81a38;
+  }
+
+  .menu__item:hover:after {
+    display: none;
+  }
+
+  .menu__item:hover {
+    background: unset;
+  }
+
+  #allrecords a.menu__item:hover {
+    color: rgba(255, 255, 255, 01) !important;
+  }
+
+  .header__logo {
+    margin-left: 0;
+  }
+
+  .timer-items {
+    display: flex;
+    justify-content: flex-end;
+    padding: 100px 0 85px;
+  }
+
+  #allrecords a.timer-btn {
+    width: 312px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background: #0066CC;
+    border-radius: 0px 7px 7px 0px;
+    color: #FFFFFF !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    align-items: center;
+    transition: .3s;
+  }
+
+  #allrecords a.timer-btn:hover {
+    background: #0059b3;
+  }
+
+  .timer-body-block {
+    border-radius: 7px 0px 0px 7px;
+    background: #fff;
+    padding: 0 3rem;
+    height: 70px;
+    align-items: center;
+  }
+
+  .timer-items p {
+    text-align: right;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 38px;
+    color: #FFFFFF;
+    padding-right: 32px;
+  }
+
+  .table-cell.second {
+    margin-right: 0;
+  }
+
+  .tab-metr {
+    margin-top: 0;
+  }
+
+  .tab-val {
+    text-align: center;
+  }
+
+  .title--form {
+    padding-bottom: 20px;
+  }
+
+
+  @media(max-width: 962px) {
+    .first-left img {
+      content: url(http://constructor.biz.ua/tilda-img/friday/logo-mobile.png);
+    }
+
+    #allrecords {
+      background: url(http://constructor.biz.ua/tilda-img/friday/bg-top-mobile.jpg) no-repeat, #0F0F0F;
+    }
+
+    .first .container {
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .first {
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .first-left {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .form__fields {
+      padding: 25px 22px 30px 22px;
+    }
+
+    .cards-items {
+      flex-direction: column;
+    }
+
+    .cards-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      padding: 0 3rem;
+    }
+
+    .cards-item.zero {
+      display: none;
+    }
+
+    .timer-items {
+      flex-direction: column;
+      padding: 50px 0 85px;
+    }
+
+    #allrecords a.timer-btn {
+      width: 100%;
+      border-radius: 0px 0px 5px 5px;
+    }
+
+    .timer-body-block {
+      border-radius: 7px 7px 0px 0px;
+    }
+
+    .timer-items p {
+      padding-right: 0;
+      font-size: 27px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .menu__button {
+      display: none;
+    }
+
   }
 </style>
 
@@ -133,3 +318,11 @@
 <script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+
+<script>
+$('a.timer-btn').on('click', function (e) {
+	$('html,body').stop().animate({
+		scrollTop: $('#form').offset().top - 30
+	}, 1000);
+	e.preventDefault();
+});</script>
