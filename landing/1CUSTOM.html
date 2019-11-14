@@ -1,6 +1,701 @@
 <!-- CustomCSS / JS -->
 
 <style>
+  .featuresBTN {
+  	width: 100%;
+  	max-width: 1100px;
+  	margin: 0 auto;
+  }
+  .feature:after {
+  	display: none;
+  }
+  .row-btn {
+  	max-width: 1100px;
+  	width: 100%;
+  	margin: 0 auto;
+  	margin-bottom: 5rem;
+  	margin-top: 1rem;
+  }
+  .row-btn .button.button--short {
+  	background: #343434 !important;
+  	font-size: 16px !important;
+  	line-height: 19px !important;
+  	letter-spacing: 1px;
+  	color: #FFFFFF !important;
+  }
+  .featureTexts p {
+  	font-size: 20px;
+  	line-height: 26px;
+  	color: #343434;
+  	margin-bottom: 3rem;
+  	font-weight: 500;
+  }
+  .featureTexts {
+  	padding-bottom: 0;
+  }
+  .featureTexts strong {
+  	position: relative;
+  	color: #343434;
+  	font-size: 45px;
+  	line-height: 54px;
+  	display: inline-block;
+  	margin-bottom: 0;
+  }
+  .featureTexts strong:after {
+  	content: '';
+  	height: 6px;
+  	display: block;
+  	background: #FF7A00;
+  	width: 100%;
+  }
+  .profit__title {
+  	font-weight: 900;
+  	font-size: 45px;
+  	line-height: 53px;
+  	color: #FFFFFF;
+  	text-align: left;
+  	display: inline-block;
+  	position: relative;
+  	padding-top: 5rem;
+  }
+  .profit__title:after {
+  	content: url(http://constructor.biz.ua/tilda-img/strategy/abottom.svg);
+  	position: relative;
+  	display: inline-block;
+  	top: 9px;
+  	left: -19px;
+  }
+  .profit__list li {
+  	margin-bottom: 5rem;
+  	align-items: flex-start;
+  }
+  .profit__list li div {
+  	margin-right: 5rem;
+  }
+  .profit__list li span {
+  	color: #FFFFFF;
+  	font-size: 20px;
+  	line-height: 26px;
+  	position: relative;
+  }
+  .profit__list li span::before {
+  	content: '';
+  	width: 3px;
+  	background: #FFFFFF;
+  	display: block;
+  	position: absolute;
+  	left: -30px;
+  	height: 45px;
+  }
+  .speaker__text {
+  	padding: 0;
+  }
+  .speaker__content {
+  	padding: 50px 0 0;
+  }
+  .speaker__photo {
+  	margin-right: 50px;
+  }
+  .speaker .container {
+  	max-width: 1380px;
+  }
+  .speaker__name {
+  	font-weight: 800;
+  	font-size: 40px;
+  	line-height: 47px;
+  	color: #3F3F3F;
+  	letter-spacing: 0.5px;
+  }
+  .speaker__name p {
+  	color: #3F3F3F;
+  	font-weight: 600;
+  	font-size: 18px;
+  	line-height: 25px;
+  	opacity: 1;
+  }
+  .speaker__info {
+  	font-size: 18px;
+  	line-height: 25px;
+  	color: #3F3F3F;
+  	font-weight: 500;
+  }
+  .speaker__photo img {
+  	content: url(http://constructor.biz.ua/tilda-img/teamworkshop/KK.png);
+  }
+  @media(max-width: 768px) {
+  	.speaker__name {
+  		font-size: 28px;
+  		line-height: 33px;
+  	}
+  	.speaker__name p {
+  		font-weight: 600;
+  		font-size: 18px;
+  		line-height: 25px;
+  	}
+  	.speaker__info {
+  		font-size: 16px;
+  		line-height: 22px;
+  	}
+  }
+  .speaker__name p {
+  	color: #FF5B5B;
+  }
+  .speaker__name:after {
+  	background: #FF5B5B;
+  }
+  .call-to-action .container {
+  	box-shadow: unset;
+  }
+  .program--container {
+  	display: flex;
+  	align-items: flex-start;
+  	justify-content: space-between;
+  	flex-wrap: wrap;
+  }
+  .container--item {
+  	background: #FFFFFF;
+  	box-shadow: 0px 4px 32px rgba(157, 169, 194, 0.24);
+  	border-radius: 2px;
+  	margin-bottom: 30px;
+  }
+  .item--title {
+  	display: flex;
+  	align-items: flex-start;
+  	padding: 13px 0 14px 0;
+  	font-size: 18px;
+  	line-height: 120%;
+  	color: #FFFFFF;
+  	border-radius: 2px 2px 0px 0px;
+  	background: linear-gradient(90deg, #FF7A00 0%, #FF9D42 100%);
+  }
+  .title--name:after {
+  	content: '';
+  	position: absolute;
+  	display: block;
+  	width: 2px;
+  	background: rgba(255, 255, 255, 0.17);
+  	border-radius: 1px;
+  	height: 100%;
+  	top: 0px;
+  	left: -20px;
+  }
+  .title--num {
+  	text-align: center;
+  	padding-left: 20px;
+  	padding-right: 18px;
+  }
+  .title--name {
+  	margin-left: 20px;
+  	text-transform: uppercase;
+  	text-align: left;
+  	padding-right: 20px;
+  	position: relative;
+  }
+  .item--body__desk {
+  	font-size: 19px;
+  	line-height: 23px;
+  	color: #636363;
+  	padding-bottom: 20px;
+  	width: 100%;
+  }
+  .item--body .item--body__desk:not(:last-child) {
+  	border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+  }
+  .program--container-title {
+  	font-weight: 800;
+  	font-size: 45px;
+  	line-height: 49px;
+  	text-align: left;
+  	color: #1F1F1F;
+  	margin-bottom: 46px;
+  }
+  @media(max-width:768px) {
+  	.program--container-title {
+  		font-weight: 900;
+  		font-size: 30px;
+  		line-height: 35px;
+  		margin-bottom: 34px;
+  	}
+  }
+  .items--body .item--body:not(:last-child) {
+  	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .item--body {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	margin: 0 20px;
+  }
+  .item--body__name {
+  	font-size: 19px;
+  	line-height: 26px;
+  	color: #171718;
+  	font-weight: bold;
+  	text-align: left;
+  }
+  .item--body__desk {
+  	font-style: normal;
+  	font-weight: normal;
+  	font-size: 16px;
+  	line-height: 22px;
+  	color: #171718;
+  	text-align: left;
+  	padding: 20px 0 20px;
+  }
+  .container--item {
+  	width: 49%;
+  }
+  @media(max-width: 768px) {
+  	.container--item {
+  		width: 100%;
+  	}
+  	.item--body__name {
+  		font-size: 16px;
+  		line-height: 22px;
+  	}
+  	.item--body__desk {
+  		font-size: 13px;
+  		line-height: 18px;
+  	}
+  	.container--item {
+  		margin-bottom: 15px
+  	}
+  	.item--body__desk {
+  		margin-top: 5px;
+  	}
+  	.item--body {
+  		padding: 13px 15px 19px 15px;
+  	}
+  	.item--title {
+  		font-size: 15px;
+  		line-height: 120%;
+  	}
+  	.title--name {
+  		margin-left: 14px;
+  	}
+  	.title--num {
+  		padding-left: 15px;
+  		padding-right: 12px;
+  	}
+  	.item--body {
+  		margin: 0 15px;
+  		padding: 13px 0 19px;
+  	}
+  }
+  .profit .container {
+  	max-width: 1100px;
+  }
+  .form--cta {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	text-align: center;
+  }
+  .form--cta h6 {
+  	color: #010103;
+  	font-size: 35px;
+  	line-height: 42px;
+  	margin-bottom: 20px;
+  }
+  .form--cta p {
+  	color: #010103;
+  	font-size: 25px;
+  	line-height: 30px;
+  	max-width: 370px;
+  }
+  .form__rocket {
+  	width: 100%;
+  	margin-bottom: -4px;
+  }
+  @media(min-width: 768px) {
+  	.speaker__info {
+  		padding-right: 55px;
+  	}
+  }
+  .program {
+  	max-width: 1100px;
+  	margin: 0 auto;
+  	width: 100%;
+  	padding: 6rem 0 4rem;
+  	background: unset;
+  }
+  .speaker {
+  	background: url(http://constructor.biz.ua/tilda-img/strategy/kirill-bg.png);
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  }
+  .speaker .container {
+  	max-width: 1100px;
+  }
+  .speaker__content {
+  	justify-content: space-between;
+  }
+  .featureTexts {
+  	max-width: 1100px;
+  	padding-left: 0;
+  	padding-right: 0;
+  }
+  .accordeon-section .container {
+  	max-width: 1100px;
+  	padding: 0;
+  }
+  @media (max-width: 768px) {
+  	.featuresBlocks {
+  		max-width: 100%;
+  	}
+  	.feature {
+  		width: 100%;
+  	}
+  	.featureTexts {
+  		padding: 0 50px;
+  	}
+  	.featureTexts p {
+  		font-size: 18px;
+  		line-height: 22px;
+  	}
+  	.featureTexts strong:after {
+  		width: 20%;
+  	}
+  	.mob-dots {
+  		display: block;
+  		position: relative;
+  		margin-bottom: 15px;
+  	}
+  	.mob-dots:before {
+  		content: url(http://constructor.biz.ua/tilda-img/trends/bullet.svg);
+  		position: absolute;
+  		display: inline;
+  		left: -15px;
+  		top: 0;
+  	}
+  	.row-btn .button.button--short {
+  		margin-left: 50px;
+  	}
+  	.profit__title:after {
+  		transform: scale(.6);
+  	}
+  	.profit__list li span {
+  		font-size: 16px;
+  		line-height: 19px;
+  		font-weight: 300;
+  	}
+  	.profit__list li div {
+  		min-width: 30px;
+  	}
+  	.profit__list li span::before {
+  		background: rgba(255, 255, 255, .6);
+  		left: -20px;
+  		height: 100%;
+  		min-height: 40px;
+  	}
+  	.speaker {
+  		background: url(http://constructor.biz.ua/tilda-img/teamworkshop/kirill-bgMOB.jpg);
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  	}
+  	.program--container-title {
+  		text-align: center;
+  	}
+  	.program {
+  		padding: 3rem 2rem !important;
+  	}
+  	.title--name {
+  		font-size: 15px;
+  		line-height: 120%;
+  		margin-right: 40px;
+  	}
+  	.title--num {
+  		padding-right: 15px;
+  	}
+  	.title--name:after {
+  		left: -15px;
+  	}
+  	.item--body__desk {
+  		margin-top: 0;
+  		font-size: 13px;
+  		line-height: 16px;
+  		padding: 15px 15px 15px 0;
+  	}
+  	.item--body {
+  		margin: 0 15px;
+  		padding: 0;
+  	}
+  	.form--cta h6 {
+  		font-weight: 900;
+  		font-size: 18px;
+  		line-height: 21px;
+  	}
+  	.form--cta p {
+  		opacity: 0.6;
+  		font-size: 16px;
+  		line-height: 19px;
+  	}
+  }
+  @media (max-width: 768px) {
+  	.container--item .item--body {
+  		max-height: 0px;
+  		overflow: hidden;
+  		transition: .3s ease-in-out;
+  	}
+  	.container--item-max .item--body {
+  		max-height: 400px;
+  	}
+  	#program {
+  		background: unset;
+  	}
+  	.program--container-title {
+  		margin-bottom: 24px;
+  	}
+  	.form--cta h6 {
+  		margin-bottom: 10px;
+  	}
+  	.form--cta p {
+  		padding: 0 70px;
+  	}
+  	.form__rocket {
+  		margin-bottom: -2px;
+  	}
+  	.featuresBTN-bg {
+  		background: unset;
+  	}
+  	.feature__title {
+  		font-size: 25px;
+  		line-height: 20px;
+  		border-bottom: none;
+  		padding: 10px 0 10px;
+  	}
+  	.feature {
+  		box-shadow: unset;
+  		margin-bottom: 0;
+  	}
+  	.feature__title span {
+  		font-size: 37px;
+  	}
+  	.features {
+  		padding: 2.8rem 2.4rem 0 !important;
+  	}
+  	.feature__text {
+  		font-size: 15px;
+  		padding: 0;
+  	}
+  }
+  @media(min-width: 768px) {
+  	.feature {
+  		border: none;
+  		border: 2px solid #FFFFFF;
+  		box-sizing: border-box;
+  		box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+  		padding: 30px;
+  		width: 24%;
+  		padding: 30px 17px 30px 17px;
+  	}
+  	.feature__text {
+  		font-size: 16px;
+  		line-height: 24px;
+  	}
+  	.profit__list li span:before {
+  		min-height: 50px;
+  	}
+  	.feature__title {
+  		display: none;
+  	}
+  	.featuresBlocks {
+  		justify-content: space-between;
+  	}
+  	.feature__icon {
+  		padding-bottom: 20px;
+  	}
+  	.features {
+  		padding: 9rem 0 3rem;
+  	}
+  	.feature:after {
+  		display: none;
+  	}
+  }
+  .button--short {
+  	font-size: 16px;
+  	line-height: 19px !important;
+  	text-align: center;
+  	letter-spacing: 1px;
+  	color: #FFFFFF;
+  	background: #FF7A00;
+  }
+  .row-btn .button.button--short {
+  	background: #16163E !important;
+  	font-size: 16px !important;
+  	line-height: 19px !important;
+  	letter-spacing: 1px;
+  	padding: 0;
+  	width: 215px;
+  	height: 55px;
+  	display: flex;
+  	text-transform: uppercase;
+  	align-items: center;
+  	justify-content: center;
+  }
+  .row-btn .button.button--short img {
+  	margin-right: 15px;
+  }
+  .accordeon-section .accordeon-title div {
+  	background: #F4F4F4;
+  }
+  .accordeon-section .accordeon-title span p, .accardeon__title_fix, .accorden-item__title.is-open, .accordeon-section .accordeon-item .accorden-item__title:hover {
+  	color: #FF7A00 !important;
+  }
+  .accordeon-section .accordeon-title p:after {
+  	content: url(http://constructor.biz.ua/tilda-img/esb/7desk.svg)
+  }
+  @media(max-width: 768px) {
+  	.accordeon-section .accordeon-title p:after {
+  		content: url(http://constructor.biz.ua/tilda-img/esb/7mob.svg)
+  	}
+  }
+  .accordeon-section .accordeon-title div:after {
+  	top: 10px;
+  }
+  .accordeon-section .accordeon-item.show-in .accorden-item__title:after {
+  	content: url(http://constructor.biz.ua/tilda-img/esb/arrow-up.svg);
+  	top: 0;
+  }
+  .profit {
+  	background: url(http://constructor.biz.ua/tilda-img/esb/bg.jpg);
+  	background-repeat: no-repeat;
+  	background-position: center;
+  	background-size: cover;
+  }
+  .t-records ul {
+  	margin-bottom: 0;
+  }
+  .speaker {
+  	background: url(http://constructor.biz.ua/tilda-img/esb/bg-kk.png);
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  }
+  .speaker__name:after {
+  	background: #FF7A00;
+  }
+  .speaker__name, .speaker__info {
+  	color: #FFFFFF;
+  }
+  .speaker__name p {
+  	color: rgba(255, 255, 255, 0.6);
+  	font-size: 20px;
+  	line-height: 28px;
+  	font-weight: 300;
+  }
+  .speaker__info {
+  	font-weight: 300;
+  }
+  .profit {
+  	padding: 4rem 0;
+  }
+  @media(min-width: 768px) {
+  	.program--container .container--item:nth-child(4) {
+  		position: relative;
+  		top: -70px;
+  	}
+  }
+  .form__left_img {
+  	display: flex !important;
+  	opacity: 1 !important;
+  	background: linear-gradient(180deg, #050522 0%, #16163E 100%);
+  	flex-direction: column;
+  	width: 50%;
+  	align-items: center;
+  	z-index: 8;
+  }
+  .img_title {
+  	font-weight: bold;
+  	font-size: 24px;
+  	line-height: 150%;
+  	text-transform: uppercase;
+  	color: #FF7A00;
+  	padding-top: 50px;
+  }
+  .img_text {
+  	font-size: 16px;
+  	line-height: 20px;
+  	color: #FFFFFF;
+  	margin-bottom: 40px;
+  	text-align: center;
+  }
+  .form .container {
+  	display: flex;
+  	justify-content: center;
+  }
+  .form__content {
+  	margin: 0
+  }
+  @media(max-width: 768px) {
+  	.hero__icons .hero__icon:nth-child(1) img {
+  		content: url(http://constructor.biz.ua/tilda-img/esb/dateM.svg);
+  	}
+  	.hero__icons .hero__icon:nth-child(2) img {
+  		content: url(http://constructor.biz.ua/tilda-img/esb/timeM.svg);
+  	}
+  	.hero__icons .hero__icon:nth-child(3) img {
+  		content: url(http://constructor.biz.ua/tilda-img/esb/locM.svg);
+  	}
+  	.form__left_img img {
+  		content: url(http://constructor.biz.ua/tilda-img/rocketMOB.svg);
+  		padding-bottom: 30px;
+  	}
+  	.profit__list li div img {
+  		width: 100%;
+  	}
+  	.featureTexts {
+  		padding: 0 20px;
+  	}
+  	.row-btn .button.button--short {
+  		margin-left: 0;
+  	}
+  	.row-btn {
+  		padding: 0 20px;
+  	}
+  	.accordeon-section .accordeon-title div:after {
+  		top: 90px;
+  	}
+  	.accordeon-section {
+  		padding: 6rem 2rem 6rem !important;
+  	}
+  	.speaker {
+  		padding: 0;
+  		background: url(http://constructor.biz.ua/tilda-img/esb/kk-bgMOB.jpg);
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  	}
+  	.form .container {
+  		flex-direction: column;
+  	}
+  	.form__left_img {
+  		width: 100%;
+  		padding: 0 20px;
+  	}
+  	.img_title {
+  		font-size: 18px;
+  		line-height: 150%;
+  		padding-top: 30px;
+  	}
+  	.img_text {
+  		font-size: 14px;
+  		line-height: 17px;
+  	}
+  	.form__left_img br {
+  		display: block;
+  	}
+  	.feature__title {
+  		font-weight: 900;
+  		color: #FF7A00;
+  	}
+  	.featureTexts {
+  		padding: 0 20px;
+  	}
+    .featureTexts p {
+      font-size: 15px;
+      color: #636363;
+      font-weight: 400;
+    }
+  }
 </style>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
@@ -8,3 +703,11 @@
 <script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+<script>
+  $(".container--item:first").addClass('container--item-max');
+
+  $(".container--item").click(function () {
+    $(this).toggleClass('container--item-max');
+    $('.container--item').not(this).removeClass('container--item-max');
+  });
+</script>
