@@ -1,6 +1,44 @@
 <!-- CustomCSS / JS -->
 
 <style>
+  .button--transparent {
+    background: rgba(0, 0, 0, 0.11);
+  }
+
+  .button.button--short {
+    background: #D81A38 !important;
+    color: #fff !important;
+  }
+
+  @media(max-width: 768px) {
+    .button--transparent {
+      background: rgba(255, 255, 255, .48);
+    }
+
+    .hero__icon:nth-child(1) img {
+      content: url(http://constructor.biz.ua/tilda-img/date-white.svg);
+    }
+
+    .hero__icon:nth-child(2) img {
+      content: url(http://constructor.biz.ua/tilda-img/time_icon-white.svg);
+    }
+
+    .hero__icon:nth-child(3) img {
+      content: url(http://constructor.biz.ua/tilda-img/location-white.svg);
+    }
+
+    .type__text,
+    .hero__title,
+    .hero__description,
+    .hero__icon {
+      color: white !important;
+    }
+
+    .title-27 {
+      font-size: 3.5rem !important;
+      line-height: 33px !important;
+    }
+  }
 </style>
 
 <script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
@@ -8,29 +46,3 @@
 <script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
 <script src="http://cbk.bizconstructor.com/scripts.min.js"></script>
 <script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
-
-
-
-<section>
-  <div class="our-mission">
-    <div class="container">
-      <div class="our-mission-container">
-        <div class="mission-container-t">
-          <div class="our-mission--title"><img src="http://constructor.biz.ua/tilda-img/trends/new/nums/text-mis.png"
-              alt=""><p style="display: none;">бизнес тренды <span>2020</span></p></div>
-          <div class="our-mission--text">
-            <p>это уникальное мероприятие, на котором визионеры бизнеса расскажут об
-              <span>инновациях и решениях, которые еще не известны
-                широкому рынку.</span>
-            </p>
-            <p>Записывайте инсайты, перенимайте опыт бизнес-лидеров и используйте их стратегии
-              <span>
-                для развития вашего бизнеса в 2020 году.
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
