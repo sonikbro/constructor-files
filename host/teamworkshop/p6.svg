@@ -1,7 +1,0 @@
-<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M40 0H5C2.25 0 0 2.25 0 5V40C0 42.75 2.25 45 5 45H40C42.75 45 45 42.75 45 40V5C45 2.25 42.75 0 40 0Z" fill="#1EAF35"/>
-<path d="M40 40H5V5H40V40Z" fill="white"/>
-<path d="M10 17.5H15V35H10V17.5Z" fill="#FFDB5B"/>
-<path d="M20 10H25V35H20V10Z" fill="#FFDB5B"/>
-<path d="M30 25H35V35H30V25Z" fill="#FFDB5B"/>
-</svg>
