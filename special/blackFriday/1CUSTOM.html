@@ -402,11 +402,7 @@
   }
 
   .btn-video.test {
-    position: fixed;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+    display: none;
   }
 
   .video-text {
@@ -447,21 +443,8 @@
     z-index: 999;
   }
 
-  .btn-video.pause {
-    font-size: 0;
-  }
-
-  .btn-video.pause .pause-btn {
-    display: block !important;
-    margin-right: 0;
-  }
-
-  .btn-video.test.pause .play-btn {
-    display: none !important;
-  }
-
-  .btn-video.play .play-btn {
-    display: block !important;
+  .cards-bg {
+    padding-bottom: 6rem;
   }
 
   @media(max-width: 962px) {
@@ -566,7 +549,7 @@
     font-weight: 900;
   }
 
-  .item-desk {
+  .cards-item.red .item-desk {
     font-size: 18px;
     line-height: 19px;
     color: rgba(0, 0, 0, 0.52);
@@ -577,26 +560,34 @@
       width: 100%;
     }
 
-    .cards-item.mob {
+    .cards-item.red {
       display: flex !important;
       background: #DE2431;
       box-shadow: 0px 4px 20px #000000;
     }
 
-    .cards-item.mob .item-pr {
+    .cards-item.red .item-pr {
       background: rgba(0, 0, 0, 0.2);
     }
 
-    .cards-item.mob .item-title,
-    .cards-item.mob .item-date {
+    .cards-item.red .item-title,
+    .cards-item.red .item-date {
       color: #fff;
     }
 
-    .cards-item.mob .item-desk {
+    .cards-item.red .item-desk {
       color: rgba(255, 255, 255, 0.6);
     }
 
+    .cards-item.red .item-title {
+      font-size: 18px;
+      line-height: 19px;
+    }
 
+    .cards-item.red .item-desk {
+      font-size: 15px;
+      line-height: 15px;
+    }
   }
 </style>
 
@@ -615,30 +606,18 @@
   });
 
 
-  var myVideo = document.getElementById("video-sum");
-
-  function playPause() {
-    if (myVideo.paused) {
-      myVideo.play();
-    } else
-      myVideo.pause();
-
-  }
   $('#btn-video').on('click', function () {
     $('#btn-video').addClass('test');
     $('#video-sum').addClass('active');
     $('.btn-close').addClass('test');
-    $('#btn-video').toggleClass('pause');
     $('.bg').addClass('active');
   });
 
   $('#btn-close').on('click', function () {
     $('#video-sum').removeClass('active');
     $('.bg').removeClass('active');
-    $('#btn-video').removeClass('pause');
     $('#btn-video').removeClass('test');
     $('.btn-close').removeClass('test');
-    myVideo.pause();
   });
 
   $("#btn-video").click(function () {
