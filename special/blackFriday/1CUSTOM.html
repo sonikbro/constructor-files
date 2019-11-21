@@ -100,9 +100,11 @@
     transition: .3s;
   }
 
-  .cards-item:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+  @media(min-width: 962px) {
+    .cards-item:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
   }
 
   .item-pr {
@@ -330,6 +332,62 @@
     line-height: 19px;
     color: rgba(0, 0, 0, 0.52);
   }
+
+  .inst-container {
+    font-family: museo;
+    font-weight: 500;
+    min-width: 360px;
+  }
+  .inst-container span {
+    font-weight: 700;
+  }
+
+  .inst-close {
+    right: 6px;
+    top: 5px;
+  }
+  .inst-logo-img {
+    border-radius: 0;
+    box-shadow: unset;
+  }
+  .inst-logo {
+    padding: 0 10px;
+    background: #06c;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px 0 0 6px;
+  }
+  .inst-logo img {
+    width: 30px;
+  }
+
+  .inst-body {
+    padding-left: 15px;
+  }
+
+  .inst-container_flex {
+    align-items: inherit !important;
+  }  
+  .inst-container .inst-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .tab-metr {
+   padding-top: 0;
+  }
+  .tab-val:after {
+    line-height: 1;
+  }
+  .tab-val {
+    line-height: 1;
+    font-size: 3.3rem;
+  }
+
 
   @media (max-width: 962px) {
     .cards-item.red {
