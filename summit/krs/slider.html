@@ -15,9 +15,6 @@
         </div>
         <div class="slider-r">
           <div class="slider-r--t">
-            <div class="slider-arrow">
-              <img src="http://constructor.biz.ua/tilda-img/trends/new/slider-arrow.svg" alt="">
-            </div>
             <p class="slider-num"><img src="http://constructor.biz.ua/tilda-img/krs/1000.png" alt=""></p>
             <div class="slider-title">успешных <span>предпринимателей</span>
               в одном зале
@@ -31,7 +28,7 @@
       </div>
 
       <div class="slider mob" style="display: none;">
-        <p class="slider-num"><img src="http://constructor.biz.ua/tilda-img/trends/new/slider-num.png" alt=""></p>
+        <p class="slider-num"><img src="http://constructor.biz.ua/tilda-img/krs/1000.png" alt=""></p>
         <div class="slider-title">успешных <span>предпринимателей</span>
           в одном зале
           <div class="slider-l--t">
@@ -55,13 +52,40 @@
             Не упустите возможность наладить выгодные и долгосрочные знакомства!</p>
         </div>
       </div>
-      <div class="arrow-program">
-        <img src="http://constructor.biz.ua/tilda-img/trends/new/arrowPr.png" alt="">
-      </div>
-      <div class="text-bottom-program">
-        В современном бизнесе от скорости принятия решений напрямую зависит успешность. Мы решили не изменять
-        трендам: чем раньше вы забронируете место на саммите, тем дешевле обойдется участие.
-      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .slider-title span {
+    color: #ff4545 !important;
+  }
+
+  .slider-l--t:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 314px;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
+    background-position: 0 0;
+    animation: slide 50s linear infinite;
+  }
+
+  .slider-r--t {
+    padding-bottom: 30px;
+  }
+
+  .l--b-tg span {
+    height: 50px;
+    width: 50px;
+    display: block;
+    background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+  .program---title-bottom {
+    padding-top: 0 !important;
+  }
+</style>
