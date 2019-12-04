@@ -1,0 +1,134 @@
+<!-- video block -->
+<section class="video-slider">
+  <div class="video-sum">
+    <div class="container">
+      <div class="video-sum-container">
+        <div class="video--container">
+          <video id="video-sum" width="768" poster="http://constructor.biz.ua/tilda-img/krs/video-cover.jpg">
+            <source src="http://constructor.biz.ua/tilda-img/krs/video.mp4" type="video/mp4">
+          </video>
+          <button class="btn-video" id="btn-video" onclick="playPause()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social">
+    <div class="social-container">
+      <p><span>Отзывы</span> участников</p>
+      <ul id="fbSLider">
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/1.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/2.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/3.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/4.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/5.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/6.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/7.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/8.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/9.jpg" loading="lazy" alt="" /></li>
+        <li><img src="http://constructor.biz.ua/tilda-img/krs/social/10.jpg" loading="lazy" alt="" /></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+<style>
+  .social-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .slick-slider {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide:focus {
+    outline: none;
+  }
+
+  .slick-prev,
+  .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    transition: 1s ease-in-out;
+  }
+
+
+  .slick-slide img {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .slick-next:before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/social/right.svg);
+  }
+
+  .slick-prev:before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/social/left.svg);
+  }
+
+  .slick-next:hover:before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/social/right-hover.svg);
+  }
+
+  .slick-prev:hover:before {
+    content: url(http://constructor.biz.ua/tilda-img/krs/social/left-hover.svg);
+  }
+
+  .slick-initialized .slick-slide {
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+  }
+
+  @media(max-width: 768px) {
+    .social-container {
+      max-width: 100%;
+    }
+
+    .slick-list {
+      padding-left: 40px;
+    }
+
+    .slick-track {
+      padding-left: 20px;
+    }
+
+    .social p {
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    #text .container {
+      padding: 0;
+    }
+  }
+</style>
+<script>
+  var myVideo = document.getElementById("video-sum");
+
+  function playPause() {
+    if (myVideo.paused) {
+      myVideo.play();
+    } else
+      myVideo.pause();
+    $('#btn-video').toggleClass('test');
+
+  }
+</script>
