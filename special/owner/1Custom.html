@@ -1,0 +1,33 @@
+<!-- CustomCSS / JS -->
+
+<link rel="stylesheet" href="http://constructor.biz.ua/tilda-img/owner/style.css">
+
+<style>
+</style>
+
+<script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
+<script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+<script>
+   $('#lessons').click(function () {
+      $('.__lesson, #lessons').addClass('active');
+      $('.__tasks, .__defer, #defer, #tasks').removeClass('active');
+   });
+
+   $('#tasks').click(function () {
+      $('.__tasks, #tasks').addClass('active');
+      $('.__lesson, .__defer, #lessons, #defer').removeClass('active');
+   });
+
+   $('#defer').click(function () {
+      $('.__defer, #defer').addClass('active');
+      $('.__tasks, .__lesson, #tasks, #lessons').removeClass('active');
+   });
+
+   $(".p-item:first").addClass('p-item-block-max');
+   $(".p-item").click(function () {
+      $(this).toggleClass('p-item-block-max');
+      $('.p-item').not(this).removeClass('p-item-block-max');
+   });
+</script>
