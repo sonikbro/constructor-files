@@ -25,9 +25,16 @@
       $('.__tasks, .__lesson, #tasks, #lessons').removeClass('active');
    });
 
-   $(".p-item:first").addClass('p-item-block-max');
+   $(".program-items.mob .p-item:first").addClass('p-item-block-max');
+   $(".program-bg.last .p-item:first").addClass('p-item-block-max');
+   $(".program-items.mob.question .p-item:first").addClass('p-item-block-max');
+
    $(".p-item").click(function () {
       $(this).toggleClass('p-item-block-max');
       $('.p-item').not(this).removeClass('p-item-block-max');
+   });
+
+   $('.menu__button').click(function () {
+      $('.sticky-wrapper').addClass('is-sticky');
    });
 </script>
