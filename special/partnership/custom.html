@@ -1,0 +1,62 @@
+<!-- CustomCSS / JS -->
+
+<link rel="stylesheet" href="http://constructor.biz.ua/tilda-img/partnership/style.css">
+
+
+<script src="http://cbk.bizconstructor.com/jquery.plugins.min.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.js"></script>
+<script src="http://cbk.bizconstructor.com/scripts.prod.js"></script>
+<script src="http://constructor.biz.ua/tilda-img/scripts/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+   $('#fbSLider').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: false
+   });
+
+   setTimeout(() => {
+      $('#fbSLider').click();
+   }, 1000);
+
+
+   $('#lessons').click(function () {
+      $('.__lesson, #lessons').addClass('active');
+      $('.__tasks, .__defer, #defer, #tasks, .__next, #next').removeClass('active');
+   });
+
+   $('#tasks').click(function () {
+      $('.__tasks, #tasks').addClass('active');
+      $('.__lesson, .__defer, #lessons, #defer,.__next, #next').removeClass('active');
+   });
+
+   $('#defer').click(function () {
+      $('.__defer, #defer').addClass('active');
+      $('.__tasks, .__lesson, #tasks, #lessons, .__next, #next').removeClass('active');
+   });
+
+   $('#next').click(function () {
+      $('.__next, #next').addClass('active');
+      $('.__tasks, .__defer, #defer, #tasks, .__lesson, #lessons').removeClass('active');
+   });
+
+
+   $(".program-items.mob .p-item__content:first, .program-bg.last .p-item__content:first, .program-items.mob.question .p-item__content:first")
+      .addClass('p-item-block-max');
+   $('.program-items.mob .p__ico:first, .program-bg.last .p__ico:first, .program-items.mob.question .p__ico:first')
+      .addClass('max');
+
+   $(".p-item__header").click(function () {
+      $(this).next('.p-item__content').toggleClass('p-item-block-max');
+      $('.p-item__header').not(this).next('.p-item__content').removeClass('p-item-block-max');
+   });
+
+   $('.menu__button').click(function () {
+      $('.sticky-wrapper').addClass('is-sticky');
+   });
+</script>
