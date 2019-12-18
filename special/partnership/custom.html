@@ -10,20 +10,44 @@
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
-   $('#fbSLider').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      dots: false,
-      centerPadding: '40px'
-   });
+   if ($(window).width() > 768) {
+      $('#fbSLider').slick({
+         infinite: true,
+         slidesToShow: 3,
+         slidesToScroll: 1,
+         arrows: true,
+         autoplay: true,
+         autoplaySpeed: 2500,
+         dots: false,
+         centerPadding: '40px'
+      });
+   } else {
+      $('#fbSLider').slick({
+         infinite: true,
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         arrows: true,
+         autoplay: true,
+         autoplaySpeed: 2500,
+         dots: false
+      });
+   };
 
    setTimeout(() => {
-      $('#fbSLider').click();
+      $('#fbSLider, #fbSLiderLogo').click();
    }, 1000);
+
+   setTimeout(() => {
+      $('#fbSLiderLogo').slick({
+         infinite: true,
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         arrows: false,
+         autoplay: true,
+         autoplaySpeed: 3000,
+         dots: true
+      });
+   }, 100);
 
 
    $('#lessons').click(function () {
@@ -49,12 +73,13 @@
 
    $(".program-items.mob .p-item__content:first, .program-bg.last .p-item__content:first, .program-items.mob.question .p-item__content:first")
       .addClass('p-item-block-max');
-   $('.program-items.mob .p__ico:first, .program-bg.last .p__ico:first, .program-items.mob.question .p__ico:first')
-      .addClass('max');
+   $('.program-items.mob .p__title:first').addClass('max');
 
    $(".p-item__header").click(function () {
       $(this).next('.p-item__content').toggleClass('p-item-block-max');
+      $(this).children('.p__title').toggleClass('max');
       $('.p-item__header').not(this).next('.p-item__content').removeClass('p-item-block-max');
+      $('.p-item__header').not(this).children('.p__title').removeClass('max');
    });
 
    $('.menu__button').click(function () {
