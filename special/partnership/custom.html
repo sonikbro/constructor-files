@@ -32,11 +32,9 @@
          dots: false
       });
    };
-
    setTimeout(() => {
       $('#fbSLider, #fbSLiderLogo').click();
    }, 1000);
-
    setTimeout(() => {
       $('#fbSLiderLogo').slick({
          infinite: true,
@@ -48,40 +46,31 @@
          dots: true
       });
    }, 100);
-
-
    $('#lessons').click(function () {
       $('.__lesson, #lessons').addClass('active');
       $('.__tasks, .__defer, #defer, #tasks, .__next, #next').removeClass('active');
    });
-
    $('#tasks').click(function () {
       $('.__tasks, #tasks').addClass('active');
       $('.__lesson, .__defer, #lessons, #defer,.__next, #next').removeClass('active');
    });
-
    $('#defer').click(function () {
       $('.__defer, #defer').addClass('active');
       $('.__tasks, .__lesson, #tasks, #lessons, .__next, #next').removeClass('active');
    });
-
    $('#next').click(function () {
       $('.__next, #next').addClass('active');
       $('.__tasks, .__defer, #defer, #tasks, .__lesson, #lessons').removeClass('active');
    });
-
-
    $(".program-items.mob .p-item__content:first, .program-bg.last .p-item__content:first, .program-items.mob.question .p-item__content:first")
       .addClass('p-item-block-max');
    $('.program-items.mob .p__title:first').addClass('max');
-
    $(".p-item__header").click(function () {
       $(this).next('.p-item__content').toggleClass('p-item-block-max');
       $(this).children('.p__title').toggleClass('max');
       $('.p-item__header').not(this).next('.p-item__content').removeClass('p-item-block-max');
       $('.p-item__header').not(this).children('.p__title').removeClass('max');
    });
-
    $('.menu__button').click(function () {
       $('.sticky-wrapper').addClass('is-sticky');
    });
