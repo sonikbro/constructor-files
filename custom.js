@@ -79,6 +79,8 @@ $('.footer a').click(function () {
 	return false;
 });
 
+$('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
+
 setTimeout(() => {
 	$('.table-cell.day .tab-val').css("text-align", "center");
 }, 500);
