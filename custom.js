@@ -79,7 +79,12 @@ $('.footer a').click(function () {
 	return false;
 });
 
+// new footer production versioan
 $('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
+
+// custom for old footers
+$('.foter-foter .desktop').html('® Все права защищены, 2013–2020 Бизнес-Конструктор');
+$('.foter-foter .mobile p ~ p').html('2013–2020 Бизнес-Конструктор');
 
 setTimeout(() => {
 	$('.table-cell.day .tab-val').css("text-align", "center");
