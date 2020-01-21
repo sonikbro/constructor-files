@@ -108,3 +108,16 @@ setTimeout(() => {
 	}
 
 })();
+
+
+! function (i) {
+	var o, n;
+	i(".spoiler__title").on("click", function () {
+		o = i(this).parents(".spoiler--item"), n = o.find(".spoiler__info"),
+			o.hasClass("active_block") ? (o.removeClass("active_block"),
+				n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(),
+				o.siblings(".active_block").removeClass("active_block").children(
+					".spoiler__info").stop(!0, !0).slideUp())
+	})
+}(jQuery);
+$('.spoiler--item:first .spoiler__title').click();

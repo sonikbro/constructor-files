@@ -5177,3 +5177,145 @@ a.box--btn {
 		margin-bottom: 20px;
 	}
 }
+
+/* spoiler */
+
+.spoiler.bg {
+	background: #000;
+	/* custom */
+	padding: 6rem 0;
+}
+
+.spoiler .spoiler__title {
+	position: relative
+}
+
+.spoiler--item {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.07);
+}
+
+.spoiler .spoiler--item:not(:last-child) {
+	margin-bottom: 2px;
+}
+
+.spoiler .spoiler--item.one {
+	border-radius: 7px 7px 0px 0px;
+}
+
+.spoiler .spoiler--item:last-child {
+	border-radius: 0px 0px 7px 7px;
+}
+
+.spoiler .spoiler__title {
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-weight: 500;
+	padding: 20px 20px 20px 26px;
+	-webkit-transition: all .2s linear 0;
+	-webkit-transition-delay: .2s 0;
+	transition: all .2s linear 0
+}
+
+.spoiler .spoiler__title span {
+	color: #FF7A00;
+	margin-right: 20px;
+}
+
+.spoiler .spoiler__title:before {
+	content: '';
+	height: 8px;
+	width: 8px;
+	display: block;
+	border: 2px solid #FF7A00;
+	border-right-width: 0;
+	border-top-width: 0;
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	right: 28px;
+	top: 25px;
+}
+
+.spoiler .spoiler--item.active_block .spoiler__title:before {
+	transform: rotate(135deg);
+}
+
+.spoiler .spoiler__info {
+	display: none;
+	overflow: hidden;
+	padding: 0 80px 30px 55px;
+}
+
+.spoiler .info_item {
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(255, 255, 255, .3);
+}
+
+h5.title {
+	font-size: 33px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-weight: 900;
+	margin-bottom: 35px;
+}
+
+.spoiler__info p:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.spoiler__info p {
+	position: relative;
+}
+
+.spoiler--item .spoiler__info .info_item::after {
+	content: '';
+	width: 13px;
+	height: 2px;
+	position: absolute;
+	left: -30px;
+	top: 10px;
+	background: #FF7A00;
+}
+
+@media(max-width: 962px) {
+	h5.title img {
+		display: none;
+	}
+
+	h5.title {
+		font-size: 26px;
+		line-height: 31px;
+	}
+
+	.spoiler__title {
+		font-size: 17px;
+		line-height: 20px;
+	}
+
+	.spoiler .spoiler__title:before {
+		right: 15px;
+	}
+
+	.spoiler .spoiler__title span {
+		display: block;
+	}
+
+	.spoiler .spoiler__title {
+		display: flex;
+		padding: 20px 40px 20px 26px;
+	}
+
+	.spoiler--item .info_item {
+		font-size: 17px;
+		line-height: 20px;
+	}
+
+	.spoiler .spoiler__info {
+		padding: 0 36px 30px 55px;
+	}
+}
