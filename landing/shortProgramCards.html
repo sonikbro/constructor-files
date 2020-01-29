@@ -1,17 +1,15 @@
-<!-- Коротка програма у вигляді карток -->
-<section id="program">
-  <div class="program">
-    <div class="program--container-title">Программа практикума</div>
+<!-- Программа практикума -->
+<section id="program bg">
+  <div class="container">
+    <h5 class="title">Программа практикума</h5>
     <div class="program--container">
-      <div class="container--item">
+      <div class="container--item container--item-max">
         <div class="item--title first first-visible">
           <div class="title--num">1</div>
-          <!-- название пункта программы -->
           <div class="title--name">Основы управленческого учета</div>
         </div>
         <div class="items--body">
           <div class="item--body">
-            <!-- описание -->
             <div class="item--body__desk">Ошибки собственника бизнеса в управлении финансами</div>
             <div class="item--body__desk">Составляющие финансового менеджмента</div>
             <div class="item--body__desk">Ключевые управленческие отчеты</div>
@@ -27,8 +25,8 @@
         <div class="items--body">
           <div class="item--body">
             <div class="item--body__desk">Особенности отчета Cash Flow</div>
-            <div class="item--body__desk">Особенности отчета P&L</div>
-            <div class="item--body__desk">Практическое задание по P&L</div>
+            <div class="item--body__desk">Особенности отчета P&amp;L</div>
+            <div class="item--body__desk">Практическое задание по P&amp;L</div>
             <div class="item--body__desk">Особенности отчета Баланс (Balance)</div>
             <div class="item--body__desk">Практическое задание по Балансу</div>
           </div>
@@ -63,12 +61,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  $(".container--item:first").addClass('container--item-max');
-
-  $(".container--item").click(function () {
-    $(this).toggleClass('container--item-max');
-    $('.container--item').not(this).removeClass('container--item-max');
-  });
-</script>
