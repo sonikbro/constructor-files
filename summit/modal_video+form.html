@@ -1,19 +1,24 @@
-<section class="modal_video" id="modal_video">
-   <div class="container">
-      <div class="form__content">
-         <div class="form_video_right">
-            <div class="video--container">
-               <video id="video-sum_modal">
-                  <source src="https://forstas.bizconstructor.com/tilda-assets/uas/video/belenkov.mp4" type="video/mp4">
-               </video>
-               <button class="btn-video_modal" id="btn-video_modal" onclick="playPause_modal()"></button>
-            </div>
+<!-- Блок з модальными приглашениями спикеров -->
+<div class="modal package__modal" id="nameSpeaker">
+   <div class="modal__overlay" data-modal-close="#nameSpeaker"></div>
+   <div class="package__content">
+      <div class="modal__close" data-modal-close="#nameSpeaker"><img
+            src="http://constructor.biz.ua/tilda-img/close-white.svg" alt=""></div>
+      <div class="package__flex">
+         <div class="modal__info">
             <div class="speaker_video_name">
-               <p>Кирилл Куницкий</p>
+               <p id="nameSpeaker__p"></p>
                <span>ВИДЕОПРИГЛАШЕНИЕ</span>
             </div>
+            <div class="modal__bg">
+               <video width="100%" id="video-sum_modal" loop="true" playsinline>
+                  <source src="" type="video/mp4">
+               </video>
+            </div>
+            <button class="btn-video_modal" id="btn-video_modal" onclick="playPause_modal()"></button>
          </div>
-         <div class="form__right">
+
+         <div class="package__modalForm">
             <div class="form__header form__header--right">
                <div class="form__title">Регистрация</div>
             </div>
@@ -50,8 +55,7 @@
                   name="success_url" value="http://thanks.bizconstructor.com/ubds/" autocomplete="off"><input
                   type="hidden" name="error_url" value="http://thanks.bizconstructor.com/ubds/"
                   autocomplete="off"><input type="hidden" name="redirect" value="false" autocomplete="off">
-               <div class="form__button"><button class="button button--submit send-form">ЗАБРОНИРОВАТЬ
-                     БИЛЕТ</button>
+               <div class="form__button"><button class="button button--submit send-form">ЗАБРОНИРОВАТЬ БИЛЕТ</button>
                </div>
             </form>
             <div class="form__politic">Нажимая кнопку «ЗАБРОНИРОВАТЬ БИЛЕТ», я даю согласие на обработку моих
@@ -63,31 +67,44 @@
          </div>
       </div>
    </div>
-</section>
-
-<div id="myVideo_modal_bg"></div>
-
-<div class="container">
-   <button id="active" style="font-size: 46px; margin: 0">АРТЕМ, НАЖМИ СЮДА</button>
 </div>
+
+<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/uas/video.css">
 
 
 <script>
-   var myVideo_modal = document.getElementById("video-sum_modal");
+   // *get attr 
+   $("#Belenkov").click(function () {
+      setModal('uas/video/belenkov.mp4', 'Толя Тест')
+   });
 
-   function playPause_modal() {
-      if (myVideo_modal.paused) {
+   $("#Romanenko").click(function () {
+      setModal('uas/video/romanenko.mp4', 'Толя Тест 2')
+   });
+
+   function setModal(srcModal, attrNameSpeaker) {
+      // setup info
+      $('#video-sum_modal > source').each(function () {
+         var linkSrc = ('https://forstas.bizconstructor.com/tilda-assets/' + srcModal);
+         $(this).attr("src", linkSrc);
+      });
+      $('#nameSpeaker__p').html(attrNameSpeaker);
+
+      myVideo_modal.load();
+      setTimeout(function () {
          myVideo_modal.play();
-      } else
-         myVideo_modal.pause();
-      $('#btn-video_modal').toggleClass('test');
+      }, 0);
    };
 
-   $('#active').click(function () {
-      $('#modal_video').addClass('test');
-      playPause_modal();
-      
+   var myVideo_modal = document.getElementById("video-sum_modal");
+   // function playPause_modal() {
+   //    if (myVideo_modal.paused) {
+   //       myVideo_modal.play();
+   //    } else
+   //       myVideo_modal.pause();
+   //    $('.btn-video_modal').toggleClass('btn-play');
+   // };
+   $("[data-modal-close]").click(function () {
+      myVideo_modal.pause();
    });
 </script>
-
-<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/uas/video.css">
