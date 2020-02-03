@@ -17,7 +17,6 @@
             </div>
             <button class="btn-video_modal" id="btn-video_modal" onclick="playPause_modal()"></button>
          </div>
-
          <div class="package__modalForm">
             <div class="form__header form__header--right">
                <div class="form__title">Регистрация</div>
@@ -71,16 +70,16 @@
 
 <link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/uas/video.css">
 
-
 <script>
-   // *get attr 
-   $("#Belenkov").click(function () {
-      setModal('uas/video/belenkov.mp4', 'Толя Тест')
-   });
+   var myVideo_modal = document.getElementById("video-sum_modal");
 
-   $("#Romanenko").click(function () {
-      setModal('uas/video/romanenko.mp4', 'Толя Тест 2')
-   });
+   function playPause_modal() {
+      if (myVideo_modal.paused) {
+         myVideo_modal.play();
+      } else
+         myVideo_modal.pause();
+      $('.btn-video_modal').toggleClass('btn-play');
+   };
 
    function setModal(srcModal, attrNameSpeaker) {
       // setup info
@@ -96,15 +95,8 @@
       }, 0);
    };
 
-   var myVideo_modal = document.getElementById("video-sum_modal");
-   // function playPause_modal() {
-   //    if (myVideo_modal.paused) {
-   //       myVideo_modal.play();
-   //    } else
-   //       myVideo_modal.pause();
-   //    $('.btn-video_modal').toggleClass('btn-play');
-   // };
    $("[data-modal-close]").click(function () {
       myVideo_modal.pause();
+      $('.btn-video_modal').removeClass('btn-play');
    });
 </script>
