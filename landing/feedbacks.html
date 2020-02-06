@@ -1,0 +1,110 @@
+<section class="feedbacks bg">
+   <div class="container">
+      <h5 class="title">Отзывы участников</h5>
+      <div class="feedbacks-items">
+         <ul id="fbSLider">
+            <li>
+               <div class="feedbacks-item flex">
+                  <div class="feedbacks__head">
+                     <span>Алексей <br> Ичко</span>
+                  </div>
+                  <div class="feedbacks__body">
+                     <div class="feedbacks__body__text">
+                        <p>Практикум полностью оправдал ожидания, помог в голове отдельные знания собрать в структуру, в
+                           план действий. Так же большой плюс - это Ваш собственный пример, пример того, что Вы не
+                           только
+                           на обучении рассказываете о систематизации бизнеса, но и сами успешно внедряете технологии в
+                           свою компанию</p>
+                        <p>Так же большой плюс - это Ваш собственный пример, пример того, что Вы не только
+                           на обучении рассказываете о систематизации бизнеса, но и сами успешно внедряете технологии в
+                           свою компанию</p>
+                     </div>
+                     <button data-action="wrap_feed">Подробнее</button>
+                  </div>
+               </div>
+            </li>
+
+            <li>
+               <div class="feedbacks-item flex">
+                  <div class="feedbacks__head">
+                     <span>Лариса <br> Банах</span>
+                  </div>
+                  <div class="feedbacks__body">
+                     <div class="feedbacks__body__text">
+                        <p>Практикум полностью оправдал ожидания, помог в голове отдельные знания собрать в структуру, в
+                           план действий.</p>
+                        <p>Так же большой плюс - это Ваш собственный пример, пример того, что Вы не только
+                           на обучении рассказываете о систематизации бизнеса, но и сами успешно внедряете технологии в
+                           свою компанию</p>
+                     </div>
+                     <button data-action="wrap_feed">Подробнее</button>
+                  </div>
+               </div>
+            </li>
+
+            <li>
+               <div class="feedbacks-item flex">
+                  <div class="feedbacks__head">
+                     <span>Лариса <br> Банах</span>
+                  </div>
+                  <div class="feedbacks__body">
+                     <div class="feedbacks__body__text">
+                        <p>Практикум полностью оправдал ожидания, помог в голове отдельные знания собрать в структуру, в
+                           план действий.</p>
+                        <p>Так же большой плюс - это Ваш собственный пример, пример того, что Вы не только
+                           на обучении рассказываете о систематизации бизнеса, но и сами успешно внедряете технологии в
+                           свою компанию</p>
+                     </div>
+                     <button data-action="wrap_feed">Подробнее</button>
+                  </div>
+               </div>
+            </li>
+
+            <li>
+               <div class="feedbacks-item flex">
+                  <div class="feedbacks__head">
+                     <span>Лариса <br> Банах</span>
+                  </div>
+                  <div class="feedbacks__body">
+                     <div class="feedbacks__body__text">
+                        <p>Практикум полностью оправдал ожидания, помог в голове отдельные знания собрать в структуру, в
+                           план действий.</p>
+                        <p>Так же большой плюс - это Ваш собственный пример, пример того, что Вы не только
+                           на обучении рассказываете о систематизации бизнеса, но и сами успешно внедряете технологии в
+                           свою компанию</p>
+                     </div>
+                     <button data-action="wrap_feed">Подробнее</button>
+                  </div>
+               </div>
+            </li>
+
+         </ul>
+      </div>
+   </div>
+</section>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+<script>
+   setTimeout(() => {
+      $('#fbSLider').slick({
+         infinite: true,
+         slidesToShow: 1.15,
+         slidesToScroll: 1,
+         autoplay: true,
+         autoplaySpeed: 16000,
+         arrows: true
+      });
+   }, 500);
+
+   $('button[data-action="wrap_feed"]').click(function () {
+      $(this).siblings(".feedbacks__body__text").toggleClass('wrap__text');
+      if ($('.feedbacks__body__text').hasClass('wrap__text')) {
+         $(this).html('Скрыть');
+      } else {
+         setTimeout(() => {
+            $(this).html('Подробнее');
+         }, 500);
+      }
+   });
+</script>
