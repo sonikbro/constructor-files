@@ -41,37 +41,28 @@ $('.feed-button').on('click', function (e) {
 		$('.feed-button').html('Подробнее');
 	}
 });
+
 $(".program__item:first").addClass('program-item-block-max');
 $(".program__item").click(function () {
 	$(this).toggleClass('program-item-block-max');
 	$('.program__item').not(this).removeClass('program-item-block-max');
 });
-$("#packageModal").click(function () {
-	$(".modal--itemsmob").addClass('active');
-	$(".modal--itemsmob-bg").addClass('on');
-});
-$("#packageModalClose").click(function () {
-	$(".modal--itemsmob").removeClass('active');
-	$(".modal--itemsmob-bg").removeClass('on');
-});
-$('a.box--btn').on('click', function (e) {
-	$('html,body').stop().animate({
-		scrollTop: $('#form').offset().top + 260
-	}, 1000);
-	e.preventDefault();
-});
 
-if ($(window).width() > 768) {
-	$('.speaker--card').hover(function () {
-		$('.speaker--card').not(this).toggleClass('opacity');
-	});
-};
-if ($(window).width() < 768) {
-	$('.speaker--card').click(function () {
-		$(this).toggleClass('hover-card');
-		$('.speaker--card').not(this).removeClass('hover-card').toggleClass('opacity');
-	});
-};
+// $("#packageModal").click(function () {
+// 	$(".modal--itemsmob").addClass('active');
+// 	$(".modal--itemsmob-bg").addClass('on');
+// });
+// $("#packageModalClose").click(function () {
+// 	$(".modal--itemsmob").removeClass('active');
+// 	$(".modal--itemsmob-bg").removeClass('on');
+// });
+// $('a.box--btn').on('click', function (e) {
+// 	$('html,body').stop().animate({
+// 		scrollTop: $('#form').offset().top + 260
+// 	}, 1000);
+// 	e.preventDefault();
+// });
+
 
 $('.footer a').click(function () {
 	$(this).target = "_blank";
@@ -89,26 +80,6 @@ $('.foter-foter .mobile p ~ p').html('2013–2020 Бизнес-Конструк�
 setTimeout(() => {
 	$('.table-cell.day .tab-val').css("text-align", "center");
 }, 500);
-
-(function () {
-	var lastVersioning = Date.UTC(2018, 11, 20, 2, 15, 10);
-
-	var lastCacheDateTime = localStorage.getItem('lastCacheDatetime');
-
-	if (lastCacheDateTime) {
-		if (lastVersioning > lastCacheDateTime) {
-			var reload = true;
-		}
-	}
-
-	localStorage.setItem('lastCacheDatetime', Date.now());
-
-	if (reload) {
-		location.reload(true);
-	}
-
-})();
-
 
 ! function (i) {
 	var o, n;
