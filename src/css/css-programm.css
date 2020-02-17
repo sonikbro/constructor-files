@@ -1,0 +1,278 @@
+.new--program {
+  padding: 6rem 0 6rem;
+}
+
+.new-program-item {
+  display: flex;
+  align-items: center;
+}
+
+.new-program-item-l {
+  width: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.new-program-item-r {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-item-r-text {
+  margin-left: 20px;
+  padding: 15px 20px 13px 20px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.program-item-r-time,
+.program-item-r-name {
+  min-height: 25px;
+}
+
+.program-item-r-text p {
+  opacity: 0.7;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  text-transform: initial;
+  letter-spacing: initial;
+}
+
+.new-program-items .new-program-item .program-item-r-text {
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.new-program-items .new-program-item:nth-child(1) .program-item-r-text {
+  background-position: -50px;
+}
+
+.new-program-items .new-program-item:nth-child(2) .program-item-r-text {
+  background-position: -100px;
+}
+
+.new-program-items .new-program-item:nth-child(3) .program-item-r-text {
+  background-position: -150px;
+}
+
+.new-program-items .new-program-item:nth-child(4) .program-item-r-text {
+  background-position: -420px;
+}
+
+.new-program-items .new-program-item:nth-child(5) .program-item-r-text {
+  background-position: -250px;
+}
+
+.new-program-items .new-program-item:nth-child(6) .program-item-r-text {
+  background-position: -300px;
+}
+
+.new-program-items .new-program-item:nth-child(7) .program-item-r-text {
+  background-position: -350px;
+}
+
+.new-program-items .new-program-item:nth-child(8) .program-item-r-text {
+  background-position: -400px;
+}
+
+.new-program-items .new-program-item:nth-child(9) .program-item-r-text {
+  background-position: -450px;
+}
+
+
+.program-item-r-time {
+  color: rgba(255, 255, 255, 0.41);
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding-left: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.new--program .container {
+  max-width: 750px !important;
+}
+
+.program-item-r-name {
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 900;
+  margin-left: 40px;
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.program-item-r-name span {
+  padding-left: 5px;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel .program-item-r-text {
+  width: 60%;
+}
+
+.new-program-title {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 80px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+.new-program-item-l img {
+  max-width: 100px;
+}
+
+.program-item-r-name span,
+.new-program-title span {
+  color: #b211da;
+}
+
+
+.last {
+  display: flex;
+}
+
+.last .gray {
+  width: 60%;
+}
+
+.last-img {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.program-item-r--item {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 962px) {
+  .new-program-title {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .new-program-item-l {
+    display: none;
+  }
+
+  .program-item-r-text {
+    margin-left: 0;
+  }
+
+  .program-item-r-time {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .program-item-r-name {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+  .last-img {
+    display: none;
+  }
+
+  .last .gray {
+    width: 100%;
+  }
+
+  .mob-list {
+    display: block !important;
+  }
+
+  .mob-list li {
+    font-size: 14px;
+    line-height: 17px;
+    color: #020918;
+    opacity: 0.7;
+    list-style-type: none;
+    position: relative;
+    font-weight: 600;
+    padding-left: 3px;
+  }
+
+  .mob-list li::before {
+    content: '—';
+    position: relative;
+    left: -3px;
+  }
+
+  .new--program {
+    padding: 6rem 0 6rem;
+  }
+
+  .panel .program-item-r-text {
+    width: 100%;
+  }
+
+  .program-item-r-time,
+  .program-item-r-name {
+    min-height: auto;
+  }
+}
+
+@media(max-width:962px) {
+  .row-blocks-item.bg {
+    display: none;
+  }
+
+  .row-blocks-item {
+    margin-bottom: 15px;
+  }
+
+  .program-item-r-name {
+    align-items: center;
+  }
+
+  .program-item-r-name img {
+    display: block !important;
+    width: 30px;
+    margin-right: 10px;
+  }
+}
+
+.program-item-r-text.gray {
+  background: url(http://constructor.biz.ua/tilda-img/trends/new/program/gray-texture.jpg) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #050308;
+}
+
+.new-program-item {
+  margin-bottom: 40px;
+}
+
+.new-program-items .new-program-item:nth-child(1),
+.new-program-items .new-program-item:nth-child(2) {
+  margin-bottom: 20px;
+}

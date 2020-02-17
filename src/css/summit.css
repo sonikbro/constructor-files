@@ -219,7 +219,7 @@ html {
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #000;
+  background: #fff;
   z-index: 9 !important
 }
 
@@ -685,7 +685,7 @@ html {
   top: 0;
   left: 0;
   z-index: 0;
-  background: #FF4545;
+  background: #ffeb99;
   display: block;
   content: '';
   width: 100%;
@@ -735,6 +735,7 @@ html {
 
 .form__field input {
   background: #fff no-repeat right center;
+  border: 1px solid #ededed;
   width: 100%;
   color: #0a0b0b;
   font-size: 1.8rem;
@@ -1295,8 +1296,7 @@ html {
 }
 
 .form {
-  padding-bottom: 0 !important;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/dashes-full.png) no-repeat 0 60px, url(http://constructor.biz.ua/tilda-img/ubds/bg-desktop-4.jpg) no-repeat;
+  padding-bottom: 0 !important
 }
 
 .form__content,
@@ -1823,6 +1823,7 @@ footer.footer {
 }
 
 .first {
+  background-position: center;
   background-repeat: no-repeat;
   background-size: unset;
   height: calc(100vh - 5rem)
@@ -1831,6 +1832,7 @@ footer.footer {
 #sticky-wrapper,
 .header {
   height: 5rem !important;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg)
 }
 
 .header:after {
@@ -1869,18 +1871,15 @@ footer.footer {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  padding: 6rem 0;
-  max-height: 650px;
-
+  padding: 6rem 0
 }
 
 .first-left {
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 0;
+  justify-content: space-between;
+  align-items: flex-start
 }
 
 .first-right {
@@ -1937,8 +1936,8 @@ footer.footer {
 }
 
 .button.button--submit.send-form {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/button-bg.png) no-repeat center, #05172D;
-  color: #fff !important;
+  background: #FFFFFF;
+  color: #B211DA !important;
   text-transform: uppercase;
   letter-spacing: .2px;
   font-size: 15px;
@@ -2073,7 +2072,7 @@ footer.footer {
 }
 
 #allrecords a.text-btn--trend {
-  color: #000 !important
+  color: #fff !important
 }
 
 .package__flex .modal__info {
@@ -2132,16 +2131,22 @@ footer.footer {
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 700;
   color: #fff;
   padding-left: 20px;
   margin-bottom: 20px
+
 }
 
 .speaker-name span.active {
-  color: #fee71d;
-  display: block
+  display: block;
+  font-weight: 900;
 }
+
+.speaker-name span:not(.active ) {
+  text-shadow: 2px 2px #b211da;
+}
+
 
 .speaker-desk {
   font-size: 13px;
@@ -2154,8 +2159,8 @@ footer.footer {
 }
 
 .program-container {
-  max-width: 600px;
-  width: 100%
+  width: 100%;
+  margin: 0 auto
 }
 
 .program--title {
@@ -2166,31 +2171,18 @@ footer.footer {
   font-weight: 900;
   color: #fff;
   margin-bottom: 35px;
-  text-align: left
-}
-
-.speakers .program--title {
-  position: relative;
-}
-
-.speakers .program--title::before {
-  position: relative;
-  content: '';
-  display: inline-block;
-  width: 55px;
-  height: 40px;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/yellow-slash.png) no-repeat;
-  background-size: cover;
+  text-align: center
 }
 
 .program-container-item {
-  color: #fff;
+  color: #000;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 20px;
+  padding: 10px 0 10px 15px;
   width: 100%;
-  font-weight: 500;
+  font-weight: 700;
   position: relative
 }
 
@@ -2218,6 +2210,30 @@ footer.footer {
   line-height: 20px;
   opacity: .3;
   top: 0
+}
+
+.program-container .program-container-item:nth-child(2)::before {
+  content: '1'
+}
+
+.program-container .program-container-item:nth-child(3)::before {
+  content: '2'
+}
+
+.program-container .program-container-item:nth-child(4)::before {
+  content: '3'
+}
+
+.program-container .program-container-item:nth-child(5)::before {
+  content: '4'
+}
+
+.program-container .program-container-item:nth-child(6)::before {
+  content: '5'
+}
+
+.program-container .program-container-item:nth-child(7)::before {
+  content: '6'
 }
 
 .text-bottom-program {
@@ -2306,7 +2322,7 @@ footer.footer {
 }
 
 .package .program--title {
-  margin-bottom: 20px
+  margin-bottom: 10px
 }
 
 .program-packages {
@@ -2361,7 +2377,7 @@ footer.footer {
 }
 
 .action--arrow {
-  width: 200px;
+  max-width: 200px;
   overflow: hidden
 }
 
@@ -2432,6 +2448,10 @@ footer.footer {
   height: 568px
 }
 
+.video-sum {
+  background: #020918;
+  padding-bottom: 0
+}
 
 #btn-video {
   height: 92px;
@@ -2441,7 +2461,7 @@ footer.footer {
   background-size: cover;
   border: none;
   position: absolute;
-  top: 310px;
+  top: 270px;
   margin: 0 auto;
   transition: .3s;
   left: 0;
@@ -2450,6 +2470,7 @@ footer.footer {
 }
 
 #btn-video.test {
+  top: 470px;
   transform: scale(.5)
 }
 
@@ -2491,7 +2512,7 @@ html {
 
 .button.button--submit.send-form {
   border-radius: unset !important;
-  letter-spacing: 4px
+  letter-spacing: 2px
 }
 
 .first--logo img {
@@ -2577,6 +2598,11 @@ html {
   letter-spacing: 1px !important
 }
 
+.form {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
 
 .form__content {
   padding: 10rem 0 15rem !important;
@@ -2653,6 +2679,7 @@ html {
   font-size: 20px;
   line-height: 30px;
   font-weight: 500;
+  margin-bottom: .7rem
 }
 
 .form__info--summit .tabs__tab:hover {
@@ -2729,7 +2756,7 @@ html {
   font-size: 14px;
   line-height: 21px;
   font-weight: 500;
-  transition: .3s ease-in-out
+  transition: .3s ease-in-out;
 }
 
 #allrecords .row-blocks-item.bg a {
@@ -2748,7 +2775,7 @@ html {
 }
 
 .row-blocks-item.bg:hover span {
-  color: #fee71d
+  color: #B211DA
 }
 
 .header__logo img {
@@ -2946,7 +2973,8 @@ html {
     font-size: 16px;
     line-height: 20px;
     color: rgba(255, 255, 255, .5);
-    text-transform: unset
+    text-transform: unset;
+    margin-top: 15px;
   }
 
   .face-id img {
@@ -3235,14 +3263,14 @@ html {
   border-bottom: 2px solid #d81a38
 }
 
+.num-line {
+  background: #020918;
+  padding: 80px 0 80px
+}
+
 .num-line-items {
   display: flex;
   justify-content: space-between
-}
-
-.num-line {
-  padding: 0;
-  background: #05172D;
 }
 
 .num-line-item {
@@ -3270,7 +3298,7 @@ html {
 .line--item {
   width: 100%;
   height: 6px;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/line-white.png) no-repeat, center;
+  background: rgba(255, 255, 255, .14)
 }
 
 .line-item-num img {
@@ -3293,35 +3321,17 @@ html {
 }
 
 .our-mission {
+  background: #020918;
   padding-bottom: 80px
-}
-
-.mission-line .container {
-  display: flex;
-  padding: 10rem 0;
-}
-
-.mission-line {
-  padding-bottom: 10rem;
-}
-
-.mission--line img {
-  width: 100%;
 }
 
 .our-mission-container {
   display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
-}
-
-.mission-container-t {
-  width: 80%;
-  padding-bottom: 4rem;
+  flex-direction: column
 }
 
 .our-mission--title {
-  padding-bottom: 30px
+  padding-bottom: 40px
 }
 
 .our-mission--title img {
@@ -3366,27 +3376,26 @@ html {
   font-weight: 500;
   color: rgba(255, 255, 255, .5);
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 28px;
-  padding-top: 40px;
+  letter-spacing: .5px;
+  font-size: 16px;
+  line-height: 30px
 }
 
 .mission--yellow-text {
   margin-top: 45px;
-  /* padding-left: 30px; */
-  width: 80%;
+  padding-left: 30px;
+  width: 75%;
   position: relative
 }
 
-/* .mission--yellow-text::before {
+.mission--yellow-text::before {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  width: 9px;
-  background: #fee71d;
-} */
+  width: 9px
+}
 
 .border {
   position: absolute;
@@ -3452,8 +3461,12 @@ html {
 .logo-anim {
   width: 25%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-end
+}
+
+.task-bg {
+  background: #020918;
+  padding-top: 10rem
 }
 
 .task-title {
@@ -3466,7 +3479,7 @@ html {
 }
 
 .task-title span {
-  color: #FF4545;
+  color: #fee71d;
   display: block;
   margin-bottom: 40px
 }
@@ -3560,7 +3573,15 @@ html {
 }
 
 .video-sum {
-  padding-top: 6rem
+  padding-top: 10rem
+}
+
+#btn-video {
+  top: 310px
+}
+
+#btn-video.test {
+  top: 560px
 }
 
 .dinner-bg {
@@ -3775,14 +3796,14 @@ html {
   text-transform: uppercase;
   color: #fff;
   position: relative;
-  margin-bottom: 80px
+  margin-bottom: 35px
 }
 
 
 .slider-sms {
   position: absolute;
   top: -60px;
-  right: 10px
+  right: 110px
 }
 
 .slider-arrow {
@@ -3901,6 +3922,10 @@ html {
     min-height: 460px
   }
 
+  .num-line {
+    padding: 80px 0 0
+  }
+
   .speakers-item.last .speaker-name {
     font-size: 20px;
     line-height: 26px
@@ -3924,6 +3949,10 @@ html {
   .our-mission--title p span,
   .yellow-text-title span {
     color: #fee71d
+  }
+
+  .our-mission--title img {
+    display: none
   }
 
   .our-mission--text,
@@ -4155,9 +4184,9 @@ html {
 }
 
 .first {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/bg-desktop-1.jpg) no-repeat;
-  background-size: cover;
-  background-position: bottom;
+  background: url(http://constructor.biz.ua/tilda-img/ums/bg.jpg) no-repeat, linear-gradient(180deg, #3f3d3e 0, #191718 100%);
+  background-size: unset;
+  background-position: top
 }
 
 .first--date::before {
@@ -4165,16 +4194,26 @@ html {
 }
 
 .first--date--items strong {
-  color: #F0CA00
+  color: #B211DA
 }
 
 
 .first--form-conteiner {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/form-top-red.png) no-repeat, url(http://constructor.biz.ua/tilda-img/ubds/form-middle-dark_yellow-button-bg.png) no-repeat 0 150px, #FFDE00;
+  background: url(http://constructor.biz.ua/tilda-img/ums/form-texture.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.desk--text-b,
+.first-right,
+.form__field input,
+.form__field input::placeholder {
+  color: #fff !important
 }
 
 .form__field input {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #fff
 }
 
 @media (min-width:1600px) {
@@ -4187,9 +4226,14 @@ html {
   background: unset
 }
 
+.first-left {
+  justify-content: flex-start;
+  padding-top: 13rem;
+}
+
 .first--logo {
-  margin-top: 4rem;
-  margin-bottom: 6rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .our-mission .container {
@@ -4202,15 +4246,32 @@ html {
 
 .mission--yellow-text {
   margin-top: 0;
+  padding-left: 0
 }
 
+.mission--yellow-text::before {
+  display: none
+}
+
+.num-line {
+  padding: 0 0 80px
+}
+
+.yellow-text-text {
+  margin-top: 50px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, .65);
+  text-transform: unset
+}
 
 .nums-items {
   margin-bottom: 90px
 }
 
 .item--title-line {
-  background: center / contain no-repeat url(http://constructor.biz.ua/tilda-img/ubds/line-yellow.png);
+  background: #B211DA
 }
 
 .num--item--text {
@@ -4228,12 +4289,10 @@ html {
 
 .num-mission {
   padding-bottom: 77px;
-  background: url(http://constructor.biz.ua/tilda-img/uas/lines.svg);
 }
 
-
 .yellow-text-text span {
-  color: #F0CA00
+  color: #B211DA
 }
 
 .container.mission {
@@ -4242,7 +4301,7 @@ html {
 
 @media(max-height:750px) {
   .first {
-    min-height: 800px;
+    min-height: 720px;
     height: 100%
   }
 }
@@ -4255,47 +4314,53 @@ html {
 
 .speaker-programm {
   padding: 77px 0 90px;
-  background-size: cover;
 }
 
 .speaker-name span.active {
-  color: #F0CA00
+  color: #B211DA
 }
 
 .program-container-item::before {
   display: none
 }
 
-.program-container .program-container-item {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/bg-desktop-1.jpg);
+.program-container {
+  max-width: 670px;
+  margin: 0
 }
 
 .program-container .program-container-item:nth-child(1) {
-  background-position: -210px -240px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -50px;
 }
 
 .program-container .program-container-item:nth-child(2) {
-  background-position: -210px -340px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -100px;
 }
 
 .program-container .program-container-item:nth-child(3) {
-  background-position: -210px -440px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -150px;
 }
 
 .program-container .program-container-item:nth-child(4) {
-  background-position: -210px -540px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -200px;
 }
 
 .program-container .program-container-item:nth-child(5) {
-  background-position: -210px -640px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -250px;
 }
 
 .program-container .program-container-item:nth-child(6) {
-  background-position: -210px -740px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
+  background-position: -300px;
 }
 
-.program-container .program-container-item:nth-child(7) {
-  background-position: -210px -840px;
+.program-container-item {
+  color: #fff
 }
 
 .program {
@@ -4357,7 +4422,7 @@ html {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 24px;
   color: #fff;
   margin-bottom: 20px;
   display: flex;
@@ -4400,7 +4465,7 @@ html {
 }
 
 .r-items li::before {
-  content: url(http://constructor.biz.ua/tilda-img/krs/bullet-r.svg);
+  content: url(http://constructor.biz.ua/tilda-img/ums/bullet-r.svg);
   display: block;
   top: -5px;
   position: relative;
@@ -4414,7 +4479,7 @@ html {
 .action--text-t span,
 .partners-title span,
 .program--title span {
-  color: #FF4545
+  color: #B211DA
 }
 
 .program---title-bottom {
@@ -4435,9 +4500,12 @@ html {
   margin: 50px 0 30px
 }
 
+.partners-bg {
+background: #050308;
+}
+
 .text-btn--trend {
-  background: url(http://constructor.biz.ua/tilda-img/uas/lines.svg), #F0CA00;
-  background-position: center;
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg);
   width: 280px;
   height: 64px;
   display: flex;
@@ -4446,20 +4514,25 @@ html {
 }
 
 #btn-video {
-  background: url(http://constructor.biz.ua/tilda-img/trends/new/play.svg);
+  background: url(http://constructor.biz.ua/tilda-img/ums/play.svg);
   background-repeat: no-repeat;
   background-size: cover
 }
 
 #btn-video.test {
-  top: 570px;
-  background: url(http://constructor.biz.ua/tilda-img/trends/new/paused.svg);
+  top: 460px;
+  background: url(http://constructor.biz.ua/tilda-img/ums/paused.svg);
   background-repeat: no-repeat;
   background-size: cover
 }
 
 .video-slider {
+  background: #191718;
   padding-bottom: 70px
+}
+
+.video-sum {
+  background: unset
 }
 
 .social {
@@ -4480,7 +4553,7 @@ html {
 }
 
 .social p span {
-  color: #F0CA00
+  color: #B211DA
 }
 
 .slick-prev {
@@ -4513,7 +4586,7 @@ html {
 }
 
 .counterStudy__number p span {
-  color: #F0CA00
+  color: #B211DA
 }
 
 .counterStudy__logos {
@@ -4631,29 +4704,30 @@ html {
 
 
 .form__right {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/form-bottom-dark-2.png) no-repeat 0 100%, url(http://constructor.biz.ua/tilda-img/ubds/form-bottom-dark-2.png) no-repeat 100% 0, #FEE71D;
+  background: url(http://constructor.biz.ua/tilda-img/ums/form-texture.jpg)
 }
 
+.tabs__tab:after {
+  background: url(http://constructor.biz.ua/tilda-img/ums/menu-texture.jpg)
+}
 
 .form__left .form__header:before {
   content: '';
-  background: url(http://constructor.biz.ua/tilda-img/ubds/line-red.png);
-  max-width: 100%;
-  background-position: center;
-  background-size: cover;
+  background: url(http://constructor.biz.ua/tilda-img/ums/form-texture.jpg);
+  max-width: 100%
 }
 
 .form__right .form__title {
-  color: #000;
+  color: #fff
 }
 
 .form__politic {
-  color: #05172D !important;
+  color: #fff !important;
   font-weight: 300
 }
 
 #allrecords .form__politic a {
-  color: #05172D !important
+  color: #fff !important
 }
 
 .form--line .form__title:last-child {
@@ -4684,6 +4758,7 @@ html {
   .container {
     overflow: visible
   }
+
 
   .program {
     flex-direction: column;
@@ -4779,7 +4854,7 @@ html {
   }
 
   .action--text-t span {
-    color: #F0CA00
+    color: #B211DA
   }
 
   .problems-l,
@@ -4815,8 +4890,8 @@ html {
 }
 
 .button.button--submit.send-form:hover {
-  color: #F0CA00 !important;
-  letter-spacing: 5px;
+  color: #000 !important;
+  letter-spacing: 4px;
 }
 
 .getcall__hover span {
@@ -4827,10 +4902,6 @@ html {
   word-break: normal !important
 }
 
-.partners-row,
-.partners-title {
-  display: none
-}
 
 .partners-action {
   padding-top: 10rem
@@ -4850,26 +4921,20 @@ html {
 }
 
 #allrecords {
-  background: url(http://constructor.biz.ua/tilda-img/ubds/bg-desktop-2.jpg) 0 820px no-repeat, url(http://constructor.biz.ua/tilda-img/ubds/bg-desktop-3.jpg) 0 2120px no-repeat, #05172D;
+  background: #050308;
 }
 
 .first--date--items span {
   position: relative;
 }
 
-.first--date--items span::before {
+.first--date--items span::after {
   content: '';
   height: 5px;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/line-red.png);
-  background-size: contain;
+  background: #B211DA;
   width: 100%;
   position: relative;
   display: inline-block;
-  top: -20px;
-}
-
-.first--date--items {
-  padding-top: 20px;
 }
 
 .package__flex .button.button--submit.send-form {
@@ -4879,6 +4944,16 @@ html {
 .package__flex .form__field input {
   border-bottom: 2px solid #000;
   color: #000 !important;
+}
+
+.package__flex .button.button--submit.send-form {
+  background: #B211DA !important;
+  color: #fff !important;
+}
+.package__flex .modal__info {
+  background: url(http://constructor.biz.ua/tilda-img/ums/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: -1050px -10px;
 }
 
 #rec142121590 {
@@ -4892,7 +4967,7 @@ html {
   }
 
   .first {
-    background: url(http://constructor.biz.ua/tilda-img/ubds/bg-mobile-1.jpg) no-repeat;
+    background: url(http://constructor.biz.ua/tilda-img/ums/bg-mobile.jpg) no-repeat, linear-gradient(180deg, #3f3d3e 0, #191718 100%);
     background-size: cover;
     background-position: top;
   }
@@ -4902,251 +4977,116 @@ html {
   }
 }
 
-.desk--text-b,
-.first-right,
-.form__field input,
-.form__field input::placeholder {
-  color: #000 !important;
+.desk--text-b {
+  opacity: 0.7;
 }
 
-.line-item-num p {
-  font-weight: 900;
-  font-size: 55px;
-  margin-right: 15px;
-  color: #FF4545;
-}
-
-.rotate {
-  transform: rotate(-90deg);
-}
-
-.programm {
-  position: relative;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/dotted-slash.png) no-repeat bottom;
-  padding-bottom: 3rem;
-}
-
-.slider-l--t:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 314px;
-  background: url(http://constructor.biz.ua/tilda-img/trends/new/roll.jpg);
-  background-position: 0 0;
-  animation: slide 50s linear infinite;
-}
-
-.l--b-tg span {
-  height: 50px;
-  width: 50px;
-  display: block;
-  background: url(http://constructor.biz.ua/tilda-img/trends/new/slider-tg.svg);
-  cursor: pointer;
-  transition: .3s ease-in-out;
-}
-
-.slider-title span {
-  color: #F0CA00;
-  display: block;
+.speakers .program--title {
+  text-align: left;
 }
 
 @media(max-width: 962px) {
-  .first .container {
-    max-height: 100%;
-  }
-
-  .our-mission--text,
-  .yellow-text-text {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .mission--yellow-text {
-    padding-top: 30px;
-  }
-
-  .line-item-num p {
-    margin-left: 15px;
-  }
-
-  .speaker-programm:after {
-    display: none;
-  }
-
-  .speaker-programm {
-    padding: 60px 0 0;
+  .speakers .program--title {
+    text-align: center;
+    margin-bottom: 10px;
   }
 }
 
 @media(min-width: 962px) {
   .speakers-item .right {
-    justify-content: flex-start;
-    padding-top: 60px;
+      justify-content: flex-start;
+      padding-top: 60px;
   }
 }
 
-@media(max-width: 962px) {
-  .mission-container-t {
-    width: 100%;
-  }
-
-  .programm:after {
-    display: none;
-  }
+#allrecords .row-blocks-item.bg a {
+  color: #fff !important;
+  opacity: 0;
 }
 
-.task-bg {
-  padding: 3rem 0 6rem;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/dashes-full.png) no-repeat;
+.row-blocks-item.bg span {
+  color: #B211DA;
 }
 
-.program--title .active {
-  color: #FF4545;
+#allrecords .row-blocks-item.bg:hover a {
+  opacity: 1;
 }
 
-.program .program--title {
-  padding-left: 68px;
-}
+/* map section */
 
-.program .program--title,
-.program .program--title::before {
-  position: relative;
-}
-
-.program .program--title::before {
-  content: '';
-  display: inline-block;
-  width: 55px;
-  height: 40px;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/yellow-slash.png) no-repeat;
+.map-bg {
+  padding: 11rem 0 7rem;
+  background: url(http://constructor.biz.ua/tilda-img/map/ums.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
-  left: -9px;
-  top: 9px;
 }
 
-.rotate-num p {
-  transform: rotate(-90deg);
+.map-bg .container {
+  max-width: 710px;
 }
 
-.program--title span {
-  margin-left: 20px;
+.map {
+  max-width: 515px;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 8px solid #B211DA;
 }
 
-.package .program--title {
-  position: relative;
-  font-size: 60px;
-  line-height: 75px;
-  letter-spacing: 0.03em;
+.map--item,
+.map-name {
   display: flex;
+}
+
+.map--item {
+  padding: 2.3rem 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-name {
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-width: 200px;
 }
 
-.package .program--title::before {
-  content: '';
-  width: 75px;
-  height: 89px;
-  position: relative;
-  display: inline-block;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/yellow-slash.png);
-  left: -25px;
+.map-name--item {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-left: 11px;
+  color: #FFFFFF;
 }
 
-.package .program--title::after {
-  content: '';
-  width: 75px;
-  height: 89px;
-  position: relative;
-  display: inline-block;
-  background: url(http://constructor.biz.ua/tilda-img/ubds/yellow-slash.png);
-  right: -25px;
+#allrecords .map-info-item,
+#allrecords a.map-info-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
 }
 
 @media(max-width: 962px) {
-  .num-line {
-    padding-top: 5rem;
+  .map-bg {
+      padding: 35rem 0 0;
+      background: url(http://constructor.biz.ua/tilda-img/map/ums-m.jpg) no-repeat;
+      background-position: top;
+      background-size: cover
   }
 
-  .mission-line .container {
-    padding: 10rem 2rem;
+  .map--item {
+      flex-direction: column;
   }
 
-  .program--title span {
-    margin-left: 0;
+  .map-info {
+      padding-left: 35px;
   }
 
-  .speakers .program--title {
-    text-align: center;
+  .map-name {
+      padding-bottom: 10px;
   }
-
-  .programm .program--title,
-  .package .program--title {
-    font-size: 30px;
-    line-height: 37px;
-    padding-left: 0;
-    text-align: center;
+  .map-name--item br {
+      display: none;
   }
-
-  .package .program--title span {
-    margin-left: 10px;
-  }
-
-  .program-container {
-    padding-top: 3rem;
-  }
-
-  .task-items {
-    padding-bottom: 0;
-  }
-
-  .task-bg,
-  .mission-line .container,
-  .programm {
-    padding: 3rem 0;
-  }
-
-  .mission-line .container {
-    padding: 3rem 2rem;
-  }
-
-  .program .program--title::before,
-  .speakers .program--title::before,
-  .package .program--title::before,
-  .package .program--title::after {
-    display: none;
-  }
-
-  .video-slider {
-    padding-bottom: 0;
-  }
-
-  .video-sum {
-    padding-top: 0;
-  }
-
-  .mission--line {
-    display: none;
-  }
-
-  .slider-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 1rem;
-  }
-
-  #allrecords {
-    background: url(http://constructor.biz.ua/tilda-img/ubds/bg-mobile-2.jpg) no-repeat 0px 1750px, url(http://constructor.biz.ua/tilda-img/ubds/bg-mobile-3.jpg) no-repeat 0px 3690px, #05172D;
-  }
-
-  .form {
-    background: url(http://constructor.biz.ua/tilda-img/ubds/bg-mobile-4.jpg) no-repeat bottom;
-  }
-}
-
-.num-line {
-  padding-top: 15px;
 }
