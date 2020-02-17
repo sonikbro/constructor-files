@@ -7602,10 +7602,16 @@ var originalMaskStr = '';
         }
 
         if (data.country == 'UA') {
-            opts.mask = '+389999999999';
+            opts.mask = '+ (380) 999999999';
             window.globalMask = opts.mask;
-        } else if (data.country == 'KZ') {
-            opts.mask = '+79999999999';
+        } else if ((data.country == 'KZ') || (data.country == 'RU')) {
+            opts.mask = '+ (7) 9999999999';
+            window.globalMask = opts.mask;
+        } else if (data.country == 'BY') {
+            opts.mask = '+ (375) 999999999';
+            window.globalMask = opts.mask;
+        }  else if (data.country == 'PL') {
+            opts.mask = '+ (48) 999999999';
             window.globalMask = opts.mask;
         } else {
             // opts.alias = "Regex";
