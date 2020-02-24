@@ -7602,7 +7602,7 @@ var originalMaskStr = '';
         }
 
         if (data.country == 'UA') {
-            opts.mask = '+ (380) 999999999';
+            opts.mask = '+ (38) 9999999999';
             window.globalMask = opts.mask;
         } else if ((data.country == 'KZ') || (data.country == 'RU')) {
             opts.mask = '+ (7) 9999999999';
@@ -7719,158 +7719,6 @@ var originalMaskStr = '';
 function checkPromoCode () {
     var location = window.location.href.replace(window.location.search,'');
     var codes = [
-        {
-            code: 'TEST',
-            value: 15,
-            percent: true,
-            enabled: [
-                'http://cfo.constructor.biz.ua/29-11-17/'
-            ]
-        },
-		{
-            code: 'webinar',
-            value: 1100,
-            percent: false,
-            enabled: [
-                "http://www.constructor.biz.ua/system-program/kiev/02-12-17/"
-            ]
-        },
-        {
-            code: 'TEST2',
-            value: 500,
-            percent: false,
-            enabled: [
-            ]
-        },
-        {
-            code: 'TEST3',
-            value: 400,
-            percent: false,
-            enabled: [
-
-            ]
-
-        },
-        {
-            code: 'retail',
-            value: 0,
-            percent: false,
-            enabled: [
-                "http://retail.bizconstructor.com/thanks.php"
-            ],
-            rules: function (landing_id) {
-                switch (landing_id) {
-                    case '711':
-                        landing_id = 750;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '712':
-                        landing_id = 751;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '713':
-                        landing_id = 752;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '714':
-                        landing_id = 753;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    default:
-                        $('[name=landing_id]').val(landing_id);
-                }
-            }
-        },
-		 {
-            code: 'joinposter',
-            value: 0,
-            percent: false,
-            enabled: [
-                "http://urs.bizconstructor.com/thanks.php"
-            ],
-            rules: function (landing_id) {
-                switch (landing_id) {
-                    case '522':
-                        landing_id = 571;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '523':
-                        landing_id = 572;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '533':
-                        landing_id = 574;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '525':
-                        landing_id = 573;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    default:
-                        $('[name=landing_id]').val(landing_id);
-                }
-            }
-        },
-        {
-            code: 'jetsetter',
-            value: 0,
-            percent: false,
-            enabled: [
-                "http://urs.bizconstructor.com/thanks.php"
-            ],
-            rules: function (landing_id) {
-                switch (landing_id) {
-                    case '522':
-                        landing_id = 571;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '523':
-                        landing_id = 572;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '533':
-                        landing_id = 574;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '525':
-                        landing_id = 573;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    default:
-                        $('[name=landing_id]').val(landing_id);
-                }
-            }
-        },
-        {
-            code: 'med',
-            value: 0,
-            percent: false,
-            enabled: [
-                "http://ums.bizconstructor.com/thanks.php"
-            ],
-            rules: function (landing_id) {
-                switch (landing_id) {
-                    case '782':
-                        landing_id = 773;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '783':
-                        landing_id = 775;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '784':
-                        landing_id = 777;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    case '525':
-                        landing_id = 573;
-                        $('[name=landing_id]').val(landing_id);
-                        break;
-                    default:
-                        $('[name=landing_id]').val(landing_id);
-                }
-            }
-        }
     ]
     $('[name="promocode"]').keyup(function(){
         var val = $(this).val().replace(' ', '').toUpperCase();
@@ -8113,20 +7961,12 @@ function initMegaTimer(timestamp) {
                     "effect": "none",
                     "space": "0",
                     "separator-margin": "0",
-                    "number-font-family": {
-                        "family": "Open Sans",
-                        "link": "<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>"
-                    },
                     "number-font-size": "36",
                     "number-font-color": "#0066cc",
                     "padding": "0",
                     "separator-on": true,
                     "separator-text": ":",
                     "text-on": true,
-                    "text-font-family": {
-                        "family": "Open Sans",
-                        "link": "<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>"
-                    },
                     "text-font-size": "13",
                     "text-font-color": "#a7a7a7"
                 }
