@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 	setBackground()
 });
 $(window).resize(setBackground)
@@ -10,7 +10,7 @@ function setBackground() {
 		$('.hero').css('background-image', 'url(' + $('.hero').data('img-lg') + ')')
 	}
 }
-$(".accorden-item__title").on("click", function () {
+$(".accorden-item__title").on("click", function() {
 	$(".accorden-item__title").removeClass("is-open"),
 		$(this).addClass("is-open");
 	var t = $(this).next();
@@ -30,7 +30,7 @@ function o(t, e) {
 			height: i
 		}, e)
 }
-$('.feed-button').on('click', function (e) {
+$('.feed-button').on('click', function(e) {
 	if (!$(this).prev('div').hasClass('feed-max')) {
 		$('.feed--text').removeClass('feed-max');
 		$(this).prev('div').toggleClass('feed-max');
@@ -41,13 +41,11 @@ $('.feed-button').on('click', function (e) {
 		$('.feed-button').html('Подробнее');
 	}
 });
-
 $(".program__item:first").addClass('program-item-block-max');
-$(".program__item").click(function () {
+$(".program__item").click(function() {
 	$(this).toggleClass('program-item-block-max');
 	$('.program__item').not(this).removeClass('program-item-block-max');
 });
-
 // $("#packageModal").click(function () {
 // 	$(".modal--itemsmob").addClass('active');
 // 	$(".modal--itemsmob-bg").addClass('on');
@@ -62,33 +60,24 @@ $(".program__item").click(function () {
 // 	}, 1000);
 // 	e.preventDefault();
 // });
-
-
-$('.footer a').click(function () {
+$('.footer a').click(function() {
 	$(this).target = "_blank";
 	window.open($(this).prop('href'));
 	return false;
 });
-
 // new footer production versioan
 $('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
-
 // custom for old footers
 $('.foter-foter .desktop').html('® Все права защищены, 2013–2020 Бизнес-Конструктор');
 $('.foter-foter .mobile p ~ p').html('2013–2020 Бизнес-Конструктор');
-
 setTimeout(() => {
 	$('.table-cell.day .tab-val').css("text-align", "center");
 }, 500);
-
-! function (i) {
+! function(i) {
 	var o, n;
-	i(".spoiler__title").on("click", function () {
+	i(".spoiler__title").on("click", function() {
 		o = i(this).parents(".spoiler--item"), n = o.find(".spoiler__info"),
-			o.hasClass("active_block") ? (o.removeClass("active_block"),
-				n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(),
-				o.siblings(".active_block").removeClass("active_block").children(
-					".spoiler__info").stop(!0, !0).slideUp())
+			o.hasClass("active_block") ? (o.removeClass("active_block"), n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(), o.siblings(".active_block").removeClass("active_block").children(".spoiler__info").stop(!0, !0).slideUp())
 	})
 }(jQuery);
 $('.spoiler--item:first .spoiler__title').click();
