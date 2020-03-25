@@ -1,0 +1,28 @@
+<!-- Блок з модальними попапом -->
+
+<div class="modal package__modal noti" id="notifi">
+    <div class="modal__overlay" data-modal-close="#notifi"></div>
+    <div class="package__content">
+        <div class="modal__close" data-modal-close="#notifi"><img
+                src="http://constructor.biz.ua/tilda-img/close-white.svg" alt=""></div>
+        <div class="package__flex">
+            <div class="problems-r">
+                <div class="r-title">Уважаемые клиенты</div>
+                <div class="r-items">
+                    Уважаемые клиенты, Кабинет министров Украины предложил ввести ограничение на проведение массовых мероприятий, в которых запланировано участие 200 и более человек.
+                    <br><br> В связи с беспокойством о здоровье наших клиентов компанией <br> <b>«Бизнес-Конструктор
+                        Украина»</b>
+                    было принято решение перенести <b>Всеукраинский Строительный Саммит.</b><br><br>Саммит переносится на <b>15 июля</b>. Все приобретенные билеты будут действительны на новую дату.<br>
+                    <div class="team-noti"> С заботой о вас,<br>команда «Бизнес-Конструктор». <br> Желаем всем
+                        крепкого здоровья!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(() => {
+        $('#notifi').addClass('modal--active');
+    }, 7000);
+</script>
