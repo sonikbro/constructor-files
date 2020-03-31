@@ -14,6 +14,6 @@ Constructor-files is a ready-made HTML5, JS, CSS code for creating desktop and m
 * http://owner.bizconstructor.com
 * http://top.bizconstructor.com/
 * http://systemworkshop.bizconstructor.com/
-* http://urs.bizconstructor.com
+* http://ubds.bizconstructor.com/
 * http://consulting.bizconstructor.com/team
 * http://strategy.bizconstructor.com
