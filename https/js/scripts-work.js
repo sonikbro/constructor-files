@@ -7977,7 +7977,7 @@ function initPromoHelp() {
 		'position': 'absolute',
 		'bottom': '2px',
 		'right': 0,
-		'background': 'url(http://cdn.bizconstructor.com/img/help-icon.min.svg) no-repeat center center',
+		'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
 		'cursor': 'pointer',
 		'width': $promo.outerHeight(),
 		'height': $promo.outerHeight(),
@@ -8125,7 +8125,7 @@ function initMegaTimer(timestamp) {
 	while (document.getElementById("timer" + _id)) _id = _id + "0";
 	$('[id^="timer"]').html("<div class='megaatimer__wrapper' id='timer" + _id + "' style='min-width:429px;height:73px;'></div>");
 	var _t = document.createElement("script");
-	_t.src = "http://megatimer.ru/timer/timer.min.js";
+	_t.src = "https://megatimer.ru/timer/timer.min.js";
 	var _f = function(_k) {
 		var l = new MegaTimer(_id, {
 			"view": [1, 1, 1, 1],
