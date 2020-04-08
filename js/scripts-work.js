@@ -8712,47 +8712,63 @@ $(document).ready(function () {
 
     $('body').append('<style>#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;} .timer-body-block { display: -webkit-box; display: -webkit-flex; display: -moz-box;display: -ms-flexbox;display: flex;font-family:Open Sans, sans-serif; font-weight: 300; } .table-cell:after { display: none !important; } /* [data-phone] { padding-left: 50px !important; } */ .phone_wrapper { position: relative; } .input__line { position: absolute; width: 43px; height: 27px; border-right: 1px solid #EDEDED; display: block; left: 0; top: 50%; transform: translateY(-50%); -webkit-background-size: 20px !important; background-size: 20px !important; background-position: 11px center !important; background-repeat: no-repeat !important; } </style>');
 
+    // $.getJSON('https://ipinfo.io', function (data) {
+   
+    //     var opts = {
+    //         mask: '',
+    //         oncomplete: checkValidPhone,
+    //         keypressEvent: checkValidPhone,
+    //         placeholder: '',
+    //         groupSeparator: ' ',
+    //         showMaskOnHover: false,
+    //     }
 
-    $.getJSON('https://ipinfo.io', function (data) {
-        // $('.input__line').css('background-image', 'url(https://lipis.github.io/flag-icon-css/flags/4x3/'+data.country.toLowerCase()+'.svg)');
+    //     if (data.country == 'UA') {
+    //         opts.mask = '+ (38) 9999999999';
+    //         window.globalMask = opts.mask;
+    //     } else if ((data.country == 'KZ') || (data.country == 'RU')) {
+    //         opts.mask = '+ (7) 9999999999';
+    //         window.globalMask = opts.mask;
+    //     } else if (data.country == 'BY') {
+    //         opts.mask = '+ (375) 999999999';
+    //         window.globalMask = opts.mask;
+    //     } else if (data.country == 'PL') {
+    //         opts.mask = '+ (48) 999999999';
+    //         window.globalMask = opts.mask;
+    //     } else {
+    //         opts.regex = "[0-9]{7,14}";
+    //         window.globalMask = opts.regex;
+    //         window.isRegexMask = true;
+    //     }
+    //     $('[data-phone]').each(function (index, el) {
+    //         var selector = document.querySelectorAll("[data-phone]");
 
-        var opts = {
-            mask: '',
-            oncomplete: checkValidPhone,
-            keypressEvent: checkValidPhone,
-            placeholder: '',
-            groupSeparator: ' ',
-            showMaskOnHover: false,
-        }
+    //         for (var i = 0; i < selector.length; i++) {
+    //             var im = new Inputmask(opts);
+    //             im.mask(selector[i]);
+    //         }
+    //     })
+    // })
 
-        if (data.country == 'UA') {
-            opts.mask = '+ (38) 9999999999';
-            window.globalMask = opts.mask;
-        } else if ((data.country == 'KZ') || (data.country == 'RU')) {
-            opts.mask = '+ (7) 9999999999';
-            window.globalMask = opts.mask;
-        } else if (data.country == 'BY') {
-            opts.mask = '+ (375) 999999999';
-            window.globalMask = opts.mask;
-        } else if (data.country == 'PL') {
-            opts.mask = '+ (48) 999999999';
-            window.globalMask = opts.mask;
-        } else {
-            // opts.alias = "Regex";
-            opts.regex = "[0-9]{7,14}";
-            window.globalMask = opts.regex;
-            window.isRegexMask = true;
-        }
-        $('[data-phone]').each(function (index, el) {
-            var selector = document.querySelectorAll("[data-phone]");
-
-            for (var i = 0; i < selector.length; i++) {
-                var im = new Inputmask(opts);
-                im.mask(selector[i]);
-            }
-        })
-    })
-
+    var opts = {
+		mask: '',
+		oncomplete: checkValidPhone,
+		keypressEvent: checkValidPhone,
+		placeholder: '',
+		groupSeparator: ' ',
+		showMaskOnHover: false,
+	}
+	// opts.alias = "Regex";
+	opts.regex = "[0-9]{7,14}";
+	window.globalMask = opts.regex;
+	window.isRegexMask = true;
+	$('[data-phone]').each(function(index, el) {
+		var selector = document.querySelectorAll("[data-phone]");
+		for (var i = 0; i < selector.length; i++) {
+			var im = new Inputmask(opts);
+			im.mask(selector[i]);
+		}
+	})
 
     $('[data-phone]').each(function (index, el) {
         $(this).focusout(checkValidPhone);
