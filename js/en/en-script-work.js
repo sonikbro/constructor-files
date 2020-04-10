@@ -7732,6 +7732,12 @@ $(document).ready(function() {
 			submitHandler: function(form, event) {
 				event.preventDefault();
 				var data = $(form).serialize();
+				var concatCode = $('.iti__selected-dial-code').text();
+				var concatTel = $(form).find('[data-phone]').val();
+				var doneNum = +concatCode + concatTel;
+				$('.iti__selected-dial-code').css("display", "none");
+				$('#phone').css("padding-left", "60px");
+				$('#phone').val(doneNum);
 				var phone = $(form).find('[data-phone]');
 				var url = $(form).attr('action') || 'amo.php';
 				if ($('.zoho_url').length) {
@@ -7798,7 +7804,7 @@ $(document).ready(function() {
 		showMaskOnHover: false,
 	}
 	// opts.alias = "Regex";
-	opts.regex = "[0-9]{7,14}";
+	opts.regex = "[0-9, +]{7,17}";
 	window.globalMask = opts.regex;
 	window.isRegexMask = true;
 	$('[data-phone]').each(function(index, el) {
