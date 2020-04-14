@@ -1,31 +1,25 @@
 <script>
-  // Дата мероприятия
-  var cDate = 'date';
+  // Впишите ваше значение в ' ... '
+  window.onload = function () {
+    // Дата мероприятия
+    var cDate = 'date',
 
-  // Длительность 
-  var cDuration = 'duration';
+      // Длительность 
+      cDuration = 'duration',
 
-  // Место проведения
-  var cLocation = 'location';
+      // Landing id
+      cLandingId = 'id',
 
-  // Landing id
-  var cLandingId = 'id';
+      // es_mail_id
+      cMail_id = 'es_mail_id',
 
-  // Валюта
-  var cCurrency = 'Currency';
+      // es_id
+      cEs_id = 'cEs_id',
 
-  // Номер телефона
-  var cNumber = 'num';
+      // success_url
+      cSuccess_url = 'success_url';
 
-  // es_mail_id
-  var cMail_id = 'es_mail_id';
 
-  // es_id
-  var cEs_id = 'cEs_id';
-
-  // success_url
-  var cSuccess_url = 'success_url';
-
-  // error_url
-  var cError_url = 'error_url';
+    if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)};
+  }
 </script>
