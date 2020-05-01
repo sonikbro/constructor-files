@@ -12,6 +12,8 @@ var table = [
 var dateTime = new Date(),
     currentTime = +(dateTime.getDate() + '' + dateTime.getHours());
 
+console.log(currentTime);
+
 const found = table.find(el => el.key > currentTime);
-$tableDate = $('.cDate').text(found.date);
-$tableTime = $('.cTime').text(found.time);
+$('.cDate').text(found.date);
+$('.cTime').text(found.time);
