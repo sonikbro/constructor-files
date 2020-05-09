@@ -8751,7 +8751,7 @@ $(document).ready(function () {
     // })
 
     var opts = {
-		mask: '',
+		mask: '+99999999999999',
 		oncomplete: checkValidPhone,
 		keypressEvent: checkValidPhone,
 		placeholder: '',
@@ -8840,7 +8840,7 @@ $(document).ready(function () {
 
     function checkValidPhone() {
 
-        originalMaskStr = originalMaskStr.replace(/#/g, '9').replace(/ /g, '').replace('+', '');
+        // originalMaskStr = originalMaskStr.replace(/#/g, '9').replace(/ /g, '').replace('+', '');
         var mask = originalMaskStr;
         var maskedString = $(this).val();
         var isValid;
