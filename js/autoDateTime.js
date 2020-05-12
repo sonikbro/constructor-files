@@ -1,17 +1,4 @@
-var table = [ 
-    { key: '612', date: '6 мая', time: '12:00'},
-    { key: '619', date: '6 мая', time: '19:00'},
-    { key: '712', date: '7 мая', time: '12:00'},
-    { key: '719', date: '7 мая', time: '19:00'},
-    { key: '812', date: '8 мая', time: '12:00'},
-    { key: '819', date: '8 мая', time: '19:00'},
-    { key: '912', date: '9 мая', time: '12:00'},
-    { key: '919', date: '9 мая', time: '19:00'},
-
-    { key: '1012', date: '10 мая', time: '12:00'},
-    { key: '1019', date: '10 мая', time: '19:00'},
-    { key: '1112', date: '11 мая', time: '12:00'},
-    { key: '1119', date: '11 мая', time: '19:00'},
+var table = [
     { key: '1212', date: '12 мая', time: '12:00'},
     { key: '1219', date: '12 мая', time: '19:00'},
     { key: '1312', date: '13 мая', time: '12:00'},
@@ -55,10 +42,9 @@ var table = [
     { key: '3119', date: '31 мая', time: '19:00'},
  ];
 
-var dateTime = new Date(),
-    currentTime = +(dateTime.getDate() + '' + dateTime.getHours());
-
-console.log(currentTime);
+ dateTime = new Date,
+ zeroHours = dateTime.getHours(),
+ currentTime = +(dateTime.getDate() + "" + ("0" + zeroHours).slice(-2));
 
 const found = table.find(el => el.key > currentTime);
 $('.cDate').text(found.date);
