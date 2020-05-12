@@ -8751,7 +8751,7 @@ $(document).ready(function () {
     // })
 
     var opts = {
-		mask: '+99999999999999',
+		mask: '',
 		oncomplete: checkValidPhone,
 		keypressEvent: checkValidPhone,
 		placeholder: '',
@@ -8776,7 +8776,7 @@ $(document).ready(function () {
         var check = false;
         $(this).on('keypress', function (e) {
             if (e.key == '0' && $(this).val().length == 4) {
-                $(this).val(globalMask);
+                $(this).val();
             }
         });
     });
@@ -8841,7 +8841,7 @@ $(document).ready(function () {
     function checkValidPhone() {
 
         // originalMaskStr = originalMaskStr.replace(/#/g, '9').replace(/ /g, '').replace('+', '');
-        var mask = originalMaskStr;
+        // var mask = originalMaskStr;
         var maskedString = $(this).val();
         var isValid;
 
