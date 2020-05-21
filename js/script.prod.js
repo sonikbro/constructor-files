@@ -140,6 +140,12 @@ $(".container--item").click(function () {
     $(this).toggleClass('container--item-max');
     $('.container--item').not(this).removeClass('container--item-max');
 });
+
+$(".program__item").click(function () {
+	$(this).toggleClass('program-item-block-max');
+	$('.program__item').not(this).removeClass('program-item-block-max');
+});
+
 $('.footer a').click(function () {
     $(this).target = "_blank";
     window.open($(this).prop('href'));
