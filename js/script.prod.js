@@ -164,3 +164,8 @@ $('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
     })
 }(jQuery);
 $('.spoiler--item:first .spoiler__title').click();
+
+
+// footer change url terms-conditions
+$('.footer-col.second-col .footer-col-list .list-footer a').last().text('Публичная оферта UA');
+$('.footer-col.second-col .footer-col-list .list-footer').last().after("<li class='list-footer'><a href='http://terms-conditions.bizconstructor.com/kz' target='_blank'>Публичная оферта KZ</a></li>");
