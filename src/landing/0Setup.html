@@ -1,6 +1,6 @@
 <script>
   // Впишите ваше значение в ' ... '
-  $(document).ready(function(){
+  $(document).ready(function () {
     // Дата мероприятия
     var cDate = 'date',
 
@@ -9,6 +9,15 @@
 
       // Landing id
       cLandingId = 'id',
+
+      // Landing id Easy
+      idPackageEasy = 'id',
+
+      // Landing id Standart
+      idPackageStandart = 'id',
+
+      // Landing id Big
+      idPackageBig = 'id',
 
       // es_mail_id
       cMail_id = 'es_mail_id',
@@ -20,6 +29,7 @@
       cSuccess_url = 'success_url';
 
 
-    if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)};
+ if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (idPackageEasy !=='id'){ $(".tabs__tab.easy").attr("data-id", idPackageEasy)}; if (idPackageStandart !=='id'){ $(".tabs__tab.standart").attr("data-id", idPackageStandart)}; if (idPackageBig !=='id'){ $(".tabs__tab.big").attr("data-id", idPackageBig)};
+
   });
 </script>
