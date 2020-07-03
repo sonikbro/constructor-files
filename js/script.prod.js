@@ -24,7 +24,7 @@ var LP = {
             }), $("[data-modal-close]").click(function (t) {
                 t.preventDefault(), LP.CORE.closeModal($(this).data("modal-close"))
             }), $(".tabs__tab, [data-id]").click(function () {
-                $(".tabs__tab").removeClass("tabs__tab--active"), $(this).addClass("tabs__tab--active"), LP.CORE.selectPackage($(this))
+                $(".tabs__tab").removeClass("tabs__tab--active"), $(this).not('.package_price').addClass("tabs__tab--active"), LP.CORE.selectPackage($(this))
             })
         },
         loadPrice: function () {
@@ -73,7 +73,7 @@ var LP = {
             return n
         },
         setActivaButtonsByID: function (t) {
-            $("[data-id]").removeClass("active__button__id tabs__tab--active"), $('[data-id="' + t + '"]').addClass("active__button__id tabs__tab--active")
+            $("[data-id]").not('.package_price').removeClass("active__button__id tabs__tab--active"), $('[data-id="' + t + '"]').not('.package_price').addClass("active__button__id tabs__tab--active")
         },
         setPriceThanks: function (t, e, a) {
             var n;
