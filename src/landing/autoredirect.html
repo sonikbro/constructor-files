@@ -1,0 +1,40 @@
+<script>
+    let table = [{
+                key: '0608',
+                url: 'https://online.bizconstructor.com/room/ua_5dw_1d'
+
+            },
+            {
+                key: '0708',
+                url: 'https://online.bizconstructor.com/room/ua_5dw_2d'
+            },
+            {
+                key: '0808',
+                url: 'https://online.bizconstructor.com/room/ua_5dw_3d'
+            },
+            {
+                key: '0908',
+                url: 'http://online.bizconstructor.com/room/ua_5dw_4d'
+            },
+            {
+                key: '1008',
+                url: 'https://online.bizconstructor.com/room/ua_5dw_5d'
+            }, {
+                key: '1108',
+                url: 'https://online.bizconstructor.com/room/ua_irb'
+            },
+        ],
+        dateTime = new Date,
+        zeroHours = dateTime.getHours(),
+        currentTime = +(dateTime.getDate() + "" + ("0" + zeroHours).slice(-2));
+
+    const found = table.find(el => el.key > currentTime);
+
+
+    let utm = location.search,
+        url = new URL(found.url);
+
+    url.search = utm;
+
+    location.replace(url);
+</script>
