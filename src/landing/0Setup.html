@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/owner/irb-package.css">
+<!--Настройка лендинга-->
+
+<link rel="stylesheet" href="">
 
 <script>
     // Впишите ваше значение в ' ... '
@@ -31,10 +33,10 @@
             cSuccess_url = 'success_url';
 
 
- if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (idPackageEasy !=='id'){ $(".easyprice").attr("data-id", idPackageEasy)}; if (idPackageStandart !=='id'){ $(".standartprice").attr("data-id", idPackageStandart)}; if (idPackageBig !=='id'){ $(".bigprice").attr("data-id", idPackageBig)};
+ if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='es_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (idPackageEasy !=='id'){ $(".easyprice").attr("data-id", idPackageEasy)}; if (idPackageStandart !=='id'){ $(".standartprice").attr("data-id", idPackageStandart)}; if (idPackageBig !=='id'){ $(".bigprice").attr("data-id", idPackageBig)};
 
 // Установка цен на пакетах 
-let data=LP.CORE.getSearchJson(); console.log(data); LP.CORE.getPriceByID(data.landing_id); $('.package_price').each(function (i, el){ LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this).find('.price-discount-big'))});
+let data=LP.CORE.getSearchJson(); LP.CORE.getPriceByID(data.landing_id); $('.package_price').each(function (i, el){ LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this).find('.price-discount-big'))});
 
     });
 </script>
