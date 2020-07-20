@@ -176,3 +176,9 @@ $(".form__contact span").each(function() {
     text = text.replace("Или напишите нам письмо:", "Или напишите письмо:");
     $(this).text(text);
 });
+
+// footer contact change UA address
+$('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(1) p:nth-child(2)').html('Киев, Боричев Ток, 35В' + '<br style="display: block">' + 'Platforma Fortuna');
+
+$(".form__contact a[href='https://goo.gl/maps/z4gUF1AKAJRSFfge8").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
+$(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
