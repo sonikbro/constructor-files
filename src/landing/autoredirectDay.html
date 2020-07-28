@@ -1,0 +1,49 @@
+<script>
+    let table = [{
+          // ПН
+          key: '2',
+          url: 'https://online.bizconstructor.com/room/eastru_5dw_1d'
+        },
+        {
+          // ВТ
+          key: '3',
+          url: 'https://online.bizconstructor.com/room/eastru_5dw_2d'
+        },
+        {
+          // СР
+          key: '4',
+          url: 'https://online.bizconstructor.com/room/eastru_5dw_3d'
+        },
+        {
+          // ЧТ
+          key: '5',
+          url: 'https://online.bizconstructor.com/room/eastru_5dw_4d'
+        },
+        {
+          // ПТ
+          key: '6',
+          url: 'https://online.bizconstructor.com/room/eastru_5dw_5d'
+        }, {
+          // СБ
+          key: '7',
+          url: 'https://owner.bizconstructor.com/irb_offerru'
+        }
+      ],
+      dateTime = new Date,
+      zeroHours = dateTime.getDay();
+  
+    let utm = location.search,
+      url = '';
+  
+    // Проверка на ВС
+    if (zeroHours == 0) {
+      url = new URL('https://owner.bizconstructor.com/irb_offerru');
+    } else {
+      const found = table.find(el => el.key > zeroHours);
+      url = new URL(found.url);
+    }
+  
+    // Редирект для ПН-СБ
+    url.search = utm;
+    location.replace(url);
+  </script>
