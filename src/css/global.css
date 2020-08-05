@@ -1,9 +1,13 @@
 /* *********************************************************************************** */
 /* root style */
 :root {
-    --main-color: #0066cc;
-    --main-dark-color: #263238;
-    --main-sub-color: #212121;
+    --main-color: #0270D4;
+    --main-dark-color: #454545;
+    --main-sub-color: #6B6B6B;
+    --dark-color: #000000;
+    --white-color: #ffffff;
+
+
     --fs-text-title: 46px;
     --fs-text-content: 21px;
     --pd-dsection: 60px 0;
@@ -12,49 +16,55 @@
 
 /* *********************************************************************************** */
 /* flex style */
+
 .flex {
-    display: flex;
+    display: flex
 }
 
 .direction--column {
-    flex-direction: column;
+    flex-direction: column
 }
 
 .direction--row {
-    flex-direction: row;
+    flex-direction: row
 }
 
 .space-between {
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .space-around {
-    justify-content: space-around;
+    justify-content: space-around
 }
 
 .justify-center {
-    justify-content: center;
+    justify-content: center
 }
 
 .align-center {
-    align-items: center;
+    align-items: center
 }
 
 .flex-start {
-    align-items: flex-start;
+    align-items: flex-start
 }
 
-@media(min-width: 768px) {
+.wrap {
+    flex-wrap: wrap;
+}
+
+@media(min-width:768px) {
     .direction--mcolumn--drow {
-        flex-direction: row;
+        flex-direction: row
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width:768px) {
     .direction--mcolumn--drow {
-        flex-direction: column;
+        flex-direction: column
     }
 }
+
 
 /* *********************************************************************************** */
 /* Padding style */
@@ -85,10 +95,22 @@ h6.title {
     font-weight: 500;
 }
 
-.fw700 {
-    font-weight: 700;
-}
-
 .fw900 {
     font-weight: 900;
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.w100 {
+    width: 100%;
 }
