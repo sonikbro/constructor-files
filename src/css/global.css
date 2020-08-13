@@ -1,15 +1,11 @@
 /* *********************************************************************************** */
 /* root style */
 :root {
-    --main-color: #0270D4;
+    --main-color: #0066cc;
     --main-dark-color: #454545;
     --main-sub-color: #6B6B6B;
     --dark-color: #000000;
-    --white-color: #ffffff;
-
-
-    --fs-text-title: 46px;
-    --fs-text-content: 21px;
+    --white-color: #fff;
     --pd-dsection: 60px 0;
     --pd-msection: 30px 0
 }
@@ -33,10 +29,6 @@
     justify-content: space-between
 }
 
-.space-around {
-    justify-content: space-around
-}
-
 .justify-center {
     justify-content: center
 }
@@ -49,10 +41,6 @@
     align-items: flex-start
 }
 
-.wrap {
-    flex-wrap: wrap;
-}
-
 @media(min-width:768px) {
     .direction--mcolumn--drow {
         flex-direction: row
@@ -63,40 +51,70 @@
     .direction--mcolumn--drow {
         flex-direction: column
     }
-}
 
-
-/* *********************************************************************************** */
-/* Padding style */
-@media(max-width: 768px) {
     .pd-main {
         padding: var(--pd-msection)
     }
-}
 
-@media(min-width: 768px) {
-    .pd-main {
-        padding: var(--pd-dsection)
+    .deskonly {
+        display: none;
+        visibility: hidden
     }
 }
-
 
 /* *********************************************************************************** */
 /* Font style */
 h6.title {
-    font-size: var(--fs-text-title);
+    font-size: 30px;
+    line-height: 36px
 }
 
-.fw400 {
-    font-weight: 400;
+.title--main {
+    margin-bottom: 40px
 }
 
-.fw500 {
-    font-weight: 500;
+@media(min-width:768px) {
+    .pd-main {
+        padding: var(--pd-dsection)
+    }
+
+    h6.title {
+        font-size: 34px;
+        line-height: 41px
+    }
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+p.additional-text {
+    font-size: 18px;
+    line-height: 25px
+}
+
+@media(min-width:768px) {
+    p.additional-text {
+        font-size: 22px;
+        line-height: 29px
+    }
+}
+
+.fs14-lh17 {
+    font-size: 14px;
+    line-height: 17px
 }
 
 .fw900 {
-    font-weight: 900;
+    font-weight: 900
 }
 
 .uppercase {
@@ -104,13 +122,17 @@ h6.title {
 }
 
 .absolute {
-    position: absolute;
+    position: absolute
 }
 
 .relative {
-    position: relative;
+    position: relative
 }
 
 .w100 {
-    width: 100%;
+    width: 100%
+}
+
+.h100 {
+    height: 100%
 }
