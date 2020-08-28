@@ -1,9 +1,9 @@
 <!-- Форма с ценой и пакетами-->
-<div class="form" id="form">
+<div class="form pd-main" id="form">
     <div class="container">
-        <div class="form__content">
+        <div class="form__content flex direction--mcolumn--drow">
             <div class="form__left">
-                <div class="form__header">
+                <div class="form__header flex align-center">
                     <!-- Шапка форми -->
                     <div class="form__flag"><img src="https://forstas.bizconstructor.com/migrate/flag.ua.svg" alt="">
                     </div>
@@ -13,20 +13,19 @@
                     </div>
                     <div class="form__title cDate"></div> <!-- Дата проведення -->
                 </div>
-                <div class="form__info form__info--tabs">
-                    <div class="tabs">
-                        <div class="tabs__tab easyprice active__button__id tabs__tab--active" data-id="">
-                            <span>online</span></div>
-                        <div class="tabs__tab standartprice" data-id="">
-                            <span>standard</span></div>
-                        <div class="tabs__tab bigprice" data-id=""><span>premium</span></div>
+                <div class="form__info--tabs">
+                    <div class="tabs flex direction--mcolumn--drow">
+                        <div class="tabs__tab fw500 standard_price" data-id=""><span>standard</span></div>
+                        <div class="tabs__tab fw500 premium_price" data-id=""><span>premium</span></div>
                     </div>
                 </div>
                 <div class="form__info">
-                    <div class="form__info_price"><span>Полная стоимость:</span><span><strong data-total-price=""
-                                class="count-price">ошибка</strong></span></div>
-                    <div class="form__info_price form__info_price--blue"><span>Стоимость со
-                            скидкой:</span><span><strong data-price="" class="count-price">ошибка</strong></span>
+                    <div class="form__info_price flex align-center space-between wrap"><span>Полная
+                            стоимость:</span><span><strong class="count-price" data-total-price="">ошибка</strong></span>
+                    </div>
+                    <div class="form__info_price form__info_price--blue flex align-center space-between wrap">
+                        <span>Стоимость со скидкой:</span><span><strong class="count-price"
+                                data-price="">ошибка</strong></span>
                         <p>при оплате до <span data-deadline="">ошибка</span></p>
                     </div>
                     <div class="form__timer">
@@ -80,12 +79,19 @@
                     <input type="hidden" name="success_url" value="" autocomplete="off">
                     <input type="hidden" name="error_url" value="" autocomplete="off">
                     <input type="hidden" name="redirect" value="false" autocomplete="off">
+
+                    <!-- use only with payment  -->
                     <input type="hidden" name="to_payment" value="true" autocomplete="off">
-                    <!-- use only with payment fondy -->
                     <input name="payment_system" type="hidden" value="fondy" />
                     <input type="hidden" name="f_m_id" value="1452337" />
 
-                    <div class="form__button"><button class="button button--submit send-form">Оплатить</button>
+                    <button class="button button--submit send-form">Принять участие
+                    </button>
+                    <div class="form__politic">Нажимая кнопку «Принять участие», я даю согласие на обработку моих
+                        персональных данных согласно <a href="http://privacy.bizconstructor.com/"
+                            target="_blank">Политике
+                            конфиденциальности</a>. <a href="http://refund.bizconstructor.com/" target="_blank">Политика
+                            возврата</a>
                     </div>
                 </form>
             </div>

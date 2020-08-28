@@ -14,15 +14,11 @@
 /* flex style */
 
 .flex {
-    display: flex
+    display: flex !important
 }
 
 .direction--column {
     flex-direction: column
-}
-
-.direction--row {
-    flex-direction: row
 }
 
 .space-between {
@@ -37,8 +33,8 @@
     align-items: center
 }
 
-.flex-start {
-    align-items: flex-start
+.wrap {
+    flex-wrap: wrap
 }
 
 @media(min-width:768px) {
@@ -65,22 +61,32 @@
 /* *********************************************************************************** */
 /* Font style */
 h6.title {
-    font-size: 30px;
-    line-height: 36px
+    font-size: 28px;
+    line-height: 32px
 }
 
 .title--main {
-    margin-bottom: 40px
+    margin-bottom: 30px
 }
 
 @media(min-width:768px) {
+    h6.title {
+        font-size: 30px;
+        line-height: 36px
+    }
+
     .pd-main {
         padding: var(--pd-dsection)
     }
 
     h6.title {
-        font-size: 34px;
-        line-height: 41px
+        font-size: 35px;
+        line-height: 42px
+    }
+
+    p.additional-text {
+        font-size: 18px;
+        line-height: 24px
     }
 }
 
@@ -97,20 +103,22 @@ h6.title {
 }
 
 p.additional-text {
-    font-size: 18px;
-    line-height: 25px
-}
-
-@media(min-width:768px) {
-    p.additional-text {
-        font-size: 22px;
-        line-height: 29px
-    }
+    font-size: 16px;
+    line-height: 20px
 }
 
 .fs14-lh17 {
     font-size: 14px;
     line-height: 17px
+}
+
+.fs18-lh22 {
+    font-size: 18px;
+    line-height: 22px
+}
+
+.fw500 {
+    font-weight: 500
 }
 
 .fw900 {
@@ -133,6 +141,8 @@ p.additional-text {
     width: 100%
 }
 
-.h100 {
-    height: 100%
+@media(min-width:768px) {
+    .mobonly {
+        display: none
+    }
 }

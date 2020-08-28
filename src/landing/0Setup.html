@@ -3,48 +3,42 @@
 <link rel="stylesheet" href="">
 
 <script>
-    // Впишите ваше значение в ' ... '
-    $(document).ready(function () {
-        // Дата мероприятия
-        let cDate = 'date',
+// Впишите ваше значение в ' ... '
+$(document).ready(function () {
+    // Дата мероприятия
+    let cDate = 'date',
 
-            // Длительность 
-            cDuration = 'duration',
+        // Landing id // Standard
+        cLandingId = 'id',
+        cLandingIdPremium = 'id',
 
-            // Landing id
-            cLandingId = 'id',
+        // es_mail_id
+        cMail_id = 'es_mail_id',
 
-            // Landing id Easy
-            idPackageEasy = 'id',
+        // es_id
+        cEs_id = 'es_id',
 
-            // Landing id Standart
-            idPackageStandart = 'id',
-
-            // Landing id Big
-            idPackageBig = 'id',
-
-            // es_mail_id
-            cMail_id = 'es_mail_id',
-
-            // es_id
-            cEs_id = 'es_id',
-
-            // success_url
-            cSuccess_url = 'success_url';
+        // success_url, error_url
+        cSuccess_url = 'success_url';
 
 
- if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cDuration !=='duration'){ $('.cDuration').each(function (){ $(this).html(cDuration);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='es_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)}; if (idPackageEasy !=='id'){ $(".easyprice").attr("data-id", idPackageEasy)}; if (idPackageStandart !=='id'){ $(".standartprice").attr("data-id", idPackageStandart)}; if (idPackageBig !=='id'){ $(".bigprice").attr("data-id", idPackageBig)};
+// Проверка данных с универсального блока (Удаем тут, если удалили с блока)
+ if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId); $(".standard_price").attr("data-id", cLandingId)}; if (cLandingIdPremium !=='id'){ $(".premium_price").attr("data-id", cLandingIdPremium)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)};
 
 // Установка цен на пакетах 
-let data=LP.CORE.getSearchJson(); LP.CORE.getPriceByID(data.landing_id); $('.package_price').each(function (i, el){ LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this).find('.price-discount-big'))});
+ let data=LP.CORE.getSearchJson(); LP.CORE.getPriceByID(data.landing_id); $('.package_price').each(function (i, el){ LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this) .find('.price-discount-big'));});
 
-    });
+// Модальная кнопка на телефонах
+ let target=$("#form"), targetPos=target.offset().top, winHeight=$(window).height(), scrollToElem=targetPos - winHeight; $(window).scroll((function (){ $(this).scrollTop() >scrollToElem ? $(" #fixed-btn").addClass("hiden") :$(" #fixed-btn").removeClass( "hiden")}));
+
+
+});
 </script>
 
 <style>
 /* Выбор валюты
 Впишите символ, добавляя перед ним пробел */
-    .count-price:after{
-        content: " ₸";
-    }
+.count-price:after {
+    content: " ₸";
+}
 </style>
