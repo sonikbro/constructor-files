@@ -1,18 +1,12 @@
-/* *********************************************************************************** */
-/* root style */
 :root {
-    --main-color: #0066cc;
-    --main-dark-color: #454545;
-    --main-sub-color: #6B6B6B;
+    --main-color: #263238;
+    --main-sub-color: #7F5AF0;
+    --main-sub-text: #7C7C7C;
     --dark-color: #000000;
     --white-color: #fff;
     --pd-dsection: 60px 0;
     --pd-msection: 30px 0
 }
-
-/* *********************************************************************************** */
-/* flex style */
-
 .flex {
     display: flex !important
 }
@@ -58,8 +52,10 @@
     }
 }
 
-/* *********************************************************************************** */
-/* Font style */
+.sub-color {
+    color: var(--main-sub-color)
+}
+
 h6.title {
     font-size: 28px;
     line-height: 32px
@@ -112,9 +108,18 @@ p.additional-text {
     line-height: 17px
 }
 
+.fs16-lh22 {
+    font-size: 16px;
+    line-height: 22px
+}
+
 .fs18-lh22 {
     font-size: 18px;
     line-height: 22px
+}
+
+.fw400 {
+    font-weight: 400
 }
 
 .fw500 {
@@ -139,6 +144,20 @@ p.additional-text {
 
 .w100 {
     width: 100%
+}
+
+.h100 {
+    height: 100%;
+}
+
+.object-fit {
+    object-fit: cover;
+}
+
+.bg-center-norepeat-contain {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain
 }
 
 @media(min-width:768px) {
