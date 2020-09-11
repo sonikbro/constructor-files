@@ -1,0 +1,38 @@
+<section class="modals"></section>
+
+<script>
+    function generateModale() {
+        for (let i = 0; i < moduleItems.length; i++) {
+            let moduleLiModal = [];
+
+            moduleItems[i].item_list.forEach(item_list => {
+                moduleLiModal.push(`<li class="module-item__list_item">${item_list}</li>`);
+            });
+
+            let myListModal = moduleLiModal.join('');
+
+            $('.modals').append(`
+            <div class="modal package__modal flex justify-center" id="day-${i + 1}">
+                <div class="modal__overlay" data-modal-close="#day-${i + 1}"></div>
+                <div class="package__content flex align-center relative h100">
+                    <div class="modal__close" data-modal-close="#day-${i + 1}"><img
+                            src="https://forstas.bizconstructor.com/migrate/close-white.svg" alt=""></div>
+                    <div class="module-item module-item-modal">
+                        <div class="module-item-top">
+                            <span class="module__day uppercase relative fw900">день ${i + 1}</span>
+                            <h6 class="module__title">${moduleItems[i].title}</h6>
+                        </div>
+                        <ul class="module-item__list">
+                            ${myListModal}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            `);
+        }
+    };
+
+    $((window).width() > 768) {
+        generateModale();
+    };
+</script>
