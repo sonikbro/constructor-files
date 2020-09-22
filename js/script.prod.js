@@ -146,7 +146,8 @@ $(".program__item").click(function () {
 	$('.program__item').not(this).removeClass('program-item-block-max');
 });
 
-$('.footer a').click(function () {
+// open link with taget
+$('.footer a, .form__contact a').click(function () {
     $(this).target = "_blank";
     window.open($(this).prop('href'));
     return false;
