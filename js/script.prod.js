@@ -112,6 +112,31 @@ function setBackground() {
     }
 };
 
+
+// fondy autochange id
+const fondyMerchant = document.querySelectorAll('input[name="f_m_id"]');
+
+function setMerchant() {
+    fondyMerchant.forEach(function (item) {
+        // Программы
+            if (item.value == 'fondy_pr') {
+                item.value = '1452337';
+            }
+            // Самитты
+            else if (item.value == 'fondy_sm') {
+                item.value = '1439508';
+            }
+            // ПМ, МК
+            else if (item.value == 'fondy_mk_pm') {
+                item.value = '1450447';
+            }
+        });
+};
+
+if (!fondyMerchant.length == 0) {
+    setMerchant();
+};
+
 // accordeon section items
 $(".accorden-item__title").on("click", function () {
     $(".accorden-item__title").removeClass("is-open"),
@@ -133,18 +158,6 @@ function o(t, e) {
             height: i
         }, e)
 };
-
-// Program items
-$(".container--item:first").addClass('container--item-max');
-$(".container--item").click(function () {
-    $(this).toggleClass('container--item-max');
-    $('.container--item').not(this).removeClass('container--item-max');
-});
-
-$(".program__item").click(function () {
-	$(this).toggleClass('program-item-block-max');
-	$('.program__item').not(this).removeClass('program-item-block-max');
-});
 
 // open link with taget
 $('.footer a, .form__contact a').click(function () {
