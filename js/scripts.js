@@ -8759,7 +8759,7 @@ $(document).ready(function () {
 		showMaskOnHover: false,
 	}
 	// opts.alias = "Regex";
-	opts.regex = "[0-9]{7,14}";
+	opts.regex = "[0-9]{10,14}";
 	window.globalMask = opts.regex;
 	window.isRegexMask = true;
 	$('[data-phone]').each(function(index, el) {
