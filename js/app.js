@@ -509,8 +509,6 @@ $('.zoho_url').submit(function (e) {
         arrayData.forEach(function (el) {
             data.append(el.name, el.value + '');
         });
-
-        console.log(arrayData);
     };
 
 
@@ -555,4 +553,22 @@ $('.zoho_url').submit(function (e) {
             }
         }
     });
-})
+});
+
+// Сделать все поля обязательными 
+let inputsName = document.getElementsByName("name"),
+    inputsEmail = document.getElementsByName("email"),
+    inputsPhone = document.getElementsByName("phone");
+
+function setInputAllRequired(item) {
+    item.forEach(input => {
+        input.setAttribute("required", "true");
+    })
+};
+
+setInputAllRequired(inputsName);
+setInputAllRequired(inputsEmail);
+setInputAllRequired(inputsPhone);
+
+
+$('body').append('<style>.timer-body-block{display:flex}#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;} .timer-body-block { display: -webkit-box; display: -webkit-flex; display: -moz-box;display: -ms-flexbox;display: flex;font-family:Open Sans, sans-serif; font-weight: 300; } .table-cell:after { display: none !important; } /* [data-phone] { padding-left: 50px !important; } */ .phone_wrapper { position: relative; } .input__line { position: absolute; width: 43px; height: 27px; border-right: 1px solid #EDEDED; display: block; left: 0; top: 50%; transform: translateY(-50%); -webkit-background-size: 20px !important; background-size: 20px !important; background-position: 11px center !important; background-repeat: no-repeat !important; } </style>');
