@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * SyoTimer v.1.1.0 | under MIT licence
  * https://github.com/mrfratello/SyoTimer#readme
@@ -230,64 +232,6 @@ function searchToObject() {
 }
 
 
-function initPromoHelp() {
-    var $promo = $('[name="promocode"], #promo');
-    var $icon = $('<span id="promoicon"></span>');
-    var $text = $('<div class="promotext"></div>');
-    var css = {
-        'display': 'block',
-        'position': 'absolute',
-        'bottom': '2px',
-        'right': 0,
-        'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
-        'cursor': 'pointer',
-        'width': $promo.outerHeight(),
-        'height': $promo.outerHeight(),
-    }
-    var cssText = {
-        'display': 'block',
-        'position': 'absolute',
-        'top': '90%',
-        'right': 0,
-        'background': '#fff',
-        'width': '100%',
-        'opacity': 0,
-        'margin-top': '-1px',
-        'z-index': 500,
-        'padding': '1rem',
-        'border': '1px solid rgba(99, 103, 103, 0.15)',
-        'transition': '0.2s ease-in-out',
-        'pointer-events': 'none',
-        'font-size': '11px'
-    }
-    var text = {
-        title: 'Промокоды «Бизнес-Конструктор»:',
-        content: 'Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или введите промокод из рассылки и получите скидку, указанную в тексте письма.'
-    }
-    $text.append('<strong></strong>');
-    $text.append('<p></p>');
-    $text.find('strong').text(text.title).css({
-        'color': '#818888',
-        'font-weight': 600
-    });
-    $text.find('p').text(text.content).css({
-        'margin': '0.5rem 0 0 0',
-        'color': '#b6b8b8',
-        'line-height': '16px'
-    });
-    $icon.css(css);
-    $text.css(cssText);
-    $promo.parent().append($icon);
-    $promo.parent().append($text);
-
-}
-$(document).on('mouseenter', '#promoicon', function () {
-    $(this).siblings('.promotext').addClass('isShow')
-})
-$(document).on('mouseleave', '#promoicon', function () {
-    $(this).siblings('.promotext').removeClass('isShow')
-});
-
 function checkPromoCode() {
     var location = window.location.href.replace(window.location.search, '');
     var codes = []
@@ -457,8 +401,6 @@ function initMegaTimer(timestamp) {
     document.getElementsByTagName("head")[0].appendChild(_t);
 }
 
-$('body').append('<style>.timer-body-block{display:flex}</style>');
-
 // Валидация tel
 function setCursorPosition(pos, elem) {
     elem.focus();
@@ -569,6 +511,264 @@ function setInputAllRequired(item) {
 setInputAllRequired(inputsName);
 setInputAllRequired(inputsEmail);
 setInputAllRequired(inputsPhone);
+
+function initPromoHelp() {
+    var $promo = $('[name="promocode"], #promo');
+    var $icon = $('<span id="promoicon"></span>');
+    var $text = $('<div class="promotext"></div>');
+    var css = {
+        'display': 'block',
+        'position': 'absolute',
+        'bottom': '2px',
+        'right': 0,
+        'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
+        'cursor': 'pointer',
+        'width': $promo.outerHeight(),
+        'height': $promo.outerHeight(),
+    }
+    var cssText = {
+        'display': 'block',
+        'position': 'absolute',
+        'top': '90%',
+        'right': 0,
+        'background': '#fff',
+        'width': '100%',
+        'opacity': 0,
+        'margin-top': '-1px',
+        'z-index': 500,
+        'padding': '1rem',
+        'border': '1px solid rgba(99, 103, 103, 0.15)',
+        'transition': '0.2s ease-in-out',
+        'pointer-events': 'none',
+        'font-size': '11px'
+    }
+    var text = {
+        title: 'Промокоды «Бизнес-Конструктор»:',
+        content: 'Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или введите промокод из рассылки и получите скидку, указанную в тексте письма.'
+    }
+    $text.append('<strong></strong>');
+    $text.append('<p></p>');
+    $text.find('strong').text(text.title).css({
+        'color': '#818888',
+        'font-weight': 600
+    });
+    $text.find('p').text(text.content).css({
+        'margin': '0.5rem 0 0 0',
+        'color': '#b6b8b8',
+        'line-height': '16px'
+    });
+    $icon.css(css);
+    $text.css(cssText);
+    $promo.parent().append($icon);
+    $promo.parent().append($text);
+
+}
+$(document).on('mouseenter', '#promoicon', function () {
+    $(this).siblings('.promotext').addClass('isShow')
+})
+$(document).on('mouseleave', '#promoicon', function () {
+    $(this).siblings('.promotext').removeClass('isShow')
+});
+
+
+$(document).ready(function () {
+    $(".hamburger").click(function () {
+        $(this).hasClass("is-active") ? LP.MENU.close() : LP.MENU.open()
+    }), LP.HERO.setSize(), LP.CORE.init(), LP.CORE.loadPrice(), $(".tabs__tab:first-child").click();
+
+    setBackground();
+});
+
+var $window = $(window);
+$window.resize(function () {
+    LP.HERO.setSize()
+});
+
+var LP = {
+    CORE: {
+        init: function () {
+            $("header").sticky({
+                topSpacing: 0
+            }), $("[data-href],  .header__menu a:not(.menu__item--phone)").click(function (t) {
+                t.preventDefault();
+                var e = $(this).data("href") ? $(this).data("href") : $(this).attr("href");
+                $("html, body").animate({
+                    scrollTop: $(e).offset().top - parseInt($(".header").height())
+                }, 800), LP.MENU.close()
+            }), $("[data-modal]").click(function (t) {
+                t.preventDefault(), LP.CORE.showModal($(this).data("modal"))
+            }), $("[data-modal-close]").click(function (t) {
+                t.preventDefault(), LP.CORE.closeModal($(this).data("modal-close"))
+            }), $(".tabs__tab, [data-id]").click(function () {
+                $(".tabs__tab").removeClass("tabs__tab--active"), $(this).not('.package_price').addClass("tabs__tab--active"), LP.CORE.selectPackage($(this))
+            })
+        },
+        loadPrice: function () {
+            autoPriceChange("[data-price]", "[data-total-price]", "[data-deadline]")
+        },
+        showModal: function (t) {
+            $(t).addClass("modal--active")
+        },
+        closeModal: function (t) {
+            $(t).removeClass("modal--active")
+        },
+        selectPackage: function (t) {
+            t.attr("data-package-type") && $("[data-pckg-text]").length && $("[data-pckg-text]").text(t.attr("data-package-type")), LP.CORE.getPriceByID(t.data("id"))
+        },
+        getPriceByID: function (t) {
+            if (!t) return !1;
+            var e;
+            e = $(".zoho_url").length ? "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" : "//proceed.bizconstructor.com/price?landingId=" + t;
+            var n = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+            $.get(e, function (t) {
+                new Date(t.beforeDate);
+                var e = t.beforeDate.split("-"),
+                    a = 0 == e[0][0] ? e[0].replace("0", "") : e[0];
+                $("[data-deadline]").text(e[1] + " " + n[a - 1]), $("[data-total-price]").text(t.maxPrice), $("[data-price]").text(t.price), $(".timer_content").length && $(".timer_content").syotimer({
+                    year: e[2],
+                    month: e[0],
+                    day: e[1] - 1,
+                    hour: 24,
+                    lang: "rus"
+                })
+            }), $('#form [name="landing_id"]').val(t), LP.CORE.setActivaButtonsByID(t)
+        },
+        getSearchJson: function () {
+            var t, e, a = window.location.search.substring(1).split("&"),
+                n = {};
+            for (e in a)
+                if ("" !== a[e] && (t = a[e].split("="), !n[decodeURIComponent(t[0])])) {
+                    if (n[decodeURIComponent(t[0])] = decodeURIComponent(t[1]), "landing_id" != t[0] && "phone" != t[0] && $('[name="' + t[0] + '"]').length) {
+                        var i = decodeURIComponent(t[1]);
+                        $('[name="' + t[0] + '"]').val(i.replace("+", " "))
+                    }
+                    "phone" == t[0] && setTimeout(function () {
+                        $("#phone").blur()
+                    }, 1e3)
+                }
+            return n
+        },
+        setActivaButtonsByID: function (t) {
+            $("[data-id]").not('.package_price').removeClass("active__button__id tabs__tab--active"), $('[data-id="' + t + '"]').not('.package_price').addClass("active__button__id tabs__tab--active")
+        },
+        setPriceThanks: function (t, e, a) {
+            var n;
+            n = $(".zoho_url").length ? "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" : "//proceed.bizconstructor.com/price?landingId=" + t, $.get(n, function (t) {
+                $(e).text(t.maxPrice), $(a).text(t.price)
+            })
+        }
+    },
+    MENU: {
+        open: function () {
+            $(".hamburger").addClass("is-active"), $(".header__menu").addClass("header__menu--active")
+        },
+        close: function () {
+            $(".hamburger").removeClass("is-active"), $(".header__menu").removeClass("header__menu--active")
+        }
+    },
+    HERO: {
+        setSize: function () {
+            var t = $(".hero"),
+                e = parseInt($(".wrapper").css("padding-top")) + parseInt($(".header").height());
+            t.css("min-height", $window.height() - e)
+        }
+    }
+};
+
+// setup lg-xs HERO.bg
+$(window).resize(setBackground);
+
+function setBackground() {
+    if ($(window).width() < 768) {
+        $('.hero').css('background-image', 'url(' + $('.hero').data('img-xs') + ')')
+    } else {
+        $('.hero').css('background-image', 'url(' + $('.hero').data('img-lg') + ')')
+    }
+};
+
+// fondy autochange id
+const fondyMerchant = document.querySelectorAll('input[name="f_m_id"]');
+
+function setMerchant() {
+    fondyMerchant.forEach(function (item) {
+        // Программы
+        if (item.value == 'fondy_pr') {
+            item.value = '1452337';
+        }
+        // Самитты
+        else if (item.value == 'fondy_sm') {
+            item.value = '1439508';
+        }
+        // ПМ, МК
+        else if (item.value == 'fondy_mk_pm') {
+            item.value = '1450447';
+        }
+    });
+};
+if (!fondyMerchant.length == 0) {
+    setMerchant();
+};
+
+// accordeon section items
+$(".accorden-item__title").on("click", function () {
+    $(".accorden-item__title").removeClass("is-open"),
+        $(this).addClass("is-open");
+    var t = $(this).next();
+    $(this).parent().hasClass("show-in") ? $(".show-in .accorden-item__content").stop().animate({
+            height: "0"
+        }, 250) : ($(".show-in .accorden-item__content").stop().animate({
+            height: "0"
+        }, 250), o(t, 250)),
+        $(this).parent().toggleClass("show-in").siblings().removeClass("show-in")
+});
+
+function o(t, e) {
+    var a = t.height(),
+        i = t.css("height", "auto").height();
+    t.height(a),
+        t.stop().animate({
+            height: i
+        }, e)
+};
+
+
+// open link with taget
+$('.footer a, .form__contact a').click(function () {
+    $(this).target = "_blank";
+    window.open($(this).prop('href'));
+    return false;
+});
+
+// footer last year
+$('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
+
+// Spoiler items section
+! function (i) {
+    var o, n;
+    i(".spoiler__title").on("click", function () {
+        o = i(this).parents(".spoiler--item"), n = o.find(".spoiler__info"),
+            o.hasClass("active_block") ? (o.removeClass("active_block"), n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(), o.siblings(".active_block").removeClass("active_block").children(".spoiler__info").stop(!0, !0).slideUp())
+    })
+}(jQuery);
+$('.spoiler--item:first .spoiler__title').click();
+
+
+// footer change url terms-conditions
+$('.footer-col.second-col .footer-col-list .list-footer a').last().text('Публичная оферта UA');
+$('.footer-col.second-col .footer-col-list .list-footer').last().after("<li class='list-footer'><a href='http://terms-conditions.bizconstructor.com/kz' target='_blank'>Публичная оферта KZ</a></li>");
+
+// footer contact change url text
+$(".form__contact span").each(function () {
+    var text = $(this).text();
+    text = text.replace("Или напишите нам письмо:", "Или напишите письмо:");
+    $(this).text(text);
+});
+
+// footer contact change UA address
+$('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(1) p:nth-child(2)').html('Киев, Боричев Ток, 35В' + '<br style="display: block">' + 'Platforma Fortuna');
+
+$(".form__contact a[href='https://goo.gl/maps/z4gUF1AKAJRSFfge8").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
+$(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
 
 
 $('body').append('<style>.timer-body-block{display:flex}#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;} .timer-body-block { display: -webkit-box; display: -webkit-flex; display: -moz-box;display: -ms-flexbox;display: flex;font-family:Open Sans, sans-serif; font-weight: 300; } .table-cell:after { display: none !important; } /* [data-phone] { padding-left: 50px !important; } */ .phone_wrapper { position: relative; } .input__line { position: absolute; width: 43px; height: 27px; border-right: 1px solid #EDEDED; display: block; left: 0; top: 50%; transform: translateY(-50%); -webkit-background-size: 20px !important; background-size: 20px !important; background-position: 11px center !important; background-repeat: no-repeat !important; } </style>');
