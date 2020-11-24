@@ -752,6 +752,8 @@ $('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
 }(jQuery);
 $('.spoiler--item:first .spoiler__title').click();
 
+$('body').append('<style>.timer-body-block{display:flex}#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;} .timer-body-block { display: -webkit-box; display: -webkit-flex; display: -moz-box;display: -ms-flexbox;display: flex; font-weight: 400; } .table-cell:after { display: none !important; } /* [data-phone] { padding-left: 50px !important; } */ .phone_wrapper { position: relative; } .input__line { position: absolute; width: 43px; height: 27px; border-right: 1px solid #EDEDED; display: block; left: 0; top: 50%; transform: translateY(-50%); -webkit-background-size: 20px !important; background-size: 20px !important; background-position: 11px center !important; background-repeat: no-repeat !important; } </style>');
+
 
 // footer change url terms-conditions
 $('.footer-col.second-col .footer-col-list .list-footer a').last().text('Публичная оферта UA');
@@ -767,8 +769,14 @@ $(".form__contact span").each(function () {
 // footer contact change UA address
 $('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(1) p:nth-child(2)').html('Киев, Боричев Ток, 35В' + '<br style="display: block">' + 'Platforma Fortuna');
 
+// footer contact change KZ address
+$('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(2) p:nth-child(2)').html('Алматы, ул. Байзакова, 280,' + '<br style="display: block">' + 'БЦ «Almaty Towers»');
+
+
+// Update contact us UA
 $(".form__contact a[href='https://goo.gl/maps/z4gUF1AKAJRSFfge8").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
 $(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
 
-
-$('body').append('<style>.timer-body-block{display:flex}#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;} .timer-body-block { display: -webkit-box; display: -webkit-flex; display: -moz-box;display: -ms-flexbox;display: flex;font-family:Open Sans, sans-serif; font-weight: 300; } .table-cell:after { display: none !important; } /* [data-phone] { padding-left: 50px !important; } */ .phone_wrapper { position: relative; } .input__line { position: absolute; width: 43px; height: 27px; border-right: 1px solid #EDEDED; display: block; left: 0; top: 50%; transform: translateY(-50%); -webkit-background-size: 20px !important; background-size: 20px !important; background-position: 11px center !important; background-repeat: no-repeat !important; } </style>');
+// Update contact us KZ
+$(".form__contact a[href='https://2gis.kz/almaty/firm/70000001018896711?m=76.939694%2C43.253276%2F16").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
+$(".form__contact a[href='https://goo.gl/maps/jEYTh6j5z2QjLEpg8").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
