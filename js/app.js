@@ -780,3 +780,10 @@ $(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', '
 // Update contact us KZ
 $(".form__contact a[href='https://2gis.kz/almaty/firm/70000001018896711?m=76.939694%2C43.253276%2F16").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
 $(".form__contact a[href='https://goo.gl/maps/jEYTh6j5z2QjLEpg8").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
+
+let inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
+    forms = document.querySelectorAll('.zoho_url');
+
+forms.forEach(item => {
+    item.insertAdjacentHTML('beforeend', inputlocationHref)
+});
