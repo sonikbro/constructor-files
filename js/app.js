@@ -607,10 +607,12 @@ var LP = {
             autoPriceChange("[data-price]", "[data-total-price]", "[data-deadline]")
         },
         showModal: function (t) {
-            $(t).addClass("modal--active")
+            $(t).addClass("modal--active");
+            $('body').css("overflow", "hidden");
         },
         closeModal: function (t) {
-            $(t).removeClass("modal--active")
+            $(t).removeClass("modal--active");
+            $('body').css("overflow", "visible");
         },
         selectPackage: function (t) {
             t.attr("data-package-type") && $("[data-pckg-text]").length && $("[data-pckg-text]").text(t.attr("data-package-type")), LP.CORE.getPriceByID(t.data("id"))
