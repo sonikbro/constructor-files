@@ -478,10 +478,12 @@ var LP = {
         showModal: function (t) {
             $(t).addClass("modal--active");
             $('body').css("overflow", "hidden");
+            $(".getcall__wrapper").css("display", "none")
         },
         closeModal: function (t) {
             $(t).removeClass("modal--active");
             $('body').css("overflow", "visible");
+            $(".getcall__wrapper").css("display", "block")
         },
         selectPackage: function (t) {
             t.attr("data-package-type") && $("[data-pckg-text]").length && $("[data-pckg-text]").text(t.attr("data-package-type")), LP.CORE.getPriceByID(t.data("id"))
