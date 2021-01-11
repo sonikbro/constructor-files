@@ -1,101 +1,108 @@
-<div class="profit" id="profit">
-  <div class="container">
-      <div><img src="https://forstas.bizconstructor.com/tilda-assets/ac/i-ch-red.svg" alt=""></div>
-      <div class="profit__title"><strong>Спасибо за заявку на программу</strong></div> <!-- Заголовок -->
-
-      <div class="fake-line"></div>
-
-      <div class="profit__title fiol"><strong>Собственник бизнеса 2.0</strong></div>
-      <div class="target__text select--package profit__title fiol">
-          Ваш тариф <b class="select-id">не выбран</b>
-      </div>
-      <div class="target__text">
-          Сейчас вы можете частично или полностью оплатить программу, чтобы получить бонусы
-      </div>
-
-
-      <div class="submit-btns" data-id=''>
-          <button class="button trasparent" id="salePrice">Внести задаток <span class="price-full-redline"></span>
-              ₸</button>
-          <button class="button fullbg" id="fullPrice">Оплатить полностью</button>
-
-          <form class="form__fields zoho_url" method="POST" action="https://proceed.bizconstructor.com">
-              <div style="display: none;"> <input id="name" type="text" name="name" autocomplete="off">
-                  <input id="phone" type="tel" name="phone" data-phone="" autocomplete="off">
-                  <input id="email" type="email" name="email" autocomplete="off"></div>
-              <input type="hidden" name="ref" value="" autocomplete="off"><input type="hidden" name="ga" value=""
-                  autocomplete="off"><input type="hidden" name="ym_uid" value="" autocomplete="off"><input
-                  type="hidden" name="utm_source" value="" autocomplete="off"><input type="hidden" name="utm_medium"
-                  value="" autocomplete="off"><input type="hidden" name="utm_term" value="" autocomplete="off"><input
-                  type="hidden" name="utm_content" value="" autocomplete="off"><input type="hidden"
-                  name="utm_campaign" value="" autocomplete="off"><input type="hidden" name="google_client_id"
-                  value="" autocomplete="off"><input type="hidden" name="landing_id" value=""
-                  autocomplete="off"><input type="hidden" name="es_mail_id" value="" autocomplete="off"><input
-                  type="hidden" name="convert_in_zoho" autocomplete="off"><input type="hidden" name="es_id" value=""
-                  autocomplete="off"><input type="hidden" name="token"
-                  value="LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" autocomplete="off"><input type="hidden"
-                  name="success_url" value="http://bizconstructor.com/" autocomplete="off"><input type="hidden"
-                  name="error_url" value="http://bizconstructor.com/" autocomplete="off">
-              <input type="hidden" name="redirect" value="false" autocomplete="off"><input type="hidden"
-                  name="to_payment" value="true" autocomplete="off">
-              <button class="button button--submit send-form" id="btn-send"
-                  style="display: none;">Регистрация</button>
-          </form>
-      </div>
-  </div>
-</div>
-
 <script>
-  $(document).ready(function () {
-      // Узнаем выбранный пакет
-      let urlWithPackage = new URL(window.location.href);
+    $(document).ready(function () {
+        // Узнаем выбранный пакет
+        let urlWithPackage = new URL(window.location.href);
 
-      // Полная стоимость
-      let currentPackage = urlWithPackage.searchParams.get("landing_id");
-      $("input[name='landing_id']").val(currentPackage);
+        // Полная стоимость
+        let currentPackage = urlWithPackage.searchParams.get("landing_id");
+        $("input[name='landing_id']").val(currentPackage);
 
-      // Базовый пакет предоплаты
-      let currentPackageSale = '2108311000380664922';
-      $('.submit-btns').attr('data-id', currentPackageSale);
+        // Базовый пакет предоплаты
+        let currentPackageSale = '2108311000428930136';
 
 
-      if (currentPackage == "2108311000380664832") {
-          $('.select-id').html("Online");
-      } else if (currentPackage == "2108311000380664862") {
-          $('.select-id').html("Premium");
-          currentPackageSale = '2108311000380664892';
-          $('.submit-btns').attr('data-id', currentPackageSale);
-      }
+        if (currentPackage == "2108311000428930106") {
+            $('.select-id').html("Online");
+            currentPackageSale = '2108311000428930136';
+        }
 
-      $('#salePrice').click(function () {
-          sendForm.bind($(this))();
-          sendForm(currentPackageSale);
-      });
-      $('#fullPrice').click(function () {
-          sendForm.bind($(this))();
-          sendForm(currentPackage);
-      });
+        // дата скидки
+        let dataDeadline = '14.01';
+        if (dataDeadline !== 'dataDeadline') {
+            $(".data_deadline").each(function () {
+                $(this).html(dataDeadline);
+            })
+        } else if (currentPackage == "2108311000382213433") {
+            $('.select-id').html("Premium");
+            currentPackageSale = '2108311000382213493';
+        }
 
-      //  Магия!
-      function sendForm(id_landing_package) {
-          var $this = $(this);
-          $this.html('Обработка запроса...');
+        $('#salePrice').click(function () {
+            sendForm.bind($(this))();
+            sendForm(currentPackageSale);
+        });
+        $('#fullPrice').click(function () {
+            sendForm.bind($(this))();
+            sendForm(currentPackage);
+        });
 
-          $("input[name='landing_id']").val(id_landing_package);
-          $('#salePrice, #fullPrice').prop('disabled', true);
+        function sendForm(id_landing_package) {
+            var $this = $(this);
+            $this.html('Обработка запроса...');
 
-          setTimeout(() => {
-              $('#btn-send').click();
-          }, 100);
-      };
+            $("input[name='landing_id']").val(id_landing_package);
+            $('#salePrice, #fullPrice').prop('disabled', true);
 
-      // Установка цен на кнопке
-      let data = LP.CORE.getSearchJson();
-      LP.CORE.getPriceByID(data.landing_id);
-      $('.submit-btns').each(function (i, el) {
-          LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this)
-              .find(
-                  '.price-discount-big'))
-      });
-  });
+            setTimeout(() => {
+                $('#btn-send').click();
+            }, 100);
+        };
+
+    });
 </script>
+
+<div class="profit" id="profit">
+    <div class="container">
+        <div><img src="https://forstas.bizconstructor.com/tilda-assets/src/i-chp.svg" alt=""></div>
+        <div class="profit__title"><strong>Спасибо за заявку на программу</strong></div> <!-- Заголовок -->
+
+        <div class="fake-line"></div>
+
+        <div class="profit__title fiol"><strong>TITLE</strong></div>
+        <div class="select--package">
+            Ваш тариф <b class="select-id">не выбран</b>
+        </div>
+        <div class="target__text">
+            TEXT
+        </div>
+
+        <div class="submit-btns">
+            <button class="button trasparent" id="salePrice">Внести задаток 30 €</button>
+            <button class="button fullbg" id="fullPrice">Оплатить полностью</button>
+
+            <form class="form__fields zoho_url" method="POST" action="https://crm-oz.constructor.biz.ua/landing/save">
+                <div style="display: none;">
+                    <input id="name" type="text" name="name" required autocomplete="off">
+                    <input id="phone" type="tel" name="phone" required autocomplete="off">
+                    <input id="email" type="email" name="email" required autocomplete="off">
+                </div>
+
+                <input type="hidden" name="ref" value="" autocomplete="off">
+                <input type="hidden" name="ga" value="" autocomplete="off">
+                <input type="hidden" name="ym_uid" value="" autocomplete="off">
+                <input type="hidden" name="utm_source" value="" autocomplete="off">
+                <input type="hidden" name="utm_medium" value="" autocomplete="off">
+                <input type="hidden" name="utm_term" value="" autocomplete="off">
+                <input type="hidden" name="utm_content" value="" autocomplete="off">
+                <input type="hidden" name="utm_campaign" value="" autocomplete="off">
+                <input type="hidden" name="google_client_id" value="" autocomplete="off">
+                <input type="hidden" name="landing_id" value="" autocomplete="off">
+                <input type="hidden" name="es_mail_id" value="" autocomplete="off">
+                <input type="hidden" name="convert_in_zoho" autocomplete="off">
+                <input type="hidden" name="es_id" value="" autocomplete="off">
+                <input type="hidden" name="token" value="LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU"
+                    autocomplete="off">
+                <input type="hidden" name="success_url" value="http://bizconstructor.com/" autocomplete="off">
+                <input type="hidden" name="error_url" value="http://bizconstructor.com/" autocomplete="off">
+                <input type="hidden" name="f_m_id" value="fondy_pr" />
+                <input name="payment_system" type="hidden" value="fondy" />
+                <input type="hidden" name="redirect" value="false" autocomplete="off"><input type="hidden"
+                    name="to_payment" value="true" autocomplete="off">
+
+                <button class="button button--submit send-form" id="btn-send"
+                    style="display: none;">Регистрация</button>
+            </form>
+        </div>
+        <p class="speacial-date">Специальная цена действительна до <b class="data_deadline"></b></p>
+    </div>
+</div>

@@ -2,26 +2,4 @@
 <input type="hidden" name="f_m_id" value="fondy_sm" />
 <input type="hidden" name="f_m_id" value="fondy_mk_pm" />
 
-<script>
-    const fondyMerchant = document.querySelectorAll('input[name="f_m_id"]');
-
-    function setMerchant() {
-        fondyMerchant.forEach(item => {
-            if (item.value == 'fondy_pr') {
-                item.value = '1452337'
-            } 
-            else if (item.value == 'fondy_sm') {
-                item.value = '1439508'
-            } 
-            else if (item.value == 'fondy_mk_pm') {
-                item.value = '1450447'
-            }
-        });
-    };
-
-    if (!fondyMerchant.length == 0) {
-        setMerchant();
-    }
-</script>
-
 

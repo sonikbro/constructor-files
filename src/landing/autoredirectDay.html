@@ -2,31 +2,31 @@
     let table = [{
           // ПН
           key: '2',
-          url: 'https://online.bizconstructor.com/room/eastru_5dw_1d'
+          url: ''
         },
         {
           // ВТ
           key: '3',
-          url: 'https://online.bizconstructor.com/room/eastru_5dw_2d'
+          url: ''
         },
         {
           // СР
           key: '4',
-          url: 'https://online.bizconstructor.com/room/eastru_5dw_3d'
+          url: ''
         },
         {
           // ЧТ
           key: '5',
-          url: 'https://online.bizconstructor.com/room/eastru_5dw_4d'
+          url: ''
         },
         {
           // ПТ
           key: '6',
-          url: 'https://online.bizconstructor.com/room/eastru_5dw_5d'
+          url: ''
         }, {
           // СБ
           key: '7',
-          url: 'https://owner.bizconstructor.com/irb_offerru'
+          url: ''
         }
       ],
       dateTime = new Date,
@@ -37,7 +37,7 @@
   
     // Проверка на ВС
     if (zeroHours == 0) {
-      url = new URL('https://owner.bizconstructor.com/irb_offerru');
+      url = new URL('');
     } else {
       const found = table.find(el => el.key > zeroHours);
       url = new URL(found.url);

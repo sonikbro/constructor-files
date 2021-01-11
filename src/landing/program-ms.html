@@ -1,11 +1,39 @@
-<section class="program-ms">
+<!-- Блок После мероприятия -->
+
+<section class="profit-pm pd-main">
     <div class="container">
-        <h6 class="title">Программа мастер-класса</h6>
-        <div class="program-ms__items">
-            <p class="program-ms__item" data-content="1"><span>Кризис в Украине и мире: </span>к чему готовиться.</p>
-            <p class="program-ms__item" data-content="2"><span>Отличия </span>обычного и антикризисного управления.</p>
-            <p class="program-ms__item" data-content="3"><span>Чек-лист</span>первых шагов предпринимателя в кризис.</p>
-            <p class="program-ms__item" data-content="4"><span>Лучшие стратегии </span>антикризисного управления.</p>
-        </div><button class="button button--short" data-href="#form">Зарегистрироваться</button>
+        <h6 class="title relative">После мероприятия <span class="active_color"><br class="mobonly">у вас будет</span></h6>
+
+        <div class="profit-pm-items flex wrap direction--mcolumn--drow space-between">
+
+            <h2>Ваш браузер не поддерживает показ этого экрана. Обновите версию браузера.</h2>
+
+        </div>
+
     </div>
+
+    <script>
+        // Список пунктов 
+        const profitItems = [
+            {
+                title: '',
+            },
+
+        ];
+
+        // ф-я создания списка НЕ ТРОГАТЬ!
+        function generateProfit() {
+            $('.profit-pm-items').empty();
+
+            for (let i = 0; i < profitItems.length; i++) {
+                $('.profit-pm-items').append(`
+                <div class="profit-pm-item flex relative align-center" data-number="${i+1}">
+                    <p class="additional-text">${profitItems[i].title}</p>
+                </div> `);
+            }
+        };
+
+        // Рендеринг блока
+        generateProfit();
+    </script>
 </section>

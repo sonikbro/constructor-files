@@ -1,126 +1,59 @@
 <!-- Программа -->
-<section class="spoiler pd-main">
-    <div class="container">
-      <div class="spoiler">
-        <!-- заголовок -->
-        <h6 class="title title--main">Программа практикума</h6>
-  
-        <section class="spoiler--item one">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="1">Бизнес-модель</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Маркетинг vs менеджмент</li>
-              <li>Роль собственника в управлении компанией</li>
-              <li>Личная эффективность собственника</li>
-              <li>Ключевые составляющие системного бизнеса</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="2">Бизнес-модель и конкурентная стратегия
-          </h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Ключевые вопросы бизнес-модели</li>
-              <li>Сегментация целевой аудитории</li>
-              <li>Продукт компании. Уровень нормы и восхищения</li>
-              <li>Анализ конкурентов</li>
-              <li>Конкурентная стратегия</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="3">Маркетинг и продажи</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Воронка привлечения и удержания клиентов</li>
-              <li>Инструменты лидогенерации</li>
-              <li>Управление маркетинговыми показателями</li>
-              <li>Утепляющая коммуникация с клиентами</li>
-              <li>Структура отдела продаж</li>
-              <li>CRM-система</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="4">Организационная структура</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Ключевые принципы построения организационной структуры</li>
-              <li>Типовые центры ответственности</li>
-              <li>Распределение функционала между сотрудниками</li>
-              <li>Принцип внутреннего клиента</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="5">Построение команды и управление персоналом
-          </h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Рабочая папка сотрудника (карта должности, профиль компетенции, должностная)</li>
-              <li>Корпоративная культура</li>
-              <li>Подбор персонала</li>
-              <li>Система вводной адаптации</li>
-              <li>Система мотивации. Инструменты материальной и нематериальной мотиваци</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="6">Операционное управление</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Регулярный менеджмент</li>
-              <li>Процессы и проекты</li>
-              <li>Постановка и достижение целей (Task-менеджмент)</li>
-              <li>Роль собственника в операционном управлении: СЕО и СОО</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="7">Управленческий учет</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Разделение финансов компании и финансов собственника</li>
-              <li>Управленческий и бухгалтерский учет</li>
-              <li>Баланс: понятие собственного капитала</li>
-              <li>Отчеты P&L, Cashflow: прибыль и денежные потоки</li>
-            </ul>
-          </article>
-        </section>
-  
-        <section class="spoiler--item">
-          <!-- Шапка блока -->
-          <h6 class="spoiler__title relative flex align-center" data-number="8">Стратегическое планирование</h6>
-          <article class="spoiler__info">
-            <!-- Текст скрываеться  -->
-            <ul class="info_item">
-              <li>Главная должностная обязанность собственника</li>
-              <li>Понятие и ритм стратегического планирования</li>
-              <li>Регламент проведения стратегических сессий</li>
-            </ul>
-          </article>
-        </section>
-      </div>
+<section class="program-bg last">
+  <div class="container">
+    <span class="title-program">Программа мероприятия</span>
+    <div class="program-items">
+      <h2>Ваш браузер не поддерживает показ этого экрана. Обновите версию браузера.</h2>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  const programItems = [{
+    title: '',
+    desk: '',
+    item_list: [
+      '',
+    ]
+  }];
+
+  function generateSection() {
+    for (let i = 0; i < programItems.length; i++) {
+      let moduleLi = [];
+
+      programItems[i].item_list.forEach(item_list => {
+        moduleLi.push(`<li>${item_list}</li>`);
+      });
+
+      let myList = moduleLi.join('');
+
+      $('.program-items').append(`
+          <div class="p-item">
+              <div class="p-item__header">
+                  <span class="p__module">Модуль ${i+1}</span>
+                  <span class="p__title">${programItems[i].title}</span>
+                  <span class="p__ico">+</span>
+              </div>
+              <div class="p-item__content">
+                  <div class="p__item-in">
+                      <p class="p__item-title">Цель уровня</p>
+                      <span class="p__item-text">${programItems[i].desk}</span>
+                  </div>
+
+                  <div class="p__item-in">
+                      <p class="p__item-title">Документы:</p>
+                      <span class="p__item-text">
+                          <ul>${myList}</ul>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          `)
+    };
+  };
+  // Ф-я создания списка
+  generateSection();
+
+  // Проверка на пустоту документов
+  $('.p__item-text ul:empty').parent().parent().hide();
+</script>
