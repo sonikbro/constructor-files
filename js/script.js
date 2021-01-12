@@ -5,677 +5,27 @@ window.addEventListener('DOMContentLoaded', function () {
     $(".hamburger").click(function () {
         $(this).hasClass("is-active") ? LP.MENU.close() : LP.MENU.open()
     });
-    $(".tabs__tab:first-child").click();
-
     LP.HERO.setSize();
     LP.CORE.init();
     LP.CORE.loadPrice();
-    LP.CUSTOM.setRequired();
-    LP.CUSTOM.setFondy();
-    
+    $(".tabs__tab:first-child").click();
+
     setBackground();
-    searchToObject()
+    searchToObject();
+    
+    LP.CUSTOM.setVaidPhone();
+    LP.CUSTOM.setInputAllRequired();
+    LP.CUSTOM.setFondy();
+    LP.CUSTOM.setLocationHref();
+    LP.CUSTOM.setCookie();
+    LP.CUSTOM.updateStaticInfo();
+
+    if (promoField) {
+        initPromoHelp();
+    }
 });
 
 
-var LP = {
-    CORE: {
-        init: function () {
-            $("header").sticky({
-                    topSpacing: 0
-                }),
-                $("[data-href], .header__menu a:not(.menu__item--phone)").click(function (t) {
-                    t.preventDefault();
-                    var e = $(this).data("href") ? $(this).data("href") : $(this).attr("href");
-                    $("html, body").animate({
-                        scrollTop: $(e).offset().top - parseInt($(".header").height())
-                    }, 800), LP.MENU.close()
-                }),
-                $("[data-modal]").click(function (t) {
-                    t.preventDefault(), LP.CORE.showModal($(this).data("modal"))
-                }),
-                $("[data-modal-close]").click(function (t) {
-                    t.preventDefault(), LP.CORE.closeModal($(this).data("modal-close"))
-                }),
-                $(".tabs__tab, [data-id]").click(function () {
-                    $(".tabs__tab").removeClass("tabs__tab--active"), $(this).not('.package_price').addClass("tabs__tab--active"), LP.CORE.selectPackage($(this))
-                })
-        },
-        loadPrice: function () {
-            autoPriceChange("[data-price]", "[data-total-price]", "[data-deadline]")
-        },
-        showModal: function (t) {
-            $(t).addClass("modal--active");
-            $('body').css("overflow", "hidden");
-            $(".getcall__wrapper").css("display", "none")
-        },
-        closeModal: function (t) {
-            $(t).removeClass("modal--active");
-            $('body').css("overflow", "visible");
-            $(".getcall__wrapper").css("display", "block")
-        },
-        selectPackage: function (t) {
-            t.attr("data-package-type") && $("[data-pckg-text]").length && $("[data-pckg-text]").text(t.attr("data-package-type")), LP.CORE.getPriceByID(t.data("id"))
-        },
-        getPriceByID: function (t) {
-            if (!t) return !1;
-            var e;
-            e = $(".zoho_url").length ? "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" : "//proceed.bizconstructor.com/price?landingId=" + t;
-            var n = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
-            $.get(e, function (t) {
-                new Date(t.beforeDate);
-                var e = t.beforeDate.split("-"),
-                    a = 0 == e[0][0] ? e[0].replace("0", "") : e[0];
-                $("[data-deadline]").text(e[1] + " " + n[a - 1]), $("[data-total-price]").text(t.maxPrice), $("[data-price]").text(t.price), $(".timer_content").length && $(".timer_content").syotimer({
-                    year: e[2],
-                    month: e[0],
-                    day: e[1] - 1,
-                    hour: 24,
-                    lang: "rus"
-                })
-            }), $('#form [name="landing_id"]').val(t), LP.CORE.setActivaButtonsByID(t)
-        },
-        getSearchJson: function () {
-            var t, e, a = window.location.search.substring(1).split("&"),
-                n = {};
-            for (e in a)
-                if ("" !== a[e] && (t = a[e].split("="), !n[decodeURIComponent(t[0])])) {
-                    if (n[decodeURIComponent(t[0])] = decodeURIComponent(t[1]), "landing_id" != t[0] && "phone" != t[0] && $('[name="' + t[0] + '"]').length) {
-                        var i = decodeURIComponent(t[1]);
-                        $('[name="' + t[0] + '"]').val(i.replace("+", " "))
-                    }
-                    "phone" == t[0] && setTimeout(function () {
-                        $("#phone").blur()
-                    }, 1e3)
-                }
-            return n
-        },
-        setActivaButtonsByID: function (t) {
-            $("[data-id]").not('.package_price').removeClass("active__button__id tabs__tab--active"), $('[data-id="' + t + '"]').not('.package_price').addClass("active__button__id tabs__tab--active")
-        },
-        setPriceThanks: function (t, e, a) {
-            let n;
-            if ($(".zoho_url").length) {
-                n = "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU";
-
-                $.get(n, function (t) {
-                    $(e).text(t.maxPrice),
-                        $(a).text(t.price)
-                })
-            }
-
-        }
-    },
-    MENU: {
-        open: function () {
-            $(".hamburger").addClass("is-active"), $(".header__menu").addClass("header__menu--active")
-        },
-        close: function () {
-            $(".hamburger").removeClass("is-active"), $(".header__menu").removeClass("header__menu--active")
-        }
-    },
-    HERO: {
-        setSize: function () {
-            var t = $(".hero"),
-                e = parseInt($(".wrapper").css("padding-top")) + parseInt($(".header").height());
-            t.css("min-height", $window.height() - e)
-        }
-    },
-    CUSTOM: {
-        setFondy: function () {
-            // fondy autochange id
-            const fondyMerchant = document.querySelectorAll('input[name="f_m_id"]');
-            if (!fondyMerchant.length == 0) {
-                setMerchant();
-            };
-
-            function setMerchant() {
-                fondyMerchant.forEach(function (item) {
-                    // Программы
-                    if (item.value == 'fondy_pr') {
-                        item.value = '1452337';
-                    }
-                    // Самитты
-                    else if (item.value == 'fondy_sm') {
-                        item.value = '1439508';
-                    }
-                    // ПМ, МК
-                    else if (item.value == 'fondy_mk_pm') {
-                        item.value = '1450447';
-                    }
-                });
-            };
-        },
-        setRequired: function () {
-            // Сделать все поля обязательными 
-            let inputsName = document.getElementsByName("name"),
-                inputsEmail = document.getElementsByName("email"),
-                inputsPhone = document.getElementsByName("phone");
-
-            function setInputAllRequired(item) {
-                item.forEach(input => {
-                    input.setAttribute("required", "true");
-                })
-            };
-
-            setInputAllRequired(inputsName);
-            setInputAllRequired(inputsEmail);
-            setInputAllRequired(inputsPhone);
-        }
-    }
-};
-
-
-// setup lg-xs HERO.bg
-var $window = $(window);
-$window.resize(function () {
-    LP.HERO.setSize()
-});
-
-$(window).resize(setBackground);
-
-function setBackground() {
-    if ($(window).width() < 768) {
-        $('.hero').css('background-image', 'url(' + $('.hero').data('img-xs') + ')')
-    } else {
-        $('.hero').css('background-image', 'url(' + $('.hero').data('img-lg') + ')')
-    }
-};
-
-
-// // Подстановка значений формы
-function searchToObject() {
-    var pairs = window.location.search.substring(1).split("&"),
-        obj = {},
-        pair,
-        i;
-
-    for (i in pairs) {
-        if (pairs[i] === "") continue;
-
-        pair = pairs[i].split("=");
-
-        if (!obj[decodeURIComponent(pair[0])]) {
-            obj[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
-
-            if (pair[0] != 'landing_id' && pair[0] != 'phone') {
-                if ($('[name="' + pair[0] + '"]').length) {
-                    var val = decodeURIComponent(pair[1]);
-                    $('[name="' + pair[0] + '"]').val(val.replace('+', ' ')).blur();
-                }
-            }
-            if (pair[0] == 'phone') {
-                $('[name="' + pair[0] + '"]').val(decodeURIComponent(pair[1]));
-                setTimeout(function () {
-                    $('#phone').blur()
-                }, 1000);
-            }
-        }
-
-    }
-
-    return obj;
-}
-
-function autoPriceChange(price, maxprice, maxdate) {
-    var id = $('[name="landing_id"]').val();
-    var month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-    var url;
-    if ($('.zoho_url').length) {
-        url = '//crm-oz.constructor.biz.ua/landing/price?landing_id=' + id + '&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU'
-    }
-
-    $.get(url, function (data) {
-        var date = new Date(data.beforeDate);
-        window.price = data.price;
-        window.totalPrice = data.maxPrice;
-        var dates = data.beforeDate.split('-');
-        var monthIndex = (dates[0][0] == 0) ? dates[0].replace('0', '') : dates[0];
-        $(maxdate).text(dates[1] + ' ' + month[monthIndex - 1]);
-        $(maxprice).text(data.maxPrice);
-        $(price).text(data.price);
-
-
-        if ($('.timer_content').length) {
-            $('.timer_content').syotimer({
-                year: dates[2],
-                month: dates[0],
-                day: dates[1],
-                hour: 24,
-                lang: 'rus'
-            });
-        }
-
-    });
-}
-
-
-// Валидация tel
-const validPhone = document.querySelectorAll('input[name="phone"]');
-
-if (validPhone) {
-    validPhone.forEach(item => {
-        item.addEventListener("input", maskPhone, false);
-        item.addEventListener("focus", maskPhone, false);
-        item.addEventListener("blur", maskPhone, false);
-    })
-}
-
-function setCursorPosition(pos, elem) {
-    elem.focus();
-    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
-    else if (elem.createTextRange) {
-        var range = elem.createTextRange();
-        range.collapse(true);
-        range.moveEnd("character", pos);
-        range.moveStart("character", pos);
-        range.select()
-    }
-};
-
-function maskPhone(event) {
-    let matrix = "+ ____________",
-        i = 0,
-        def = matrix.replace(/\D/g, ""),
-        val = this.value.replace(/\D/g, "");
-
-    if (def.length >= val.length) val = def;
-    this.value = matrix.replace(/./g, function (a) {
-        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-    });
-
-    if (event.type == "blur") {
-        if (this.value.length == 2) this.value = ""
-    } else setCursorPosition(this.value.length, this)
-};
-
-
-
-
-
-
-
-
-
-
-
-let newInputs = '<input type="hidden" name="rolecompany" value="" autocomplete="off"><input type="hidden" name="countcompany" value="" autocomplete="off">';
-
-let inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
-    forms = document.querySelectorAll('.zoho_url');
-
-forms.forEach(item => {
-    item.insertAdjacentHTML('beforeend', inputlocationHref);
-    item.insertAdjacentHTML('beforeend', newInputs);
-});
-
-
-
-// Quiz form
-let quizComplete = false,
-    serverResponse;
-
-const formWithQuiz = document.querySelector('[data-quiz]');
-
-if (!formWithQuiz) {
-    quizComplete = true;
-} else {
-    modalQuiz();
-}
-
-function modalQuiz() {
-    let questionCounter = 0,
-        selections = [],
-        quiz = $('#quiz');
-
-    // показываем вопросы
-    displayNext();
-
-    // Кнопка вперед
-    $('#next').on('click', function (e) {
-        e.preventDefault();
-
-        choose();
-
-        if (isNaN(selections[questionCounter])) {
-            alert('Выберите один вариант ответа');
-        } else {
-            questionCounter++;
-            displayNext();
-        }
-    });
-
-    // Кнопка назад
-    $('#prev').on('click', function (e) {
-        e.preventDefault();
-
-        choose();
-        questionCounter--;
-        displayNext();
-    });
-
-    function createQuestionElement(index) {
-        let qElement = $('<div>', {
-            id: 'question'
-        });
-
-        let question = $('<p>').append(questions[index].question);
-        qElement.append(question);
-
-        let radioButtons = createRadios(index);
-        qElement.append(radioButtons);
-
-        return qElement;
-    }
-
-    // Создает список вариантов ответа
-    function createRadios(index) {
-        let answers = document.createElement('ul')
-
-        let answerKey = questions[index].key;
-
-        questions[index].choices.forEach((item, i = 0) => {
-            answers.insertAdjacentHTML('beforeend', `<li><input type="radio" data-num="${i}" id="${i}" name="answer" value=${item.split(' ').join('_')} answerkey=${answerKey}><label for="${i}">${item}</label></li>`)
-        });
-
-        return answers;
-    }
-
-    // Считывает выбор пользователя и помещает значение в массив и input 
-    function choose() {
-        selections[questionCounter] = +$('input[name="answer"]:checked').attr('data-num');
-
-        let currentQuestion = $('input[name="answer"]:checked').attr('answerkey'),
-            questionAnswer = $('input[name="answer"]:checked').val();
-
-        $('input[name=' + currentQuestion + ']').val(questionAnswer);
-    }
-
-    // Отображает следующий запрошенный элемент
-    function displayNext() {
-        quiz.fadeOut(function () {
-            $('#question').remove();
-
-            if (questionCounter < questions.length) {
-                let nextQuestion = createQuestionElement(questionCounter);
-                quiz.append(nextQuestion).fadeIn();
-
-                if (!(isNaN(selections[questionCounter]))) {
-                    $('input[data-num=' + selections[questionCounter] + ']').prop('checked', true);
-                }
-
-                if (questionCounter === 1) {
-                    $('#prev').show();
-                } else if (questionCounter === 0) {
-                    $('#prev').hide();
-                    $('#next').show();
-                }
-            } else {
-                $('#modal__quiz').remove();
-                quizComplete = true;
-
-                $('.zoho_url').submit();
-            }
-        });
-    };
-}
-
-// Обработчик на форму
-$('.zoho_url').submit(function (e) {
-    e.preventDefault();
-    var form = $(this);
-    var data = $(form).serialize();
-    var url = $(form).attr('action');
-    if ($('.zoho_url').length) {
-        data = new FormData();
-        url = 'https://crm-oz.constructor.biz.ua/landing/save';
-        var arrayData = $(form).serializeArray();
-        arrayData.forEach(function (el) {
-            data.append(el.name, el.value + '');
-        });
-    };
-
-    $(form).find('.send-form').prop('disabled', true).text('Отправка формы...');
-
-    $.ajax({
-        data: data,
-        url: url,
-        type: $(form).attr('method') || "POST",
-        method: $(form).attr('method') || "POST",
-        cache: false,
-        processData: false,
-        contentType: false,
-        dataType: 'json'
-    }).done(function (server_response) {
-        if (server_response.status == 'ok') {
-            $(form).find('.send-form').text('Форма отправлена').addClass('send-success');
-
-            if ($(form).data('form') == 'callback') {
-
-            } else {
-                if (window.dataLayer) {
-                    console.log('formsend');
-                    dataLayer.push({
-                        'event': 'formsend'
-                    });
-                }
-                if ($(form).attr('ga-id') && window.send_GA_event) {
-                    send_GA_event($(form).attr('ga-id'))
-                }
-                window._vis_opt_queue = window._vis_opt_queue || [];
-                window._vis_opt_queue.push(function () {
-                    _vis_opt_goal_conversion(200);
-                });
-                if (server_response.link !== false) {
-                    if (!quizComplete) {
-                        $('#modal__quiz').addClass('modal--active');
-                    } else {
-                        setTimeout(function () {
-                            document.location.href = server_response.link;
-                        }, 250);
-                    }
-                }
-            }
-        }
-    });
-});
-
-
-
-// Установка куки клиента
-try {
-    jQuery(document).ready(function ($) {
-        if ($('.zoho_url').length) {
-            var getId = getGA();
-
-            if (getId) {
-                $('input[name="google_client_id"]').val(getId);
-            } else {
-                var timerID = setInterval(checkGA, 200);
-            }
-
-            function checkGA() {
-                //get GA from cookie
-                getId = getGA();
-
-                if (getId) {
-                    $('input[name="google_client_id"]').val(getId);
-                    clearInterval(timerID);
-                }
-            }
-
-            function getGA() {
-                var res = getCookie('_ga');
-                if (res !== null) {
-                    var parts = res.split('.', 4);
-                    if (parts.length === 4) {
-                        return parts[2] + '.' + parts[3];
-                    }
-                }
-                return false;
-            }
-
-            function getCookie(name) {
-                var nameEQ = name + "=";
-                var ca = document.cookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-                }
-                return null;
-            }
-        }
-    });
-} catch (error) {
-    console.error(error);
-}
-
-
-// Подсказка промокода legacy
-let promoField = document.querySelector('[name="promocode"]');
-if (promoField) {
-    initPromoHelp();
-}
-
-function initPromoHelp() {
-    var $promo = $('[name="promocode"], #promo');
-    var $icon = $('<span id="promoicon"></span>');
-    var $text = $('<div class="promotext"></div>');
-    var css = {
-        'display': 'block',
-        'position': 'absolute',
-        'bottom': '2px',
-        'right': 0,
-        'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
-        'cursor': 'pointer',
-        'width': $promo.outerHeight(),
-        'height': $promo.outerHeight(),
-    }
-    var cssText = {
-        'display': 'block',
-        'position': 'absolute',
-        'top': '90%',
-        'right': 0,
-        'background': '#fff',
-        'width': '100%',
-        'opacity': 0,
-        'margin-top': '-1px',
-        'z-index': 500,
-        'padding': '1rem',
-        'border': '1px solid rgba(99, 103, 103, 0.15)',
-        'transition': '0.2s ease-in-out',
-        'pointer-events': 'none',
-        'font-size': '11px'
-    }
-    var text = {
-        title: 'Промокоды «Бизнес-Конструктор»:',
-        content: 'Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или введите промокод из рассылки и получите скидку, указанную в тексте письма.'
-    }
-    $text.append('<strong></strong>');
-    $text.append('<p></p>');
-    $text.find('strong').text(text.title).css({
-        'color': '#818888',
-        'font-weight': 600
-    });
-    $text.find('p').text(text.content).css({
-        'margin': '0.5rem 0 0 0',
-        'color': '#b6b8b8',
-        'line-height': '16px'
-    });
-    $icon.css(css);
-    $text.css(cssText);
-    $promo.parent().append($icon);
-    $promo.parent().append($text);
-
-    $(document).on('mouseenter', '#promoicon', function () {
-        $(this).siblings('.promotext').addClass('isShow')
-    })
-    $(document).on('mouseleave', '#promoicon', function () {
-        $(this).siblings('.promotext').removeClass('isShow')
-    });
-
-    $('body').append('<style>#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;}</style>');
-
-}
-
-
-// accordeon section items
-function o(t, e) {
-    var a = t.height(),
-        i = t.css("height", "auto").height();
-    t.height(a),
-        t.stop().animate({
-            height: i
-        }, e)
-};
-
-$(".accorden-item__title").on("click", function () {
-    $(".accorden-item__title").removeClass("is-open"),
-        $(this).addClass("is-open");
-    var t = $(this).next();
-    $(this).parent().hasClass("show-in") ? $(".show-in .accorden-item__content").stop().animate({
-            height: "0"
-        }, 250) : ($(".show-in .accorden-item__content").stop().animate({
-            height: "0"
-        }, 250), o(t, 250)),
-        $(this).parent().toggleClass("show-in").siblings().removeClass("show-in")
-});
-
-// Spoiler items section
-! function (i) {
-    var o, n;
-    i(".spoiler__title").on("click", function () {
-        o = i(this).parents(".spoiler--item"), n = o.find(".spoiler__info"),
-            o.hasClass("active_block") ? (o.removeClass("active_block"), n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(), o.siblings(".active_block").removeClass("active_block").children(".spoiler__info").stop(!0, !0).slideUp())
-    })
-}(jQuery);
-$('.spoiler--item:first .spoiler__title').click();
-
-
-// open link with taget
-$('.footer a, .form__contact a').click(function () {
-    $(this).target = "_blank";
-    window.open($(this).prop('href'));
-    return false;
-});
-
-// footer last year
-$('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
-
-
-$('body').append('<style>.timer-body-block{display:flex}.timer-body-block {display: flex; font-weight: 400;} .table-cell:after { display: none !important; }</style>');
-
-
-// footer change url terms-conditions
-$('.footer-col.second-col .footer-col-list .list-footer a').last().text('Публичная оферта UA');
-$('.footer-col.second-col .footer-col-list .list-footer').last().after("<li class='list-footer'><a href='http://terms-conditions.bizconstructor.com/kz' target='_blank'>Публичная оферта KZ</a></li>");
-
-// footer contact change url text
-$(".form__contact span").each(function () {
-    var text = $(this).text();
-    text = text.replace("Или напишите нам письмо:", "Или напишите письмо:");
-    $(this).text(text);
-});
-
-// footer contact change UA address
-$('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(1) p:nth-child(2)').html('Киев, Боричев Ток, 35В' + '<br style="display: block">' + 'Platforma Fortuna');
-
-// footer contact change KZ address
-$('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(2) p:nth-child(2)').html('Алматы, ул. Байзакова, 280,' + '<br style="display: block">' + 'БЦ «Almaty Towers»');
-
-
-// Update contact us UA
-$(".form__contact a[href='https://goo.gl/maps/z4gUF1AKAJRSFfge8").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
-$(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
-
-// Update contact us KZ
-$(".form__contact a[href='https://2gis.kz/almaty/firm/70000001018896711?m=76.939694%2C43.253276%2F16").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
-$(".form__contact a[href='https://goo.gl/maps/jEYTh6j5z2QjLEpg8").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
-
-
-
-// Sticky Plugin v1.0.4 for jQuery
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -1155,3 +505,643 @@ $(".form__contact a[href='https://goo.gl/maps/jEYTh6j5z2QjLEpg8").attr('href', '
         return null === t || "object" == typeof t ? a.init.apply(this, [t]) : void e.error("SyoTimer. Error in call methods: methods is not exist")
     }
 }(jQuery);
+
+// Имитация модулей
+var LP = {
+    CORE: {
+        init: function () {
+            $("header").sticky({
+                topSpacing: 0
+            }), $("[data-href],  .header__menu a:not(.menu__item--phone)").click(function (t) {
+                t.preventDefault();
+                var e = $(this).data("href") ? $(this).data("href") : $(this).attr("href");
+                $("html, body").animate({
+                    scrollTop: $(e).offset().top - parseInt($(".header").height())
+                }, 800), LP.MENU.close()
+            }), $("[data-modal]").click(function (t) {
+                t.preventDefault(), LP.CORE.showModal($(this).data("modal"))
+            }), $("[data-modal-close]").click(function (t) {
+                t.preventDefault(), LP.CORE.closeModal($(this).data("modal-close"))
+            }), $(".tabs__tab, [data-id]").click(function () {
+                $(".tabs__tab").removeClass("tabs__tab--active"), $(this).not('.package_price').addClass("tabs__tab--active"), LP.CORE.selectPackage($(this))
+            })
+        },
+        loadPrice: function () {
+            autoPriceChange("[data-price]", "[data-total-price]", "[data-deadline]")
+        },
+        showModal: function (t) {
+            $(t).addClass("modal--active");
+            $('body').css("overflow", "hidden");
+            $(".getcall__wrapper").css("display", "none")
+        },
+        closeModal: function (t) {
+            $(t).removeClass("modal--active");
+            $('body').css("overflow", "visible");
+            $(".getcall__wrapper").css("display", "block")
+        },
+        selectPackage: function (t) {
+            t.attr("data-package-type") && $("[data-pckg-text]").length && $("[data-pckg-text]").text(t.attr("data-package-type")), LP.CORE.getPriceByID(t.data("id"))
+        },
+        getPriceByID: function (t) {
+            if (!t) return !1;
+            var e;
+            e = $(".zoho_url").length ? "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU" : "//proceed.bizconstructor.com/price?landingId=" + t;
+            var n = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+            $.get(e, function (t) {
+                new Date(t.beforeDate);
+                var e = t.beforeDate.split("-"),
+                    a = 0 == e[0][0] ? e[0].replace("0", "") : e[0];
+                $("[data-deadline]").text(e[1] + " " + n[a - 1]), $("[data-total-price]").text(t.maxPrice), $("[data-price]").text(t.price), $(".timer_content").length && $(".timer_content").syotimer({
+                    year: e[2],
+                    month: e[0],
+                    day: e[1] - 1,
+                    hour: 24,
+                    lang: "rus"
+                })
+            }), $('#form [name="landing_id"]').val(t), LP.CORE.setActivaButtonsByID(t)
+        },
+        getSearchJson: function () {
+            var t, e, a = window.location.search.substring(1).split("&"),
+                n = {};
+            for (e in a)
+                if ("" !== a[e] && (t = a[e].split("="), !n[decodeURIComponent(t[0])])) {
+                    if (n[decodeURIComponent(t[0])] = decodeURIComponent(t[1]), "landing_id" != t[0] && "phone" != t[0] && $('[name="' + t[0] + '"]').length) {
+                        var i = decodeURIComponent(t[1]);
+                        $('[name="' + t[0] + '"]').val(i.replace("+", " "))
+                    }
+                    "phone" == t[0] && setTimeout(function () {
+                        $("#phone").blur()
+                    }, 1e3)
+                }
+            return n
+        },
+        setActivaButtonsByID: function (t) {
+            $("[data-id]").not('.package_price').removeClass("active__button__id tabs__tab--active"), $('[data-id="' + t + '"]').not('.package_price').addClass("active__button__id tabs__tab--active")
+        },
+        setPriceThanks: function (t, e, a) {
+            let n;
+            if ($(".zoho_url").length) {
+                n = "https://crm-oz.constructor.biz.ua/landing/price?landing_id=" + t + "&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU";
+
+                $.get(n, function (t) {
+                    $(e).text(t.maxPrice),
+                        $(a).text(t.price)
+                })
+            }
+
+        }
+    },
+    MENU: {
+        open: function () {
+            $(".hamburger").addClass("is-active"), $(".header__menu").addClass("header__menu--active")
+        },
+        close: function () {
+            $(".hamburger").removeClass("is-active"), $(".header__menu").removeClass("header__menu--active")
+        }
+    },
+    HERO: {
+        setSize: function () {
+            var t = $(".hero"),
+                e = parseInt($(".wrapper").css("padding-top")) + parseInt($(".header").height());
+            t.css("min-height", $window.height() - e)
+        }
+    },
+    CUSTOM: {
+        setFondy: function () {
+            // fondy autochange id
+            const fondyMerchant = document.querySelectorAll('input[name="f_m_id"]');
+
+            function setMerchant() {
+                fondyMerchant.forEach(function (item) {
+                    // Программы
+                    if (item.value == 'fondy_pr') {
+                        // item.value = '1452337';
+                        item.value = '1450447';
+                    }
+                    // Самитты
+                    else if (item.value == 'fondy_sm') {
+                        // item.value = '1439508';
+                        item.value = '1450447';
+                    }
+                    // ПМ, МК
+                    else if (item.value == 'fondy_mk_pm') {
+                        // item.value = '1450447';
+                        item.value = '1450447';
+                    }
+                });
+            };
+            if (!fondyMerchant.length == 0) {
+                setMerchant();
+            };
+        },
+        setCookie: function () {
+            try {
+                if ($('.zoho_url').length) {
+                    var getId = getGA();
+
+                    if (getId) {
+                        $('input[name="google_client_id"]').val(getId);
+                    } else {
+                        var timerID = setInterval(checkGA, 200);
+                    }
+
+                    function checkGA() {
+                        //get GA from cookie
+                        getId = getGA();
+
+                        if (getId) {
+                            $('input[name="google_client_id"]').val(getId);
+                            clearInterval(timerID);
+                        }
+                    }
+
+                    function getGA() {
+                        var res = getCookie('_ga');
+                        if (res !== null) {
+                            var parts = res.split('.', 4);
+                            if (parts.length === 4) {
+                                return parts[2] + '.' + parts[3];
+                            }
+                        }
+                        return false;
+                    }
+
+                    function getCookie(name) {
+                        var nameEQ = name + "=";
+                        var ca = document.cookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                        }
+                        return null;
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        setVaidPhone: function () {
+            // Валидация tel
+            function setCursorPosition(pos, elem) {
+                elem.focus();
+                if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+                else if (elem.createTextRange) {
+                    var range = elem.createTextRange();
+                    range.collapse(true);
+                    range.moveEnd("character", pos);
+                    range.moveStart("character", pos);
+                    range.select()
+                }
+            };
+
+            function maskPhone(event) {
+                let matrix = "+ ____________",
+                    i = 0,
+                    def = matrix.replace(/\D/g, ""),
+                    val = this.value.replace(/\D/g, "");
+
+                if (def.length >= val.length) val = def;
+                this.value = matrix.replace(/./g, function (a) {
+                    return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+                });
+
+                if (event.type == "blur") {
+                    if (this.value.length == 2) this.value = ""
+                } else setCursorPosition(this.value.length, this)
+            };
+
+            let validPhone = document.querySelectorAll('input[name="phone"]');
+            if (validPhone) {
+                validPhone.forEach(item => {
+                    item.addEventListener("input", maskPhone, false);
+                    item.addEventListener("focus", maskPhone, false);
+                    item.addEventListener("blur", maskPhone, false);
+                })
+            }
+        },
+        setInputAllRequired: function () {
+            // Сделать все поля обязательными 
+            let inputsName = document.getElementsByName("name"),
+                inputsEmail = document.getElementsByName("email"),
+                inputsPhone = document.getElementsByName("phone");
+
+            function setInputAllRequired(item) {
+                item.forEach(input => {
+                    input.setAttribute("required", "true");
+                })
+            };
+
+            setInputAllRequired(inputsName);
+            setInputAllRequired(inputsEmail);
+            setInputAllRequired(inputsPhone);
+        },
+        setLocationHref: function () {
+            let inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
+                forms = document.querySelectorAll('.zoho_url');
+
+            forms.forEach(item => {
+                item.insertAdjacentHTML('beforeend', inputlocationHref)
+            });
+        },
+        updateStaticInfo: function () {
+            // footer change url terms-conditions
+            $('.footer-col.second-col .footer-col-list .list-footer a').last().text('Публичная оферта UA');
+            $('.footer-col.second-col .footer-col-list .list-footer').last().after("<li class='list-footer'><a href='http://terms-conditions.bizconstructor.com/kz' target='_blank'>Публичная оферта KZ</a></li>");
+
+            // footer contact change url text
+            $(".form__contact span").each(function () {
+                var text = $(this).text();
+                text = text.replace("Или напишите нам письмо:", "Или напишите письмо:");
+                $(this).text(text);
+            });
+
+            // footer contact change UA address
+            $('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(1) p:nth-child(2)').html('Киев, Боричев Ток, 35В' + '<br style="display: block">' + 'Platforma Fortuna');
+
+            // footer contact change KZ address
+            $('.footer-col.four-col .footer-col-list ul .list-footer.footer--contacts:nth-child(2) p:nth-child(2)').html('Алматы, ул. Байзакова, 280,' + '<br style="display: block">' + 'БЦ «Almaty Towers»');
+
+
+            // Update contact us UA
+            $(".form__contact a[href='https://goo.gl/maps/z4gUF1AKAJRSFfge8").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
+            $(".form__contact a[href='https://goo.gl/maps/9LMtuVv7yqCwTziMA").attr('href', 'https://g.page/coworking-platforma-fortuna?share').html('Киев, Боричев Ток, 35В, Platforma Fortuna');
+
+            // Update contact us KZ
+            $(".form__contact a[href='https://2gis.kz/almaty/firm/70000001018896711?m=76.939694%2C43.253276%2F16").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
+            $(".form__contact a[href='https://goo.gl/maps/jEYTh6j5z2QjLEpg8").attr('href', 'https://goo.gl/maps/W9WbpiC1VtsXDmWg9').html('Алматы, ул. Байзакова, 280, БЦ «Almaty Towers», SmArt.Point');
+        }
+    }
+};
+
+
+var $window = $(window);
+$window.resize(function () {
+    LP.HERO.setSize()
+});
+
+// setup lg-xs HERO.bg
+$(window).resize(setBackground);
+
+function setBackground() {
+    if ($(window).width() < 768) {
+        $('.hero').css('background-image', 'url(' + $('.hero').data('img-xs') + ')')
+    } else {
+        $('.hero').css('background-image', 'url(' + $('.hero').data('img-lg') + ')')
+    }
+};
+
+// Установка полей формы после регистрации
+function searchToObject() {
+    var pairs = window.location.search.substring(1).split("&"),
+        obj = {},
+        pair,
+        i;
+
+    for (i in pairs) {
+        if (pairs[i] === "") continue;
+
+        pair = pairs[i].split("=");
+
+        if (!obj[decodeURIComponent(pair[0])]) {
+            obj[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+
+            if (pair[0] != 'landing_id' && pair[0] != 'phone') {
+                if ($('[name="' + pair[0] + '"]').length) {
+                    var val = decodeURIComponent(pair[1]);
+                    $('[name="' + pair[0] + '"]').val(val.replace('+', ' ')).blur();
+                }
+            }
+            if (pair[0] == 'phone') {
+                $('[name="' + pair[0] + '"]').val(decodeURIComponent(pair[1]));
+                setTimeout(function () {
+                    $('#phone').blur()
+                }, 1000);
+            }
+        }
+
+    }
+
+    return obj;
+}
+
+// Установка цен на таймере
+function autoPriceChange(price, maxprice, maxdate) {
+    try {
+        var id = $('[name="landing_id"]').val();
+        var month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+        var url;
+        if ($('.zoho_url').length) {
+            url = '//crm-oz.constructor.biz.ua/landing/price?landing_id=' + id + '&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU'
+        }
+
+        $.get(url, function (data) {
+            var date = new Date(data.beforeDate);
+            window.price = data.price;
+            window.totalPrice = data.maxPrice;
+            var dates = data.beforeDate.split('-');
+            var monthIndex = (dates[0][0] == 0) ? dates[0].replace('0', '') : dates[0];
+            $(maxdate).text(dates[1] + ' ' + month[monthIndex - 1]);
+            $(maxprice).text(data.maxPrice);
+            $(price).text(data.price);
+
+
+            if ($('.timer_content').length) {
+                $('.timer_content').syotimer({
+                    year: dates[2],
+                    month: dates[0],
+                    day: dates[1],
+                    hour: 24,
+                    lang: 'rus'
+                });
+            }
+        });
+    } catch (e) {
+        console.log(e)
+    }
+
+}
+
+
+// Квиз формы
+let quizComplete = false,
+    serverResponse;
+
+const formWithQuiz = document.querySelector('[data-quiz]');
+
+// Если нету квиза - запрос серверу сразу
+if (!formWithQuiz) {
+    quizComplete = true;
+} else {
+    modalQuiz();
+}
+
+function modalQuiz() {
+    let questionCounter = 0,
+        selections = [],
+        quiz = $('#quiz');
+
+    // показываем вопросы
+    displayNext();
+
+    // Кнопка вперед
+    $('#next').on('click', function (e) {
+        e.preventDefault();
+
+        choose();
+
+        if (isNaN(selections[questionCounter])) {
+            alert('Выберите один вариант ответа');
+        } else {
+            questionCounter++;
+            displayNext();
+        }
+    });
+
+    // Кнопка назад
+    $('#prev').on('click', function (e) {
+        e.preventDefault();
+
+        choose();
+        questionCounter--;
+        displayNext();
+    });
+
+    function createQuestionElement(index) {
+        let qElement = $('<div>', {
+            id: 'question'
+        });
+
+        let question = $('<p>').append(questions[index].question);
+        qElement.append(question);
+
+        let radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+    }
+
+    // Создает список вариантов ответа
+    function createRadios(index) {
+        let answers = document.createElement('ul')
+
+        let answerKey = questions[index].key;
+
+        questions[index].choices.forEach((item, i = 0) => {
+            answers.insertAdjacentHTML('beforeend', `<li><input type="radio" data-num="${i}" id="${i}" name="answer" value=${item.split(' ').join('_')} answerkey=${answerKey}><label for="${i}">${item}</label></li>`)
+        });
+
+        return answers;
+    }
+
+    // Считывает выбор пользователя и помещает значение в массив и input 
+    function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').attr('data-num');
+
+        let currentQuestion = $('input[name="answer"]:checked').attr('answerkey'),
+            questionAnswer = $('input[name="answer"]:checked').val();
+
+        $('input[name=' + currentQuestion + ']').val(questionAnswer);
+    }
+
+    // Отображает следующий запрошенный элемент
+    function displayNext() {
+        quiz.fadeOut(function () {
+            $('#question').remove();
+
+            if (questionCounter < questions.length) {
+                let nextQuestion = createQuestionElement(questionCounter);
+                quiz.append(nextQuestion).fadeIn();
+
+                if (!(isNaN(selections[questionCounter]))) {
+                    $('input[data-num=' + selections[questionCounter] + ']').prop('checked', true);
+                }
+
+                if (questionCounter === 1) {
+                    $('#prev').show();
+                } else if (questionCounter === 0) {
+                    $('#prev').hide();
+                    $('#next').show();
+                }
+            } else {
+                $('#modal__quiz').remove();
+                quizComplete = true;
+
+                $('.zoho_url').submit();
+            }
+        });
+    };
+}
+
+// Обработчик на форму
+$('.zoho_url').submit(function (e) {
+    e.preventDefault();
+    var form = $(this);
+    var data = $(form).serialize();
+    var url = $(form).attr('action');
+    if ($('.zoho_url').length) {
+        data = new FormData();
+        url = 'https://crm-oz.constructor.biz.ua/landing/save';
+        var arrayData = $(form).serializeArray();
+        arrayData.forEach(function (el) {
+            data.append(el.name, el.value + '');
+        });
+    };
+
+    $(form).find('.send-form').prop('disabled', true).text('Отправка формы...');
+
+    $.ajax({
+        data: data,
+        url: url,
+        type: $(form).attr('method') || "POST",
+        method: $(form).attr('method') || "POST",
+        cache: false,
+        processData: false,
+        contentType: false,
+        dataType: 'json'
+    }).done(function (server_response) {
+        if (server_response.status == 'ok') {
+            $(form).find('.send-form').text('Форма отправлена').addClass('send-success');
+
+            if ($(form).data('form') == 'callback') {
+
+            } else {
+                if (window.dataLayer) {
+                    console.log('formsend');
+                    dataLayer.push({
+                        'event': 'formsend'
+                    });
+                }
+                if ($(form).attr('ga-id') && window.send_GA_event) {
+                    send_GA_event($(form).attr('ga-id'))
+                }
+                window._vis_opt_queue = window._vis_opt_queue || [];
+                window._vis_opt_queue.push(function () {
+                    _vis_opt_goal_conversion(200);
+                });
+                if (server_response.link !== false) {
+                    if (!quizComplete) {
+                        $('#modal__quiz').addClass('modal--active');
+                    } else {
+                        setTimeout(function () {
+                            document.location.href = server_response.link;
+                        }, 250);
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+
+// accordeon section items
+function o(t, e) {
+    var a = t.height(),
+        i = t.css("height", "auto").height();
+    t.height(a),
+        t.stop().animate({
+            height: i
+        }, e)
+};
+
+$(".accorden-item__title").on("click", function () {
+    $(".accorden-item__title").removeClass("is-open"),
+        $(this).addClass("is-open");
+    var t = $(this).next();
+    $(this).parent().hasClass("show-in") ? $(".show-in .accorden-item__content").stop().animate({
+            height: "0"
+        }, 250) : ($(".show-in .accorden-item__content").stop().animate({
+            height: "0"
+        }, 250), o(t, 250)),
+        $(this).parent().toggleClass("show-in").siblings().removeClass("show-in")
+});
+
+
+// Spoiler items section
+! function (i) {
+    var o, n;
+    i(".spoiler__title").on("click", function () {
+        o = i(this).parents(".spoiler--item"), n = o.find(".spoiler__info"),
+            o.hasClass("active_block") ? (o.removeClass("active_block"), n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(), o.siblings(".active_block").removeClass("active_block").children(".spoiler__info").stop(!0, !0).slideUp())
+    })
+}(jQuery);
+$('.spoiler--item:first .spoiler__title').click();
+
+
+// open link with taget
+$('.footer a, .form__contact a').click(function () {
+    $(this).target = "_blank";
+    window.open($(this).prop('href'));
+    return false;
+});
+
+// footer last year
+$('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
+
+
+$('body').append('<style>.timer-body-block{display:flex}.timer-body-block {display: flex; font-weight: 400;} .table-cell:after { display: none !important; }</style>');
+
+
+// Подсказка промокода legacy
+let promoField = document.querySelector('[name="promocode"]');
+
+function initPromoHelp() {
+    var $promo = $('[name="promocode"], #promo');
+    var $icon = $('<span id="promoicon"></span>');
+    var $text = $('<div class="promotext"></div>');
+    var css = {
+        'display': 'block',
+        'position': 'absolute',
+        'bottom': '2px',
+        'right': 0,
+        'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
+        'cursor': 'pointer',
+        'width': $promo.outerHeight(),
+        'height': $promo.outerHeight(),
+    }
+    var cssText = {
+        'display': 'block',
+        'position': 'absolute',
+        'top': '90%',
+        'right': 0,
+        'background': '#fff',
+        'width': '100%',
+        'opacity': 0,
+        'margin-top': '-1px',
+        'z-index': 500,
+        'padding': '1rem',
+        'border': '1px solid rgba(99, 103, 103, 0.15)',
+        'transition': '0.2s ease-in-out',
+        'pointer-events': 'none',
+        'font-size': '11px'
+    }
+    var text = {
+        title: 'Промокоды «Бизнес-Конструктор»:',
+        content: 'Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или введите промокод из рассылки и получите скидку, указанную в тексте письма.'
+    }
+    $text.append('<strong></strong>');
+    $text.append('<p></p>');
+    $text.find('strong').text(text.title).css({
+        'color': '#818888',
+        'font-weight': 600
+    });
+    $text.find('p').text(text.content).css({
+        'margin': '0.5rem 0 0 0',
+        'color': '#b6b8b8',
+        'line-height': '16px'
+    });
+    $icon.css(css);
+    $text.css(cssText);
+    $promo.parent().append($icon);
+    $promo.parent().append($text);
+
+    $(document).on('mouseenter', '#promoicon', function () {
+        $(this).siblings('.promotext').addClass('isShow')
+    })
+    $(document).on('mouseleave', '#promoicon', function () {
+        $(this).siblings('.promotext').removeClass('isShow')
+    });
+
+    $('body').append('<style>#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;}</style>');
+}
