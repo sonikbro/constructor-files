@@ -19,10 +19,6 @@ window.addEventListener('DOMContentLoaded', function () {
     LP.CUSTOM.setLocationHref();
     LP.CUSTOM.setCookie();
     LP.CUSTOM.updateStaticInfo();
-
-    if (promoField) {
-        initPromoHelp();
-    }
 });
 
 
@@ -1083,67 +1079,3 @@ $('#lastYearFooter, #lastYearFooterMob').html(new Date().getFullYear());
 
 
 $('body').append('<style>.timer-body-block{display:flex}.timer-body-block {display: flex; font-weight: 400;} .table-cell:after { display: none !important; }</style>');
-
-
-// Подсказка промокода legacy
-let promoField = document.querySelector('[name="promocode"]');
-
-function initPromoHelp() {
-    var $promo = $('[name="promocode"], #promo');
-    var $icon = $('<span id="promoicon"></span>');
-    var $text = $('<div class="promotext"></div>');
-    var css = {
-        'display': 'block',
-        'position': 'absolute',
-        'bottom': '2px',
-        'right': 0,
-        'background': 'url(https://forstas.bizconstructor.com/tilda-assets/src/help-icon.min.svg) no-repeat center center',
-        'cursor': 'pointer',
-        'width': $promo.outerHeight(),
-        'height': $promo.outerHeight(),
-    }
-    var cssText = {
-        'display': 'block',
-        'position': 'absolute',
-        'top': '90%',
-        'right': 0,
-        'background': '#fff',
-        'width': '100%',
-        'opacity': 0,
-        'margin-top': '-1px',
-        'z-index': 500,
-        'padding': '1rem',
-        'border': '1px solid rgba(99, 103, 103, 0.15)',
-        'transition': '0.2s ease-in-out',
-        'pointer-events': 'none',
-        'font-size': '11px'
-    }
-    var text = {
-        title: 'Промокоды «Бизнес-Конструктор»:',
-        content: 'Получите скидку 5%, введя промокод или ФИО человека, порекомендовавшего обучение или введите промокод из рассылки и получите скидку, указанную в тексте письма.'
-    }
-    $text.append('<strong></strong>');
-    $text.append('<p></p>');
-    $text.find('strong').text(text.title).css({
-        'color': '#818888',
-        'font-weight': 600
-    });
-    $text.find('p').text(text.content).css({
-        'margin': '0.5rem 0 0 0',
-        'color': '#b6b8b8',
-        'line-height': '16px'
-    });
-    $icon.css(css);
-    $text.css(cssText);
-    $promo.parent().append($icon);
-    $promo.parent().append($text);
-
-    $(document).on('mouseenter', '#promoicon', function () {
-        $(this).siblings('.promotext').addClass('isShow')
-    })
-    $(document).on('mouseleave', '#promoicon', function () {
-        $(this).siblings('.promotext').removeClass('isShow')
-    });
-
-    $('body').append('<style>#promoicon { opacity: 0.5; transition: 0.2s; } #promoicon:hover { opacity: 1; } .isShow {opacity: 1 !important; top: 100%  !important;}</style>');
-}
