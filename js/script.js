@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     setBackground();
     searchToObject();
-    
+
     LP.CUSTOM.setVaidPhone();
     LP.CUSTOM.setInputAllRequired();
     LP.CUSTOM.setFondy();
@@ -737,10 +737,12 @@ var LP = {
             setInputAllRequired(inputsPhone);
         },
         setLocationHref: function () {
-            let inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
+            const newInputs = '<input type="hidden" name="rolecompany" value="" autocomplete="off"><input type="hidden" name="countcompany" value="" autocomplete="off">',
+                inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
                 forms = document.querySelectorAll('.zoho_url');
 
             forms.forEach(item => {
+                item.insertAdjacentHTML('beforeend', newInputs);
                 item.insertAdjacentHTML('beforeend', inputlocationHref)
             });
         },
@@ -1021,7 +1023,7 @@ $('.zoho_url').submit(function (e) {
                 });
                 if (server_response.link !== false) {
                     if (!quizComplete) {
-                        $('#modal__quiz').addClass('modal--active');
+                        LP.CORE.showModal('#modal__quiz');
                     } else {
                         setTimeout(function () {
                             document.location.href = server_response.link;
