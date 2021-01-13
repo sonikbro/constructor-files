@@ -817,21 +817,17 @@ function searchToObject() {
                 }, 1000);
             }
         }
-
     }
-
     return obj;
 }
 
 // Установка цен на таймере
 function autoPriceChange(price, maxprice, maxdate) {
-    try {
-        var id = $('[name="landing_id"]').val();
-        var month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        var url;
-        if ($('.zoho_url').length) {
-            url = '//crm-oz.constructor.biz.ua/landing/price?landing_id=' + id + '&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU'
-        }
+    var id = $('[name="landing_id"]').val();
+    var month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    var url;
+    if ($('.zoho_url').length) {
+        url = '//crm-oz.constructor.biz.ua/landing/price?landing_id=' + id + '&token=LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU';
 
         $.get(url, function (data) {
             var date = new Date(data.beforeDate);
@@ -854,10 +850,7 @@ function autoPriceChange(price, maxprice, maxdate) {
                 });
             }
         });
-    } catch (e) {
-        console.log(e)
     }
-
 }
 
 
