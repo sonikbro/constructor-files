@@ -616,8 +616,7 @@ var LP = {
                     }
                     // Самитты
                     else if (item.value == 'fondy_sm') {
-                        // item.value = '1439508';
-                        item.value = '1450447';
+                        item.value = '1439508';
                     }
                     // ПМ, МК
                     else if (item.value == 'fondy_mk_pm') {
