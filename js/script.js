@@ -611,8 +611,7 @@ var LP = {
                 fondyMerchant.forEach(function (item) {
                     // Программы
                     if (item.value == 'fondy_pr') {
-                        // item.value = '1452337';
-                        item.value = '1450447';
+                        item.value = '1452337';
                     }
                     // Самитты
                     else if (item.value == 'fondy_sm') {
