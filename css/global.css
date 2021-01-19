@@ -121,6 +121,11 @@ h6.title {
     color: var(--main-blue-color)
 }
 
+.pointer-events {
+    pointer-events: none;
+    user-select: none; 
+}
+
 img,
 legend {
     border: 0
