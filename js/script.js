@@ -731,8 +731,8 @@ var LP = {
             setInputAllRequired(inputsPhone);
         },
         setLocationHref: function () {
-            const newInputs = '<input type="hidden" name="rolecompany" value="" autocomplete="off"><input type="hidden" name="countcompany" value="" autocomplete="off">',
-                inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}" autocomplete="off">`,
+            const newInputs = '<input type="hidden" name="rolecompany" value=""><input type="hidden" name="countcompany" value=""><input type="hidden" name="typemessage" value=""><input type="hidden" name="typetime" value="">',
+                inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}">`,
                 forms = document.querySelectorAll('.zoho_url');
 
             forms.forEach(item => {
