@@ -6,7 +6,7 @@ const table = [
     { key: '22218', date: '15 — 17 февраля'}
 ],
     date = new Date,
-    // Генерируем ключ реального времени для сравнения с таблицей
+    // Ключ реального времени для сравнения с таблицей
     currentTime = +((date.getMonth() + 1) + "" +  ("0" +date.getDate()).slice(-2) + "" + ("0" + date.getHours()).slice(-2));
 
 
