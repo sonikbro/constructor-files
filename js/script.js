@@ -853,8 +853,7 @@ function autoPriceChange(price, maxprice, maxdate) {
 
 
 // Квиз формы
-let quizComplete = false,
-    serverResponse;
+let quizComplete = false;
 
 const formWithQuiz = document.querySelector('[data-quiz]');
 
@@ -955,7 +954,7 @@ function modalQuiz() {
             } else {
                 $('#modal__quiz').remove();
                 quizComplete = true;
-
+                
                 $('.zoho_url').submit();
             }
         });
@@ -965,6 +964,7 @@ function modalQuiz() {
 // Обработчик на форму
 $('.zoho_url').submit(function (e) {
     e.preventDefault();
+    
     var form = $(this);
     var data = $(form).serialize();
     var url = $(form).attr('action');
@@ -1009,9 +1009,12 @@ $('.zoho_url').submit(function (e) {
                     _vis_opt_goal_conversion(200);
                 });
                 if (server_response.link !== false) {
+
                     if (!quizComplete) {
                         LP.CORE.showModal('#modal__quiz');
-                    } else {
+                    }
+                    if (quizComplete) {
+                        console.log(server_response.link)
                         setTimeout(function () {
                             document.location.href = server_response.link;
                         }, 250);
@@ -1021,7 +1024,6 @@ $('.zoho_url').submit(function (e) {
         }
     });
 });
-
 
 
 // accordeon section items
