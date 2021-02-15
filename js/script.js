@@ -854,6 +854,7 @@ function autoPriceChange(price, maxprice, maxdate) {
 
 // Квиз формы
 let quizComplete = false;
+let activeForm = null;
 
 const formWithQuiz = document.querySelector('[data-quiz]');
 
@@ -954,8 +955,10 @@ function modalQuiz() {
             } else {
                 $('#modal__quiz').remove();
                 quizComplete = true;
-                
-                $('.zoho_url').submit();
+
+                if (activeForm !== null) {
+                    activeForm.submit()
+                }
             }
         });
     };
@@ -964,8 +967,9 @@ function modalQuiz() {
 // Обработчик на форму
 $('.zoho_url').submit(function (e) {
     e.preventDefault();
-    
+
     var form = $(this);
+    activeForm = $(this);
     var data = $(form).serialize();
     var url = $(form).attr('action');
     if ($('.zoho_url').length) {
@@ -1009,20 +1013,26 @@ $('.zoho_url').submit(function (e) {
                     _vis_opt_goal_conversion(200);
                 });
                 if (server_response.link !== false) {
-
                     if (!quizComplete) {
                         LP.CORE.showModal('#modal__quiz');
-                    }
-                    if (quizComplete) {
-                        console.log(server_response.link)
+                    } else {
                         setTimeout(function () {
                             document.location.href = server_response.link;
                         }, 250);
                     }
-                }
+                } 
             }
         }
-    });
+    })
+    .fail(function () { 
+        $(form).find('.send-form').text('Что-то не так :(');
+        console.log('error_formsend');
+        if (window.dataLayer) {
+            dataLayer.push({
+                'event': 'error_formsend'
+            });
+        }
+    })
 });
 
 
