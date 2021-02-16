@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/ac/thanks.css">
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        // Узнаем выбранный пакет
+        let urlWithPackage = new URL(window.location.href);
+
+        // Полная стоимость
+        let currentPackage = urlWithPackage.searchParams.get("landing_id");
+        $("input[name='landing_id']").val(currentPackage);
+
+        if (!currentPackage) {
+            $('.submit-btns').hide();
+        }
+
+        // Базовый пакет предоплаты
+        let currentPackageSale = '';
+
+        if (currentPackage == "") {
+            $('.select-id').html("Online");
+            currentPackageSale = '';
+        } else if (currentPackage == "") {
+            $('.select-id').html("Premium");
+            currentPackageSale = '';
+        }
+
+        $('#salePrice').click(function () {
+            sendForm.bind($(this))();
+            sendForm(currentPackageSale);
+        });
+        $('#fullPrice').click(function () {
+            sendForm.bind($(this))();
+            sendForm(currentPackage);
+        });
+
+        function sendForm(id_landing_package) {
+            var $this = $(this);
+            $this.html('Обработка запроса...');
+
+            $("input[name='landing_id']").val(id_landing_package);
+            $('#salePrice, #fullPrice').prop('disabled', true);
+
+            setTimeout(() => {
+                $('#btn-send').click();
+            }, 100);
+        }
+    });
+</script>
+
+<div class="profit" id="profit">
+    <div class="container">
+        <div><img src="https://forstas.bizconstructor.com/tilda-assets/ac/i-ch-red.svg" alt=""></div>
+        <div class="profit__title"><strong>Спасибо за заявку на {pr}</strong></div> <!-- Заголовок -->
+
+        <div class="fake-line"></div>
+
+        <div class="profit__title fiol"><strong>{title}</strong></div>
+        <div class="target__text select--package profit__title fiol">
+            Ваш тариф <b class="select-id">не выбран</b>
+        </div>
+        <div class="target__text">
+            {desc}
+        </div>
+        <div class="submit-btns">
+            <button class="button trasparent" id="salePrice">Внести задаток {price.sale}</button>
+            <button class="button fullbg" id="fullPrice">Оплатить полностью</button>
+
+            <form class="form__fields zoho_url" style="display: none;" method="POST"
+                action="https://crm-oz.constructor.biz.ua/landing/save">
+                <div>
+                    <input id="name" type="text" name="name" autocomplete="off">
+                    <input id="phone" type="tel" name="phone" autocomplete="off">
+                    <input id="email" type="email" name="email" autocomplete="off">
+                </div>
+                {@include default form with fondy+pay}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<style>
+ .profit__title.fiol{ color:#D81A38; font-size:35px; line-height:40px;} .button.fullbg{ background-image:unset; background:#D81A38;} .button.trasparent:hover{ background:#fff; border:.741353px solid #D81A38; color:#263238;} @media(min-width:768px){ .profit__title.fiol{ font-size:38px; line-height:70px;} .button{ border:unset; min-height:68px;}} .select-id{ color:#D81A38} .target__text.select--package{ font-size:18px; line-height:22px; text-transform:uppercase; color:#323A3E;} .footer{ display:none; visibility:hidden}
+</style>
