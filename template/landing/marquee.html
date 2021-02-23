@@ -1,0 +1,36 @@
+<div class="marquee relative uppercase fw900 pointer-events">
+    <div class="track absolute">
+        {TEXT}
+    </div>
+</div>
+
+<style>
+    .marquee {
+        width: 100vw;
+        max-width: 100%;
+        font-size: 50px;
+        height: 60px;
+        overflow-x: hidden;
+        letter-spacing: .03em;
+    }
+
+    .track {
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 35s linear infinite;
+        color: #141414;
+        -webkit-text-stroke-width: 2px;
+        letter-spacing: .03em;
+        -webkit-text-stroke-color: var(--main-color);
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>
