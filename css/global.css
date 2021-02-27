@@ -254,7 +254,7 @@ input[type=search]::-webkit-search-decoration {
 
 html {
     color: #263238;
-    font-display: optional;
+    font-display: swap;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-size: 10px;
@@ -263,11 +263,11 @@ html {
 
 @media (prefers-reduced-motion:reduce) {
     * {
-        -webkit-animation-duration: NaNs !important;
-        animation-duration: NaNs !important;
+        -webkit-animation-duration: 0s !important;
+        animation-duration: 0s !important;
         -webkit-animation-iteration-count: 1 !important;
         animation-iteration-count: 1 !important;
-        transition-duration: NaNs !important;
+        transition-duration: 0s !important;
         scroll-behavior: auto !important
     }
 }
