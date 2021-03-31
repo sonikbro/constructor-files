@@ -1,0 +1,36 @@
+<div class="modal flex justify-center" id="modal__quiz">
+    <div class="modal__overlay" data-modal-close="#modal__quiz"></div>
+    <div class="flex align-center modal__container">
+        <div class="pm module-item module-item-modal relative">
+            <div class="module-item__list">
+                <h6 class="quiz__title active_color">Спасибо за ваш ответ!</h6>
+
+                <div id="container" class="quiz-items">
+                    <div id="quiz" class="quiz-item"></div>
+                    <div class='button quiz_button' id='prev'>Назад</div>
+                    <div class='button quiz_button' id='next'>Далее</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Вопросы квиза-->
+<script>
+    const questions = [{
+        question: "Мы стараемся сделать программу максимально полезной и актуальной для вас. Расскажите, почему вы заинтересовались обучением",
+        choices: [
+            'Я собственник бизнеса и хочу уйти от хаоса',
+            'Я руководитель и хочу повысить показатели отдела',
+            'Я наемный сотрудник и хочу понять, как работать эффективнее',
+            'Я планирую запуск своего бизнеса и хочу делать это сразу правильно'
+        ],
+        key: 'rolecompany'
+    }, {
+        question: "Последний вопрос.<br> Сколько сотрудников в вашей компании?",
+        choices: ['От 1 до 5', 'От 6 до 10', 'От 11 до 20', 'От 21 до 50', 'От 51 до 100', 'От 100'],
+        key: 'countcompany'
+    }];
+</script>
+
+<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/src/quiz/modalquiz.css">

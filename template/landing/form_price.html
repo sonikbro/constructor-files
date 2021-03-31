@@ -5,12 +5,9 @@
             <div class="form__left">
                 <div class="form__header flex align-center">
                     <!-- Шапка форми -->
-                    <div class="form__flag"><img src="https://forstas.bizconstructor.com/migrate/flag.ua.svg" alt="">
-                    </div>
+                    <div class="form__flag"><img src="https://forstas.bizconstructor.com/migrate/flag.{{ua/kz/ru}}.svg" alt=""></div>
                     <div class="form__title cLocation"></div> <!-- Місце проведення -->
-                    <div class="form__arrow"><img src="https://forstas.bizconstructor.com/migrate/arrow_form.svg"
-                            alt="">
-                    </div>
+                    <div class="form__arrow"><img src="https://forstas.bizconstructor.com/migrate/arrow_form.svg" alt=""></div>
                     <div class="form__title cDate"></div> <!-- Дата проведення -->
                 </div>
                 <div class="form__info--tabs">
@@ -74,24 +71,23 @@
                     <input type="hidden" name="es_mail_id" value="" autocomplete="off">
                     <input type="hidden" name="convert_in_zoho" autocomplete="off">
                     <input type="hidden" name="es_id" value="" autocomplete="off">
-                    <input type="hidden" name="token" value="LapQMWHF9k5QPPGRkfRnAtACAGwUcX2tkaVgyDuQe76crMGnrU"
-                        autocomplete="off">
+                    <input type="hidden" name="token" value="{{env.TOKEN}}" autocomplete="off">
                     <input type="hidden" name="success_url" value="" autocomplete="off">
                     <input type="hidden" name="error_url" value="" autocomplete="off">
                     <input type="hidden" name="redirect" value="false" autocomplete="off">
 
-                    <!-- use only with payment  -->
+                    <!-- use only with payment if !== KZ  -->
                     <input type="hidden" name="to_payment" value="true" autocomplete="off">
                     <input name="payment_system" type="hidden" value="fondy" />
-                    <input type="hidden" name="f_m_id" value="fondy_pr" />
+                    <input type="hidden" name="f_m_id" value="fondy_pr"/>
 
-                    <button class="button button--submit send-form">Принять участие
-                    </button>
-                    <div class="form__politic">Нажимая кнопку «Принять участие», я даю согласие на обработку моих
-                        персональных данных согласно <a href="http://privacy.bizconstructor.com/"
-                            target="_blank">Политике
-                            конфиденциальности</a>. <a href="http://refund.bizconstructor.com/" target="_blank">Политика
-                            возврата</a>
+                    <button class="button button--submit send-form">Принять участие</button>
+
+                    <div class="form__politic">
+                        Нажимая кнопку «Принять участие», я даю согласие на обработку моих
+                        персональных данных согласно
+                        <a href="http://privacy.bizconstructor.com/{{if KZ/RU = /kz}}" target="_blank">Политике конфиденциальности</a>.
+                        <a href="http://refund.bizconstructor.com/{{if KZ/RU = /kz/ru}}" target="_blank">Политика возврата</a>
                     </div>
                 </form>
             </div>

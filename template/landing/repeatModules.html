@@ -1,24 +1,15 @@
 <section class="module pd-main">
     <div class="container">
-        <h5 class="title title--main">Программа <br class="mobonly"><span class="sub-color">серии мастер-классов</span></h5>
+        <h5 class="title title--main">TITLE</h5>
 
         <div class="module-section relative">
             <div class="module-items">
                 <h2>Ваш браузер не поддерживает показ этого экрана. Обновите версию браузера.</h2>
             </div>
-
-
-            <span class="deskonly cDate content moduleDate uppercase fw900"></span>
         </div>
-
     </div>
 </section>
-<div class="mobonly marquee">
-    <div class="track">
-        <div class="cDate content moduleDate uppercase fw900"></div>
-    </div>
- </div>
- 
+
 <script>
     const moduleItems = [{
             title: '',
@@ -41,20 +32,19 @@
             let myList = moduleLi.join('');
 
             $('.module-items').append(`
-            <section class="module-item flex space-between direction--mcolumn--drow">
-                <div class="module-item-left">
-                    <span class="module__day uppercase relative fw900">день ${i + 1}</span>
-                    <h6 class="module__title">${moduleItems[i].title}</h6>
-                    <button class="deskonly button button__module sub-color" data-modal="#day-${i + 1}">Все темы ${i + 1}-го дня</button>
-                </div>
-                <div class="module-item-right">
-                    <ul class="module-item__list">
-                        ${myList}
-                    </ul>
-                </div>
-            </section>`);
-        }
-        
+                <section class="module-item flex space-between direction--mcolumn--drow">
+                    <div class="module-item-left">
+                        <span class="module__day uppercase relative fw900">день ${i + 1}</span>
+                        <h6 class="module__title">${moduleItems[i].title}</h6>
+                        <button class="deskonly button button__module sub-color" data-modal="#day-${i + 1}">Все темы ${i + 1}-го дня</button>
+                    </div>
+                    <div class="module-item-right">
+                        <ul class="module-item__list">
+                            ${myList}
+                        </ul>
+                    </div>
+                </section>`);
+            }
     };
 
     generateSection();

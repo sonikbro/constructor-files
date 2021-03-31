@@ -1,12 +1,12 @@
 <!--Настройка лендинга-->
 
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/">
 
 <script>
 // Впишите ваше значение в ' ... '
 $(document).ready(function () {
     // Дата мероприятия
-    let cDate = 'date',
+    const cDate = 'date',
 
         // Landing id // Product Standard
         cLandingId = 'id',
@@ -27,10 +27,10 @@ $(document).ready(function () {
 // Проверка данных с универсального блока (Удаем тут, если удалили с блока)
  if (cDate !=='date'){ $('.cDate').each(function (){ $(this).html(cDate);});}; if (cLandingId !=='id'){ $("input[name='landing_id']").val(cLandingId); $(".standard_price").attr("data-id", cLandingId)}; if (cLandingIdPremium !=='id'){ $(".premium_price").attr("data-id", cLandingIdPremium)}; if (cMail_id !=='es_mail_id'){ $("input[name='es_mail_id']").val(cMail_id)}; if (cEs_id !=='cEs_id'){ $("input[name='es_id']").val(cEs_id)}; if (cSuccess_url !=='success_url'){ $("input[name='success_url'], input[name='error_url']").val(cSuccess_url)};
 
-// Установка цен на пакетах 
+// Установка цен на пакетах  (указать нужный элемент)
  let data=LP.CORE.getSearchJson(); LP.CORE.getPriceByID(data.landing_id); $('.package_price').each(function (i, el){ LP.CORE.setPriceThanks($(this).data('id'), $(this).find('.price-full-redline'), $(this) .find('.price-discount-big'));});
 
-// Модальная кнопка на телефонах
+// Модальная кнопка на телефонах (указать нужный элемент)
  let target=$("#form"), targetPos=target.offset().top, winHeight=$(window).height(), scrollToElem=targetPos - winHeight; $(window).scroll((function (){ $(this).scrollTop() >scrollToElem ? $(" #fixed-btn").addClass("hiden") :$(" #fixed-btn").removeClass( "hiden")}));
 
 

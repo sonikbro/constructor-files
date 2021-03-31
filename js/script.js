@@ -715,7 +715,7 @@ var LP = {
             }
         },
         setInputAllRequired: function () {
-            // Сделать все поля обязательными 
+            // Сделать все поля обязательными
             let inputsName = document.getElementsByName("name"),
                 inputsEmail = document.getElementsByName("email"),
                 inputsPhone = document.getElementsByName("phone");
@@ -866,6 +866,12 @@ if (!formWithQuiz) {
 }
 
 function modalQuiz() {
+
+    const templateTitle = '<div class="quiz--header flex direction--mcolumn--drow space-between"><span>Вопрос <span id="countQuestions">1</span> из 2</span><h6 class="quiz__title active_color">Спасибо за ваш ответ!</h6></div>'
+
+    $('#modal__quiz .module-item__list h6').remove();
+    $('#modal__quiz .module-item__list').prepend(templateTitle);
+
     let questionCounter = 0,
         selections = [],
         quiz = $('#quiz');
@@ -923,7 +929,7 @@ function modalQuiz() {
         return answers;
     }
 
-    // Считывает выбор пользователя и помещает значение в массив и input 
+    // Считывает выбор пользователя и помещает значение в массив и input
     function choose() {
         selections[questionCounter] = +$('input[name="answer"]:checked').attr('data-num');
 
@@ -948,9 +954,11 @@ function modalQuiz() {
 
                 if (questionCounter === 1) {
                     $('#prev').show();
+                    $('#countQuestions').html(questionCounter + 1)
                 } else if (questionCounter === 0) {
                     $('#prev').hide();
                     $('#next').show();
+                    $('#countQuestions').html(questionCounter + 1)
                 }
             } else {
                 $('#modal__quiz').remove();
@@ -1020,11 +1028,11 @@ $('.zoho_url').submit(function (e) {
                             document.location.href = server_response.link;
                         }, 250);
                     }
-                } 
+                }
             }
         }
     })
-    .fail(function () { 
+    .fail(function () {
         $(form).find('.send-form').text('Что-то не так :(');
         console.log('error_formsend');
         if (window.dataLayer) {
