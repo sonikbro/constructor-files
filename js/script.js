@@ -731,7 +731,7 @@ var LP = {
             setInputAllRequired(inputsPhone);
         },
         setLocationHref: function () {
-            const newInputs = '<input type="hidden" name="rolecompany" value=""><input type="hidden" name="countcompany" value=""><input type="hidden" name="typemessage" value=""><input type="hidden" name="typetime" value="">',
+            const newInputs = '<input type="hidden" name="rolecompany" value=""><input type="hidden" name="countcompany" value="">',
                 inputlocationHref = `<input type="hidden" name="location_href" value="${window.location.href}">`,
                 forms = document.querySelectorAll('.zoho_url');
 
@@ -866,8 +866,7 @@ if (!formWithQuiz) {
 }
 
 function modalQuiz() {
-
-    const templateTitle = '<div class="quiz--header flex direction--mcolumn--drow space-between"><span>Вопрос <span id="countQuestions">1</span> из 2</span><h6 class="quiz__title active_color">Спасибо за ваш ответ!</h6></div>'
+    const templateTitle = `<div class="quiz--header flex direction--mcolumn--drow space-between"><span>Вопрос <span id="countQuestions">1</span> из ${questions.length}</span><h6 class="quiz__title active_color">Спасибо за ваш ответ!</h6></div>`;
 
     $('#modal__quiz .module-item__list h6').remove();
     $('#modal__quiz .module-item__list').prepend(templateTitle);
@@ -920,10 +919,8 @@ function modalQuiz() {
     function createRadios(index) {
         let answers = document.createElement('ul')
 
-        let answerKey = questions[index].key;
-
         questions[index].choices.forEach((item, i = 0) => {
-            answers.insertAdjacentHTML('beforeend', `<li><input type="radio" data-num="${i}" id="${i}" name="answer" value=${item.split(' ').join('_')} answerkey=${answerKey}><label for="${i}">${item}</label></li>`)
+            answers.insertAdjacentHTML('beforeend', `<li><input type="radio" data-num="${i}" id="${i}" name="answer" value=${item.value} answerkey=${questions[index].key}><label for="${i}">${item.text}</label></li>`)
         });
 
         return answers;
@@ -951,11 +948,12 @@ function modalQuiz() {
                 if (!(isNaN(selections[questionCounter]))) {
                     $('input[data-num=' + selections[questionCounter] + ']').prop('checked', true);
                 }
+                
 
-                if (questionCounter === 1) {
+                if (questionCounter > 0) {
                     $('#prev').show();
                     $('#countQuestions').html(questionCounter + 1)
-                } else if (questionCounter === 0) {
+                } else if (questionCounter == 0) {
                     $('#prev').hide();
                     $('#next').show();
                     $('#countQuestions').html(questionCounter + 1)
