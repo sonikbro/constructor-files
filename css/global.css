@@ -281,3 +281,8 @@ a:focus-visible,
 button:focus-visible {
     outline: auto !important
 }
+
+img {
+    /* Only render when in viewport */
+    content-visibility: auto;
+  }
