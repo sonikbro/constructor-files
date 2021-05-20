@@ -1006,7 +1006,7 @@ $('.zoho_url').submit(function (e) {
             $(form).find('.send-form').text('Форма отправлена').addClass('send-success');
 
             if ($(form).data('form') == 'callback') {
-
+                console.log(arrayData);
             } else {
                 if (window.dataLayer) {
                     console.log('formsend');
@@ -1033,12 +1033,14 @@ $('.zoho_url').submit(function (e) {
             }
         }
     })
-    .fail(function () {
+    .fail(function (request, status, error) {
         $(form).find('.send-form').text('Что-то не так :(');
-        console.log('error_formsend');
+
+        const statusCode = `error_formsend with code: ${request.status}`;
+        console.log(statusCode);
         if (window.dataLayer) {
             dataLayer.push({
-                'event': 'error_formsend'
+                'event': statusCode
             });
         }
     })
