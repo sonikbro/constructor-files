@@ -621,7 +621,7 @@ var LP = {
                     else if (item.value == 'fondy_mk_pm') {
                         item.value = '1450447';
                     }
-                     // RU all
+                    // RU all
                     else if (item.value == 'fondy_ru') {
                         item.value = '1452337';
                     }
@@ -693,8 +693,16 @@ var LP = {
             };
 
             function maskPhone(event) {
-                let matrix = "+ ____________",
-                    i = 0,
+                let matrix;
+                let isCharacterTel = document.querySelector('[data-mask]');
+
+                if (!isCharacterTel) {
+                    matrix = "+ ____________";
+                } else {
+                    matrix = isCharacterTel.dataset.mask;
+                };
+
+                let i = 0,
                     def = matrix.replace(/\D/g, ""),
                     val = this.value.replace(/\D/g, "");
 
@@ -951,7 +959,7 @@ function modalQuiz() {
                 if (!(isNaN(selections[questionCounter]))) {
                     $('input[data-num=' + selections[questionCounter] + ']').prop('checked', true);
                 }
-                
+
 
                 if (questionCounter > 0) {
                     $('#prev').show();
@@ -993,57 +1001,57 @@ $('.zoho_url').submit(function (e) {
     $(form).find('.send-form').prop('disabled', true).text('Отправка формы...');
 
     $.ajax({
-        data: data,
-        url: url,
-        type: $(form).attr('method') || "POST",
-        method: $(form).attr('method') || "POST",
-        cache: false,
-        processData: false,
-        contentType: false,
-        dataType: 'json'
-    }).done(function (server_response) {
-        if (server_response.status == 'ok') {
-            $(form).find('.send-form').text('Форма отправлена').addClass('send-success');
+            data: data,
+            url: url,
+            type: $(form).attr('method') || "POST",
+            method: $(form).attr('method') || "POST",
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'json'
+        }).done(function (server_response) {
+            if (server_response.status == 'ok') {
+                $(form).find('.send-form').text('Форма отправлена').addClass('send-success');
 
-            if ($(form).data('form') == 'callback') {
-                console.log(arrayData);
-            } else {
-                if (window.dataLayer) {
-                    console.log('formsend');
-                    dataLayer.push({
-                        'event': 'formsend'
+                if ($(form).data('form') == 'callback') {
+                    console.log(arrayData);
+                } else {
+                    if (window.dataLayer) {
+                        console.log('formsend');
+                        dataLayer.push({
+                            'event': 'formsend'
+                        });
+                    }
+                    if ($(form).attr('ga-id') && window.send_GA_event) {
+                        send_GA_event($(form).attr('ga-id'))
+                    }
+                    window._vis_opt_queue = window._vis_opt_queue || [];
+                    window._vis_opt_queue.push(function () {
+                        _vis_opt_goal_conversion(200);
                     });
-                }
-                if ($(form).attr('ga-id') && window.send_GA_event) {
-                    send_GA_event($(form).attr('ga-id'))
-                }
-                window._vis_opt_queue = window._vis_opt_queue || [];
-                window._vis_opt_queue.push(function () {
-                    _vis_opt_goal_conversion(200);
-                });
-                if (server_response.link !== false) {
-                    if (!quizComplete) {
-                        LP.CORE.showModal('#modal__quiz');
-                    } else {
-                        setTimeout(function () {
-                            document.location.href = server_response.link;
-                        }, 250);
+                    if (server_response.link !== false) {
+                        if (!quizComplete) {
+                            LP.CORE.showModal('#modal__quiz');
+                        } else {
+                            setTimeout(function () {
+                                document.location.href = server_response.link;
+                            }, 250);
+                        }
                     }
                 }
             }
-        }
-    })
-    .fail(function (request, status, error) {
-        $(form).find('.send-form').text('Что-то не так :(');
+        })
+        .fail(function (request, status, error) {
+            $(form).find('.send-form').text('Что-то не так :(');
 
-        const statusCode = `error_formsend with code: ${request.status}`;
-        console.log(statusCode);
-        if (window.dataLayer) {
-            dataLayer.push({
-                'event': statusCode
-            });
-        }
-    })
+            const statusCode = `error_formsend with code: ${request.status}`;
+            console.log(statusCode);
+            if (window.dataLayer) {
+                dataLayer.push({
+                    'event': statusCode
+                });
+            }
+        })
 });
 
 
