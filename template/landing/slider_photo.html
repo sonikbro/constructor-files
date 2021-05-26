@@ -1,0 +1,73 @@
+<section class="section_slider pd-main">
+    <div class="container">
+        <div class="flex align-center">
+            <h3 class="title">
+               {TITLE}
+            </h3>
+            <div class="movedArrow">
+                <!-- moved arrow js -->
+            </div>
+        </div>
+        <div class="slider_item">
+
+            <div class="splide {customClassName} relative">
+                <div class="splide__track">
+                    <ul class="splide__list {customClassName}-js">
+                        <!-- render js -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // array of items
+        const arrayItems = ['',''];
+
+        const sliderItem = arrayItems.map(function (photo) {
+            return photo
+        });
+
+        // insert modified items
+        const parent = document.querySelector('.items-feedback-js');
+        parent.insertAdjacentHTML('afterbegin', sliderItem.join(' '));
+    </script>
+
+
+    <!-- to footer -->
+    <link rel="stylesheet" href="https://forstas.bizconstructor.com/tilda-assets/src/libs/splide.min.css">
+    <script src="https://forstas.bizconstructor.com/tilda-assets/src/libs/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // some settings
+            new Splide('{customClassName}', {
+                perPage: 4,
+                lazyLoad: 'nearby',
+                preloadPages: 1,
+                rewind: true,
+                gap: 25,
+                perMove: 1,
+                pagination: false,
+                keyboard: false,
+                type: 'loop',
+                autoplay: true,
+                interval: '10000',
+                breakpoints: {
+                    992: {
+                        perPage: 1,
+                        interval: '5000',
+                        gap: 20
+
+                    }
+                }
+            }).mount();
+
+            // move arrows to title
+            const modevArrows = document.querySelector('.movedArrow');
+            const arrows = document.querySelector('{customClassName} .splide__arrows');
+
+            modevArrows.replaceWith(arrows);
+        });
+    </script>
+</section>
